@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import CoreData
+
+@objc(Novel)
+public class Novel: NSManagedObject {
+    
+}

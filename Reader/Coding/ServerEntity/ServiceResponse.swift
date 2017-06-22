@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class ServiceResponse {
+    
+    var isSuccess: Bool
+    var errorCode: Int
+    var dict: [String: Any] = [:]
+    var data: Data?
+    var pdfPath: String?
+    
+    init(isSuccess: Bool, errorCode: Int) {
+        self.isSuccess = isSuccess
+        self.errorCode = errorCode
+    }
+    
+}

@@ -1,0 +1,49 @@
+PODS:
+  - Alamofire (4.5.0)
+  - DACircularProgress (2.3.1)
+  - DZNEmptyDataSet (1.8.1)
+  - LoremIpsum (1.0.0)
+  - MBProgressHUD (0.9.2)
+  - MWPhotoBrowser (2.1.2):
+    - DACircularProgress (~> 2.3)
+    - MBProgressHUD (~> 0.9)
+    - SDWebImage (!= 3.7.2, ~> 3.7)
+  - QBImagePickerController (3.4.0)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SlackTextViewController (1.9.5)
+  - SnapKit (3.0.2)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - DZNEmptyDataSet
+  - LoremIpsum (~> 1.0)
+  - MWPhotoBrowser
+  - QBImagePickerController
+  - SDCycleScrollView (~> 1.64)
+  - SDWebImage (~> 3.8)
+  - SlackTextViewController
+  - SnapKit (~> 3.0.2)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  LoremIpsum: 9029c55d36501b2ee0b05cc9ecda11d3a0479160
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
+  QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SlackTextViewController: fbcdadbb8090673f604484ff5b6eb8d77baed42a
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: a0aa00d03e3916602e9893c2b1ad848c6bef6808
+
+COCOAPODS: 1.2.1
