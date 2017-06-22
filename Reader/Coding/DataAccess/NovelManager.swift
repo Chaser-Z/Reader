@@ -60,7 +60,7 @@ class NovelManager {
         novel.author = serverNovel.author
         novel.image_link = serverNovel.image_link
         novel.link = serverNovel.link
-        novel.image_link = serverNovel.image_link
+        novel.title = serverNovel.title
     }
     
 }
