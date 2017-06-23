@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // 显示状态栏
         application.setStatusBarHidden(false, with: UIStatusBarAnimation.fade)
-        let vc = ViewController()
-        
-        let navVC = UINavigationController(rootViewController:vc)
-        
-        window!.rootViewController = navVC
+//        let vc = ViewController()
+//        
+//        let navVC = UINavigationController(rootViewController:vc)
+//        
+//        window!.rootViewController = navVC
 
         return true
     }
