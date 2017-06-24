@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		680BAD471EF95C920052FA11 /* 求魔.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680BAD461EF95C920052FA11 /* 求魔.txt */; };
-<<<<<<< HEAD
-=======
+		6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825AACA1EFD483000A0F73F /* InfoModel.swift */; };
 		6881D4861EFCB6CE003CA502 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4851EFCB6CD003CA502 /* Home.storyboard */; };
 		6881D4881EFCB6E4003CA502 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4871EFCB6E4003CA502 /* User.storyboard */; };
 		6881D48C1EFCB88A003CA502 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D48B1EFCB88A003CA502 /* HomeViewController.swift */; };
@@ -24,7 +23,6 @@
 		6881D4A11EFCBDA2003CA502 /* 4_7Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49E1EFCBDA2003CA502 /* 4_7Inchbookshelfback.png */; };
 		6881D4A21EFCBDA2003CA502 /* 5_5Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49F1EFCBDA2003CA502 /* 5_5Inchbookshelfback.png */; };
 		6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4A31EFCBDB3003CA502 /* 703s.jpg */; };
->>>>>>> 2d6f7295cfd0da230d7014c640eba55963388264
 		68A6C6991EFAA7DB00BF971B /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C65F1EFAA7DB00BF971B /* ASValuePopUpView.m */; };
 		68A6C69A1EFAA7DB00BF971B /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C6611EFAA7DB00BF971B /* ASValueTrackingSlider.m */; };
 		68A6C69B1EFAA7DB00BF971B /* DZMCoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C6641EFAA7DB00BF971B /* DZMCoverController.m */; };
@@ -79,6 +77,12 @@
 		68A6C6D71EFAB61A00BF971B /* ServerNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C6D61EFAB61A00BF971B /* ServerNovel.swift */; };
 		68A6C6D91EFAB78400BF971B /* NovelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C6D81EFAB78400BF971B /* NovelManager.swift */; };
 		68A6C6DB1EFAB82400BF971B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C6DA1EFAB82400BF971B /* CoreDataManager.swift */; };
+		68B5A07A1EFE0796009D4EAE /* Chapter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0791EFE0796009D4EAE /* Chapter+CoreDataClass.swift */; };
+		68B5A07C1EFE0821009D4EAE /* Chapter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A07B1EFE0821009D4EAE /* Chapter+CoreDataProperties.swift */; };
+		68B5A07E1EFE08D2009D4EAE /* ChapterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A07D1EFE08D2009D4EAE /* ChapterManager.swift */; };
+		68B5A0801EFE096B009D4EAE /* ServerChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A07F1EFE096B009D4EAE /* ServerChapter.swift */; };
+		68B5A0821EFE0D4D009D4EAE /* ChapterFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0811EFE0D4D009D4EAE /* ChapterFacade.swift */; };
+		68B5A0841EFE0D6E009D4EAE /* ChapterWSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0831EFE0D6E009D4EAE /* ChapterWSHelper.swift */; };
 		68F4D8511EF7FCBB004B39DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */; };
 		68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8521EF7FCBB004B39DB /* ViewController.swift */; };
 		68F4D8561EF7FCBB004B39DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D8541EF7FCBB004B39DB /* Main.storyboard */; };
@@ -91,8 +95,7 @@
 /* Begin PBXFileReference section */
 		3BED83C7077D86B773E450C8 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		680BAD461EF95C920052FA11 /* 求魔.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔.txt"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
+		6825AACA1EFD483000A0F73F /* InfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		6881D4851EFCB6CD003CA502 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6881D4871EFCB6E4003CA502 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		6881D48B1EFCB88A003CA502 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +110,6 @@
 		6881D49E1EFCBDA2003CA502 /* 4_7Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_7Inchbookshelfback.png; sourceTree = "<group>"; };
 		6881D49F1EFCBDA2003CA502 /* 5_5Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_5Inchbookshelfback.png; sourceTree = "<group>"; };
 		6881D4A31EFCBDB3003CA502 /* 703s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 703s.jpg; sourceTree = "<group>"; };
->>>>>>> 2d6f7295cfd0da230d7014c640eba55963388264
 		68A6C65E1EFAA7DB00BF971B /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		68A6C65F1EFAA7DB00BF971B /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
 		68A6C6601EFAA7DB00BF971B /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
@@ -167,6 +169,12 @@
 		68A6C6D61EFAB61A00BF971B /* ServerNovel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerNovel.swift; sourceTree = "<group>"; };
 		68A6C6D81EFAB78400BF971B /* NovelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelManager.swift; sourceTree = "<group>"; };
 		68A6C6DA1EFAB82400BF971B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		68B5A0791EFE0796009D4EAE /* Chapter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		68B5A07B1EFE0821009D4EAE /* Chapter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		68B5A07D1EFE08D2009D4EAE /* ChapterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterManager.swift; sourceTree = "<group>"; };
+		68B5A07F1EFE096B009D4EAE /* ServerChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerChapter.swift; sourceTree = "<group>"; };
+		68B5A0811EFE0D4D009D4EAE /* ChapterFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterFacade.swift; sourceTree = "<group>"; };
+		68B5A0831EFE0D6E009D4EAE /* ChapterWSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterWSHelper.swift; sourceTree = "<group>"; };
 		68E88DED1EF809FE00921015 /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		68F4D84D1EF7FCBB004B39DB /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,8 +208,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		6881D4831EFCB5ED003CA502 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				6881D48D1EFCB8C7003CA502 /* UserViewController.swift */,
+				6825AACA1EFD483000A0F73F /* InfoModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -253,7 +260,6 @@
 			path = ZHNBookShelf;
 			sourceTree = "<group>";
 		};
->>>>>>> 2d6f7295cfd0da230d7014c640eba55963388264
 		68A6C6551EFAA77600BF971B /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +286,8 @@
 				68A6C6DA1EFAB82400BF971B /* CoreDataManager.swift */,
 				68A6C6D21EFAB1B700BF971B /* Novel+CoreDataClass.swift */,
 				68A6C6D41EFAB24200BF971B /* Novel+CoreDataProperties.swift */,
+				68B5A0791EFE0796009D4EAE /* Chapter+CoreDataClass.swift */,
+				68B5A07B1EFE0821009D4EAE /* Chapter+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				68A6C6D81EFAB78400BF971B /* NovelManager.swift */,
+				68B5A07D1EFE08D2009D4EAE /* ChapterManager.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				68A6C6C41EFAA93A00BF971B /* NovelFacade.swift */,
+				68B5A0811EFE0D4D009D4EAE /* ChapterFacade.swift */,
 			);
 			path = Facade;
 			sourceTree = "<group>";
@@ -306,6 +316,7 @@
 				68A6C6CA1EFAA9BF00BF971B /* ServiceResponse.swift */,
 				68A6C6CC1EFAAA6300BF971B /* ServerResponse.swift */,
 				68A6C6D61EFAB61A00BF971B /* ServerNovel.swift */,
+				68B5A07F1EFE096B009D4EAE /* ServerChapter.swift */,
 			);
 			path = ServerEntity;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 			children = (
 				68A6C6C81EFAA99D00BF971B /* CommonWSHelper.swift */,
 				68A6C6C61EFAA97800BF971B /* NovelWSHelper.swift */,
+				68B5A0831EFE0D6E009D4EAE /* ChapterWSHelper.swift */,
 			);
 			path = Webservice;
 			sourceTree = "<group>";
@@ -616,25 +628,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				68F4D85E1EF7FCBB004B39DB /* LaunchScreen.storyboard in Resources */,
-=======
 				6881D4A11EFCBDA2003CA502 /* 4_7Inchbookshelfback.png in Resources */,
 				68F4D85E1EF7FCBB004B39DB /* LaunchScreen.storyboard in Resources */,
 				6881D4A21EFCBDA2003CA502 /* 5_5Inchbookshelfback.png in Resources */,
 				6881D4861EFCB6CE003CA502 /* Home.storyboard in Resources */,
->>>>>>> 2d6f7295cfd0da230d7014c640eba55963388264
 				68F4D85B1EF7FCBB004B39DB /* Assets.xcassets in Resources */,
 				6881D49C1EFCBC6B003CA502 /* ZHNBookShelfCell.xib in Resources */,
 				680BAD471EF95C920052FA11 /* 求魔.txt in Resources */,
-<<<<<<< HEAD
 				68F4D8561EF7FCBB004B39DB /* Main.storyboard in Resources */,
-=======
 				6881D4A01EFCBDA2003CA502 /* 4Inchbookshelfback.png in Resources */,
 				68F4D8561EF7FCBB004B39DB /* Main.storyboard in Resources */,
 				6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */,
 				6881D4881EFCB6E4003CA502 /* User.storyboard in Resources */,
->>>>>>> 2d6f7295cfd0da230d7014c640eba55963388264
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +714,7 @@
 				68A6C6A11EFAA7DB00BF971B /* ReadOperation.swift in Sources */,
 				68A6C6B31EFAA7DB00BF971B /* RMLightView.swift in Sources */,
 				6881D4981EFCBC4A003CA502 /* ZHNLayout.swift in Sources */,
+				68B5A07A1EFE0796009D4EAE /* Chapter+CoreDataClass.swift in Sources */,
 				68A6C6C11EFAA7DB00BF971B /* ReadViewUDCellTableViewCell.swift in Sources */,
 				68A6C6991EFAA7DB00BF971B /* ASValuePopUpView.m in Sources */,
 				68A6C6BF1EFAA7DB00BF971B /* ReadView.swift in Sources */,
@@ -733,22 +740,28 @@
 				68A6C6B61EFAA7DB00BF971B /* ReadChapterListModel.swift in Sources */,
 				68A6C6B41EFAA7DB00BF971B /* RMTopView.swift in Sources */,
 				68A6C6BC1EFAA7DB00BF971B /* RMFuncView.swift in Sources */,
+				68B5A0841EFE0D6E009D4EAE /* ChapterWSHelper.swift in Sources */,
 				68A6C6A41EFAA7DB00BF971B /* HaloButton.swift in Sources */,
 				68A6C6C51EFAA93A00BF971B /* NovelFacade.swift in Sources */,
 				68A6C6D91EFAB78400BF971B /* NovelManager.swift in Sources */,
 				68F4D8511EF7FCBB004B39DB /* AppDelegate.swift in Sources */,
 				68A6C6AD1EFAA7DB00BF971B /* GlobalMethod.swift in Sources */,
 				68A6C6A71EFAA7DB00BF971B /* NSObject+Extension.swift in Sources */,
+				68B5A0801EFE096B009D4EAE /* ServerChapter.swift in Sources */,
 				6881D4931EFCBB90003CA502 /* MyTabBarController.swift in Sources */,
 				68A6C6A91EFAA7DB00BF971B /* UIPageViewController+Extension.swift in Sources */,
+				68B5A07E1EFE08D2009D4EAE /* ChapterManager.swift in Sources */,
 				68A6C6C91EFAA99D00BF971B /* CommonWSHelper.swift in Sources */,
+				68B5A07C1EFE0821009D4EAE /* Chapter+CoreDataProperties.swift in Sources */,
 				68A6C6BB1EFAA7DB00BF971B /* RMColorView.swift in Sources */,
 				68A6C6A31EFAA7DB00BF971B /* ReadViewController.swift in Sources */,
 				68A6C6D71EFAB61A00BF971B /* ServerNovel.swift in Sources */,
 				68A6C6BD1EFAA7DB00BF971B /* RMSettingView.swift in Sources */,
 				68A6C6C01EFAA7DB00BF971B /* ReadViewCellTableViewCell.swift in Sources */,
 				68A6C6AE1EFAA7DB00BF971B /* GlobalProperty.swift in Sources */,
+				6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */,
 				68A6C6A61EFAA7DB00BF971B /* SegmentedControl.swift in Sources */,
+				68B5A0821EFE0D4D009D4EAE /* ChapterFacade.swift in Sources */,
 				68A6C6A51EFAA7DB00BF971B /* MyUserDefaults.swift in Sources */,
 				6881D4961EFCBC31003CA502 /* ZHNBookShelfView.swift in Sources */,
 				68A6C6B91EFAA7DB00BF971B /* ReadModel.swift in Sources */,

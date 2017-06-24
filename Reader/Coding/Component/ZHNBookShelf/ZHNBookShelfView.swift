@@ -18,7 +18,6 @@ class ZHNBookShelfView: UIView {
     private var collectionView: UICollectionView!
     var isShow = false
     var delegate: ZHNBookShelfViewDelegate!
-    fileprivate var index: Int = 0
     var novels = [Novel]() {
         didSet{
             reloadData()
@@ -104,9 +103,8 @@ extension ZHNBookShelfView: UICollectionViewDelegate,UICollectionViewDataSource 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        index = indexPath.row
-        reloadData()
-        //delegate.reloadOrPushBuyVC(index: indexPath.row)
+        //reloadData()
+        delegate.reloadOrPushReadVC(index: indexPath.row)
     }
     
     

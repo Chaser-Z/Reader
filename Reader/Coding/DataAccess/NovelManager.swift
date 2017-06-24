@@ -21,7 +21,6 @@ class NovelManager {
         let context = CoreDataManager.sharedInstance.context
         let request: NSFetchRequest<Novel> = Novel.fetchRequest()
         request.predicate = NSPredicate(format: "article_id == %@", serverNovel.article_id)
-        
         do {
             let list = try context.fetch(request)
             if list.count > 0 {
@@ -56,7 +55,7 @@ class NovelManager {
     
     fileprivate class func setFields(_ novel: Novel, serverNovel: ServerNovel) {
         novel.article_id = serverNovel.article_id
-        novel.article_abstract =  "tt" 
+        novel.article_abstract =  serverNovel.article_abstract
         novel.author = serverNovel.author
         novel.image_link = serverNovel.image_link
         novel.link = serverNovel.link

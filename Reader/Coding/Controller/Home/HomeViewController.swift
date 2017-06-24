@@ -10,12 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var tView: ZHNBookShelfView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
         self.view.backgroundColor = UIColor.red
-        let tView = ZHNBookShelfView(frame: self.view.bounds)
+        tView = ZHNBookShelfView(frame: self.view.bounds)
+        tView.delegate = self
         self.view.addSubview(tView)
         
         let novles = NovelManager.getAll()
@@ -26,12 +29,10 @@ class HomeViewController: UIViewController {
         } else {
             NovelFacade.getNovelList { (novels) in
                 let novles = NovelManager.getAll()
-                tView.novels = novles
+                self.tView.novels = novles
                 NOVELLog(novles[0].title)
             }
         }
-        //tView.reloadData()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,15 +40,31 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension HomeViewController: ZHNBookShelfViewDelegate {
+    
+    func reloadOrPushReadVC(index: Int) {
+        
+        var params = [String: AnyObject]()
+        params["article_id"] = tView.novels[index].article_id as AnyObject
+
+        
+        let chapterList = ChapterManager.getAll(tView.novels[index].article_id)
+        
+        if chapterList.count > 0 {
+            for chapter in chapterList {
+                NOVELLog(chapter.article_directory)
+            }
+        } else {
+            
+            ChapterFacade.getChapterList(params: params, completion: { (chapters) in
+                for chapter in chapters {
+                    NOVELLog(chapter.article_directory)
+                }
+            })
+        }
+
+    }
+}
+

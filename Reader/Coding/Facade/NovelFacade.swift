@@ -17,7 +17,6 @@ class NovelFacade {
             
             let errorCode = resp.errorCode
             if errorCode == ErrorCode.Success {
-                NOVELLog(resp.dict["novels"])
                 let serverNovels = resp.dict["novels"] as! [ServerNovel]
                 let novels = serverNovels.map {
                     NovelManager.add($0)
@@ -33,13 +32,6 @@ class NovelFacade {
         
         
     }
-    
-    
-    
-    
-    
-    
-    
     
     
 }

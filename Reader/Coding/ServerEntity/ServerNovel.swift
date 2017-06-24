@@ -20,7 +20,7 @@ class ServerNovel {
     var status: String = "0"
     
     
-    init(article_id: String, title: String, author: String, article_abstract: String?, link: String, image_link: String) {
+    init(article_id: String, title: String, author: String, article_abstract: String, link: String, image_link: String) {
         self.article_id = article_id
         self.title = title
         self.author = author
@@ -39,7 +39,7 @@ extension ServerNovel {
         let article_id = dict["article_id"] as! String
         let title = dict["title"] as! String
         let author = dict["author"] as! String
-        let article_abstract = dict["article_abstract"] as? String
+        let article_abstract = dict["article_abstract"] as! String
         let link = dict["link"] as! String
         let image_link = dict["image_link"] as! String
         
