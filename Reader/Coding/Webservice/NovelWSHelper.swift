@@ -17,7 +17,6 @@ class NovelWSHelper {
         CommonWSHelper.request(path: path, params: params) { (resp) in
             let serviceResponse = CommonWSHelper.processServiceResponse(resp) { json in
                 var info = [String: Any]()
-                
                 if let dict = json as? [String: Any] {
                     if let novelListDict = dict["data"] as? [[String: Any]] {
                         let novels = novelListDict.map{

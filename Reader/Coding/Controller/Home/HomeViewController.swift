@@ -46,25 +46,11 @@ extension HomeViewController: ZHNBookShelfViewDelegate {
     
     func reloadOrPushReadVC(index: Int) {
         
-        var params = [String: AnyObject]()
-        params["article_id"] = tView.novels[index].article_id as AnyObject
-
+        let vc = ZHNReadController()
+        vc.novelID = tView.novels[index].article_id
         
-        let chapterList = ChapterManager.getAll(tView.novels[index].article_id)
+        self.navigationController?.pushViewController(vc, animated: true)
         
-        if chapterList.count > 0 {
-            for chapter in chapterList {
-                NOVELLog(chapter.article_directory)
-            }
-        } else {
-            
-            ChapterFacade.getChapterList(params: params, completion: { (chapters) in
-                for chapter in chapters {
-                    NOVELLog(chapter.article_directory)
-                }
-            })
-        }
-
     }
 }
 

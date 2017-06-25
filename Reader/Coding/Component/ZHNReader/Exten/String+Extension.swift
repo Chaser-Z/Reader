@@ -2,7 +2,7 @@
 //  String+Extension.swift
 //  Reader
 //
-//  Created by 张海南 on 2017/6/19.
+//  Created by 张海南 on 2017/6/24.
 //  Copyright © 2017年 枫韵海. All rights reserved.
 //
 
@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension String {
-    
     
     /**
      String 的 length

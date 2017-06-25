@@ -53,47 +53,41 @@ class UserViewController: UIViewController {
         var params1 = [String: AnyObject]()
         params1["article_directory_link"] = "/0_703/7364625.html" as AnyObject
         
-        Alamofire.request("\(HOST)\(path1)", method: .post, parameters: params1, encoding: JSONEncoding.default).responseJSON { response in
-            if let json = response.result.value {
-                if json is [String: Any] {
-                    let info = json as! [String: Any]
-                    let data = info["data"] as! Dictionary<String, Any>
-                    self.content = data["content"] as! String
-                }
+        let content = ContentManager.getAll("")
+        
+        if content.count > 0  {
+            NOVELLog(content[0].content)
+            NOVELLog(content[0].article_directory)
+
+        } else {
+            
+            ContentFacade.getContent(params: params1) { (content) in
+                NOVELLog(content)
             }
+
         }
+        
+        
+//        Alamofire.request("\(HOST)\(path1)", method: .post, parameters: params1, encoding: JSONEncoding.default).responseJSON { response in
+//            if let json = response.result.value {
+//                if json is [String: Any] {
+//                    let info = json as! [String: Any]
+//                    let data = info["data"] as! Dictionary<String, Any>
+//                    self.content = data["content"] as! String
+//                }
+//            }
+//        }
         
         // 跳转
         let button = UIButton(type: .custom)
         button.setTitle("点击阅读", for: .normal)
         button.backgroundColor = UIColor.green
-        button.addTarget(self, action: #selector(read), for: .touchDown)
+        //button.addTarget(self, action: #selector(read), for: .touchDown)
         view.addSubview(button)
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
 
         
     }
-    
-    // 跳转
-    func read() {
-        
-        //MBProgressHUD.showMessage("本地文件第一次解析慢,以后就会秒进了")
-        
-        let url = Bundle.main.url(forResource: "求魔", withExtension: "txt")
-        
-        print(infoModels[0].airicle_directory)
-        ReadParser.ParserLocalURL(url: url!) {[weak self] (readModel) in
-            
-            //MBProgressHUD.hide()
-            
-            let readController = ReadController()
-            
-            readController.readModel = readModel
-            
-            self?.navigationController?.pushViewController(readController, animated: true)
-        }
-    }
-
     
 
     override func didReceiveMemoryWarning() {

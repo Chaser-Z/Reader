@@ -2,11 +2,11 @@
 //  NSObject+Extension.swift
 //  Reader
 //
-//  Created by 张海南 on 2017/6/19.
+//  Created by 张海南 on 2017/6/24.
 //  Copyright © 2017年 枫韵海. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension NSObject {
     
@@ -69,4 +69,6 @@ extension NSObject {
         
         return dict
     }
+
+    
 }
