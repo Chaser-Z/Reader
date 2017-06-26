@@ -80,6 +80,8 @@ class ZHNReadController: ZHNBaseViewController {
         
         if chapterList.count > 0 {
             chapters = chapterList
+            ZHNReadParser.shared.chapters = chapters
+            readMenu.leftView.reloadData()
             // 加载内容
             loadContentData()
 
@@ -92,6 +94,8 @@ class ZHNReadController: ZHNBaseViewController {
             ChapterFacade.getChapterList(params: params, completion: { (chapters) in
                 hud?.hide(true)
                 self.chapters = chapters
+                ZHNReadParser.shared.chapters = chapters
+                self.readMenu.leftView.reloadData()
                 // 加载内容
                 self.loadContentData()
                 for chapter in chapters {
@@ -415,8 +419,9 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     }
     
     /// 点击章节列表
-    func readMenuClickChapterList(readMenu: ZHNReadMenu, readChapterListModel: [Chapter]) {
-        
+    func readMenuClickChapterList(readMenu: ZHNReadMenu, readChapterListModel: Chapter) {
+        self.readVC = GetReadViewController()!
+        self.creatPageController(self.readVC)
     }
     
     /// 切换日夜间模式

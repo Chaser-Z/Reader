@@ -48,7 +48,7 @@ import UIKit
     @objc optional func readMenuClickLightButton(readMenu:ZHNReadMenu,isDay:Bool)
     
     /// 点击章节列表
-    @objc optional func readMenuClickChapterList(readMenu:ZHNReadMenu,readChapterListModel: [Chapter])
+    @objc optional func readMenuClickChapterList(readMenu:ZHNReadMenu,readChapterListModel: Chapter)
     
     /// 点击书签列表
     //@objc optional func readMenuClickMarkList(readMenu:DZMReadMenu,readMarkModel:DZMReadMarkModel)
@@ -77,7 +77,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     private(set) var leftView:ZHNLeftView!
     
     /// TopView
-    //private(set) var topView:DZMRMTopView!
+    private(set) var topView: ZHNTopView!
     
     /// BottomView
     private(set) var bottomView: ZHNBottomView!
@@ -262,8 +262,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         coverView.isUserInteractionEnabled = false
         
         coverView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        
-        //coverView.alpha = DZMUserDefaults.boolForKey(DZMKey_IsNighOrtDay) ? 1.0 : 0
+        coverView.alpha = ZHNReadUserDefaultes.boolForKey(Key_IsNighOrtDay) ? 1.0 : 0
         
         vc.view.addSubview(coverView)
         
@@ -333,15 +332,15 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     /// 初始化TopView
     private func initTopView() {
         
-//        topView = DZMRMTopView(readMenu:self)
-//        
-//        topView.isHidden = !menuShow
-//        
-//        vc.view.addSubview(topView)
-//        
-//        topView.frame = CGRect(x: 0, y: -NavgationBarHeight, width: ScreenWidth, height: NavgationBarHeight)
-//        
-//        topView.back.addTarget(self, action: #selector(DZMReadMenu.clickBack), for: .touchUpInside)
+        topView = ZHNTopView(readMenu:self)
+        
+        topView.isHidden = !menuShow
+        
+        vc.view.addSubview(topView)
+        
+        topView.frame = CGRect(x: 0, y: -NavgationBarHeight, width: ScreenWidth, height: NavgationBarHeight)
+        
+        topView.back.addTarget(self, action: #selector(ZHNReadMenu.clickBack), for: .touchUpInside)
     }
     
     /// 返回
@@ -405,13 +404,12 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
 //        
 //        publicButton(isShow: isShow, complete:nil)
         
-//        topView(isShow: isShow) { [weak self] ()->Void in
-//            
-         self.isAnimateComplete = true
+        topView(isShow: isShow) { [weak self] ()->Void in
+         self?.isAnimateComplete = true
 //            
 //            // 完成动画
 //            self?.delegate?.readMenuDidShowOrHidden?(readMenu: self!, isShow: self!.menuShow)
-//        }
+        }
     }
     
     /// LeftView 展示
@@ -446,31 +444,31 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         }
     }
     
-//    /// TopView 展示
-//    func topView(isShow:Bool,complete:(()->Void)?) {
-//        
-//        if topView.isHidden == !isShow {return}
-//        
-//        if isShow {topView.isHidden = false}
-//        
-//        UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
-//            
-//            if isShow {
-//                
-//                self?.topView.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: NavgationBarHeight)
-//                
-//            }else{
-//                
-//                self?.topView.frame = CGRect(x: 0, y: -NavgationBarHeight, width: ScreenWidth, height: NavgationBarHeight)
-//            }
-//            
-//        }) {[weak self] (isOK) in
-//            
-//            if !isShow {self?.topView.isHidden = true}
-//            
-//            if complete != nil {complete!()}
-//        }
-//    }
+    /// TopView 展示
+    func topView(isShow:Bool,complete:(()->Void)?) {
+        
+        if topView.isHidden == !isShow {return}
+        
+        if isShow {topView.isHidden = false}
+        
+        UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
+            
+            if isShow {
+                
+                self?.topView.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: NavgationBarHeight)
+                
+            }else{
+                
+                self?.topView.frame = CGRect(x: 0, y: -NavgationBarHeight, width: ScreenWidth, height: NavgationBarHeight)
+            }
+            
+        }) {[weak self] (isOK) in
+            
+            if !isShow {self?.topView.isHidden = true}
+            
+            if complete != nil {complete!()}
+        }
+    }
     
     /// BottomView 展示
     func bottomView(isShow:Bool,complete:(()->Void)?) {

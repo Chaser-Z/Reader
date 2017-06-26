@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		680BAD471EF95C920052FA11 /* 求魔.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680BAD461EF95C920052FA11 /* 求魔.txt */; };
 		6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825AACA1EFD483000A0F73F /* InfoModel.swift */; };
+		684B74701F013E1B009EF889 /* ZHNTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684B746F1F013E1B009EF889 /* ZHNTopView.swift */; };
 		6861A9461F00FE1E00A7687A /* ZHNBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6861A9451F00FE1E00A7687A /* ZHNBaseView.swift */; };
 		6861A9481F00FE9E00A7687A /* ZHNLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6861A9471F00FE9E00A7687A /* ZHNLeftView.swift */; };
 		6861A94B1F00FFA200A7687A /* DZMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6861A94A1F00FFA200A7687A /* DZMSegmentedControl.swift */; };
@@ -136,6 +137,7 @@
 		3BED83C7077D86B773E450C8 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		680BAD461EF95C920052FA11 /* 求魔.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔.txt"; sourceTree = "<group>"; };
 		6825AACA1EFD483000A0F73F /* InfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		684B746F1F013E1B009EF889 /* ZHNTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNTopView.swift; sourceTree = "<group>"; };
 		6861A9451F00FE1E00A7687A /* ZHNBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHNBaseView.swift; path = Reader/Coding/Component/ZHNBookShelf/ZHNBaseView.swift; sourceTree = SOURCE_ROOT; };
 		6861A9471F00FE9E00A7687A /* ZHNLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHNLeftView.swift; path = Reader/Coding/Component/ZHNBookShelf/ZHNLeftView.swift; sourceTree = SOURCE_ROOT; };
 		6861A94A1F00FFA200A7687A /* DZMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DZMSegmentedControl.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				6861A9471F00FE9E00A7687A /* ZHNLeftView.swift */,
 				6861A94E1F010C4500A7687A /* ZHNReadMenu.swift */,
 				6861A9501F01136C00A7687A /* ZHNBottomView.swift */,
+				684B746F1F013E1B009EF889 /* ZHNTopView.swift */,
 			);
 			path = MenuUI;
 			sourceTree = "<group>";
@@ -949,6 +952,7 @@
 				68F4D8511EF7FCBB004B39DB /* AppDelegate.swift in Sources */,
 				68B5A0801EFE096B009D4EAE /* ServerChapter.swift in Sources */,
 				68B5A0C51EFEB2F3009D4EAE /* ContentManager.swift in Sources */,
+				684B74701F013E1B009EF889 /* ZHNTopView.swift in Sources */,
 				6881D4931EFCBB90003CA502 /* MyTabBarController.swift in Sources */,
 				68B5A0B71EFE969F009D4EAE /* ZHNReadViewUDCell.swift in Sources */,
 				68B5A07E1EFE08D2009D4EAE /* ChapterManager.swift in Sources */,

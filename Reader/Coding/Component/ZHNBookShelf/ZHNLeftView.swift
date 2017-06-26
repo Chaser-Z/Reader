@@ -53,6 +53,10 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         contentView.addSubview(topView)
     }
     
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
     // MARK: -- DZMSegmentedControlDelegate
     func segmentedControl(segmentedControl: DZMSegmentedControl, clickButton button: UIButton, index: NSInteger) {
         
@@ -84,7 +88,7 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         
         if type == 0 { // 章节
             
-           return 20
+           return ZHNReadParser.shared.chapters.count
             
         }else{ // 书签
             
@@ -107,11 +111,11 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         
         if type == 0 { // 章节
             
-            cell?.textLabel?.text = "111"
+            cell?.textLabel?.text = ZHNReadParser.shared.chapters[indexPath.row].article_directory
             
             cell?.textLabel?.numberOfLines = 1
             
-            cell?.textLabel?.font = Font_18
+            cell?.textLabel?.font = Font_14
             
         }else{ // 书签
             
@@ -143,7 +147,7 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         
         if type == 0 { // 章节
             
-            //readMenu.delegate?.readMenuClickChapterList?(readMenu: readMenu, readChapterListModel: readMenu.vc.readModel.readChapterListModels[indexPath.row])
+            readMenu.delegate?.readMenuClickChapterList?(readMenu: readMenu, readChapterListModel: ZHNReadParser.shared.chapters[indexPath.row])
             
         }else{ // 书签
             
@@ -151,7 +155,7 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         }
         
         // 隐藏
-        //readMenu.leftView(isShow: false, complete: nil)
+        readMenu.leftView(isShow: false, complete: nil)
     }
     
     // MARK: -- 删除操作

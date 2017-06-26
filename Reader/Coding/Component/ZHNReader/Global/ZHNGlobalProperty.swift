@@ -57,9 +57,11 @@ let ReadBGColor_5:UIColor = RGB(51, g: 51, b: 51)
 let MenuUIColor:UIColor = UIColor.black.withAlphaComponent(0.85)
 
 // MARK: -- 字体支持
-let Font_10:UIFont = UIFont.systemFont(ofSize: 10)
-let Font_12:UIFont = UIFont.systemFont(ofSize: 12)
-let Font_18:UIFont = UIFont.systemFont(ofSize: 18)
+let Font_10: UIFont = UIFont.systemFont(ofSize: 10)
+let Font_12: UIFont = UIFont.systemFont(ofSize: 12)
+let Font_14: UIFont = UIFont.systemFont(ofSize: 14)
+let Font_16: UIFont = UIFont.systemFont(ofSize: 16)
+let Font_18: UIFont = UIFont.systemFont(ofSize: 18)
 
 
 // MARK: -- 间距支持

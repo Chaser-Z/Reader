@@ -12,6 +12,8 @@ class ZHNReadParser  {
 
     open static let shared = ZHNReadParser()
     
+    /// 文章章节
+    var chapters = [Chapter]()
     
     /// 文字章节内容
     var content: String? {
