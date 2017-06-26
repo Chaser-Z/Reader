@@ -10,6 +10,9 @@ import UIKit
 import MBProgressHUD
 class ZHNReadController: ZHNBaseViewController {
 
+    /// 阅读菜单UI
+    private(set) var readMenu: ZHNReadMenu!
+    
     /// 左边还是右边
     fileprivate var currentLeft: Bool = false
     
@@ -54,8 +57,16 @@ class ZHNReadController: ZHNBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = UIColor.white
+        
+        // 设置白色状态栏
+        isStatusBarLightContent = true
+        
+        // 初始化阅读UI控制对象
+        readMenu = ZHNReadMenu.readMenu(vc: self, delegate: self)
+
+        
         readVC.readController = self
         // 加载小说章节
         loadNovelChaptersData()
@@ -156,7 +167,7 @@ class ZHNReadController: ZHNBaseViewController {
 
     // MARK: -- 创建 PageController
     /// 创建效果控制器 传入初始化显示控制器
-    private func creatPageController(_ displayController:UIViewController?) {
+    fileprivate func creatPageController(_ displayController:UIViewController?) {
         
         // 清理
         if pageViewController != nil {
@@ -239,13 +250,13 @@ extension ZHNReadController: DZMCoverControllerDelegate {
     // 获取上一个控制器
     func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         
-        return getReadViewController(isLeft: true)
+        return GetReadViewController()
     }
     
     // 获取下一个控制器
     func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
 
-        return getReadViewController(isLeft: false)
+        return GetBelowReadViewController()
     }
 }
 
@@ -256,6 +267,12 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
         
         if !completed {
             // 记录
+            if currentLeft {
+                currentPage += 1
+
+            } else {
+                currentPage -= 1
+            }
             currentReadViewController = previousViewControllers.first as? ZHNReadViewController
         } else {
          
@@ -266,12 +283,11 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
     
     // 准备切换
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        
+        readMenu.menuSH(isShow: false)
     }
     
     // 获取上一页
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-
         TempNumber -= 1
     
         if abs(TempNumber) % 2 == 0 { // 背面
@@ -279,8 +295,9 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
             vc.view.backgroundColor = ZHNReadConfigure.shared().readColor().withAlphaComponent(0.95)
             return vc
         } else { // 内容
-            
-            return getReadViewController(isLeft: true)
+            currentLeft = true
+            return GetAboveReadViewController()
+            //return getReadViewController(isLeft: true)
         }
     }
     
@@ -291,55 +308,132 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
         if abs(TempNumber) % 2 == 0 { // 背面
             
             let vc = UIViewController()
-            
             vc.view.backgroundColor =  ZHNReadConfigure.shared().readColor().withAlphaComponent(0.95)
-            
             return vc
             
         }else{ // 内容
-            
-            return getReadViewController(isLeft: false)
+            currentLeft = false
+            return GetBelowReadViewController()
         }
     }
     
-    /// 获取书页
-    fileprivate func getReadViewController(isLeft: Bool) -> UIViewController?{
-        let readVC = ZHNReadViewController()
-        readVC.readController = self
-        //ZHNReadParser.shared.content = self.contents[currentChapterIndex].content
-        readVC.readController.currentPage = getCurrentPage(isLeft: isLeft)
-        readVC.content = self.contents[currentChapterIndex].content
-        currentReadViewController = readVC
-        return currentReadViewController
+    /// 获取上一页控制器
+    fileprivate func GetAboveReadViewController() -> ZHNReadViewController?{
+        
+        // 小说到开始的最头了
+        if currentPage == 0 && currentChapterIndex == 0{
+            return nil
+        }
+        if currentPage == 0 { // 这一章到头了
+            currentChapterIndex -= 1
+            ZHNReadParser.shared.content = self.contents[currentChapterIndex].content
+            currentPage = ZHNReadParser.shared.pageCount - 1
+        } else { // 没到头
+            currentPage -= 1
+        }
+        return GetReadViewController()
     }
     
-    /// getcurrentPage
-    fileprivate func getCurrentPage(isLeft: Bool) -> Int {
+    /// 获得下一页控制器
+    fileprivate func GetBelowReadViewController() -> ZHNReadViewController{
         
-        if isLeft {
-            self.currentLeft = true
-            if currentPage <= 0 {
-                if currentChapterIndex > 0 {
-                    currentChapterIndex -= 1
-                    self.loadContentData()
-                    return ZHNReadParser.shared.pageCount - 1
-                }
-                return 0
-            }
-            currentPage -= 1
-        } else {
-            self.currentLeft = false
-            if currentPage >= (ZHNReadParser.shared.pageCount - 1) {
-                if currentChapterIndex < chapters.count {
-                    currentChapterIndex += 1
-                    self.loadContentData()
-                    return 0
-                }
-                return currentPage
-            }
-            
+        // 页码
+        //let page = currentPage
+        // 最后一页
+        let lastPage = ZHNReadParser.shared.pageCount - 1
+        
+        if currentPage == lastPage { // 这一章到头了
+            currentChapterIndex += 1
+            self.loadContentData()
+            currentPage = 0
+        } else { // 没到头
             currentPage += 1
         }
-        return currentPage
+        return GetReadViewController()!
+    }
+    
+    /// 获取阅读View控制器
+    fileprivate func GetReadViewController() ->ZHNReadViewController? {
+        
+        let readViewController = ZHNReadViewController()
+        readViewController.readController = self
+        return readViewController
     }
 }
+
+extension ZHNReadController: ZHNReadMenuDelegate {
+    
+    /// 背景颜色
+    func readMenuClickSetuptColor(readMenu: ZHNReadMenu, index: NSInteger, color: UIColor) {
+        ZHNReadConfigure.shared().colorIndex = index
+        currentReadViewController?.configureBGColor()
+    }
+    
+    // 翻书动画
+    func readMenuClickSetuptEffect(readMenu: ZHNReadMenu, index: NSInteger) {
+        ZHNReadConfigure.shared().effectType = index
+        self.creatPageController(self.readVC)
+    }
+    
+    /// 字体
+    func readMenuClickSetuptFont(readMenu: ZHNReadMenu, index: NSInteger) {
+        ZHNReadConfigure.shared().fontType = index
+        self.creatPageController(self.readVC)
+    }
+    
+    /// 字体大小
+    func readMenuClickSetuptFontSize(readMenu: ZHNReadMenu, fontSize: CGFloat) {
+        self.creatPageController(self.readVC)
+    }
+    
+    // TODO: -- 书签
+    /// 点击书签列表
+//    func readMenuClickMarkList(readMenu: DZMReadMenu, readMarkModel: DZMReadMarkModel) {
+//        
+//        readModel.modifyReadRecordModel(readMarkModel: readMarkModel, isUpdateFont: true, isSave: false)
+//        
+//        creatPageController(readOperation.GetCurrentReadViewController(isUpdateFont: false, isSave: true))
+//    }
+
+    /// 下载
+    func readMenuClickDownload(readMenu: ZHNReadMenu) {
+        print("点击了下载")
+    }
+    
+    /// 拖拽进度条
+    func readMenuSliderEndScroll(readMenu: ZHNReadMenu, slider: ASValueTrackingSlider) {
+        
+    }
+    
+    /// 上一章
+    func readMenuClickPreviousChapter(readMenu: ZHNReadMenu) {
+        
+    }
+    
+    /// 下一章
+    func readMenuClickNextChapter(readMenu: ZHNReadMenu) {
+        
+    }
+    
+    /// 点击章节列表
+    func readMenuClickChapterList(readMenu: ZHNReadMenu, readChapterListModel: [Chapter]) {
+        
+    }
+    
+    /// 切换日夜间模式
+    func readMenuClickLightButton(readMenu: ZHNReadMenu, isDay: Bool) {
+        
+    }
+    
+    /// 状态栏 将要 - 隐藏以及显示状态改变
+    func readMenuWillShowOrHidden(readMenu: ZHNReadMenu, isShow: Bool) {
+        
+    }
+    
+    /// 点击书签按钮
+    func readMenuClickMarkButton(readMenu: ZHNReadMenu, button: UIButton) {
+        
+    }
+    
+}
+

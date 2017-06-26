@@ -31,6 +31,10 @@ class ZHNReadViewController: UIViewController {
         
         // 配置背景颜色
         configureBGColor()
+        
+        // 配置阅读模式
+        configureReadEffect()
+
     }
 
     private func addSubviews() {
@@ -48,10 +52,25 @@ class ZHNReadViewController: UIViewController {
         
     }
     
+    // MARK: - 配置背景颜色
     /// 配置背景颜色
     func configureBGColor() {
         
         view.backgroundColor = ZHNReadConfigure.shared().readColor()
+    }
+
+    // MARK: - 阅读模式
+    /// 配置阅读效果
+    func configureReadEffect() {
+        
+        if ZHNReadConfigure.shared().effectType != ZHNEffectType.upAndDown.rawValue { // 非上下滚动
+            
+            tableView.isScrollEnabled = false
+            
+        }else{ // 上下滚动
+            
+            tableView.isScrollEnabled = true
+        }
     }
 
     

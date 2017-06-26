@@ -10,26 +10,45 @@ import UIKit
 
 class ZHNBaseViewController: UIViewController {
 
+    /// 状态栏是否显示白色
+    var isStatusBarLightContent:Bool = false {
+        
+        didSet{
+            
+            if isStatusBarLightContent != oldValue {
+                
+                setStatusBarStyle()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.white
+        // 设置状态栏颜色
+        setStatusBarStyle()
     }
 
+    /// 设置状态栏颜色
+    private func setStatusBarStyle() {
+        
+        if isStatusBarLightContent {
+            
+            UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: true)
+            
+        }else{
+            
+            UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: true)
+        }
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
