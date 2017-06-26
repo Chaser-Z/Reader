@@ -356,7 +356,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         bottomView = ZHNBottomView(readMenu:self)
         
         bottomView.isHidden = !menuShow
-        
+
         vc.view.addSubview(bottomView)
         
         bottomView.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: BottomViewH)

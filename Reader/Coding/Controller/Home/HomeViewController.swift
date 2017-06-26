@@ -48,7 +48,6 @@ extension HomeViewController: ZHNBookShelfViewDelegate {
         
         let vc = ZHNReadController()
         vc.novelID = tView.novels[index].article_id
-        
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -59,13 +59,12 @@ class ZHNReadController: ZHNBaseViewController {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = UIColor.white
-        
+        self.automaticallyAdjustsScrollViewInsets = false
         // 设置白色状态栏
         isStatusBarLightContent = true
         
         // 初始化阅读UI控制对象
         readMenu = ZHNReadMenu.readMenu(vc: self, delegate: self)
-
         
         readVC.readController = self
         // 加载小说章节
