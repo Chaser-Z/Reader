@@ -10,6 +10,16 @@ import UIKit
 import MBProgressHUD
 class ZHNReadController: ZHNBaseViewController {
 
+    /// 下一章内容
+    fileprivate var nextContent: Content?
+    
+    /// 现在内容
+    fileprivate var currentContent: Content?
+    
+    /// 上一章内容
+    fileprivate var preContent: Content?
+    
+    
     /// 阅读菜单UI
     private(set) var readMenu: ZHNReadMenu!
     
@@ -33,9 +43,6 @@ class ZHNReadController: ZHNBaseViewController {
     
     /// 当前章节
     var currentChapterIndex = 0
-    
-    /// 内容
-    var content: Content?
     
     /// 当前加载完成的内容数组
     var contents = [Content]()
@@ -124,18 +131,27 @@ class ZHNReadController: ZHNBaseViewController {
         
         if isCreatePage == false {
             
-            for i in 0...2 {
+            for i in (currentChapterIndex - 1)...(currentChapterIndex + 1) {
+                
+                if i < 0 || i > chapters.count {
+                    continue
+                }
                 var params = [String: AnyObject]()
                 params["article_directory_link"] = chapters[i].article_directory_link as AnyObject
                 
                 ContentFacade.getContent(params: params) { (content) in
                     if self.isCreatePage == false {
-                        self.isLoad = true
-                        self.content = content
+                        self.isCreatePage = true
+                    }
+                    if i == self.currentChapterIndex - 1 {
+                        self.preContent = content
+                    } else if i == self.currentChapterIndex {
                         ZHNReadParser.shared.content = content.content
                         self.readVC.content = content.content
+                        self.currentContent = content
                         self.creatPageController(self.readVC)
-                        self.isCreatePage = true
+                    } else {
+                        self.nextContent = content
                     }
                     self.contents.append(content)
                 }
@@ -146,19 +162,35 @@ class ZHNReadController: ZHNBaseViewController {
             
             if currentLeft {
                 
-                ZHNReadParser.shared.content = self.contents[currentChapterIndex].content
+                self.nextContent = self.currentContent
+                self.currentContent = self.preContent
+                ZHNReadParser.shared.content = self.currentContent?.content
+                
+                if currentChapterIndex - 1 >= 0  {
+                    var params = [String: AnyObject]()
+                    params["article_directory_link"] = chapters[currentChapterIndex - 1].article_directory_link as AnyObject
+                    ContentFacade.getContent(params: params) { (content) in
+                        self.isLoad = true
+                        self.preContent = content
+                        self.contents.append(content)
+                        self.readVC.content = self.currentContent?.content
+                    }
+
+                }
+                
                 
             } else {
                 
-                ZHNReadParser.shared.content = self.contents[currentChapterIndex].content
-
+                self.preContent = self.currentContent
+                self.currentContent = self.nextContent
+                ZHNReadParser.shared.content = self.currentContent?.content
                 var params = [String: AnyObject]()
-                params["article_directory_link"] = chapters[currentChapterIndex + 2].article_directory_link as AnyObject
+                params["article_directory_link"] = chapters[currentChapterIndex + 1].article_directory_link as AnyObject
                 ContentFacade.getContent(params: params) { (content) in
                     self.isLoad = true
-                    self.content = self.contents[self.currentChapterIndex]
+                    self.nextContent = content
                     self.contents.append(content)
-                    self.readVC.content = self.content?.content
+                    self.readVC.content = self.currentContent?.content
                 }
 
             }
@@ -329,7 +361,7 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
         }
         if currentPage == 0 { // 这一章到头了
             currentChapterIndex -= 1
-            ZHNReadParser.shared.content = self.contents[currentChapterIndex].content
+            self.loadContentData()
             currentPage = ZHNReadParser.shared.pageCount - 1
         } else { // 没到头
             currentPage -= 1
