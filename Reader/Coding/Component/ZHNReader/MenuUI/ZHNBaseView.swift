@@ -42,7 +42,7 @@ class ZHNBaseView: UIControl {
     /// 添加子控件
     func addSubviews() {
         
-        backgroundColor = MenuUIColor
+        backgroundColor = DefaultColor.withAlphaComponent(0.5)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -43,8 +43,8 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         // topView
         topView = DZMSegmentedControl()
         topView.delegate = self
-        topView.normalTitles = ["章节","书签"]
-        topView.selectTitles = ["章节","书签"]
+        topView.normalTitles = ["章节"]
+        topView.selectTitles = ["章节"]
         topView.horizontalShowTB = false
         topView.backgroundColor = UIColor.clear
         topView.normalTitleColor = Color_6
@@ -71,7 +71,7 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         super.layoutSubviews()
         
         // contentView
-        let contentViewW:CGFloat = width * 0.6
+        let contentViewW:CGFloat = width * 0.7
         contentView.frame = CGRect(x: -contentViewW, y: 0, width: contentViewW, height: height)
         
         // topView

@@ -65,7 +65,7 @@ class ZHNBottomView: ZHNBaseView,ASValueTrackingSliderDelegate {
         slider.font = UIFont(name: "Futura-CondensedExtraBold", size: 22)
         slider.textColor = UIColor.white
         slider.popUpViewArrowLength = Space_4
-        addSubview(slider)
+        //addSubview(slider)
     }
     
     /// 刷新 slider

@@ -31,7 +31,7 @@ class ZHNTopView: ZHNBaseView {
         mark.setImage(UIImage(named:"RM_17"), for: .normal)
         mark.setImage(UIImage(named:"RM_18"), for: .selected)
         mark.addTarget(self, action: #selector(ZHNTopView.clickMark(button:)), for: .touchUpInside)
-        addSubview(mark)
+        //addSubview(mark)
     }
     
     @objc private func clickMark(button:UIButton) {

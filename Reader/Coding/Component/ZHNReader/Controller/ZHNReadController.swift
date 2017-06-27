@@ -495,7 +495,7 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     /// 上一章
     func readMenuClickPreviousChapter(readMenu: ZHNReadMenu) {
         self.currentLeft = true
-        if currentChapterIndex - 1 > 0 {
+        if currentChapterIndex - 1 >= 0 {
             currentChapterIndex -= 1
             currentPage = 0
             self.loadContentData()
