@@ -48,7 +48,7 @@ import UIKit
     @objc optional func readMenuClickLightButton(readMenu:ZHNReadMenu,isDay:Bool)
     
     /// 点击章节列表
-    @objc optional func readMenuClickChapterList(readMenu:ZHNReadMenu,readChapterListModel: Chapter)
+    @objc optional func readMenuClickChapterList(readMenu:ZHNReadMenu,index: Int)
     
     /// 点击书签列表
     //@objc optional func readMenuClickMarkList(readMenu:DZMReadMenu,readMarkModel:DZMReadMarkModel)

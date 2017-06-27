@@ -147,7 +147,7 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         
         if type == 0 { // 章节
             
-            readMenu.delegate?.readMenuClickChapterList?(readMenu: readMenu, readChapterListModel: ZHNReadParser.shared.chapters[indexPath.row])
+            readMenu.delegate?.readMenuClickChapterList?(readMenu: readMenu, index: indexPath.row)
             
         }else{ // 书签
             

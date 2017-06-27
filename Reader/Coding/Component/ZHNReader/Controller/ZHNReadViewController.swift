@@ -9,8 +9,6 @@
 import UIKit
 
 class ZHNReadViewController: UIViewController {
-
-    var content: String!
     
     /// 阅读控制器
     weak var readController: ZHNReadController!
@@ -31,7 +29,6 @@ class ZHNReadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //ZHNReadParser.shared.content = readController.content?.content
         // 添加子控件
         addSubviews()
         
@@ -40,9 +37,14 @@ class ZHNReadViewController: UIViewController {
         
         // 配置阅读模式
         configureReadEffect()
+        
+        // 配置上下滚动阅读记录
+        configureReadRecordModel()
+
 
     }
-
+    
+    /// 创建UI
     private func addSubviews() {
         
         // TopStatusView
@@ -84,7 +86,7 @@ class ZHNReadViewController: UIViewController {
 
     // MARK: - 阅读模式
     /// 配置阅读效果
-    func configureReadEffect() {
+    private func configureReadEffect() {
         
         if ZHNReadConfigure.shared().effectType != ZHNEffectType.upAndDown.rawValue { // 非上下滚动
             
@@ -96,6 +98,14 @@ class ZHNReadViewController: UIViewController {
         }
     }
 
+    // MARK: - 滚动到阅读记录
+    private func configureReadRecordModel() {
+        // 上下滚动
+        if ZHNReadConfigure.shared().effectType == ZHNEffectType.upAndDown.rawValue {
+            tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: CGFloat(ZHNReadParser.shared.chapters.count + readController.currentPage) * GetReadTableViewFrame().height)
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -114,7 +124,7 @@ extension ZHNReadViewController: UITableViewDelegate,UITableViewDataSource {
             
         }else{ // 上下滚动
             
-            return readController.chapters.count
+            return ZHNReadParser.shared.chapters.count
         }
     }
     

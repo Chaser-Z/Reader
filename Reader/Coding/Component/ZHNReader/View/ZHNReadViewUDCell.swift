@@ -14,7 +14,7 @@ class ZHNReadViewUDCell: UITableViewCell {
     var tableView:UITableView!
     
 
-    /// DZMReadChapterModel
+    /// ReadChapterModel
     var readChapterModel:Content? {
         
         didSet{

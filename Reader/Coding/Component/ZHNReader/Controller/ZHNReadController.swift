@@ -38,8 +38,8 @@ class ZHNReadController: ZHNBaseViewController {
     /// 章节
     var chapters = [Chapter]()
     
-    /// 是否加载完成本章节
-    fileprivate var isLoad: Bool = false
+    /// 是否跳章节
+    fileprivate var isJumpChapter: Bool = false
     
     /// 当前章节
     var currentChapterIndex = 0
@@ -129,11 +129,11 @@ class ZHNReadController: ZHNBaseViewController {
 //            
 //        } else {
         
-        if isCreatePage == false {
+        if isCreatePage == false || isJumpChapter == true {
             
             for i in (currentChapterIndex - 1)...(currentChapterIndex + 1) {
                 
-                if i < 0 || i > chapters.count {
+                if i < 0 || i >= chapters.count {
                     continue
                 }
                 var params = [String: AnyObject]()
@@ -147,11 +147,12 @@ class ZHNReadController: ZHNBaseViewController {
                         self.preContent = content
                     } else if i == self.currentChapterIndex {
                         ZHNReadParser.shared.content = content.content
-                        self.readVC.content = content.content
                         self.currentContent = content
+                        self.readVC = self.GetReadViewController()!
                         self.creatPageController(self.readVC)
                     } else {
                         self.nextContent = content
+                        self.isJumpChapter = false
                     }
                     self.contents.append(content)
                 }
@@ -162,18 +163,17 @@ class ZHNReadController: ZHNBaseViewController {
             
             if currentLeft {
                 
+
                 self.nextContent = self.currentContent
                 self.currentContent = self.preContent
                 ZHNReadParser.shared.content = self.currentContent?.content
-                
                 if currentChapterIndex - 1 >= 0  {
+                    
                     var params = [String: AnyObject]()
                     params["article_directory_link"] = chapters[currentChapterIndex - 1].article_directory_link as AnyObject
                     ContentFacade.getContent(params: params) { (content) in
-                        self.isLoad = true
                         self.preContent = content
                         self.contents.append(content)
-                        self.readVC.content = self.currentContent?.content
                     }
 
                 }
@@ -184,15 +184,19 @@ class ZHNReadController: ZHNBaseViewController {
                 self.preContent = self.currentContent
                 self.currentContent = self.nextContent
                 ZHNReadParser.shared.content = self.currentContent?.content
-                var params = [String: AnyObject]()
-                params["article_directory_link"] = chapters[currentChapterIndex + 1].article_directory_link as AnyObject
-                ContentFacade.getContent(params: params) { (content) in
-                    self.isLoad = true
-                    self.nextContent = content
-                    self.contents.append(content)
-                    self.readVC.content = self.currentContent?.content
-                }
 
+                if currentChapterIndex + 1 < ZHNReadParser.shared.chapters.count {
+                    var params = [String: AnyObject]()
+                    params["article_directory_link"] = chapters[currentChapterIndex + 1].article_directory_link as AnyObject
+                    ContentFacade.getContent(params: params) { (content) in
+                        self.nextContent = content
+                        self.contents.append(content)
+                    }
+                } else{
+                    
+                    print("超了啊")
+                }
+ 
             }
 
         }
@@ -261,6 +265,34 @@ class ZHNReadController: ZHNBaseViewController {
         
     }
     
+    /// MARK - 刷新字体相关
+    /// 刷新字体
+    fileprivate func updateFont(isSave:Bool = false) {
+        
+        let location = ZHNReadParser.shared.rangeArray[currentPage].location
+        ZHNReadParser.shared.content = currentContent?.content
+        currentPage = page(location: location)
+        
+    }
+    
+    /// 通过 Location 获得 Page
+    fileprivate func page(location:NSInteger) ->NSInteger {
+        let count = ZHNReadParser.shared.rangeArray.count
+        
+        for i in 0..<count {
+            
+            let range = ZHNReadParser.shared.rangeArray[i]
+            
+            if location < (range.location + range.length) {
+                
+                return i
+            }
+        }
+        
+        return 0
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -275,6 +307,18 @@ extension ZHNReadController: DZMCoverControllerDelegate {
         
         // 记录
         currentReadViewController = currentController as? ZHNReadViewController
+        if !isFinish {
+            // 记录
+            if currentLeft {
+                currentPage += 1
+                
+            } else {
+                currentPage -= 1
+            }
+        } else {
+            
+            print("------")
+        }
     }
     
     // 将要显示的控制器
@@ -284,13 +328,13 @@ extension ZHNReadController: DZMCoverControllerDelegate {
     
     // 获取上一个控制器
     func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
-        
-        return GetReadViewController()
+        currentLeft = true
+        return GetAboveReadViewController()
     }
     
     // 获取下一个控制器
     func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
-
+        currentLeft = false
         return GetBelowReadViewController()
     }
 }
@@ -332,7 +376,6 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
         } else { // 内容
             currentLeft = true
             return GetAboveReadViewController()
-            //return getReadViewController(isLeft: true)
         }
     }
     
@@ -370,21 +413,25 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
     }
     
     /// 获得下一页控制器
-    fileprivate func GetBelowReadViewController() -> ZHNReadViewController{
+    fileprivate func GetBelowReadViewController() -> ZHNReadViewController?{
         
+        // 小说到最后了
+        if currentPage == ZHNReadParser.shared.pageCount - 1 && currentChapterIndex >= ZHNReadParser.shared.chapters.count - 1{
+            return nil
+        }
         // 页码
         //let page = currentPage
         // 最后一页
         let lastPage = ZHNReadParser.shared.pageCount - 1
         
-        if currentPage == lastPage { // 这一章到头了
+        if currentPage == lastPage{ // 这一章到头了
             currentChapterIndex += 1
             self.loadContentData()
             currentPage = 0
         } else { // 没到头
             currentPage += 1
         }
-        return GetReadViewController()!
+        return GetReadViewController()
     }
     
     /// 获取阅读View控制器
@@ -407,17 +454,22 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     // 翻书动画
     func readMenuClickSetuptEffect(readMenu: ZHNReadMenu, index: NSInteger) {
         ZHNReadConfigure.shared().effectType = index
+        self.readVC = GetReadViewController()!
         self.creatPageController(self.readVC)
     }
     
     /// 字体
     func readMenuClickSetuptFont(readMenu: ZHNReadMenu, index: NSInteger) {
         ZHNReadConfigure.shared().fontType = index
+        self.readVC = GetReadViewController()!
+        updateFont()
         self.creatPageController(self.readVC)
     }
     
     /// 字体大小
     func readMenuClickSetuptFontSize(readMenu: ZHNReadMenu, fontSize: CGFloat) {
+        self.readVC = GetReadViewController()!
+        updateFont()
         self.creatPageController(self.readVC)
     }
     
@@ -442,18 +494,41 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     
     /// 上一章
     func readMenuClickPreviousChapter(readMenu: ZHNReadMenu) {
-        
+        self.currentLeft = true
+        if currentChapterIndex - 1 > 0 {
+            currentChapterIndex -= 1
+            currentPage = 0
+            self.loadContentData()
+        }
+        self.readVC = GetReadViewController()!
+        self.creatPageController(self.readVC)
     }
     
     /// 下一章
     func readMenuClickNextChapter(readMenu: ZHNReadMenu) {
-        
+        self.currentLeft = false
+        if currentChapterIndex + 1 < ZHNReadParser.shared.chapters.count {
+            currentChapterIndex += 1
+            currentPage = 0
+            self.loadContentData()
+        }
+        self.readVC = GetReadViewController()!
+        self.creatPageController(self.readVC)
     }
     
     /// 点击章节列表
-    func readMenuClickChapterList(readMenu: ZHNReadMenu, readChapterListModel: Chapter) {
-        self.readVC = GetReadViewController()!
-        self.creatPageController(self.readVC)
+    func readMenuClickChapterList(readMenu: ZHNReadMenu, index: Int) {
+        self.isJumpChapter = true
+        currentPage = 0
+        if currentChapterIndex > index {
+            self.currentLeft = true
+            currentChapterIndex = index
+            self.loadContentData()
+        } else if currentChapterIndex < index {
+            self.currentLeft = false
+            currentChapterIndex = index
+            self.loadContentData()
+        }
     }
     
     /// 切换日夜间模式
