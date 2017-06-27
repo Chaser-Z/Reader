@@ -18,6 +18,12 @@ class ZHNReadViewController: UIViewController {
     /// TableView
     private(set) var tableView:UITableView!
     
+    /// 顶部状态栏 - 文章章节标题
+    private(set) var topStatusView:UILabel!
+    
+    /// 底部状态栏
+    private(set) var bottomStatusView: ZHNStatusView!
+
     
     /// 往上滚(true)还是往下滚(false)
     fileprivate var isScrollTop:Bool = true
@@ -38,6 +44,23 @@ class ZHNReadViewController: UIViewController {
     }
 
     private func addSubviews() {
+        
+        // TopStatusView
+        topStatusView = UILabel()
+        topStatusView.text = ZHNReadParser.shared.chapters[readController.currentChapterIndex].article_directory
+        topStatusView.lineBreakMode = .byTruncatingMiddle
+        topStatusView.textColor = Color_4
+        topStatusView.font = Font_12
+        topStatusView.frame = CGRect(x: Space_1, y: 0, width: view.width - 2 * Space_1, height: Space_2)
+        view.addSubview(topStatusView)
+        
+        // BottomStatusView
+        bottomStatusView = ZHNStatusView(frame:CGRect(x: Space_1, y: view.frame.height - Space_2, width: view.width - 2 * Space_1, height: Space_2))
+        bottomStatusView.backgroundColor = UIColor.clear
+        bottomStatusView.titleLabel.text = "\(readController.currentPage + 1)/\(ZHNReadParser.shared.pageCount)"
+        view.addSubview(bottomStatusView)
+
+        
         
         // UITableView
         tableView = UITableView()

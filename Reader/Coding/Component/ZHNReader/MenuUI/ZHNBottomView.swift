@@ -127,20 +127,20 @@ class ZHNBottomView: ZHNBaseView,ASValueTrackingSliderDelegate {
 
         readMenu.bottomView(isShow: false) { [weak self] ()->Void in
             
-            //self?.readMenu.lightView(isShow: true, complete: nil)
+            self?.readMenu.lightView(isShow: true, complete: nil)
         }
         
-        //readMenu.publicButtonBottomY(view: readMenu.lightView)
+        readMenu.publicButtonBottomY(view: readMenu.lightView)
     }
     
     /// 设置
     func clickSetup() {
         
-        //readMenu.publicButton(isShow: false, complete: nil)
+        readMenu.publicButton(isShow: false, complete: nil)
         
         readMenu.bottomView(isShow: false) { [weak self] ()->Void in
             
-            //self?.readMenu.novelsSettingView(isShow: true , complete: nil)
+        self?.readMenu.novelsSettingView(isShow: true , complete: nil)
         }
     }
     

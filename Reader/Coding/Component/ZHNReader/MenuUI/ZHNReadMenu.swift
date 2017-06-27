@@ -83,16 +83,16 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     private(set) var bottomView: ZHNBottomView!
     
     /// 亮度
-    //private(set) var lightView:DZMRMLightView!
+    private(set) var lightView: ZHNLightView!
     
     /// 遮盖亮度
     private var coverView:UIView!
     
     /// 亮度按钮
-    //private var lightButton:DZMHaloButton!
+    private var lightButton: ZHNHaloButton!
     
     /// 小说阅读设置
-    //private var novelsSettingView:DZMRMSettingView!
+    private var novelsSettingView: ZHNSettingView!
     
     /// BottomView 高
     private let BottomViewH:CGFloat = 112
@@ -170,7 +170,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         initCoverView()
         
         // 设置为日夜间 默认日间
-        //lightButton.isSelected = DZMUserDefaults.boolForKey(DZMKey_IsNighOrtDay)
+        lightButton.isSelected = ZHNReadUserDefaultes.boolForKey(Key_IsNighOrtDay)
     }
     
     /// 初始化数据
@@ -244,11 +244,11 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     /// 初始化NovelsSettingView
     private func initNovelsSettingView() {
         
-//        novelsSettingView = DZMRMSettingView(frame:CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: NovelsSettingViewH),readMenu:self)
-//        
-//        novelsSettingView.isHidden = true
-//        
-//        vc.view.addSubview(novelsSettingView)
+        novelsSettingView = ZHNSettingView(frame:CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: NovelsSettingViewH),readMenu:self)
+        
+        novelsSettingView.isHidden = true
+        
+        vc.view.addSubview(novelsSettingView)
         
     }
     
@@ -275,13 +275,13 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     /// 初始化LightView
     private func initLightView() {
         
-//        lightView = DZMRMLightView(readMenu:self)
-//        
-//        lightView.isHidden = true
-//        
-//        vc.view.addSubview(lightView)
-//        
-//        lightView.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: LightViewH)
+        lightView = ZHNLightView(readMenu:self)
+        
+        lightView.isHidden = true
+        
+        vc.view.addSubview(lightView)
+        
+        lightView.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: LightViewH)
     }
     
     // MARK: -- LightButton
@@ -289,17 +289,17 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     /// 初始化LightButton
     private func initLightButton() {
         
-//        lightButton = DZMHaloButton(CGRect(x: ScreenWidth - lightButtonWH - DZMSpace_1, y: ScreenHeight, width: lightButtonWH, height: lightButtonWH), haloColor:UIColor.black.withAlphaComponent(0.75))
-//        
-//        lightButton.nomalImage = UIImage(named:"RM_14")
-//        
-//        lightButton.selectImage = UIImage(named:"RM_13")
-//        
-//        lightButton.isHidden = !menuShow
-//        
-//        vc.view.addSubview(lightButton)
-//        
-//        lightButton.addTarget(self, action: #selector(DZMReadMenu.clickLightButton), for: .touchUpInside)
+        lightButton = ZHNHaloButton(CGRect(x: ScreenWidth - lightButtonWH - Space_1, y: ScreenHeight, width: lightButtonWH, height: lightButtonWH), haloColor:UIColor.black.withAlphaComponent(0.75))
+        
+        lightButton.nomalImage = UIImage(named:"RM_14")
+        
+        lightButton.selectImage = UIImage(named:"RM_13")
+        
+        lightButton.isHidden = !menuShow
+        
+        vc.view.addSubview(lightButton)
+        
+        lightButton.addTarget(self, action: #selector(ZHNReadMenu.clickLightButton), for: .touchUpInside)
     }
     
     /// 点击按钮
@@ -322,7 +322,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
             })
         }
         
-        //DZMUserDefaults.setBool(button.isSelected, key: DZMKey_IsNighOrtDay)
+        ZHNReadUserDefaultes.setBool(button.isSelected, key: Key_IsNighOrtDay)
         
         delegate?.readMenuClickLightButton?(readMenu: self, isDay: button.isSelected)
     }
@@ -397,18 +397,17 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         delegate?.readMenuWillShowOrHidden?(readMenu: self, isShow: menuShow)
         
         bottomView(isShow: isShow, complete:nil)
-//        
-//        lightView(isShow: false, complete:nil)
-//        
-//        novelsSettingView(isShow: false, complete:nil)
-//        
-//        publicButton(isShow: isShow, complete:nil)
+        lightView(isShow: false, complete:nil)
+        
+        novelsSettingView(isShow: false, complete:nil)
+        
+        publicButton(isShow: isShow, complete:nil)
         
         topView(isShow: isShow) { [weak self] ()->Void in
          self?.isAnimateComplete = true
-//            
-//            // 完成动画
-//            self?.delegate?.readMenuDidShowOrHidden?(readMenu: self!, isShow: self!.menuShow)
+            
+        // 完成动画
+            self?.delegate?.readMenuDidShowOrHidden?(readMenu: self!, isShow: self!.menuShow)
         }
     }
     
@@ -496,102 +495,102 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         }
     }
     
-//    /// PublicButton 展示
-//    func publicButton(isShow:Bool,complete:(()->Void)?) {
-//        
-//        if lightButton.isHidden == !isShow {return}
-//        
-//        if isShow {
-//            
-//            if isShow {lightButton.isHidden = false}
-//            
-//            lightButton.frame = CGRect(x: ScreenWidth - lightButtonWH - DZMSpace_1, y: ScreenHeight, width: lightButtonWH, height: lightButtonWH)
-//            
-//            UIView.animate(withDuration: animateDuration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: { [weak self] ()->Void in
-//                
-//                self?.lightButton.frame = CGRect(x: ScreenWidth - self!.lightButtonWH - DZMSpace_1, y: ScreenHeight - self!.BottomViewH - self!.lightButtonWH - DZMSpace_1, width: self!.lightButtonWH, height: self!.lightButtonWH)
-//                
-//                }, completion: { (isOK) in
-//                    
-//                    if complete != nil {complete!()}
-//            })
-//            
-//        }else{
-//            
-//            UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
-//                
-//                self?.lightButton.frame = CGRect(x: ScreenWidth, y: self!.lightButton.y, width: self!.lightButtonWH, height: self!.lightButtonWH)
-//                
-//            }) {[weak self] (isOK) in
-//                
-//                if !isShow {self?.lightButton.isHidden = true}
-//                
-//                if complete != nil {complete!()}
-//            }
-//        }
-//    }
+    /// PublicButton 展示
+    func publicButton(isShow:Bool,complete:(()->Void)?) {
+        
+        if lightButton.isHidden == !isShow {return}
+        
+        if isShow {
+            
+            if isShow {lightButton.isHidden = false}
+            
+            lightButton.frame = CGRect(x: ScreenWidth - lightButtonWH - Space_1, y: ScreenHeight, width: lightButtonWH, height: lightButtonWH)
+            
+            UIView.animate(withDuration: animateDuration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: { [weak self] ()->Void in
+                
+                self?.lightButton.frame = CGRect(x: ScreenWidth - self!.lightButtonWH - Space_1, y: ScreenHeight - self!.BottomViewH - self!.lightButtonWH - Space_1, width: self!.lightButtonWH, height: self!.lightButtonWH)
+                
+                }, completion: { (isOK) in
+                    
+                    if complete != nil {complete!()}
+            })
+            
+        }else{
+            
+            UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
+                
+                self?.lightButton.frame = CGRect(x: ScreenWidth, y: self!.lightButton.y, width: self!.lightButtonWH, height: self!.lightButtonWH)
+                
+            }) {[weak self] (isOK) in
+                
+                if !isShow {self?.lightButton.isHidden = true}
+                
+                if complete != nil {complete!()}
+            }
+        }
+    }
     
     /// 根据View 修改 PublicButton 的底部Y值
     func publicButtonBottomY(view:UIView) {
         
         UIView.animate(withDuration: animateDuration) { [weak self] ()->Void in
             
-            //self?.lightButton.frame = CGRect(x: self!.lightButton.x, y: ScreenHeight - view.height - self!.lightButtonWH - DZMSpace_1, width: self!.lightButtonWH, height: self!.lightButtonWH)
+            self?.lightButton.frame = CGRect(x: self!.lightButton.x, y: ScreenHeight - view.height - self!.lightButtonWH - Space_1, width: self!.lightButtonWH, height: self!.lightButtonWH)
         }
     }
     
-//    /// LightView 展示
-//    func lightView(isShow:Bool,complete:(()->Void)?) {
-//        
-//        if lightView.isHidden == !isShow {return}
-//        
-//        if isShow {lightView.isHidden = false}
-//        
-//        UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
-//            
-//            if isShow {
-//                
-//                self?.lightView.frame = CGRect(x: 0, y: ScreenHeight - self!.LightViewH, width: ScreenWidth, height: self!.LightViewH)
-//                
-//            }else{
-//                
-//                self?.lightView.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: self!.LightViewH)
-//            }
-//            
-//        }) {[weak self] (isOK) in
-//            
-//            if !isShow {self?.lightView.isHidden = true}
-//            
-//            if complete != nil {complete!()}
-//        }
-//    }
+    /// LightView 展示
+    func lightView(isShow:Bool,complete:(()->Void)?) {
+        
+        if lightView.isHidden == !isShow {return}
+        
+        if isShow {lightView.isHidden = false}
+        
+        UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
+            
+            if isShow {
+                
+                self?.lightView.frame = CGRect(x: 0, y: ScreenHeight - self!.LightViewH, width: ScreenWidth, height: self!.LightViewH)
+                
+            }else{
+                
+                self?.lightView.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: self!.LightViewH)
+            }
+            
+        }) {[weak self] (isOK) in
+            
+            if !isShow {self?.lightView.isHidden = true}
+            
+            if complete != nil {complete!()}
+        }
+    }
     
     
-//    /// NovelsSettingView 展示
-//    func novelsSettingView(isShow:Bool,complete:(()->Void)?) {
-//        
-//        if novelsSettingView.isHidden == !isShow {return}
-//        
-//        if isShow {novelsSettingView.isHidden = false}
-//        
-//        UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
-//            
-//            if isShow {
-//                
-//                self?.novelsSettingView.frame = CGRect(x: 0, y: ScreenHeight - self!.NovelsSettingViewH, width: ScreenWidth, height: self!.NovelsSettingViewH)
-//                
-//            }else{
-//                
-//                self?.novelsSettingView.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: self!.NovelsSettingViewH)
-//            }
-//            
-//        }) {[weak self] (isOK) in
-//            
-//            if !isShow {self?.novelsSettingView.isHidden = true}
-//            
-//            if complete != nil {complete!()}
-//        }
-//    }
+    /// NovelsSettingView 展示
+    func novelsSettingView(isShow:Bool,complete:(()->Void)?) {
+        
+        if novelsSettingView.isHidden == !isShow {return}
+        
+        if isShow {novelsSettingView.isHidden = false}
+        
+        UIView.animate(withDuration: animateDuration, animations: { [weak self] ()->Void in
+            
+            if isShow {
+                
+                self?.novelsSettingView.frame = CGRect(x: 0, y: ScreenHeight - self!.NovelsSettingViewH, width: ScreenWidth, height: self!.NovelsSettingViewH)
+                
+            }else{
+                
+                self?.novelsSettingView.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: self!.NovelsSettingViewH)
+            }
+            
+        }) {[weak self] (isOK) in
+            
+            if !isShow {self?.novelsSettingView.isHidden = true}
+            
+            if complete != nil {complete!()}
+        }
+    }
 
     
 }
