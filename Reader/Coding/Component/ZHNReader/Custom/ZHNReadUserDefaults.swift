@@ -1,5 +1,5 @@
 //
-//  ZHNReadUserDefaultes.swift
+//  ZHNReadUserDefaults.swift
 //  Reader
 //
 //  Created by 张海南 on 2017/6/24.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ZHNReadUserDefaultes {
+class ZHNReadUserDefaults {
     
     // MARK: -- 清理 NSUserDefaults
     
@@ -43,7 +43,7 @@ class ZHNReadUserDefaultes {
     
     /// 存储String
     class func setString(_ value:String?,key:String) {
-        ZHNReadUserDefaultes.setObject(value, key: key)
+        ZHNReadUserDefaults.setObject(value, key: key)
     }
     
     /// 存储NSInteger

@@ -20,52 +20,36 @@ class UserViewController: UIViewController {
         
         
         
-//        let path = "/articleInfo/getArticlesByArticleId"
-//        
-//        var params = [String: AnyObject]()
-//        params["article_id"] = "0_703" as AnyObject
-//        
-//        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
-//            
-//            NOVELLog("response = \(response)")
-//            
-//            if let json = response.result.value {
-//                if json is [String: Any] {
-//                    let info = json as! [String: Any]
-//                    let data = info["data"] as! Array<Dictionary<String, Any>>
-//                    print(data.count)
-//                    for dict in data {
-//                        let info = InfoModel()
-//                        info.airicle_directory = dict["airicle_directory"] as! String
-//                        info.article_directory_link = dict["article_directory_link"] as! String
-//                        info.last_update_directory = dict["last_update_directory"] as! String
-//                        info.title = dict["title"] as! String
-//                        self.infoModels.append(info)
-//                    }
-//                    
-//                }
-//            }
-//            
-//        }
+        let path = "/articleInfo/getLatestArticles"
+        
+        var params = [String: AnyObject]()
+        params["article_id"] = "0_703" as AnyObject
+        params["last_update_date"] = "2017-06-19" as AnyObject
 
-        let path1 = "/articleContent/getArticleByDriectoryLink"
-        
-        var params1 = [String: AnyObject]()
-        params1["article_directory_link"] = "/0_703/7364625.html" as AnyObject
-        
-        let content = ContentManager.getAll("")
-        
-        if content.count > 0  {
-            NOVELLog(content[0].content)
-            NOVELLog(content[0].article_directory)
-
-        } else {
+        NOVELLog(params)
+        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
             
-            ContentFacade.getContent(params: params1) { (content) in
-                NOVELLog(content)
+            NOVELLog("response = \(response)")
+            
+            if let json = response.result.value {
+                if json is [String: Any] {
+                    let info = json as! [String: Any]
+                    let data = info["data"] as! Array<Dictionary<String, Any>>
+                    print(data.count)
+                    for dict in data {
+                        let info = InfoModel()
+                        info.airicle_directory = dict["article_directory"] as! String
+                        info.article_directory_link = dict["article_directory_link"] as! String
+                        info.last_update_directory = dict["last_update_directory"] as! String
+                        info.title = dict["title"] as! String
+                        self.infoModels.append(info)
+                    }
+                    
+                }
             }
-
+            
         }
+
         
         
 //        Alamofire.request("\(HOST)\(path1)", method: .post, parameters: params1, encoding: JSONEncoding.default).responseJSON { response in

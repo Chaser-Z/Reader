@@ -11,7 +11,7 @@ import CoreData
 
 class ContentManager{
 
-    fileprivate static let entityChapter = "Content"
+    fileprivate static let entityConetent = "Content"
     
     class func add(_ serverContent: ServerContent) -> Content? {
         
@@ -25,7 +25,7 @@ class ContentManager{
             if list.count > 0 {
                 content = list.first
             } else {
-                let entity = NSEntityDescription.entity(forEntityName: entityChapter, in: context)
+                let entity = NSEntityDescription.entity(forEntityName: entityConetent, in: context)
                 content = Content(entity: entity!, insertInto: context)
             }
             

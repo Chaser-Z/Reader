@@ -33,6 +33,18 @@ class HomeViewController: UIViewController {
                 NOVELLog(novles[0].title)
             }
         }
+        
+        
+//        let record = RecordManager.getRecord("0_703")
+//        NOVELLog(record[0].article_directory)
+//        NOVELLog(record[0].article_id)
+//        NOVELLog(record[0].last_update_date)
+//        NOVELLog(record[0].article_directory_link)
+//        NOVELLog(record[0].content)
+//        NOVELLog(record[0].currentPage)
+//        NOVELLog(record[0].pageCount)
+//        NOVELLog(record[0].currentChapterIndex)
+
     }
 
     override func didReceiveMemoryWarning() {

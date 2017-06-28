@@ -19,6 +19,9 @@ class ZHNReadController: ZHNBaseViewController {
     /// 上一章内容
     fileprivate var preContent: Content?
     
+    /// 文章记录
+    fileprivate var novelRecord: ServerRecord? = ServerRecord()
+    
     
     /// 阅读菜单UI
     private(set) var readMenu: ZHNReadMenu!
@@ -74,6 +77,15 @@ class ZHNReadController: ZHNBaseViewController {
         readMenu = ZHNReadMenu.readMenu(vc: self, delegate: self)
         
         readVC.readController = self
+        
+        // 获取阅读记录
+        let record = RecordManager.getRecord(novelID)
+        if record.count > 0 {
+            currentChapterIndex = Int(record[0].currentChapterIndex)
+            currentPage = Int(record[0].currentPage)
+        }
+
+        
         // 加载小说章节
         loadNovelChaptersData()
     }
@@ -103,11 +115,11 @@ class ZHNReadController: ZHNBaseViewController {
                 self.chapters = chapters
                 ZHNReadParser.shared.chapters = chapters
                 self.readMenu.leftView.reloadData()
-                // 加载内容
-                self.loadContentData()
                 for chapter in chapters {
                     NOVELLog(chapter.article_directory)
                 }
+                // 加载内容
+                self.loadContentData()
             })
         }
     }
@@ -128,6 +140,7 @@ class ZHNReadController: ZHNBaseViewController {
 //            }
 //            
 //        } else {
+        
         
         if isCreatePage == false || isJumpChapter == true {
             
@@ -150,6 +163,10 @@ class ZHNReadController: ZHNBaseViewController {
                         self.currentContent = content
                         self.readVC = self.GetReadViewController()!
                         self.creatPageController(self.readVC)
+                        
+                        // 添加缓存
+                        self.saveNovel()
+                        
                     } else {
                         self.nextContent = content
                         self.isJumpChapter = false
@@ -204,7 +221,7 @@ class ZHNReadController: ZHNBaseViewController {
         
     }
 
-    // MARK: -- 创建 PageController
+    // MARK: - 创建 PageController
     /// 创建效果控制器 传入初始化显示控制器
     fileprivate func creatPageController(_ displayController:UIViewController?) {
         
@@ -265,7 +282,7 @@ class ZHNReadController: ZHNBaseViewController {
         
     }
     
-    /// MARK - 刷新字体相关
+    // MARK: - 刷新字体相关
     /// 刷新字体
     fileprivate func updateFont(isSave:Bool = false) {
         
@@ -290,6 +307,21 @@ class ZHNReadController: ZHNBaseViewController {
         }
         
         return 0
+    }
+    
+    // MARK: - 缓存记录相关
+    fileprivate func saveNovel() {
+        
+        // 添加缓存
+        self.novelRecord?.last_update_date = self.chapters[self.chapters.count - 1].last_update_date
+        self.novelRecord?.article_id = self.novelID
+        self.novelRecord?.article_directory_link = currentContent?.article_directory_link
+        self.novelRecord?.content = currentContent?.content
+        self.novelRecord?.article_directory = currentContent?.article_directory
+        self.novelRecord?.pageCount = Int32(ZHNReadParser.shared.pageCount)
+        self.novelRecord?.currentPage = Int32(self.currentPage)
+        self.novelRecord?.currentChapterIndex = Int32(self.currentChapterIndex)
+        let _ = RecordManager.add(self.novelRecord!)
     }
 
     
@@ -317,13 +349,14 @@ extension ZHNReadController: DZMCoverControllerDelegate {
             }
         } else {
             
-            print("------")
+            saveNovel()
         }
     }
     
     // 将要显示的控制器
     func coverController(_ coverController: DZMCoverController, willTransitionToPendingController pendingController: UIViewController?) {
-        
+        readMenu.menuSH(isShow: false)
+
     }
     
     // 获取上一个控制器
@@ -357,6 +390,7 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
          
             // 记录
             currentReadViewController = pageViewController.viewControllers?.first as? ZHNReadViewController
+            saveNovel()
         }
     }
     
@@ -499,6 +533,7 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             currentChapterIndex -= 1
             currentPage = 0
             self.loadContentData()
+            self.saveNovel()
         }
         self.readVC = GetReadViewController()!
         self.creatPageController(self.readVC)
@@ -511,6 +546,7 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             currentChapterIndex += 1
             currentPage = 0
             self.loadContentData()
+            self.saveNovel()
         }
         self.readVC = GetReadViewController()!
         self.creatPageController(self.readVC)

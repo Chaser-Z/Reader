@@ -170,7 +170,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         initCoverView()
         
         // 设置为日夜间 默认日间
-        lightButton.isSelected = ZHNReadUserDefaultes.boolForKey(Key_IsNighOrtDay)
+        lightButton.isSelected = ZHNReadUserDefaults.boolForKey(Key_IsNighOrtDay)
     }
     
     /// 初始化数据
@@ -262,7 +262,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         coverView.isUserInteractionEnabled = false
         
         coverView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        coverView.alpha = ZHNReadUserDefaultes.boolForKey(Key_IsNighOrtDay) ? 1.0 : 0
+        coverView.alpha = ZHNReadUserDefaults.boolForKey(Key_IsNighOrtDay) ? 1.0 : 0
         
         vc.view.addSubview(coverView)
         
@@ -322,7 +322,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
             })
         }
         
-        ZHNReadUserDefaultes.setBool(button.isSelected, key: Key_IsNighOrtDay)
+        ZHNReadUserDefaults.setBool(button.isSelected, key: Key_IsNighOrtDay)
         
         delegate?.readMenuClickLightButton?(readMenu: self, isDay: button.isSelected)
     }

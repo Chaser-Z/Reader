@@ -67,13 +67,13 @@ class ZHNReadConfigure: NSObject {
         var dict = allPropertys()
         dict.removeValue(forKey: "lineSpacing")
         dict.removeValue(forKey: "textColor")
-        ZHNReadUserDefaultes.setObject(dict, key: ReadConfigureKey)
+        ZHNReadUserDefaults.setObject(dict, key: ReadConfigureKey)
     }
     
     /// 清理(暂无需求使用)
     private func clear() {
         instance = nil
-        ZHNReadUserDefaultes.removeObjectForKey(ReadConfigureKey)
+        ZHNReadUserDefaults.removeObjectForKey(ReadConfigureKey)
     }
     
     /// 获得文字属性字典
@@ -131,7 +131,7 @@ class ZHNReadConfigure: NSObject {
     // MARK: - 构造初始化
     /// 创建获取内存中的用户信息
     class func readInfo() -> ZHNReadConfigure {
-        let info = ZHNReadUserDefaultes.objectForKey(ReadConfigureKey)
+        let info = ZHNReadUserDefaults.objectForKey(ReadConfigureKey)
         return ZHNReadConfigure(dict: info)
     }
     
