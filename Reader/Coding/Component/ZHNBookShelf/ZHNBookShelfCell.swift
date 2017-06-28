@@ -14,6 +14,7 @@ class ZHNBookShelfCell: UICollectionViewCell {
     
     @IBOutlet weak var infoLabel: UILabel!
 
+    @IBOutlet weak var remindLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

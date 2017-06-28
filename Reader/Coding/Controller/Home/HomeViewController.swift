@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class HomeViewController: UIViewController {
 
     var tView: ZHNBookShelfView!
@@ -34,6 +34,46 @@ class HomeViewController: UIViewController {
             }
         }
         
+        let path = "/articleInfo/getLatestArticles"
+        var params = [String: AnyObject]()
+
+        if novles.count > 0 {
+            
+            let semaphore : DispatchSemaphore = DispatchSemaphore(value: 1)
+            let queue = DispatchGroup()
+            
+            
+            for novel in novles {
+                let record = RecordManager.getRecord(novel.article_id)
+                if record.count <= 0 {
+                    continue
+                }
+                params["article_id"] = novel.article_id as AnyObject
+                params["last_update_date"] = record[0].last_update_date as AnyObject
+                
+                Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
+                    if let json = response.result.value {
+                        if json is [String: Any] {
+                            let info = json as! [String: Any]
+                            let data = info["data"] as! Array<Dictionary<String, Any>>
+                            let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+
+                            print(data.count)
+                            semaphore.signal()
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+        
+        
+// let t = getData()
+//        print(t)
+        
+        
         
 //        let record = RecordManager.getRecord("0_703")
 //        NOVELLog(record[0].article_directory)
@@ -46,6 +86,42 @@ class HomeViewController: UIViewController {
 //        NOVELLog(record[0].currentChapterIndex)
 
     }
+    
+    fileprivate func getData() -> Int {
+        let path = "/articleInfo/getLatestArticles"
+        var params = [String: AnyObject]()
+var t = 10
+        params["article_id"] = "0_703" as AnyObject
+        params["last_update_date"] = "2017-06-14" as AnyObject
+        let semaphore : DispatchSemaphore = DispatchSemaphore(value: 1)
+        
+        let group = DispatchGroup()
+        
+        
+        
+        group.notify(queue: DispatchQueue.main) { 
+            
+//        }
+//        DispatchQueue.global().async {
+        
+        
+        
+        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
+            
+            print("11")
+            t = 20
+            semaphore.signal()
+            
+        }
+        
+        }
+        let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+
+        return t
+
+
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
