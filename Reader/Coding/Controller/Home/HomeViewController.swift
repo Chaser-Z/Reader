@@ -21,12 +21,14 @@ class HomeViewController: UIViewController {
         tView.delegate = self
         self.view.addSubview(tView)
         
+        // 获取小说目录
         let novles = NovelManager.getAll()
+        // 本地
         if novles.count > 0 {
             tView.novels = novles
             NOVELLog(novles[0].title)
             
-        } else {
+        } else { // 网络
             NovelFacade.getNovelList { (novels) in
                 let novles = NovelManager.getAll()
                 self.tView.novels = novles
@@ -34,16 +36,18 @@ class HomeViewController: UIViewController {
             }
         }
         
+        
+        for _ in 0..<novles.count {
+            tView.remindArr.append(0)
+        }
+        
+        // 小说更新
         let path = "/articleInfo/getLatestArticles"
         var params = [String: AnyObject]()
 
         if novles.count > 0 {
             
-            let semaphore : DispatchSemaphore = DispatchSemaphore(value: 1)
-            let queue = DispatchGroup()
-            
-            
-            for novel in novles {
+            for (index,novel) in novles.enumerated() {
                 let record = RecordManager.getRecord(novel.article_id)
                 if record.count <= 0 {
                     continue
@@ -56,11 +60,13 @@ class HomeViewController: UIViewController {
                         if json is [String: Any] {
                             let info = json as! [String: Any]
                             let data = info["data"] as! Array<Dictionary<String, Any>>
-                            let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-
+                            //NOVELLog(data)
                             print(data.count)
-                            semaphore.signal()
-
+                            self.tView.remindArr[index] = data.count
+                            //print(self.tView.remindArr)
+                            //if index == novles.count - 1 {
+                                self.tView.reloadData()
+                            //}
                         }
                     }
 
@@ -68,10 +74,6 @@ class HomeViewController: UIViewController {
 
             }
         }
-        
-        
-// let t = getData()
-//        print(t)
         
         
         
@@ -87,42 +89,6 @@ class HomeViewController: UIViewController {
 
     }
     
-    fileprivate func getData() -> Int {
-        let path = "/articleInfo/getLatestArticles"
-        var params = [String: AnyObject]()
-var t = 10
-        params["article_id"] = "0_703" as AnyObject
-        params["last_update_date"] = "2017-06-14" as AnyObject
-        let semaphore : DispatchSemaphore = DispatchSemaphore(value: 1)
-        
-        let group = DispatchGroup()
-        
-        
-        
-        group.notify(queue: DispatchQueue.main) { 
-            
-//        }
-//        DispatchQueue.global().async {
-        
-        
-        
-        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
-            
-            print("11")
-            t = 20
-            semaphore.signal()
-            
-        }
-        
-        }
-        let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-
-        return t
-
-
-    }
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -136,6 +102,9 @@ extension HomeViewController: ZHNBookShelfViewDelegate {
         
         let vc = ZHNReadController()
         vc.novelID = tView.novels[index].article_id
+        if tView.remindArr[index]  > 0{
+            vc.isUpdate = true
+        }
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

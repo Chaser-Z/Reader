@@ -29,4 +29,26 @@ class ChapterFacade {
 
         }
     }
+    
+    class func getUpdated(params: [String: AnyObject], completion: @escaping (_ chapter: [Chapter]) -> Void) {
+        
+        ChapterWSHelper.getUpdated(params) { (resp) in
+            
+            let errorCode = resp.errorCode
+            if errorCode == ErrorCode.Success {
+                let serverChapters = resp.dict["updated"] as! [ServerChapter]
+                let chapters = serverChapters.map {
+                    ChapterManager.add($0)
+                }
+                completion(chapters as! [Chapter])
+            } else {
+                NOVELLog("Failed to get getUpdated: \(errorCode)")
+                completion([])
+            }
+            
+        }
+        
+    }
+    
+    
 }

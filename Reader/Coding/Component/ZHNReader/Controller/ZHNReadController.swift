@@ -10,6 +10,9 @@ import UIKit
 import MBProgressHUD
 class ZHNReadController: ZHNBaseViewController {
 
+    /// 是否存在更新
+    var isUpdate = false
+    
     /// 下一章内容
     fileprivate var nextContent: Content?
     
@@ -159,7 +162,10 @@ class ZHNReadController: ZHNBaseViewController {
                     if i == self.currentChapterIndex - 1 {
                         self.preContent = content
                     } else if i == self.currentChapterIndex {
-                        ZHNReadParser.shared.content = content.content
+                        guard let currentContent = content?.content else {
+                            return
+                        }
+                        ZHNReadParser.shared.content = currentContent
                         self.currentContent = content
                         self.readVC = self.GetReadViewController()!
                         self.creatPageController(self.readVC)
@@ -171,7 +177,9 @@ class ZHNReadController: ZHNBaseViewController {
                         self.nextContent = content
                         self.isJumpChapter = false
                     }
-                    self.contents.append(content)
+                    if content != nil {
+                        self.contents.append(content!)
+                    }
                 }
 
             }
@@ -190,7 +198,7 @@ class ZHNReadController: ZHNBaseViewController {
                     params["article_directory_link"] = chapters[currentChapterIndex - 1].article_directory_link as AnyObject
                     ContentFacade.getContent(params: params) { (content) in
                         self.preContent = content
-                        self.contents.append(content)
+                        self.contents.append(content!)
                     }
 
                 }
@@ -207,7 +215,7 @@ class ZHNReadController: ZHNBaseViewController {
                     params["article_directory_link"] = chapters[currentChapterIndex + 1].article_directory_link as AnyObject
                     ContentFacade.getContent(params: params) { (content) in
                         self.nextContent = content
-                        self.contents.append(content)
+                        self.contents.append(content!)
                     }
                 } else{
                     

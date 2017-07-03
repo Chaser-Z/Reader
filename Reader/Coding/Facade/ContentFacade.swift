@@ -10,7 +10,7 @@ import UIKit
 
 class ContentFacade {
     
-    class func getContent(params: [String: AnyObject], completion: @escaping (_ content: Content) -> Void) {
+    class func getContent(params: [String: AnyObject], completion: @escaping (_ content: Content?) -> Void) {
         ContentWSHelper.getContent(params) { (resp) in
             
             let errorCode = resp.errorCode
@@ -21,7 +21,7 @@ class ContentFacade {
                 
             } else {
                 NOVELLog("Failed to get all novels: \(errorCode)")
-                completion(Content())
+                completion(nil)
             }
             
         }

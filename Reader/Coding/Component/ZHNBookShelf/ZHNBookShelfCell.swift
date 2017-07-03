@@ -33,4 +33,14 @@ class ZHNBookShelfCell: UICollectionViewCell {
         backImageView.sd_setImage(with: URL(string: novel.image_link))
         
     }
+    
+    func setupRemind(_ count: Int) {
+        if count > 0 {
+            remindLabel.isHidden = false
+            remindLabel.text = "\(count)"
+        } else {
+            remindLabel.isHidden = true
+        }
+    }
+    
 }

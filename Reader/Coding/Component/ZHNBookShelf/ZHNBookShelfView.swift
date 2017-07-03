@@ -18,11 +18,8 @@ class ZHNBookShelfView: UIView {
     private var collectionView: UICollectionView!
     var isShow = false
     var delegate: ZHNBookShelfViewDelegate!
-    var novels = [Novel]() {
-        didSet{
-            reloadData()
-        }
-    }
+    var remindArr = Array<Int>()
+    var novels = [Novel]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -97,6 +94,7 @@ extension ZHNBookShelfView: UICollectionViewDelegate,UICollectionViewDataSource 
         //        courseCell.alpha = 0.5
         
         bookShelfCell.setup(novels[indexPath.row])
+        bookShelfCell.setupRemind(remindArr[indexPath.row])
         return bookShelfCell
         
     }
