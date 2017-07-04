@@ -105,6 +105,8 @@ extension HomeViewController: ZHNBookShelfViewDelegate {
         if tView.remindArr[index]  > 0{
             vc.isUpdate = true
         }
+        self.tView.remindArr[index] = 0
+        self.tView.reloadData()
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

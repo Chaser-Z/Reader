@@ -102,10 +102,27 @@ class ZHNReadController: ZHNBaseViewController {
         
         if chapterList.count > 0 {
             chapters = chapterList
-            ZHNReadParser.shared.chapters = chapters
-            readMenu.leftView.reloadData()
-            // 加载内容
-            loadContentData()
+            
+            // 无更新情况
+            if isUpdate == false {
+                ZHNReadParser.shared.chapters = chapters
+                readMenu.leftView.reloadData()
+                // 加载内容
+                loadContentData()
+
+            } else { // 有更新
+                let record = RecordManager.getRecord(novelID)
+                params["last_update_date"] = record[0].last_update_date as AnyObject
+               ChapterFacade.getUpdated(params: params, completion: { (chapters) in
+                for chapter in chapters {
+                    self.chapters.append(chapter)
+                }
+                ZHNReadParser.shared.chapters = self.chapters
+                self.readMenu.leftView.reloadData()
+                // 加载内容
+                self.loadContentData()
+               })
+            }
 
         } else {
             let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
