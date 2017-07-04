@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 class HomeViewController: UIViewController {
 
-    var tView: ZHNBookShelfView!
+    fileprivate var tView: ZHNBookShelfView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,31 +23,51 @@ class HomeViewController: UIViewController {
         
         // 获取小说目录
         let novles = NovelManager.getAll()
-        // 本地
-        if novles.count > 0 {
-            tView.novels = novles
-            NOVELLog(novles[0].title)
-            
-        } else { // 网络
+//        // 本地
+//        if novles.count > 0 {
+//            tView.novels = novles
+//            NOVELLog(novles[0].title)
+//            for _ in 0..<novles.count {
+//                self.tView.remindArr.append(0)
+//            }
+//            self.tView.reloadData()
+//            checkoutNovelUpdate()
+//
+//        } else { // 网络
             NovelFacade.getNovelList { (novels) in
                 let novles = NovelManager.getAll()
                 self.tView.novels = novles
                 NOVELLog(novles[0].title)
+                for _ in 0..<novles.count {
+                    self.tView.remindArr.append(0)
+                }
+                self.tView.reloadData()
+                self.checkoutNovelUpdate()
+
             }
-        }
-        
-        
-        for _ in 0..<novles.count {
-            tView.remindArr.append(0)
-        }
+        //}
+//        let record = RecordManager.getRecord("0_703")
+//        NOVELLog(record[0].article_directory)
+//        NOVELLog(record[0].article_id)
+//        NOVELLog(record[0].last_update_date)
+//        NOVELLog(record[0].article_directory_link)
+//        NOVELLog(record[0].content)
+//        NOVELLog(record[0].currentPage)
+//        NOVELLog(record[0].pageCount)
+//        NOVELLog(record[0].currentChapterIndex)
+
+    }
+    
+    
+    private func checkoutNovelUpdate() {
         
         // 小说更新
         let path = "/articleInfo/getLatestArticles"
         var params = [String: AnyObject]()
-
-        if novles.count > 0 {
+        
+        if tView.novels.count > 0 {
             
-            for (index,novel) in novles.enumerated() {
+            for (index,novel) in tView.novels.enumerated() {
                 let record = RecordManager.getRecord(novel.article_id)
                 if record.count <= 0 {
                     continue
@@ -65,27 +85,15 @@ class HomeViewController: UIViewController {
                             self.tView.remindArr[index] = data.count
                             //print(self.tView.remindArr)
                             //if index == novles.count - 1 {
-                                self.tView.reloadData()
+                            self.tView.reloadData()
                             //}
                         }
                     }
-
+                    
                 }
-
+                
             }
         }
-        
-        
-        
-//        let record = RecordManager.getRecord("0_703")
-//        NOVELLog(record[0].article_directory)
-//        NOVELLog(record[0].article_id)
-//        NOVELLog(record[0].last_update_date)
-//        NOVELLog(record[0].article_directory_link)
-//        NOVELLog(record[0].content)
-//        NOVELLog(record[0].currentPage)
-//        NOVELLog(record[0].pageCount)
-//        NOVELLog(record[0].currentChapterIndex)
 
     }
     

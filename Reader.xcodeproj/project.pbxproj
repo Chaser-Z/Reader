@@ -10,6 +10,8 @@
 		680BAD471EF95C920052FA11 /* 求魔.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680BAD461EF95C920052FA11 /* 求魔.txt */; };
 		6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825AACA1EFD483000A0F73F /* InfoModel.swift */; };
 		684B74701F013E1B009EF889 /* ZHNTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684B746F1F013E1B009EF889 /* ZHNTopView.swift */; };
+		684F04601F0B571500C712F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D85C1EF7FCBB004B39DB /* LaunchScreen.storyboard */; };
+		684F04611F0B571500C712F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D8541EF7FCBB004B39DB /* Main.storyboard */; };
 		68571B321F03573600D1F7C1 /* Record+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68571B311F03573600D1F7C1 /* Record+CoreDataClass.swift */; };
 		68571B341F03577E00D1F7C1 /* Record+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68571B331F03577E00D1F7C1 /* Record+CoreDataProperties.swift */; };
 		68571B361F0358F400D1F7C1 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68571B351F0358F400D1F7C1 /* RecordManager.swift */; };
@@ -138,10 +140,8 @@
 		68B5A0C51EFEB2F3009D4EAE /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0C41EFEB2F3009D4EAE /* ContentManager.swift */; };
 		68F4D8511EF7FCBB004B39DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */; };
 		68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8521EF7FCBB004B39DB /* ViewController.swift */; };
-		68F4D8561EF7FCBB004B39DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D8541EF7FCBB004B39DB /* Main.storyboard */; };
 		68F4D8591EF7FCBB004B39DB /* Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8571EF7FCBB004B39DB /* Reader.xcdatamodeld */; };
 		68F4D85B1EF7FCBB004B39DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D85A1EF7FCBB004B39DB /* Assets.xcassets */; };
-		68F4D85E1EF7FCBB004B39DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D85C1EF7FCBB004B39DB /* LaunchScreen.storyboard */; };
 		FA268755716D16A20A9AD89A /* Pods_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB43FD6337481CDE00ADAFC /* Pods_Reader.framework */; };
 /* End PBXBuildFile section */
 
@@ -790,7 +790,7 @@
 				TargetAttributes = {
 					68F4D84C1EF7FCBB004B39DB = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = BLJXHMJDBS;
+						DevelopmentTeam = 85PMH535HR;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -827,7 +827,7 @@
 				6861A9811F01160900A7687A /* RM_6@3x.png in Resources */,
 				6861A9611F0115C500A7687A /* read_bar_2@3x.png in Resources */,
 				6861A96D1F0115DD00A7687A /* RM_1@3x.png in Resources */,
-				68F4D85E1EF7FCBB004B39DB /* LaunchScreen.storyboard in Resources */,
+				684F04601F0B571500C712F6 /* LaunchScreen.storyboard in Resources */,
 				6861A9691F0115D600A7687A /* RM_0@3x.png in Resources */,
 				6861A95C1F0115BC00A7687A /* read_bar_1@2x.png in Resources */,
 				6881D4A11EFCBDA2003CA502 /* 4_7Inchbookshelfback.png in Resources */,
@@ -845,7 +845,6 @@
 				6861A9A41F01164C00A7687A /* RM_16@2x.png in Resources */,
 				6861A9A91F01165400A7687A /* RM_17@3x.png in Resources */,
 				6861A9851F01161100A7687A /* RM_7@3x.png in Resources */,
-				68F4D85E1EF7FCBB004B39DB /* LaunchScreen.storyboard in Resources */,
 				6861A99D1F01163E00A7687A /* RM_14@3x.png in Resources */,
 				6861A9681F0115D600A7687A /* RM_0@2x.png in Resources */,
 				6861A9551F0115A800A7687A /* G_Battery_Black@3x.png in Resources */,
@@ -866,9 +865,8 @@
 				68B5A0AA1EFE82BB009D4EAE /* read_bg_0@2x.png in Resources */,
 				6861A9701F0115E900A7687A /* RM_2@2x.png in Resources */,
 				6861A9741F0115F000A7687A /* RM_3@2x.png in Resources */,
-				68F4D8561EF7FCBB004B39DB /* Main.storyboard in Resources */,
+				684F04611F0B571500C712F6 /* Main.storyboard in Resources */,
 				6881D4A01EFCBDA2003CA502 /* 4Inchbookshelfback.png in Resources */,
-				68F4D8561EF7FCBB004B39DB /* Main.storyboard in Resources */,
 				6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */,
 				6861A9A11F01164500A7687A /* RM_15@3x.png in Resources */,
 				6861A9951F01162D00A7687A /* RM_11@3x.png in Resources */,
@@ -1140,11 +1138,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = BLJXHMJDBS;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Reader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.Reader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reader.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Reader/Reader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1157,11 +1158,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = BLJXHMJDBS;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Reader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.Reader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reader.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Reader/Reader-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
