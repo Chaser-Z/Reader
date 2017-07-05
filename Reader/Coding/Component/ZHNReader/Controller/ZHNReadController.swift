@@ -53,6 +53,9 @@ class ZHNReadController: ZHNBaseViewController {
     /// 当前加载完成的内容数组
     var contents = [Content]()
     
+    /// 当前已经缓存的章节数组
+    var loadContents = [Content]()
+    
     /// 小说id
     var novelID: String!
     
@@ -88,6 +91,8 @@ class ZHNReadController: ZHNBaseViewController {
             currentPage = Int(record[0].currentPage)
         }
 
+        // 获取已经缓存的内容
+        loadContents = ContentManager.getAll(novelID)
         
         // 加载小说章节
         loadNovelChaptersData()
@@ -148,7 +153,7 @@ class ZHNReadController: ZHNBaseViewController {
     fileprivate func loadContentData() {
         
         
-        let novle_content = ContentManager.getAll("")
+        let novle_content = ContentManager.getAll(novelID)
         
 //        if novle_content.count > 0 {
 //            
@@ -160,6 +165,7 @@ class ZHNReadController: ZHNBaseViewController {
 //            }
 //            
 //        } else {
+        
         
         
         if isCreatePage == false || isJumpChapter == true {
@@ -544,6 +550,13 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     /// 下载
     func readMenuClickDownload(readMenu: ZHNReadMenu) {
         print("点击了下载")
+        
+        var params = [String: AnyObject]()
+        params["article_id"] = novelID as AnyObject
+        
+        ContentFacade.getAllContent(params: params) { (contents) in
+            self.contents = contents
+        }
     }
     
     /// 拖拽进度条

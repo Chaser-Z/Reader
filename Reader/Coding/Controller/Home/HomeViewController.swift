@@ -46,6 +46,23 @@ class HomeViewController: UIViewController {
 
             }
         //}
+        
+        
+        let contents = ContentManager.getAll("0_703")
+        for content in contents {
+            NOVELLog(content.article_directory)
+        }
+        
+        var params = [String: AnyObject]()
+        params["article_id"] = "0_703" as AnyObject
+
+        ContentFacade.getAllContent(params: params) { (contents) in
+            for content in contents {
+                NOVELLog(content.article_directory)
+            }
+        }
+        
+        
 //        let record = RecordManager.getRecord("0_703")
 //        NOVELLog(record[0].article_directory)
 //        NOVELLog(record[0].article_id)
@@ -56,6 +73,8 @@ class HomeViewController: UIViewController {
 //        NOVELLog(record[0].pageCount)
 //        NOVELLog(record[0].currentChapterIndex)
 
+        
+        
     }
     
     

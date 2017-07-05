@@ -14,11 +14,13 @@ class ServerContent {
     var content: String
     var article_directory: String
     var pageCount = 0
+    var article_id: String
     
-    init(article_directory_link: String, content: String, article_directory: String) {
+    init(article_directory_link: String, content: String, article_directory: String, article_id: String) {
         self.article_directory_link = article_directory_link
         self.content = content
         self.article_directory = article_directory
+        self.article_id = article_id
     }
     
     
@@ -31,9 +33,10 @@ extension ServerContent {
         let article_directory_link = dict["article_directory_link"] as! String
         let content = dict["content"] as! String
         let article_directory = dict["article_directory"] as! String
+        let article_id = dict["article_id"] as! String
 
         
-        let novel_content = ServerContent(article_directory_link: article_directory_link, content: content, article_directory: article_directory)
+        let novel_content = ServerContent(article_directory_link: article_directory_link, content: content, article_directory: article_directory, article_id: article_id)
         
         return novel_content
         
