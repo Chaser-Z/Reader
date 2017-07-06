@@ -20,8 +20,8 @@ class ZHNBottomView: ZHNBaseView,ASValueTrackingSliderDelegate {
     private(set) var slider:ASValueTrackingSlider!
     
     /// 功能按钮数组
-    //private(set) var funcIcons:[String] = ["read_bar_0","read_bar_1","read_bar_2","read_bar_3"]
-    private(set) var funcIcons:[String] = ["read_bar_0","read_bar_1","read_bar_2"]
+    private(set) var funcIcons:[String] = ["read_bar_0","read_bar_1","read_bar_2","read_bar_3"]
+    //private(set) var funcIcons:[String] = ["read_bar_0","read_bar_1","read_bar_2"]
     
     override func addSubviews() {
         

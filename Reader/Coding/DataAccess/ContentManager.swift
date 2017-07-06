@@ -19,7 +19,7 @@ class ContentManager{
         
         let context = CoreDataManager.sharedInstance.context
         let request: NSFetchRequest<Content> = Content.fetchRequest()
-        request.predicate = NSPredicate(format: "article_directory_link == %@", serverContent.article_directory_link)
+        request.predicate = NSPredicate(format: "article_directory_link == %@ AND article_id == %@", serverContent.article_directory_link, serverContent.article_id)
         do {
             let list = try context.fetch(request)
             if list.count > 0 {
@@ -43,7 +43,7 @@ class ContentManager{
         var content = [Content]()
         let context = CoreDataManager.sharedInstance.context
         let request: NSFetchRequest<Content> = Content.fetchRequest()
-        //request.predicate = NSPredicate(format: "article_id == %@", articleId)
+        request.predicate = NSPredicate(format: "article_id == %@", articleId)
         
         do {
             content = try context.fetch(request)
@@ -57,6 +57,7 @@ class ContentManager{
         content.article_directory = serverContent.article_directory
         content.article_directory_link =  serverContent.article_directory_link
         content.content = serverContent.content
+        content.article_id = serverContent.article_id
     }
 
     
