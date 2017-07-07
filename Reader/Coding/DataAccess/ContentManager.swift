@@ -48,8 +48,25 @@ class ContentManager{
         do {
             content = try context.fetch(request)
         } catch {
+            NOVELLog("Failed to get All content: \(error)")
+        }
+        return content
+    }
+    
+    class func getContent(_ article_directory_link: String) -> Content? {
+        
+        var content: Content? = nil
+        let context = CoreDataManager.sharedInstance.context
+        let request: NSFetchRequest<Content> = Content.fetchRequest()
+        request.predicate = NSPredicate(format: "article_directory_link == %@", article_directory_link)
+        
+        do {
+            let list = try context.fetch(request)
+            content = list.first
+        } catch {
             NOVELLog("Failed to get content: \(error)")
         }
+        
         return content
     }
     

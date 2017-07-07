@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
 
 
         self.view.backgroundColor = UIColor.red
+        
         tView = ZHNBookShelfView(frame: self.view.bounds)
         tView.delegate = self
         self.view.addSubview(tView)
@@ -34,6 +35,57 @@ class HomeViewController: UIViewController {
 //            checkoutNovelUpdate()
 //
 //        } else { // 网络
+        
+        
+        
+//        let semaphore = DispatchSemaphore(value: 1)
+//        DispatchQueue.global(qos: .userInitiated).sync {
+//            
+//            NovelFacade.getNovelList { (novels) in
+//                let novles = NovelManager.getAll()
+//                self.tView.novels = novles
+//                NOVELLog(novles[0].title)
+//                for _ in 0..<novles.count {
+//                    self.tView.remindArr.append(0)
+//                }
+//                NOVELLog("222222222")
+//                self.tView.reloadData()
+//                self.checkoutNovelUpdate()
+//                semaphore.signal()
+//            }
+//        //}
+//            let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+//            print("11111111")
+//        }
+
+        
+//        let group = DispatchGroup()
+//        
+//        let queue = DispatchQueue(label: "com")
+//        
+//        queue.async(group: group) {
+//            NovelFacade.getNovelList { (novels) in
+//                let novles = NovelManager.getAll()
+//                self.tView.novels = novles
+//                NOVELLog(novles[0].title)
+//                for _ in 0..<novles.count {
+//                    self.tView.remindArr.append(0)
+//                }
+//                NOVELLog("222222222")
+//                self.tView.reloadData()
+//                self.checkoutNovelUpdate()
+//            }
+//
+//        }
+
+        //let semaphore = DispatchSemaphore(value: 1)
+        
+        //let queue = DispatchQueue.global()
+        
+        //queue.async {
+            //let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+        DispatchQueue.main.async {
+            
             NovelFacade.getNovelList { (novels) in
                 let novles = NovelManager.getAll()
                 self.tView.novels = novles
@@ -41,38 +93,22 @@ class HomeViewController: UIViewController {
                 for _ in 0..<novles.count {
                     self.tView.remindArr.append(0)
                 }
+                //flag = false
                 self.tView.reloadData()
                 self.checkoutNovelUpdate()
-
             }
+            //semaphore.signal()
         //}
-        
-        
-        let contents = ContentManager.getAll("0_703")
-        for content in contents {
-            NOVELLog(content.article_directory)
         }
-        
-        var params = [String: AnyObject]()
-        params["article_id"] = "0_703" as AnyObject
 
-        ContentFacade.getAllContent(params: params) { (contents) in
-            for content in contents {
-                NOVELLog(content.article_directory)
-            }
-        }
-        
-        
-//        let record = RecordManager.getRecord("0_703")
-//        NOVELLog(record[0].article_directory)
-//        NOVELLog(record[0].article_id)
-//        NOVELLog(record[0].last_update_date)
-//        NOVELLog(record[0].article_directory_link)
-//        NOVELLog(record[0].content)
-//        NOVELLog(record[0].currentPage)
-//        NOVELLog(record[0].pageCount)
-//        NOVELLog(record[0].currentChapterIndex)
+//        while flag {
+//            RunLoop.current.acceptInput(forMode: .defaultRunLoopMode, before: NSDate.distantFuture)
+//        }
 
+//        let content = ContentManager.getContent("/0_703/7504946.html")
+//        NOVELLog(content?.content)
+//        
+//        print("什么")
         
         
     }
