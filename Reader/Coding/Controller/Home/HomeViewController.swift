@@ -134,7 +134,7 @@ class HomeViewController: UIViewController {
                         if json is [String: Any] {
                             let info = json as! [String: Any]
                             let data = info["data"] as! Array<Dictionary<String, Any>>
-                            //NOVELLog(data)
+                            NOVELLog(data)
                             print(data.count)
                             self.tView.remindArr[index] = data.count
                             //print(self.tView.remindArr)

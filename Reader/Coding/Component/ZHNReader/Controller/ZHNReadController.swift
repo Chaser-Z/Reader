@@ -484,7 +484,7 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
         
         NOVELLog("viewControllerBefore")
         if pageAnimationFinished {
-            return nil
+            //return nil
         }
         TempNumber -= 1
     
@@ -503,7 +503,7 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
         NOVELLog("viewControllerAfter")
         
         if pageAnimationFinished {
-            return nil
+            //return nil
         }
         
         TempNumber += 1
@@ -785,7 +785,3 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     
 }
 
-extension ZHNReadController: UIGestureRecognizerDelegate {
-    
-
-}
