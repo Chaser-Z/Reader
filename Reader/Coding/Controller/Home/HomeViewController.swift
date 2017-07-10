@@ -11,7 +11,6 @@ import Alamofire
 class HomeViewController: UIViewController {
 
     fileprivate var tView: ZHNBookShelfView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -25,6 +25,9 @@ class ZHNReadParser  {
     /// 文章有多少页
     var pageCount: Int = 0
     
+    /// 当前页
+    var currentPage: Int = 0
+    
     /// 每一页的Range数组
     var rangeArray:[NSRange] = []
     

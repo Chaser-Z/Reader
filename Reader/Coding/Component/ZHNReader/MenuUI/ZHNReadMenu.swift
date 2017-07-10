@@ -86,7 +86,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     private(set) var lightView: ZHNLightView!
     
     /// 遮盖亮度
-    private var coverView:UIView!
+    private var coverView:ZHNCoverView!
     
     /// 亮度按钮
     private var lightButton: ZHNHaloButton!
@@ -257,7 +257,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     /// 初始化CoverView
     private func initCoverView() {
         
-        coverView = UIView()
+        coverView = ZHNCoverView()
         
         coverView.isUserInteractionEnabled = false
         
