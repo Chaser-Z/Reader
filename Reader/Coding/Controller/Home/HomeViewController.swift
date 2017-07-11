@@ -14,6 +14,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let path = "/article/getArticleByType"
+        var params = [String: AnyObject]()
+        params["article_type"] = "玄幻" as AnyObject
+        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
+            
+            NOVELLog(response)
+        }
 
         self.view.backgroundColor = UIColor.red
         print(self.view.frame)

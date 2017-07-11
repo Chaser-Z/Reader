@@ -227,13 +227,13 @@
                   symbolName = "Reader.ZHNReadController.(loadNovelChaptersData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.534112"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.888838"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "1983">
+                  offsetFromSymbolStart = "1632">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -242,13 +242,13 @@
                   symbolName = "Reader.ZHNReadController.((loadNovelChaptersData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()).(closure #2)"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.535785"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.890312"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "149"
                   endingLineNumber = "149"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -291,13 +291,13 @@
                   symbolName = "Reader.ZHNReadController.(loadNovelChaptersData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.542254"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.89572"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "135"
                   endingLineNumber = "135"
-                  offsetFromSymbolStart = "1800">
+                  offsetFromSymbolStart = "1484">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -306,13 +306,13 @@
                   symbolName = "Reader.ZHNReadController.((loadNovelChaptersData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()).(closure #1)"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.543593"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.896962"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "136"
                   endingLineNumber = "136"
-                  offsetFromSymbolStart = "23">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "521370243.373994"
+            timestampString = "521473735.021624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -387,13 +387,13 @@
                   symbolName = "Reader.HomeViewController.viewDidLoad () -&gt; ()"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.553802"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.907475"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "1127">
+                  offsetFromSymbolStart = "1356">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -402,13 +402,13 @@
                   symbolName = "Reader.HomeViewController.(viewDidLoad () -&gt; ()).(closure #1)"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.555109"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.90878"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
                   endingLineNumber = "88"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -420,103 +420,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "521370243.373994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.HomeViewController.viewDidLoad () -&gt; ()"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.557948"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "1127">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.HomeViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.55915"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "521370243.373994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.HomeViewController.viewDidLoad () -&gt; ()"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.561975"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "1127">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.HomeViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.563256"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "521370243.373994"
+            timestampString = "521473735.021624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -531,13 +435,13 @@
                   symbolName = "Reader.HomeViewController.viewDidLoad () -&gt; ()"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.567165"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.911835"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "1127">
+                  offsetFromSymbolStart = "1356">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -546,13 +450,109 @@
                   symbolName = "Reader.HomeViewController.(viewDidLoad () -&gt; ()).(closure #1)"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
-                  timestampString = "521459141.569008"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.913117"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
                   endingLineNumber = "88"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
+            timestampString = "521473735.021624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.HomeViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.916167"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1356">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.HomeViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.91746"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
+            timestampString = "521473735.021624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.HomeViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.920635"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1356">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.HomeViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Home/HomeViewController.swift"
+                  timestampString = "521468606.921872"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -627,13 +627,13 @@
                   symbolName = "Reader.ZHNReadController.(loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.583889"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.932463"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "264"
                   endingLineNumber = "264"
-                  offsetFromSymbolStart = "6774">
+                  offsetFromSymbolStart = "5160">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -642,13 +642,13 @@
                   symbolName = "Reader.ZHNReadController.((loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()).(closure #2)"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.585372"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.933906"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "264"
                   endingLineNumber = "264"
-                  offsetFromSymbolStart = "136">
+                  offsetFromSymbolStart = "164">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -675,13 +675,13 @@
                   symbolName = "Reader.ZHNReadController.(loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.588677"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.937965"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "294"
                   endingLineNumber = "294"
-                  offsetFromSymbolStart = "10370">
+                  offsetFromSymbolStart = "7988">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -690,13 +690,13 @@
                   symbolName = "Reader.ZHNReadController.((loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()).(closure #3)"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.590319"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.93922"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "294"
                   endingLineNumber = "294"
-                  offsetFromSymbolStart = "136">
+                  offsetFromSymbolStart = "164">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -915,13 +915,13 @@
                   symbolName = "Reader.ZHNReadController.(loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.613924"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.965151"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "294"
                   endingLineNumber = "294"
-                  offsetFromSymbolStart = "10370">
+                  offsetFromSymbolStart = "7988">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -930,13 +930,13 @@
                   symbolName = "Reader.ZHNReadController.((loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()).(closure #3)"
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Downloads/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "521459141.615158"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "521468606.966408"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "294"
                   endingLineNumber = "294"
-                  offsetFromSymbolStart = "136">
+                  offsetFromSymbolStart = "164">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -969,6 +969,102 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "274"
             endingLineNumber = "274"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "521467902.829337"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "521467904.159172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "521467904.880689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "521467905.694477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "521467907.145904"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "521467908.347779"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>

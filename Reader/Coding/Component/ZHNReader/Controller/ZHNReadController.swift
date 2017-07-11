@@ -765,6 +765,10 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             self.currentLeft = false
             currentChapterIndex = index
             self.loadContentData()
+        } else {
+            currentChapterIndex = index
+            self.hud.hide(true)
+            self.isJumpChapter = false
         }
     }
     

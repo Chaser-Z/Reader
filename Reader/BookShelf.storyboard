@@ -9,45 +9,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--主页-->
-        <scene sceneID="7gW-q7-UwI">
+        <!--书架-->
+        <scene sceneID="jxJ-4H-Fan">
             <objects>
-                <navigationController storyboardIdentifier="HomeNavigationController" id="4LC-DE-ZLu" customClass="MyNavigationController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="主页" image="home" id="paW-fN-HFR"/>
+                <navigationController storyboardIdentifier="BookShelfNavigationController" id="Kkg-uC-6cA" customClass="MyNavigationController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="书架" image="bookShelf" id="wyq-1w-hq0"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c31-F5-4DD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rO6-Hs-Jwi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="HJh-Rj-4gE" kind="relationship" relationship="rootViewController" id="Z1X-OV-3ZS"/>
+                        <segue destination="H6Y-IM-SN6" kind="relationship" relationship="rootViewController" id="Rw7-gF-ero"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e63-RC-sBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJ1-S3-fM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714" y="186"/>
+            <point key="canvasLocation" x="-462" y="1"/>
         </scene>
-        <!--Home View Controller-->
-        <scene sceneID="VTk-a1-9bw">
+        <!--Book Shelf View Controller-->
+        <scene sceneID="77g-sn-paS">
             <objects>
-                <viewController id="HJh-Rj-4gE" customClass="HomeViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="H6Y-IM-SN6" customClass="BookShelfViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Cha-iF-VIP"/>
-                        <viewControllerLayoutGuide type="bottom" id="aam-N4-hon"/>
+                        <viewControllerLayoutGuide type="top" id="NH6-2X-1N1"/>
+                        <viewControllerLayoutGuide type="bottom" id="TeM-Oz-19F"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MG2-7B-aK4">
+                    <view key="view" contentMode="scaleToFill" id="uqr-Ny-fqX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="k4n-Xa-f6g"/>
+                    <navigationItem key="navigationItem" id="THE-Cn-sxf"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KFl-5M-rJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="El8-Lr-0wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="186"/>
+            <point key="canvasLocation" x="375" y="0.0"/>
         </scene>
     </scenes>
     <resources>
-        <image name="home" width="23" height="20"/>
+        <image name="bookShelf" width="20" height="20"/>
     </resources>
 </document>

@@ -17,9 +17,6 @@ class UserViewController: UIViewController {
         self.view.backgroundColor = UIColor.purple
         
         
-        
-        
-        
         let path = "/articleInfo/getLatestArticles"
         
         var params = [String: AnyObject]()
