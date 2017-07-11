@@ -79,6 +79,9 @@
 		6861A9AC1F01166100A7687A /* RM_18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861A9AA1F01166100A7687A /* RM_18@2x.png */; };
 		6861A9AD1F01166100A7687A /* RM_18@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861A9AB1F01166100A7687A /* RM_18@3x.png */; };
 		6863E1691F0A114700FDB81A /* ViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863E1681F0A114700FDB81A /* ViewSwift.swift */; };
+		6872A5031F14D8290004D85D /* 4_7Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5021F14D8290004D85D /* 4_7Inchbookshelfback.png */; };
+		6872A5051F14D9EA0004D85D /* 4Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5041F14D9EA0004D85D /* 4Inchbookshelfback.png */; };
+		6872A5071F14DA710004D85D /* 5_5Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5061F14DA710004D85D /* 5_5Inchbookshelfback.png */; };
 		6881D4861EFCB6CE003CA502 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4851EFCB6CD003CA502 /* Home.storyboard */; };
 		6881D4881EFCB6E4003CA502 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4871EFCB6E4003CA502 /* User.storyboard */; };
 		6881D48C1EFCB88A003CA502 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D48B1EFCB88A003CA502 /* HomeViewController.swift */; };
@@ -89,9 +92,6 @@
 		6881D4981EFCBC4A003CA502 /* ZHNLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D4971EFCBC4A003CA502 /* ZHNLayout.swift */; };
 		6881D49B1EFCBC6B003CA502 /* ZHNBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D4991EFCBC6B003CA502 /* ZHNBookShelfCell.swift */; };
 		6881D49C1EFCBC6B003CA502 /* ZHNBookShelfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49A1EFCBC6B003CA502 /* ZHNBookShelfCell.xib */; };
-		6881D4A01EFCBDA2003CA502 /* 4Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49D1EFCBDA2003CA502 /* 4Inchbookshelfback.png */; };
-		6881D4A11EFCBDA2003CA502 /* 4_7Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49E1EFCBDA2003CA502 /* 4_7Inchbookshelfback.png */; };
-		6881D4A21EFCBDA2003CA502 /* 5_5Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49F1EFCBDA2003CA502 /* 5_5Inchbookshelfback.png */; };
 		6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4A31EFCBDB3003CA502 /* 703s.jpg */; };
 		68A6C6991EFAA7DB00BF971B /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C65F1EFAA7DB00BF971B /* ASValuePopUpView.m */; };
 		68A6C69A1EFAA7DB00BF971B /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C6611EFAA7DB00BF971B /* ASValueTrackingSlider.m */; };
@@ -220,6 +220,9 @@
 		6861A9AA1F01166100A7687A /* RM_18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RM_18@2x.png"; sourceTree = "<group>"; };
 		6861A9AB1F01166100A7687A /* RM_18@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RM_18@3x.png"; sourceTree = "<group>"; };
 		6863E1681F0A114700FDB81A /* ViewSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSwift.swift; sourceTree = "<group>"; };
+		6872A5021F14D8290004D85D /* 4_7Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_7Inchbookshelfback.png; sourceTree = "<group>"; };
+		6872A5041F14D9EA0004D85D /* 4Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4Inchbookshelfback.png; sourceTree = "<group>"; };
+		6872A5061F14DA710004D85D /* 5_5Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_5Inchbookshelfback.png; sourceTree = "<group>"; };
 		6881D4851EFCB6CD003CA502 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6881D4871EFCB6E4003CA502 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		6881D48B1EFCB88A003CA502 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -230,9 +233,6 @@
 		6881D4971EFCBC4A003CA502 /* ZHNLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNLayout.swift; sourceTree = "<group>"; };
 		6881D4991EFCBC6B003CA502 /* ZHNBookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNBookShelfCell.swift; sourceTree = "<group>"; };
 		6881D49A1EFCBC6B003CA502 /* ZHNBookShelfCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHNBookShelfCell.xib; sourceTree = "<group>"; };
-		6881D49D1EFCBDA2003CA502 /* 4Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4Inchbookshelfback.png; sourceTree = "<group>"; };
-		6881D49E1EFCBDA2003CA502 /* 4_7Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_7Inchbookshelfback.png; sourceTree = "<group>"; };
-		6881D49F1EFCBDA2003CA502 /* 5_5Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_5Inchbookshelfback.png; sourceTree = "<group>"; };
 		6881D4A31EFCBDB3003CA502 /* 703s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 703s.jpg; sourceTree = "<group>"; };
 		68A6C65E1EFAA7DB00BF971B /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		68A6C65F1EFAA7DB00BF971B /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
@@ -389,9 +389,9 @@
 			isa = PBXGroup;
 			children = (
 				6881D4A31EFCBDB3003CA502 /* 703s.jpg */,
-				6881D49D1EFCBDA2003CA502 /* 4Inchbookshelfback.png */,
-				6881D49E1EFCBDA2003CA502 /* 4_7Inchbookshelfback.png */,
-				6881D49F1EFCBDA2003CA502 /* 5_5Inchbookshelfback.png */,
+				6872A5021F14D8290004D85D /* 4_7Inchbookshelfback.png */,
+				6872A5041F14D9EA0004D85D /* 4Inchbookshelfback.png */,
+				6872A5061F14DA710004D85D /* 5_5Inchbookshelfback.png */,
 				6881D4951EFCBC31003CA502 /* ZHNBookShelfView.swift */,
 				6881D4971EFCBC4A003CA502 /* ZHNLayout.swift */,
 				6881D4991EFCBC6B003CA502 /* ZHNBookShelfCell.swift */,
@@ -847,7 +847,8 @@
 				684F04601F0B571500C712F6 /* LaunchScreen.storyboard in Resources */,
 				6861A9691F0115D600A7687A /* RM_0@3x.png in Resources */,
 				6861A95C1F0115BC00A7687A /* read_bar_1@2x.png in Resources */,
-				6881D4A11EFCBDA2003CA502 /* 4_7Inchbookshelfback.png in Resources */,
+				6872A5051F14D9EA0004D85D /* 4Inchbookshelfback.png in Resources */,
+				6872A5031F14D8290004D85D /* 4_7Inchbookshelfback.png in Resources */,
 				6861A99C1F01163E00A7687A /* RM_14@2x.png in Resources */,
 				6861A9A81F01165400A7687A /* RM_17@2x.png in Resources */,
 				6861A9581F0115B500A7687A /* read_bar_0@2x.png in Resources */,
@@ -860,6 +861,7 @@
 				6861A97C1F01160000A7687A /* RM_5@2x.png in Resources */,
 				6861A9A01F01164500A7687A /* RM_15@2x.png in Resources */,
 				6861A9A41F01164C00A7687A /* RM_16@2x.png in Resources */,
+				6872A5071F14DA710004D85D /* 5_5Inchbookshelfback.png in Resources */,
 				6861A9A91F01165400A7687A /* RM_17@3x.png in Resources */,
 				6861A9851F01161100A7687A /* RM_7@3x.png in Resources */,
 				6861A99D1F01163E00A7687A /* RM_14@3x.png in Resources */,
@@ -867,7 +869,6 @@
 				6861A9551F0115A800A7687A /* G_Battery_Black@3x.png in Resources */,
 				6861A9781F0115F700A7687A /* RM_4@2x.png in Resources */,
 				6861A9881F01161900A7687A /* RM_8@2x.png in Resources */,
-				6881D4A21EFCBDA2003CA502 /* 5_5Inchbookshelfback.png in Resources */,
 				6861A9941F01162D00A7687A /* RM_11@2x.png in Resources */,
 				6861A9801F01160900A7687A /* RM_6@2x.png in Resources */,
 				6861A9AD1F01166100A7687A /* RM_18@3x.png in Resources */,
@@ -883,7 +884,6 @@
 				6861A9701F0115E900A7687A /* RM_2@2x.png in Resources */,
 				6861A9741F0115F000A7687A /* RM_3@2x.png in Resources */,
 				684F04611F0B571500C712F6 /* Main.storyboard in Resources */,
-				6881D4A01EFCBDA2003CA502 /* 4Inchbookshelfback.png in Resources */,
 				6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */,
 				6861A9A11F01164500A7687A /* RM_15@3x.png in Resources */,
 				6861A9951F01162D00A7687A /* RM_11@3x.png in Resources */,

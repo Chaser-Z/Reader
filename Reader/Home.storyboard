@@ -30,7 +30,7 @@
         <!--Home View Controller-->
         <scene sceneID="VTk-a1-9bw">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="HJh-Rj-4gE" customClass="HomeViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HJh-Rj-4gE" customClass="HomeViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cha-iF-VIP"/>
                         <viewControllerLayoutGuide type="bottom" id="aam-N4-hon"/>

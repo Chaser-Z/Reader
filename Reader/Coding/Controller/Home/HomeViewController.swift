@@ -16,8 +16,8 @@ class HomeViewController: UIViewController {
 
 
         self.view.backgroundColor = UIColor.red
-        
-        tView = ZHNBookShelfView(frame: self.view.bounds)
+        print(self.view.frame)
+        tView = ZHNBookShelfView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
         tView.delegate = self
         self.view.addSubview(tView)
         

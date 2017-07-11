@@ -67,7 +67,7 @@ class ZHNBookShelfView: UIView {
     
     // 卡片长度
     fileprivate func cellHeight() -> CGFloat {
-        return (self.bounds.size.height - 64) / 3.0
+        return (self.bounds.size.height) / 3.0
     }
     
     func reloadData() {
@@ -90,7 +90,6 @@ extension ZHNBookShelfView: UICollectionViewDelegate,UICollectionViewDataSource 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let bookShelfCell: ZHNBookShelfCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZHNBookShelfCell", for: indexPath) as! ZHNBookShelfCell
-        //        courseCell.backgroundColor = UIColor.purple
         //        courseCell.alpha = 0.5
         
         bookShelfCell.setup(novels[indexPath.row])
