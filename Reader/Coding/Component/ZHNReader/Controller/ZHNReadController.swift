@@ -12,7 +12,7 @@ class ZHNReadController: ZHNBaseViewController {
 
     
     /// 
-    var pageScrollView: UIScrollView!
+    fileprivate var isBug = false
     
     /// 
     fileprivate var pageAnimationFinished = false
@@ -271,9 +271,20 @@ class ZHNReadController: ZHNBaseViewController {
                 //self.preContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].article_directory_link)
                 NOVELLog("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc")
 
-                self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].article_directory_link)
+                if isBug {
+                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!)].article_directory_link)
+                } else{
+                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].article_directory_link)
+                    NOVELLog("这里")
+                }
+                NOVELLog("到这了")
+                if self.currentContent == nil {
+                    
+                    NOVELLog("控制")
+                    return
+                }
                 ZHNReadParser.shared.content = self.currentContent?.content
-                
+
                 if currentChapterIndex + 1 < ZHNReadParser.shared.chapters.count {
                     NOVELLog("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
                     // 是否有缓存
@@ -404,7 +415,10 @@ class ZHNReadController: ZHNBaseViewController {
         self.novelRecord?.pageCount = Int32(ZHNReadParser.shared.pageCount)
         self.novelRecord?.currentPage = Int32(self.currentPage)
         self.novelRecord?.currentChapterIndex = Int32(self.currentChapterIndex)
-        let _ = RecordManager.add(self.novelRecord!)
+        if currentContent?.content != nil {
+            let _ = RecordManager.add(self.novelRecord!)
+
+        }
     }
     
     // MARK: - 展示加载提醒试图
@@ -573,9 +587,11 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
             // 如果调用下一页控制器的时候，bug调用上一页方法
             if Int((self.novelRecord?.currentChapterIndex)!) + 1 - currentChapterIndex  == 2 && lastPage - page != 1 {
                 NOVELLog("$$$$$$$$$$$$$$$$$$$")
+                isBug = true
                 currentChapterIndex += 1
                 self.loadContentData()
             }
+            isBug = false
             currentPage = page + 1 <= lastPage ? page + 1 : lastPage
         }
         NOVELLog(currentChapterIndex)
@@ -747,9 +763,10 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             currentPage = 0
             self.loadContentData()
             self.saveNovel()
+            self.readVC = GetReadViewController()!
+            self.creatPageController(self.readVC)
+
         }
-        self.readVC = GetReadViewController()!
-        self.creatPageController(self.readVC)
     }
     
     /// 点击章节列表
