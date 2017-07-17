@@ -50,6 +50,9 @@ import UIKit
     /// 点击章节列表
     @objc optional func readMenuClickChapterList(readMenu:ZHNReadMenu,index: Int)
     
+    /// 返回按钮
+    @objc optional func readMenuBackClick()
+    
     /// 点击书签列表
     //@objc optional func readMenuClickMarkList(readMenu:DZMReadMenu,readMarkModel:DZMReadMarkModel)
     
@@ -346,7 +349,8 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     /// 返回
     func clickBack() {
         
-        let _ = vc.navigationController?.popViewController(animated: true)
+        delegate.readMenuBackClick!()
+        //let _ = vc.navigationController?.popViewController(animated: true)
     }
     
     // MARK: -- BottomView

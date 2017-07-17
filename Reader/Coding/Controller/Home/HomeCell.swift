@@ -14,5 +14,14 @@ class HomeCell: UICollectionViewCell {
     @IBOutlet weak var authorLabel: UILabel!    
     @IBOutlet weak var titleLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func setup(novel: Novel) {
+        self.imageView.sd_setImage(with: URL(string: novel.image_link))
+        self.authorLabel.text = novel.author
+        self.titleLabel.text = novel.title
+    }
     
 }

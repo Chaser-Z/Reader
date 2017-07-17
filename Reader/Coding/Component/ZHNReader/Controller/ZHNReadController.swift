@@ -804,5 +804,22 @@ extension ZHNReadController: ZHNReadMenuDelegate {
         
     }
     
+    /// 返回按钮
+    func readMenuBackClick() {
+        
+        
+        let alertController = UIAlertController(title: "", message: "喜欢这本书就添加到书架吧", preferredStyle: UIAlertControllerStyle.alert)
+
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel){ (al) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        let okAction = UIAlertAction(title: "添加到书架", style: UIAlertActionStyle.destructive){ (al) in
+            
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 

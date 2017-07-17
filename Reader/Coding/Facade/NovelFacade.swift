@@ -29,9 +29,27 @@ class NovelFacade {
             }
             
         }
+    }
+    
+    class func getHomeNovelList(completion: @escaping (_ novel: [Novel]) -> Void) {
+        
+        NovelWSHelper.getHomeNovels([:]) { (resp) in
+            
+            let errorCode = resp.errorCode
+            if errorCode == ErrorCode.Success {
+                let serverNovels = resp.dict["novels"] as! [ServerNovel]
+                let novels = serverNovels.map {
+                    NovelManager.add($0)
+                }
+                completion(novels as! [Novel])
+                
+            } else {
+                NOVELLog("Failed to getHomeNovelList: \(errorCode)")
+                completion([])
+            }
+            
+        }
         
         
     }
-    
-    
 }
