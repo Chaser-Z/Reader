@@ -2,123 +2,55 @@
 //  BookShelfViewController.swift
 //  Reader
 //
-//  Created by 张海南 on 2017/7/11.
+//  Created by 张海南 on 2017/7/17.
 //  Copyright © 2017年 枫韵海. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class BookShelfViewController: UIViewController {
+class BookShelfViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
 
     fileprivate var tView: ZHNBookShelfView!
-
+    private var novels = [Novel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //        let path = "/article/getArticleByType"
-        //        var params = [String: AnyObject]()
-        //        params["article_type"] = "玄幻" as AnyObject
-        //        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
-        //
-        //            NOVELLog(response)
-        //        }
+        self.title = "书架"
+
         
-        //self.view.backgroundColor = UIColor.white
-        print(self.view.frame)
-        tView = ZHNBookShelfView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
-        tView.delegate = self
-        self.view.addSubview(tView)
+        let novels = NovelManager.getAll()
+        self.novels = novels
         
-        // 获取小说目录
-        let novles = NovelManager.getAll()
-        //        // 本地
-        //        if novles.count > 0 {
-        //            tView.novels = novles
-        //            NOVELLog(novles[0].title)
-        //            for _ in 0..<novles.count {
-        //                self.tView.remindArr.append(0)
-        //            }
-        //            self.tView.reloadData()
-        //            checkoutNovelUpdate()
-        //
-        //        } else { // 网络
-        
-        
-        
-        //        let semaphore = DispatchSemaphore(value: 1)
-        //        DispatchQueue.global(qos: .userInitiated).sync {
-        //
-        //            NovelFacade.getNovelList { (novels) in
-        //                let novles = NovelManager.getAll()
-        //                self.tView.novels = novles
-        //                NOVELLog(novles[0].title)
-        //                for _ in 0..<novles.count {
-        //                    self.tView.remindArr.append(0)
-        //                }
-        //                NOVELLog("222222222")
-        //                self.tView.reloadData()
-        //                self.checkoutNovelUpdate()
-        //                semaphore.signal()
-        //            }
-        //        //}
-        //            let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-        //            print("11111111")
-        //        }
-        
-        
-        //        let group = DispatchGroup()
-        //
-        //        let queue = DispatchQueue(label: "com")
-        //
-        //        queue.async(group: group) {
-        //            NovelFacade.getNovelList { (novels) in
-        //                let novles = NovelManager.getAll()
-        //                self.tView.novels = novles
-        //                NOVELLog(novles[0].title)
-        //                for _ in 0..<novles.count {
-        //                    self.tView.remindArr.append(0)
-        //                }
-        //                NOVELLog("222222222")
-        //                self.tView.reloadData()
-        //                self.checkoutNovelUpdate()
-        //            }
-        //
-        //        }
-        
-        //let semaphore = DispatchSemaphore(value: 1)
-        
-        //let queue = DispatchQueue.global()
-        
-        //queue.async {
-        //let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-        DispatchQueue.main.async {
-            
-            NovelFacade.getNovelList { (novels) in
-                let novles = NovelManager.getAll()
-                self.tView.novels = novles
-                NOVELLog(novles[0].title)
-                for _ in 0..<novles.count {
-                    self.tView.remindArr.append(0)
-                }
-                //flag = false
-                self.tView.reloadData()
-                self.checkoutNovelUpdate()
-            }
-            //semaphore.signal()
-            //}
+        for novel in novels {
+            NOVELLog(novel.title)
         }
         
-        //        while flag {
-        //            RunLoop.current.acceptInput(forMode: .defaultRunLoopMode, before: NSDate.distantFuture)
-        //        }
+        NOVELLog(novels.count)
         
-        //        let content = ContentManager.getContent("/0_703/7504946.html")
-        //        NOVELLog(content?.content)
-        //        
-        //        print("什么")
-        
+//        print(self.view.frame)
+//        tView = ZHNBookShelfView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
+//        tView.delegate = self
+//        //self.view.addSubview(tView)
+//        
+//        // 获取小说目录
+//        let novles = NovelManager.getAll()
+//        DispatchQueue.main.async {
+//            
+//            NovelFacade.getNovelList { (novels) in
+//                let novles = NovelManager.getAll()
+//                self.tView.novels = novles
+//                NOVELLog(novles[0].title)
+//                for _ in 0..<novles.count {
+//                    self.tView.remindArr.append(0)
+//                }
+//                //flag = false
+//                self.tView.reloadData()
+//                self.checkoutNovelUpdate()
+//            }
+//        }
+
     }
 
     private func checkoutNovelUpdate() {
@@ -159,20 +91,88 @@ class BookShelfViewController: UIViewController {
         
     }
     
-
+            
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return novels.count + 1
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookShelfCell", for: indexPath) as! BookShelfCell
+        
+        var novel: Novel?
+        var isEditing = false
+        var isPlaceholder = false
+        
+        if indexPath.row < novels.count {
+            novel = novels[indexPath.row]
+            isPlaceholder = false
+        } else {
+            novel = nil
+            isEditing = false
+            isPlaceholder = true
+        }
+        
+        cell.setup(novel: novel, isEditing: isEditing, isPlaceholder: isPlaceholder)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if is4InchPhone() {
+            return CGSize(width: 85.0, height: 160)
+        } else {
+            return CGSize(width: 100.0, height: 160.0)
+        }
+    }
+    // MARK: UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.row < novels.count {
+            let vc = ZHNReadController()
+            vc.novel = novels[indexPath.row]
+            vc.novelID = novels[indexPath.row].article_id
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            
+        }
+    }
+    /*
+    // Uncomment this method to specify if the specified item should be highlighted during tracking
+    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    */
 
     /*
-    // MARK: - Navigation
+    // Uncomment this method to specify if the specified item should be selected
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    */
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /*
+    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return false
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    
     }
     */
 
@@ -193,4 +193,3 @@ extension BookShelfViewController: ZHNBookShelfViewDelegate {
         
     }
 }
-

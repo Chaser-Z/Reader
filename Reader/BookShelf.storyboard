@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="H6Y-IM-SN6" kind="relationship" relationship="rootViewController" id="Rw7-gF-ero"/>
+                        <segue destination="PUr-3e-R2P" kind="relationship" relationship="rootViewController" id="lIA-QS-IO7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ1-S3-fM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,26 +29,91 @@
             <point key="canvasLocation" x="-462" y="1"/>
         </scene>
         <!--Book Shelf View Controller-->
-        <scene sceneID="77g-sn-paS">
+        <scene sceneID="TMH-PP-8RM">
             <objects>
-                <viewController id="H6Y-IM-SN6" customClass="BookShelfViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NH6-2X-1N1"/>
-                        <viewControllerLayoutGuide type="bottom" id="TeM-Oz-19F"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uqr-Ny-fqX">
+                <collectionViewController id="PUr-3e-R2P" customClass="BookShelfViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="13C-L1-n6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="THE-Cn-sxf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="El8-Lr-0wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s3L-F9-PWE">
+                            <size key="itemSize" width="100" height="160"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookShelfCell" id="tcN-gK-mqT" customClass="BookShelfCell" customModule="Reader" customModuleProvider="target">
+                                <rect key="frame" x="20" y="10" width="100" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k0j-OU-uGa">
+                                            <rect key="frame" x="8" y="8" width="84" height="115"/>
+                                            <color key="backgroundColor" red="0.24313725489999999" green="0.59215686270000001" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="115" id="frz-lr-dk4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;中英对照版&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="eB7-bj-fSm">
+                                            <rect key="frame" x="8" y="127" width="84" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;2016年第5期&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="iY2-YC-rLT">
+                                            <rect key="frame" x="8" y="145.5" width="84" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNA-Vs-LtX">
+                                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button" image="delete"/>
+                                            <connections>
+                                                <action selector="deleteButtonClick:" destination="tcN-gK-mqT" eventType="touchUpInside" id="60z-08-YXz"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="k0j-OU-uGa" firstAttribute="trailing" secondItem="tcN-gK-mqT" secondAttribute="trailingMargin" id="88h-kf-bTf"/>
+                                    <constraint firstItem="k0j-OU-uGa" firstAttribute="top" secondItem="tcN-gK-mqT" secondAttribute="topMargin" id="CqZ-MZ-15U"/>
+                                    <constraint firstItem="iY2-YC-rLT" firstAttribute="leading" secondItem="tcN-gK-mqT" secondAttribute="leading" constant="8" id="RLu-2S-BxU"/>
+                                    <constraint firstItem="eB7-bj-fSm" firstAttribute="leading" secondItem="tcN-gK-mqT" secondAttribute="leadingMargin" id="Wqo-Sb-VTk"/>
+                                    <constraint firstItem="iY2-YC-rLT" firstAttribute="top" secondItem="eB7-bj-fSm" secondAttribute="bottom" constant="4" id="b5b-eq-fnr"/>
+                                    <constraint firstAttribute="trailing" secondItem="iY2-YC-rLT" secondAttribute="trailing" constant="8" id="fgE-RF-TLY"/>
+                                    <constraint firstAttribute="bottom" secondItem="iY2-YC-rLT" secondAttribute="bottom" id="tGk-mt-5Jd"/>
+                                    <constraint firstItem="eB7-bj-fSm" firstAttribute="trailing" secondItem="tcN-gK-mqT" secondAttribute="trailingMargin" id="tYg-mr-Zr5"/>
+                                    <constraint firstItem="k0j-OU-uGa" firstAttribute="leading" secondItem="tcN-gK-mqT" secondAttribute="leadingMargin" id="zYs-XG-82t"/>
+                                </constraints>
+                                <size key="customSize" width="100" height="160"/>
+                                <connections>
+                                    <outlet property="deleteButton" destination="xNA-Vs-LtX" id="VUi-3O-b1t"/>
+                                    <outlet property="heightConstraint" destination="frz-lr-dk4" id="VO6-k1-7Hc"/>
+                                    <outlet property="novelImageView" destination="k0j-OU-uGa" id="wch-s8-RRz"/>
+                                    <outlet property="processLabel" destination="iY2-YC-rLT" id="1Eb-zn-J86"/>
+                                    <outlet property="titleLabel" destination="eB7-bj-fSm" id="H6g-k9-3Iy"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="PUr-3e-R2P" id="nZl-ci-cwn"/>
+                            <outlet property="delegate" destination="PUr-3e-R2P" id="XHI-eq-5Zz"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="zTS-LQ-Ahc"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUo-dd-hku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="0.0"/>
+            <point key="canvasLocation" x="386" y="-1"/>
         </scene>
     </scenes>
     <resources>
         <image name="bookShelf" width="20" height="20"/>
+        <image name="delete" width="128" height="128"/>
     </resources>
 </document>

@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-private let reuseIdentifier = "Cell"
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -27,6 +26,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "推荐"
         
         NovelFacade.getHomeNovelList { (novels) in
             
@@ -59,15 +60,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.hidesBottomBarWhenPushed = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.hidesBottomBarWhenPushed = false
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -157,26 +150,35 @@ extension HomeViewController {
         print(indexPath.row)
         
         var novleID = ""
-        
+        var novel: Novel?
         switch indexPath.section {
         case 0:
             novleID = hotNovels[indexPath.row].article_id
+            novel = hotNovels[indexPath.row]
         case 1:
             novleID = fantasyNovels[indexPath.row].article_id
+            novel = fantasyNovels[indexPath.row]
         case 2:
             novleID = coatardNovels[indexPath.row].article_id
+            novel = coatardNovels[indexPath.row]
         case 3:
             novleID = cityNovels[indexPath.row].article_id
+            novel = cityNovels[indexPath.row]
         case 4:
             novleID = historyNovels[indexPath.row].article_id
+            novel = historyNovels[indexPath.row]
         case 5:
             novleID = onlineNovels[indexPath.row].article_id
+            novel = onlineNovels[indexPath.row]
         case 6:
             novleID = scienceNovels[indexPath.row].article_id
+            novel = scienceNovels[indexPath.row]
         case 7:
             novleID = terrorNovels[indexPath.row].article_id
+            novel = terrorNovels[indexPath.row]
         case 8:
             novleID = completeNovels[indexPath.row].article_id
+            novel = completeNovels[indexPath.row]
         default:
             print("++")
         }
@@ -184,6 +186,7 @@ extension HomeViewController {
         
         let vc = ZHNReadController()
         vc.novelID = novleID
+        vc.novel = novel
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

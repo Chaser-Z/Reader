@@ -15,7 +15,8 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.purple
-        
+        self.title = "个人中心"
+
         
         let path = "/articleInfo/getLatestArticles"
         
@@ -70,7 +71,6 @@ class UserViewController: UIViewController {
         
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

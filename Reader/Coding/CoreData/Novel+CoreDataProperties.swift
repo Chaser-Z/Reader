@@ -23,6 +23,7 @@ extension Novel {
     @NSManaged public var link: String
     @NSManaged public var image_link: String
     @NSManaged public var article_type: String
+    @NSManaged public var isSave: String 
 
     
     

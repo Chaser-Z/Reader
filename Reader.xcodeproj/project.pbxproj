@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		680BAD471EF95C920052FA11 /* 求魔.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680BAD461EF95C920052FA11 /* 求魔.txt */; };
 		6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825AACA1EFD483000A0F73F /* InfoModel.swift */; };
+		682C5D811F1CE3FB00AB353C /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */; };
+		682C5D831F1CE4ED00AB353C /* BookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */; };
 		684B74701F013E1B009EF889 /* ZHNTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684B746F1F013E1B009EF889 /* ZHNTopView.swift */; };
 		684F04601F0B571500C712F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D85C1EF7FCBB004B39DB /* LaunchScreen.storyboard */; };
 		684F04611F0B571500C712F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D8541EF7FCBB004B39DB /* Main.storyboard */; };
@@ -144,7 +146,6 @@
 		68B5A0C31EFEB23D009D4EAE /* ContentFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0C21EFEB23D009D4EAE /* ContentFacade.swift */; };
 		68B5A0C51EFEB2F3009D4EAE /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0C41EFEB2F3009D4EAE /* ContentManager.swift */; };
 		68B8AC751F14FC9C00764F99 /* BookShelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B8AC741F14FC9C00764F99 /* BookShelf.storyboard */; };
-		68B8AC781F14FDA700764F99 /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B8AC771F14FDA700764F99 /* BookShelfViewController.swift */; };
 		68F4D8511EF7FCBB004B39DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */; };
 		68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8521EF7FCBB004B39DB /* ViewController.swift */; };
 		68F4D8591EF7FCBB004B39DB /* Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8571EF7FCBB004B39DB /* Reader.xcdatamodeld */; };
@@ -156,6 +157,8 @@
 		3BED83C7077D86B773E450C8 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		680BAD461EF95C920052FA11 /* 求魔.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔.txt"; sourceTree = "<group>"; };
 		6825AACA1EFD483000A0F73F /* InfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
+		682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfCell.swift; sourceTree = "<group>"; };
 		684B746F1F013E1B009EF889 /* ZHNTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNTopView.swift; sourceTree = "<group>"; };
 		6854EF5B1F1374790033B61C /* ZHNCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNCoverView.swift; sourceTree = "<group>"; };
 		6854EF891F138C870033B61C /* UIView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
@@ -294,7 +297,6 @@
 		68B5A0C21EFEB23D009D4EAE /* ContentFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentFacade.swift; sourceTree = "<group>"; };
 		68B5A0C41EFEB2F3009D4EAE /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		68B8AC741F14FC9C00764F99 /* BookShelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookShelf.storyboard; sourceTree = "<group>"; };
-		68B8AC771F14FDA700764F99 /* BookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
 		68E88DED1EF809FE00921015 /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		68F4D84D1EF7FCBB004B39DB /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -720,7 +722,8 @@
 		68B8AC761F14FD8600764F99 /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
-				68B8AC771F14FDA700764F99 /* BookShelfViewController.swift */,
+				682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */,
+				682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */,
 			);
 			path = BookShelf;
 			sourceTree = "<group>";
@@ -976,6 +979,7 @@
 			files = (
 				68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */,
 				68B5A0BF1EFEA840009D4EAE /* ZHNReadRecordModel.swift in Sources */,
+				682C5D831F1CE4ED00AB353C /* BookShelfCell.swift in Sources */,
 				68A6C6C31EFAA8AF00BF971B /* Constant.swift in Sources */,
 				68A6C6DB1EFAB82400BF971B /* CoreDataManager.swift in Sources */,
 				68B5A0B31EFE951B009D4EAE /* ZHNReadView.swift in Sources */,
@@ -994,6 +998,7 @@
 				6881D4981EFCBC4A003CA502 /* ZHNLayout.swift in Sources */,
 				68B5A07A1EFE0796009D4EAE /* Chapter+CoreDataClass.swift in Sources */,
 				685C05B51F02025A00BEB1F4 /* ZHNHaloButton.swift in Sources */,
+				682C5D811F1CE3FB00AB353C /* BookShelfViewController.swift in Sources */,
 				68A6C6991EFAA7DB00BF971B /* ASValuePopUpView.m in Sources */,
 				68A6C6D51EFAB24200BF971B /* Novel+CoreDataProperties.swift in Sources */,
 				6859CF441F1B66B100155BE7 /* HomeReusableView.swift in Sources */,
@@ -1043,7 +1048,6 @@
 				68B5A0AF1EFE86CE009D4EAE /* ZHNReadViewController.swift in Sources */,
 				68A6C6C91EFAA99D00BF971B /* CommonWSHelper.swift in Sources */,
 				68B5A07C1EFE0821009D4EAE /* Chapter+CoreDataProperties.swift in Sources */,
-				68B8AC781F14FDA700764F99 /* BookShelfViewController.swift in Sources */,
 				68A6C6D71EFAB61A00BF971B /* ServerNovel.swift in Sources */,
 				6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */,
 				68B5A0821EFE0D4D009D4EAE /* ChapterFacade.swift in Sources */,

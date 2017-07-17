@@ -66,6 +66,9 @@ class ZHNReadController: ZHNBaseViewController {
     /// 当前已经缓存的章节数组
     var loadContents = [Content]()
     
+    /// 小说模型
+    var novel: Novel?
+    
     /// 小说id
     var novelID: String!
     
@@ -110,6 +113,16 @@ class ZHNReadController: ZHNBaseViewController {
         
         // 加载小说章节
         loadNovelChaptersData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - 加载小说章节
@@ -814,7 +827,7 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             self.navigationController?.popViewController(animated: true)
         }
         let okAction = UIAlertAction(title: "添加到书架", style: UIAlertActionStyle.destructive){ (al) in
-            
+            let _ =  NovelManager.add(self.novel!)
         }
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)

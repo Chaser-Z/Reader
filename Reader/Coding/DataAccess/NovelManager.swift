@@ -39,12 +39,37 @@ class NovelManager {
         return novel
     }
     
+    class func add(_ novel: Novel) {
+        
+        NOVELLog(novel.title)
+        novel.isSave = "1"
+        
+        let context = CoreDataManager.sharedInstance.context
+        let request: NSFetchRequest<Novel> = Novel.fetchRequest()
+        request.predicate = NSPredicate(format: "article_id == %@ AND isSave == %@", novel.article_id, "1")
+        do {
+            let list = try context.fetch(request)
+            if list.count > 0 {
+                let _ = list.first
+            } else {
+                let entity = NSEntityDescription.entity(forEntityName: entityNovel, in: context)
+                let _ = Novel(entity: entity!, insertInto: context)
+            }
+            try context.save()
+        } catch {
+            NOVELLog("Failed to add novel: \(error)")
+        }
+        
+    }
+
+    
     class func getAll() -> [Novel] {
         
         var novels = [Novel]()
         let context = CoreDataManager.sharedInstance.context
         let request: NSFetchRequest<Novel> = Novel.fetchRequest()
-        
+        request.predicate = NSPredicate(format: "isSave == %@", "1")
+
         do {
             novels = try context.fetch(request)
         } catch {
