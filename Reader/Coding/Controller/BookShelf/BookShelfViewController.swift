@@ -144,7 +144,8 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
             vc.novelID = novels[indexPath.row].article_id
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            
+            let vc = SearchResultViewController()
+            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
     /*

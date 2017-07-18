@@ -15,19 +15,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        novelImageView = UIImageView()
-        novelImageView.frame = CGRect(x: 0, y: 100, width: 100, height: 100)
-        view.addSubview(novelImageView)
-        let novles = NovelManager.getAll()
-        if novles.count > 0 {
-            novelImageView.sd_setImage(with: URL(string: novles[0].image_link))
-            NOVELLog(novles[0].title)
-            
-        } else {
-            NovelFacade.getNovelList { (novels) in
-                print(novels)
-            }
-        }
+        self.view.backgroundColor = UIColor.white
+        
+        print("-------------------------")
+//        novelImageView = UIImageView()
+//        novelImageView.frame = CGRect(x: 0, y: 100, width: 100, height: 100)
+//        view.addSubview(novelImageView)
+//        let novles = NovelManager.getAll()
+//        if novles.count > 0 {
+//            novelImageView.sd_setImage(with: URL(string: novles[0].image_link))
+//            NOVELLog(novles[0].title)
+//            
+//        } else {
+//            NovelFacade.getNovelList { (novels) in
+//                print(novels)
+//            }
+//        }
         
 //        // 标题
 //        title = "DZMeBookRead"

@@ -11,6 +11,9 @@ import Alamofire
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    var searchController: UISearchController?
+
+    
     fileprivate let headerViewTitles = ["热门","玄幻","修真","都市","历史","网游","科幻","恐怖","全本"]
     fileprivate var hotNovels = [Novel]()
     fileprivate var fantasyNovels = [Novel]()
@@ -26,6 +29,27 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let searchResultVC = UIViewController()
+        searchResultVC.view.backgroundColor = UIColor.red
+        let searchVC = SearchViewController(searchResultsController: searchResultVC)
+        self.searchController = searchVC
+        //searchVC.dimsBackgroundDuringPresentation = false
+        searchVC.hidesNavigationBarDuringPresentation = false
+//        self.navigationItem.titleView = searchVC.searchBar
+//        searchResultVC.navigationItem.titleView = searchVC.searchBar
+        
+        let searchView = SearchView.newInstance()
+        searchView?.searchTextField.text = "测试"
+        searchView?.delegate = self
+        self.navigationItem.titleView = searchView!
+        
+
+        let btn = UIButton(type: .custom)
+        btn.frame = CGRect(x: 0, y: 100, width: ScreenWidth, height: 50)
+        btn.backgroundColor = UIColor.red
+        btn.addTarget(self, action: #selector(text), for: .touchUpInside)
+        //self.view.addSubview(btn)
         
         self.title = "推荐"
         
@@ -60,7 +84,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
     }
     
-
+    func text() {
+        let vc = ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -142,7 +169,6 @@ extension HomeViewController {
             headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeHeaderView", for: indexPath) as? HomeReusableView 
         }
         headerView?.typeLabel.text = headerViewTitles[indexPath.section]
-        
         return headerView!
     }
     
@@ -192,3 +218,14 @@ extension HomeViewController {
     
     
 }
+
+extension HomeViewController: SearchViewDelegate {
+    
+    func searchButtonPress() {
+        let vc = SearchResultViewController()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    
+}
+

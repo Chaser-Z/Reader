@@ -86,6 +86,12 @@
 		6872A5031F14D8290004D85D /* 4_7Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5021F14D8290004D85D /* 4_7Inchbookshelfback.png */; };
 		6872A5051F14D9EA0004D85D /* 4Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5041F14D9EA0004D85D /* 4Inchbookshelfback.png */; };
 		6872A5071F14DA710004D85D /* 5_5Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5061F14DA710004D85D /* 5_5Inchbookshelfback.png */; };
+		687E6E401F1D97EA0049F582 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E6E3F1F1D97EA0049F582 /* SearchViewController.swift */; };
+		687E6E4A1F1DDA720049F582 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E6E491F1DDA720049F582 /* SearchResultViewController.swift */; };
+		687E6E4C1F1DF6E30049F582 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E6E4B1F1DF6E30049F582 /* SearchView.swift */; };
+		687E6E4E1F1DF6F70049F582 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687E6E4D1F1DF6F70049F582 /* SearchView.xib */; };
+		687E6E501F1E04050049F582 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E6E4F1F1E04050049F582 /* SearchDetailView.swift */; };
+		687E6E521F1E041C0049F582 /* SearchDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687E6E511F1E041C0049F582 /* SearchDetailView.xib */; };
 		6881D4861EFCB6CE003CA502 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4851EFCB6CD003CA502 /* Home.storyboard */; };
 		6881D4881EFCB6E4003CA502 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4871EFCB6E4003CA502 /* User.storyboard */; };
 		6881D48E1EFCB8C7003CA502 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D48D1EFCB8C7003CA502 /* UserViewController.swift */; };
@@ -232,6 +238,12 @@
 		6872A5021F14D8290004D85D /* 4_7Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_7Inchbookshelfback.png; sourceTree = "<group>"; };
 		6872A5041F14D9EA0004D85D /* 4Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4Inchbookshelfback.png; sourceTree = "<group>"; };
 		6872A5061F14DA710004D85D /* 5_5Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_5Inchbookshelfback.png; sourceTree = "<group>"; };
+		687E6E3F1F1D97EA0049F582 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		687E6E491F1DDA720049F582 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		687E6E4B1F1DF6E30049F582 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		687E6E4D1F1DF6F70049F582 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		687E6E4F1F1E04050049F582 /* SearchDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
+		687E6E511F1E041C0049F582 /* SearchDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchDetailView.xib; sourceTree = "<group>"; };
 		6881D4851EFCB6CD003CA502 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6881D4871EFCB6E4003CA502 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		6881D48D1EFCB8C7003CA502 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -394,6 +406,12 @@
 			children = (
 				6881D4901EFCBB4B003CA502 /* MyNavigationController.swift */,
 				6881D4921EFCBB90003CA502 /* MyTabBarController.swift */,
+				687E6E3F1F1D97EA0049F582 /* SearchViewController.swift */,
+				687E6E491F1DDA720049F582 /* SearchResultViewController.swift */,
+				687E6E4B1F1DF6E30049F582 /* SearchView.swift */,
+				687E6E4D1F1DF6F70049F582 /* SearchView.xib */,
+				687E6E4F1F1E04050049F582 /* SearchDetailView.swift */,
+				687E6E511F1E041C0049F582 /* SearchDetailView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -884,6 +902,7 @@
 				6861A9981F01163600A7687A /* RM_13@2x.png in Resources */,
 				6861A97C1F01160000A7687A /* RM_5@2x.png in Resources */,
 				6861A9A01F01164500A7687A /* RM_15@2x.png in Resources */,
+				687E6E4E1F1DF6F70049F582 /* SearchView.xib in Resources */,
 				6861A9A41F01164C00A7687A /* RM_16@2x.png in Resources */,
 				6872A5071F14DA710004D85D /* 5_5Inchbookshelfback.png in Resources */,
 				6861A9A91F01165400A7687A /* RM_17@3x.png in Resources */,
@@ -897,6 +916,7 @@
 				6861A9801F01160900A7687A /* RM_6@2x.png in Resources */,
 				6861A9AD1F01166100A7687A /* RM_18@3x.png in Resources */,
 				6881D4861EFCB6CE003CA502 /* Home.storyboard in Resources */,
+				687E6E521F1E041C0049F582 /* SearchDetailView.xib in Resources */,
 				6861A96C1F0115DD00A7687A /* RM_1@2x.png in Resources */,
 				68F4D85B1EF7FCBB004B39DB /* Assets.xcassets in Resources */,
 				6881D49C1EFCBC6B003CA502 /* ZHNBookShelfCell.xib in Resources */,
@@ -991,6 +1011,7 @@
 				68B5A0A21EFE7BBC009D4EAE /* ZHNReadEnum.swift in Sources */,
 				685C05A61F01FD0D00BEB1F4 /* ZHNBatteryView.swift in Sources */,
 				68571B361F0358F400D1F7C1 /* RecordManager.swift in Sources */,
+				687E6E4C1F1DF6E30049F582 /* SearchView.swift in Sources */,
 				68B5A0941EFE78CA009D4EAE /* ZHNBaseViewController.swift in Sources */,
 				6881D48E1EFCB8C7003CA502 /* UserViewController.swift in Sources */,
 				68A6C69B1EFAA7DB00BF971B /* DZMCoverController.m in Sources */,
@@ -1015,6 +1036,7 @@
 				6881D49B1EFCBC6B003CA502 /* ZHNBookShelfCell.swift in Sources */,
 				6861A94B1F00FFA200A7687A /* DZMSegmentedControl.swift in Sources */,
 				6859CF421F1B589900155BE7 /* HomeCell.swift in Sources */,
+				687E6E501F1E04050049F582 /* SearchDetailView.swift in Sources */,
 				6863E1691F0A114700FDB81A /* ViewSwift.swift in Sources */,
 				68A6C69C1EFAA7DB00BF971B /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				68B5A0991EFE7941009D4EAE /* ZHNGlobalProperty.swift in Sources */,
@@ -1024,6 +1046,7 @@
 				68B5A0C31EFEB23D009D4EAE /* ContentFacade.swift in Sources */,
 				68A6C6C71EFAA97800BF971B /* NovelWSHelper.swift in Sources */,
 				68B5A0AD1EFE856A009D4EAE /* ZHNReadOperation.swift in Sources */,
+				687E6E4A1F1DDA720049F582 /* SearchResultViewController.swift in Sources */,
 				68B5A0C11EFEAEE1009D4EAE /* ContentWSHelper.swift in Sources */,
 				68B5A0A41EFE7CC2009D4EAE /* ZHNReadUserDefaults.swift in Sources */,
 				68B5A0921EFE5A5D009D4EAE /* ZHNReadController.swift in Sources */,
@@ -1055,6 +1078,7 @@
 				68B5A0B51EFE95C2009D4EAE /* ZHNReadParser.swift in Sources */,
 				685C05A41F01FCD800BEB1F4 /* ZHNStatusView.swift in Sources */,
 				68A6C69D1EFAA7DB00BF971B /* UIView+YGPulseView.m in Sources */,
+				687E6E401F1D97EA0049F582 /* SearchViewController.swift in Sources */,
 				689B3B0C1F18F730000BA64B /* HomeViewController.swift in Sources */,
 				6854EF5C1F1374790033B61C /* ZHNCoverView.swift in Sources */,
 				685C05B31F0201E700BEB1F4 /* ZHNColorView.swift in Sources */,
