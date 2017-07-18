@@ -151,6 +151,8 @@
 		68B5A0C11EFEAEE1009D4EAE /* ContentWSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0C01EFEAEE1009D4EAE /* ContentWSHelper.swift */; };
 		68B5A0C31EFEB23D009D4EAE /* ContentFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0C21EFEB23D009D4EAE /* ContentFacade.swift */; };
 		68B5A0C51EFEB2F3009D4EAE /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0C41EFEB2F3009D4EAE /* ContentManager.swift */; };
+		68B702691F1E519C00DAC39A /* UserWSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B702681F1E519C00DAC39A /* UserWSHelper.swift */; };
+		68B7026B1F1E51D600DAC39A /* ServerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7026A1F1E51D600DAC39A /* ServerUser.swift */; };
 		68B8AC751F14FC9C00764F99 /* BookShelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B8AC741F14FC9C00764F99 /* BookShelf.storyboard */; };
 		68F4D8511EF7FCBB004B39DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */; };
 		68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8521EF7FCBB004B39DB /* ViewController.swift */; };
@@ -308,6 +310,8 @@
 		68B5A0C01EFEAEE1009D4EAE /* ContentWSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentWSHelper.swift; sourceTree = "<group>"; };
 		68B5A0C21EFEB23D009D4EAE /* ContentFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentFacade.swift; sourceTree = "<group>"; };
 		68B5A0C41EFEB2F3009D4EAE /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
+		68B702681F1E519C00DAC39A /* UserWSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWSHelper.swift; sourceTree = "<group>"; };
+		68B7026A1F1E51D600DAC39A /* ServerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUser.swift; sourceTree = "<group>"; };
 		68B8AC741F14FC9C00764F99 /* BookShelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookShelf.storyboard; sourceTree = "<group>"; };
 		68E88DED1EF809FE00921015 /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		68F4D84D1EF7FCBB004B39DB /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -499,6 +503,7 @@
 				68B5A07F1EFE096B009D4EAE /* ServerChapter.swift */,
 				68B5A0BC1EFE9940009D4EAE /* ServerContent.swift */,
 				68571B371F03598500D1F7C1 /* ServerRecord.swift */,
+				68B7026A1F1E51D600DAC39A /* ServerUser.swift */,
 			);
 			path = ServerEntity;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				68A6C6C61EFAA97800BF971B /* NovelWSHelper.swift */,
 				68B5A0831EFE0D6E009D4EAE /* ChapterWSHelper.swift */,
 				68B5A0C01EFEAEE1009D4EAE /* ContentWSHelper.swift */,
+				68B702681F1E519C00DAC39A /* UserWSHelper.swift */,
 			);
 			path = Webservice;
 			sourceTree = "<group>";
@@ -1003,6 +1009,7 @@
 				68A6C6C31EFAA8AF00BF971B /* Constant.swift in Sources */,
 				68A6C6DB1EFAB82400BF971B /* CoreDataManager.swift in Sources */,
 				68B5A0B31EFE951B009D4EAE /* ZHNReadView.swift in Sources */,
+				68B702691F1E519C00DAC39A /* UserWSHelper.swift in Sources */,
 				68571B341F03577E00D1F7C1 /* Record+CoreDataProperties.swift in Sources */,
 				68B5A0B11EFE9500009D4EAE /* ZHNReadViewCell.swift in Sources */,
 				68B5A0971EFE7904009D4EAE /* ZHNReadConfigure.swift in Sources */,
@@ -1014,6 +1021,7 @@
 				687E6E4C1F1DF6E30049F582 /* SearchView.swift in Sources */,
 				68B5A0941EFE78CA009D4EAE /* ZHNBaseViewController.swift in Sources */,
 				6881D48E1EFCB8C7003CA502 /* UserViewController.swift in Sources */,
+				68B7026B1F1E51D600DAC39A /* ServerUser.swift in Sources */,
 				68A6C69B1EFAA7DB00BF971B /* DZMCoverController.m in Sources */,
 				68A6C6CD1EFAAA6300BF971B /* ServerResponse.swift in Sources */,
 				6881D4981EFCBC4A003CA502 /* ZHNLayout.swift in Sources */,

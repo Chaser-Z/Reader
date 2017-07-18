@@ -30,6 +30,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.forTest()
+        
         let searchResultVC = UIViewController()
         searchResultVC.view.backgroundColor = UIColor.red
         let searchVC = SearchViewController(searchResultsController: searchResultVC)
@@ -82,6 +84,22 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             self.collectionView?.reloadData()
         }
         
+    }
+    
+    func forTest() {
+        
+        var params = [String: AnyObject]()
+        params["userId"] = "0_703" as AnyObject
+        params["sessionId"] = "tt" as AnyObject
+        params["nickname"] = "name" as AnyObject
+        params["unionid"] = "unionid" as AnyObject
+        params["identityType"] = "identityType" as AnyObject
+        params["identifier"] = "identifier" as AnyObject
+        params["expiresIn"] = "expiresIn" as AnyObject
+
+        UserWSHelper.register(params) { (resp) in
+            NOVELLog(resp)
+        }
     }
     
     func text() {
