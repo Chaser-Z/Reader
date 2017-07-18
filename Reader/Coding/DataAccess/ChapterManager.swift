@@ -52,7 +52,7 @@ class ChapterManager {
         }
         return chapters
     }
-    
+        
     fileprivate class func setFields(_ chapter: Chapter, serverChapter: ServerChapter) {
         chapter.article_directory = serverChapter.article_directory
         chapter.article_directory_link =  serverChapter.article_directory_link

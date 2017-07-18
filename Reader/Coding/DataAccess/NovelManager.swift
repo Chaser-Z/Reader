@@ -78,6 +78,22 @@ class NovelManager {
         return novels
     }
     
+    class func getNovel(_ articleId: String) -> Novel? {
+        
+        var novel: Novel?
+        let context = CoreDataManager.sharedInstance.context
+        let request: NSFetchRequest<Novel> = Novel.fetchRequest()
+        request.predicate = NSPredicate(format: "article_id == %@ AND isSave == %@", articleId, "1")
+        
+        do {
+            let list = try context.fetch(request)
+            novel = list.first
+        } catch {
+            NOVELLog("Failed to get all novels: \(error)")
+        }
+        return novel
+    }
+    
     fileprivate class func setFields(_ novel: Novel, serverNovel: ServerNovel) {
         novel.article_id = serverNovel.article_id
         novel.article_abstract =  serverNovel.article_abstract
