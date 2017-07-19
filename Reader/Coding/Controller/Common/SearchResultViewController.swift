@@ -19,7 +19,7 @@ class SearchResultViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
 
         inhibitPop()
-        searchView?.searchTextField.text = "测试"
+        searchView?.searchTextField.text = ""
         searchView?.delegate = self
         self.navigationItem.titleView = searchView!
     }

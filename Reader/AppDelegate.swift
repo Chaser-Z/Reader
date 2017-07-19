@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        
 //        window!.rootViewController = navVC
 
-        registerShareSDK()
+        ///registerShareSDK()
 
         return true
     }

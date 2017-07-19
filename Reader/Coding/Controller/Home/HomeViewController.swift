@@ -29,21 +29,16 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-
-        
+  
         self.forTest()
         setupSearchView()
-        //loadData()
+        loadData()
 
     }
     
-
-    
     private func setupSearchView() {
         let searchView = SearchView.newInstance()
-        searchView?.searchTextField.text = "测试"
+        searchView?.searchTextField.text = "搜一搜"
         searchView?.delegate = self
         self.navigationItem.titleView = searchView!
     }
@@ -82,27 +77,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func forTest() {
-        
         let btn = UIButton(type: .custom)
         btn.frame = CGRect(x: 0, y: 100, width: ScreenWidth, height: 50)
         btn.backgroundColor = UIColor.red
         btn.addTarget(self, action: #selector(text), for: .touchUpInside)
         //self.view.addSubview(btn)
         self.title = "推荐"
-
-        
-        var params = [String: AnyObject]()
-        params["userId"] = "0_703" as AnyObject
-        params["sessionId"] = "tt" as AnyObject
-        params["nickname"] = "name" as AnyObject
-        params["unionid"] = "unionid" as AnyObject
-        params["identityType"] = "identityType" as AnyObject
-        params["identifier"] = "identifier" as AnyObject
-        params["expiresIn"] = "expiresIn" as AnyObject
-
-        UserWSHelper.register(params) { (resp) in
-            NOVELLog(resp)
-        }
     }
     
     func text() {

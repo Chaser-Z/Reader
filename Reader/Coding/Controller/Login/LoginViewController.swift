@@ -26,23 +26,13 @@ class LoginViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barStyle = .default
-        self.navigationController?.navigationBar.barTintColor = DefaultColor
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.white ]
-        
         self.title = "登录"
-        
         setupTapGesture()
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        
         iconImageView.alpha = 0
         forgetPasswordBtn.alpha = 0
         registerBtn.alpha = 0

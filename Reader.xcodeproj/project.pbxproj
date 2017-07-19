@@ -124,6 +124,10 @@
 		6861A9AC1F01166100A7687A /* RM_18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861A9AA1F01166100A7687A /* RM_18@2x.png */; };
 		6861A9AD1F01166100A7687A /* RM_18@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861A9AB1F01166100A7687A /* RM_18@3x.png */; };
 		6863E1691F0A114700FDB81A /* ViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863E1681F0A114700FDB81A /* ViewSwift.swift */; };
+		686ED7471F1F9B910007AD0A /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686ED7451F1F9B910007AD0A /* UserInfoCell.swift */; };
+		686ED7481F1F9B910007AD0A /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 686ED7461F1F9B910007AD0A /* UserInfoCell.xib */; };
+		686ED74B1F1F9DAC0007AD0A /* MyBriefCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686ED7491F1F9DAC0007AD0A /* MyBriefCell.swift */; };
+		686ED74C1F1F9DAC0007AD0A /* MyBriefCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 686ED74A1F1F9DAC0007AD0A /* MyBriefCell.xib */; };
 		6872A5031F14D8290004D85D /* 4_7Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5021F14D8290004D85D /* 4_7Inchbookshelfback.png */; };
 		6872A5051F14D9EA0004D85D /* 4Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5041F14D9EA0004D85D /* 4Inchbookshelfback.png */; };
 		6872A5071F14DA710004D85D /* 5_5Inchbookshelfback.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872A5061F14DA710004D85D /* 5_5Inchbookshelfback.png */; };
@@ -333,6 +337,10 @@
 		6861A9AA1F01166100A7687A /* RM_18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RM_18@2x.png"; sourceTree = "<group>"; };
 		6861A9AB1F01166100A7687A /* RM_18@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RM_18@3x.png"; sourceTree = "<group>"; };
 		6863E1681F0A114700FDB81A /* ViewSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSwift.swift; sourceTree = "<group>"; };
+		686ED7451F1F9B910007AD0A /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		686ED7461F1F9B910007AD0A /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		686ED7491F1F9DAC0007AD0A /* MyBriefCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBriefCell.swift; sourceTree = "<group>"; };
+		686ED74A1F1F9DAC0007AD0A /* MyBriefCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBriefCell.xib; sourceTree = "<group>"; };
 		6872A5021F14D8290004D85D /* 4_7Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_7Inchbookshelfback.png; sourceTree = "<group>"; };
 		6872A5041F14D9EA0004D85D /* 4Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4Inchbookshelfback.png; sourceTree = "<group>"; };
 		6872A5061F14DA710004D85D /* 5_5Inchbookshelfback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_5Inchbookshelfback.png; sourceTree = "<group>"; };
@@ -651,6 +659,10 @@
 				6881D48D1EFCB8C7003CA502 /* UserViewController.swift */,
 				68319A351F1F33F500023105 /* UserInfoViewController.swift */,
 				6825AACA1EFD483000A0F73F /* InfoModel.swift */,
+				686ED7451F1F9B910007AD0A /* UserInfoCell.swift */,
+				686ED7461F1F9B910007AD0A /* UserInfoCell.xib */,
+				686ED7491F1F9DAC0007AD0A /* MyBriefCell.swift */,
+				686ED74A1F1F9DAC0007AD0A /* MyBriefCell.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1167,6 +1179,7 @@
 				6861A9641F0115CE00A7687A /* read_bar_3@2x.png in Resources */,
 				6861A9841F01161100A7687A /* RM_7@2x.png in Resources */,
 				6861A9981F01163600A7687A /* RM_13@2x.png in Resources */,
+				686ED7481F1F9B910007AD0A /* UserInfoCell.xib in Resources */,
 				6861A97C1F01160000A7687A /* RM_5@2x.png in Resources */,
 				6861A9A01F01164500A7687A /* RM_15@2x.png in Resources */,
 				687E6E4E1F1DF6F70049F582 /* SearchView.xib in Resources */,
@@ -1212,6 +1225,7 @@
 				68319A841F1F69F600023105 /* ShareSDK.bundle in Resources */,
 				6881D4881EFCB6E4003CA502 /* User.storyboard in Resources */,
 				6861A9711F0115E900A7687A /* RM_2@3x.png in Resources */,
+				686ED74C1F1F9DAC0007AD0A /* MyBriefCell.xib in Resources */,
 				6861A9A51F01164C00A7687A /* RM_16@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1307,6 +1321,7 @@
 				68A6C6D31EFAB1B700BF971B /* Novel+CoreDataClass.swift in Sources */,
 				6854EF8B1F138C870033B61C /* UIView+Loading.swift in Sources */,
 				68B5A0A61EFE7E93009D4EAE /* NSObject+Extension.swift in Sources */,
+				686ED74B1F1F9DAC0007AD0A /* MyBriefCell.swift in Sources */,
 				685C05A21F01E65600BEB1F4 /* ZHNLightView.swift in Sources */,
 				685C05B91F02041D00BEB1F4 /* ZHNSettingView.swift in Sources */,
 				68A6C69A1EFAA7DB00BF971B /* ASValueTrackingSlider.m in Sources */,
@@ -1369,6 +1384,7 @@
 				6854EF5C1F1374790033B61C /* ZHNCoverView.swift in Sources */,
 				68319A391F1F3BEF00023105 /* LoginViewController.swift in Sources */,
 				685C05B31F0201E700BEB1F4 /* ZHNColorView.swift in Sources */,
+				686ED7471F1F9B910007AD0A /* UserInfoCell.swift in Sources */,
 				68571B381F03598500D1F7C1 /* ServerRecord.swift in Sources */,
 				68319A421F1F601600023105 /* Reachability.swift in Sources */,
 				68B5A09D1EFE79FC009D4EAE /* String+Extension.swift in Sources */,

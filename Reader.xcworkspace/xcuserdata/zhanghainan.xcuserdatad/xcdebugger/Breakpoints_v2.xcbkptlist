@@ -228,12 +228,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522150608.998877"
+                  timestampString = "522167147.123203"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "1484">
+                  offsetFromSymbolStart = "1800">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -243,12 +243,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522150609.000636"
+                  timestampString = "522167147.124737"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "149"
                   endingLineNumber = "149"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -676,12 +676,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522150609.359318"
+                  timestampString = "522167147.197909"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "554"
                   endingLineNumber = "554"
-                  offsetFromSymbolStart = "204">
+                  offsetFromSymbolStart = "294">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -691,12 +691,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522150609.360571"
+                  timestampString = "522167147.19989"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "554"
                   endingLineNumber = "554"
-                  offsetFromSymbolStart = "2092">
+                  offsetFromSymbolStart = "2719">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1092,12 +1092,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522150609.574361"
+                  timestampString = "522167147.320739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "192">
+                  offsetFromSymbolStart = "212">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1107,14 +1107,160 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522150609.575777"
+                  timestampString = "522167147.322199"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "15">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.AddressBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "*0x10fccabeb">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/User/UserViewController.swift"
+            timestampString = "522167088.434109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/User/UserViewController.swift"
+            timestampString = "522167089.332137"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/User/UserViewController.swift"
+            timestampString = "522167096.612196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/User/UserViewController.swift"
+            timestampString = "522167137.45685"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/UserManager.swift"
+            timestampString = "522167222.246391"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "hasUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/UserManager.swift"
+            timestampString = "522167223.899312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "hasUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/UserManager.swift"
+            timestampString = "522167227.373366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "hasUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/UserManager.swift"
+            timestampString = "522167228.478261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "hasUser()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

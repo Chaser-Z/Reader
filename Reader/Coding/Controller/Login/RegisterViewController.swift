@@ -94,8 +94,8 @@ class RegisterViewController: UITableViewController {
                 
                 if errorCode == ErrorCode.Success {
                     // Post login notification
-//                    let notification = Notification(name: kUserLoginNotificationName)
-//                    NotificationCenter.default.post(notification)
+                    let notification = Notification(name: kUserLoginNotificationName)
+                    NotificationCenter.default.post(notification)
                     self?.dismiss(animated: true, completion: nil)
                 } else if errorCode == ErrorCode.UserIdentityExisting {
                     showMessage("注册邮箱已存在", onView: self?.view)
