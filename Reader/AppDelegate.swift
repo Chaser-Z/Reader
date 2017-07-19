@@ -15,6 +15,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    private func registerShareSDK() {
+        let activePlatforms = [
+            SSDKPlatformType.typeWechat.rawValue,
+            SSDKPlatformType.typeQQ.rawValue,
+            SSDKPlatformType.typeSinaWeibo.rawValue,
+            /*SSDKPlatformType.typeMail.rawValue,
+             SSDKPlatformType.typeCopy.rawValue*/
+        ]
+        
+        ShareSDK.registerApp(kShareSDKAppKey, activePlatforms: activePlatforms, onImport: { platformType in
+            switch platformType {
+                
+            case .typeWechat:
+                ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                break
+                
+            case .typeQQ:
+                ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+                break
+                
+            case .typeSinaWeibo:
+                ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
+                break
+                
+            default:
+                break
+            }
+        }) { (platformType, appInfo) in
+            switch platformType {
+                
+            case .typeWechat:
+                appInfo?.ssdkSetupWeChat(byAppId: kWeChatAppId, appSecret: kWeChatAppSecret)
+                break
+                
+            case .typeQQ:
+                appInfo?.ssdkSetupQQ(byAppId: kQQAppId, appKey: kQQAppKey, authType: SSDKAuthTypeBoth)
+                break
+                
+            case .typeSinaWeibo:
+                appInfo?.ssdkSetupSinaWeibo(byAppKey: kWeiboAppKey, appSecret: kWeiboAppSecret, redirectUri: kWeiboReturnUri, authType: SSDKAuthTypeBoth)
+                break
+                
+            default:
+                break
+            }
+        }
+        
+        WXApi.registerApp(kWeChatAppId)
+    }
+
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // 显示状态栏
         application.setStatusBarHidden(false, with: UIStatusBarAnimation.fade)
@@ -23,6 +75,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let navVC = UINavigationController(rootViewController:vc)
 //        
 //        window!.rootViewController = navVC
+
+        registerShareSDK()
 
         return true
     }

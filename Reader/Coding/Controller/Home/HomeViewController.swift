@@ -30,30 +30,25 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+
+        
         self.forTest()
-        
-        let searchResultVC = UIViewController()
-        searchResultVC.view.backgroundColor = UIColor.red
-        let searchVC = SearchViewController(searchResultsController: searchResultVC)
-        self.searchController = searchVC
-        //searchVC.dimsBackgroundDuringPresentation = false
-        searchVC.hidesNavigationBarDuringPresentation = false
-//        self.navigationItem.titleView = searchVC.searchBar
-//        searchResultVC.navigationItem.titleView = searchVC.searchBar
-        
+        setupSearchView()
+        //loadData()
+
+    }
+    
+
+    
+    private func setupSearchView() {
         let searchView = SearchView.newInstance()
         searchView?.searchTextField.text = "测试"
         searchView?.delegate = self
         self.navigationItem.titleView = searchView!
-        
-
-        let btn = UIButton(type: .custom)
-        btn.frame = CGRect(x: 0, y: 100, width: ScreenWidth, height: 50)
-        btn.backgroundColor = UIColor.red
-        btn.addTarget(self, action: #selector(text), for: .touchUpInside)
-        //self.view.addSubview(btn)
-        
-        self.title = "推荐"
+    }
+    
+    private func loadData() {
         
         NovelFacade.getHomeNovelList { (novels) in
             
@@ -83,10 +78,18 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             }
             self.collectionView?.reloadData()
         }
-        
+
     }
     
     func forTest() {
+        
+        let btn = UIButton(type: .custom)
+        btn.frame = CGRect(x: 0, y: 100, width: ScreenWidth, height: 50)
+        btn.backgroundColor = UIColor.red
+        btn.addTarget(self, action: #selector(text), for: .touchUpInside)
+        //self.view.addSubview(btn)
+        self.title = "推荐"
+
         
         var params = [String: AnyObject]()
         params["userId"] = "0_703" as AnyObject

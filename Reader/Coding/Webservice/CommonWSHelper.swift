@@ -25,6 +25,40 @@ class CommonWSHelper {
         
     }
     
+    class func request(path: String, params: [String: AnyObject], datum: [Data], progress: ProgressHandler?, completion: @escaping ServerHandler) {
+        let multipartFormData: (MultipartFormData) -> Void = { multipartFormData in
+            for (index, data) in datum.enumerated() {
+                multipartFormData.append(data, withName: "file", fileName: "file\(index).jpg", mimeType: "image/jpg")
+            }
+            
+            for (key, value) in params {
+                multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
+            }
+        }
+        
+        request(path: path, multipartFormData: multipartFormData, progress: progress, completion: completion)
+    }
+    
+    class func request(path: String, multipartFormData: @escaping (MultipartFormData) -> Void, progress: ProgressHandler?, completion: @escaping ServerHandler) {
+        Alamofire.upload(multipartFormData: multipartFormData, to: "\(HOST)\(path)", method: .post, encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.uploadProgress { (myProgress) in
+                    progress?(myProgress.fractionCompleted)
+                }
+                
+                upload.responseJSON { response in
+                    processServerResponse(response, completion: completion)
+                }
+                
+            case .failure(let error):
+                NOVELLog("CommonWSHelper encoding error: \(error)")
+                let resp = ServerResponse(isSuccess: false, errorCode: ErrorCode.ClientEncodingError, json: nil)
+                completion(resp)
+            }
+        })
+    }
+    
     class func processServiceResponse(_ resp: ServerResponse, handler: (_ data: Any) -> [String: Any]?) -> ServiceResponse {
         var result: ServiceResponse
         

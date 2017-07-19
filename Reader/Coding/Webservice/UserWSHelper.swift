@@ -14,6 +14,7 @@ class UserWSHelper {
         let path = "/user/register"
         
         CommonWSHelper.request(path: path, params: params) { resp in
+            NOVELLog(resp)
             let serviceResponse = CommonWSHelper.processServiceResponse(resp) { json in
                 var info = [String: Any]()
                 
@@ -121,24 +122,24 @@ class UserWSHelper {
         }
     }
     
-//    class func updateAvatar(_ params: [String: AnyObject], avatar: Data, progress: ProgressHandler?, completion: @escaping ServiceHandler) {
-//        let path = "/user/updateAvatar"
-//        
-//        CommonWSHelper.request(path: path, params: params, datum: [avatar], progress: progress) { resp in
-//            let serviceResponse = CommonWSHelper.processServiceResponse(resp) { json in
-//                var info = [String: Any]()
-//                
-//                if let dict = json as? [String: Any] {
-//                    if let path = dict["data"] as? String {
-//                        info["path"] = path
-//                    }
-//                }
-//                
-//                return info
-//            }
-//            
-//            completion(serviceResponse)
-//        }
-//    }
+    class func updateAvatar(_ params: [String: AnyObject], avatar: Data, progress: ProgressHandler?, completion: @escaping ServiceHandler) {
+        let path = "/user/updateAvatar"
+        
+        CommonWSHelper.request(path: path, params: params, datum: [avatar], progress: progress) { resp in
+            let serviceResponse = CommonWSHelper.processServiceResponse(resp) { json in
+                var info = [String: Any]()
+                
+                if let dict = json as? [String: Any] {
+                    if let path = dict["data"] as? String {
+                        info["path"] = path
+                    }
+                }
+                
+                return info
+            }
+            
+            completion(serviceResponse)
+        }
+    }
     
 }
