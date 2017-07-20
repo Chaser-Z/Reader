@@ -53,7 +53,7 @@ class UserViewController: UITableViewController {
     ]
     
     private let commonItems = [
-        ConfigItem(titleCn: "通用", iconName: "bookmark")
+        ConfigItem(titleCn: "通用", iconName: "tongyong")
     ]
     
     
@@ -159,8 +159,8 @@ class UserViewController: UITableViewController {
     }
     
     private func showUserInfoController() {
-        let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(withIdentifier: "UpdateUserViewController")
+        let storyboard = UIStoryboard(name: "User", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "UserInfoViewController")
         navigationController?.pushViewController(controller, animated: true)
     }
     

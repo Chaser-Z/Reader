@@ -50,6 +50,23 @@ class NovelFacade {
             
         }
         
-        
     }
+    
+    class func searchNovelByKeyword(_ keyword: String, completion: @escaping (_ articles: [Novel]) -> Void) {
+        var params = [String: AnyObject]()
+        params["keyword"] = keyword as AnyObject?
+        
+        NovelWSHelper.searchNovelByKeyword(params) { resp in
+            let errorCode = resp.errorCode
+            if errorCode == ErrorCode.Success {
+                let serverNovels = resp.dict["novels"] as! [ServerNovel]
+                let novels = serverNovels.map { NovelManager.add($0)! }
+                completion(novels)
+            } else {
+                NOVELLog("Failed to search articles by keyword: \(errorCode)")
+                completion([])
+            }
+        }
+    }
+
 }

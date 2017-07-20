@@ -147,6 +147,11 @@
 		6881D49B1EFCBC6B003CA502 /* ZHNBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D4991EFCBC6B003CA502 /* ZHNBookShelfCell.swift */; };
 		6881D49C1EFCBC6B003CA502 /* ZHNBookShelfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49A1EFCBC6B003CA502 /* ZHNBookShelfCell.xib */; };
 		6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4A31EFCBDB3003CA502 /* 703s.jpg */; };
+		689868261F20474300A3D0DC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689868251F20474300A3D0DC /* Search.storyboard */; };
+		6898686A1F20607500A3D0DC /* CCFoldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 689868651F20607500A3D0DC /* CCFoldCell.m */; };
+		6898686B1F20607500A3D0DC /* CCRotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689868671F20607500A3D0DC /* CCRotatedView.m */; };
+		6898686C1F20607500A3D0DC /* UIView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 689868691F20607500A3D0DC /* UIView+Snapshot.m */; };
+		6898686E1F2060A300A3D0DC /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6898686D1F2060A300A3D0DC /* DemoCell.swift */; };
 		689B3B0C1F18F730000BA64B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689B3B0B1F18F730000BA64B /* HomeViewController.swift */; };
 		68A6C6991EFAA7DB00BF971B /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C65F1EFAA7DB00BF971B /* ASValuePopUpView.m */; };
 		68A6C69A1EFAA7DB00BF971B /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6C6611EFAA7DB00BF971B /* ASValueTrackingSlider.m */; };
@@ -360,6 +365,14 @@
 		6881D4991EFCBC6B003CA502 /* ZHNBookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNBookShelfCell.swift; sourceTree = "<group>"; };
 		6881D49A1EFCBC6B003CA502 /* ZHNBookShelfCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHNBookShelfCell.xib; sourceTree = "<group>"; };
 		6881D4A31EFCBDB3003CA502 /* 703s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 703s.jpg; sourceTree = "<group>"; };
+		689868251F20474300A3D0DC /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		689868641F20607500A3D0DC /* CCFoldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFoldCell.h; sourceTree = "<group>"; };
+		689868651F20607500A3D0DC /* CCFoldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFoldCell.m; sourceTree = "<group>"; };
+		689868661F20607500A3D0DC /* CCRotatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRotatedView.h; sourceTree = "<group>"; };
+		689868671F20607500A3D0DC /* CCRotatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRotatedView.m; sourceTree = "<group>"; };
+		689868681F20607500A3D0DC /* UIView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snapshot.h"; sourceTree = "<group>"; };
+		689868691F20607500A3D0DC /* UIView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snapshot.m"; sourceTree = "<group>"; };
+		6898686D1F2060A300A3D0DC /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
 		689B3B0B1F18F730000BA64B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		68A6C65E1EFAA7DB00BF971B /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		68A6C65F1EFAA7DB00BF971B /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
@@ -638,6 +651,7 @@
 				68B8AC741F14FC9C00764F99 /* BookShelf.storyboard */,
 				6881D4871EFCB6E4003CA502 /* User.storyboard */,
 				68319A3A1F1F3C5000023105 /* Login.storyboard */,
+				689868251F20474300A3D0DC /* Search.storyboard */,
 			);
 			name = "User Interface";
 			path = ..;
@@ -670,6 +684,7 @@
 		6881D48F1EFCBB2A003CA502 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6898686D1F2060A300A3D0DC /* DemoCell.swift */,
 				6881D4901EFCBB4B003CA502 /* MyNavigationController.swift */,
 				6881D4921EFCBB90003CA502 /* MyTabBarController.swift */,
 				687E6E3F1F1D97EA0049F582 /* SearchViewController.swift */,
@@ -696,6 +711,19 @@
 				6863E1681F0A114700FDB81A /* ViewSwift.swift */,
 			);
 			path = ZHNBookShelf;
+			sourceTree = "<group>";
+		};
+		689868631F20607500A3D0DC /* CCFoldCell */ = {
+			isa = PBXGroup;
+			children = (
+				689868641F20607500A3D0DC /* CCFoldCell.h */,
+				689868651F20607500A3D0DC /* CCFoldCell.m */,
+				689868661F20607500A3D0DC /* CCRotatedView.h */,
+				689868671F20607500A3D0DC /* CCRotatedView.m */,
+				689868681F20607500A3D0DC /* UIView+Snapshot.h */,
+				689868691F20607500A3D0DC /* UIView+Snapshot.m */,
+			);
+			path = CCFoldCell;
 			sourceTree = "<group>";
 		};
 		68A6C6551EFAA77600BF971B /* Common */ = {
@@ -792,6 +820,7 @@
 		68A6C65C1EFAA7DB00BF971B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				689868631F20607500A3D0DC /* CCFoldCell */,
 				68319A451F1F69F500023105 /* ShareSDK */,
 				68319A401F1F601600023105 /* Reachability */,
 				6854EF881F138C870033B61C /* UIView+Loading */,
@@ -1197,6 +1226,7 @@
 				68319A811F1F69F600023105 /* read_me.txt in Resources */,
 				68319A751F1F69F600023105 /* ShareSDKUI.bundle in Resources */,
 				6861A9AD1F01166100A7687A /* RM_18@3x.png in Resources */,
+				689868261F20474300A3D0DC /* Search.storyboard in Resources */,
 				6881D4861EFCB6CE003CA502 /* Home.storyboard in Resources */,
 				687E6E521F1E041C0049F582 /* SearchDetailView.xib in Resources */,
 				6861A96C1F0115DD00A7687A /* RM_1@2x.png in Resources */,
@@ -1343,9 +1373,11 @@
 				68B5A0C31EFEB23D009D4EAE /* ContentFacade.swift in Sources */,
 				68A6C6C71EFAA97800BF971B /* NovelWSHelper.swift in Sources */,
 				68B5A0AD1EFE856A009D4EAE /* ZHNReadOperation.swift in Sources */,
+				6898686A1F20607500A3D0DC /* CCFoldCell.m in Sources */,
 				687E6E4A1F1DDA720049F582 /* SearchResultViewController.swift in Sources */,
 				68B5A0C11EFEAEE1009D4EAE /* ContentWSHelper.swift in Sources */,
 				68B5A0A41EFE7CC2009D4EAE /* ZHNReadUserDefaults.swift in Sources */,
+				6898686B1F20607500A3D0DC /* CCRotatedView.m in Sources */,
 				68B5A0921EFE5A5D009D4EAE /* ZHNReadController.swift in Sources */,
 				6881D4911EFCBB4B003CA502 /* MyNavigationController.swift in Sources */,
 				6861A94D1F00FFE300A7687A /* UIView+Extension.swift in Sources */,
@@ -1363,10 +1395,12 @@
 				68B5A0C51EFEB2F3009D4EAE /* ContentManager.swift in Sources */,
 				685C05A91F0200ED00BEB1F4 /* ZHNBottomView.swift in Sources */,
 				684B74701F013E1B009EF889 /* ZHNTopView.swift in Sources */,
+				6898686C1F20607500A3D0DC /* UIView+Snapshot.m in Sources */,
 				6881D4931EFCBB90003CA502 /* MyTabBarController.swift in Sources */,
 				68B5A0B71EFE969F009D4EAE /* ZHNReadViewUDCell.swift in Sources */,
 				68B5A07E1EFE08D2009D4EAE /* ChapterManager.swift in Sources */,
 				68B5A0AF1EFE86CE009D4EAE /* ZHNReadViewController.swift in Sources */,
+				6898686E1F2060A300A3D0DC /* DemoCell.swift in Sources */,
 				68319A341F1F2DBF00023105 /* UserManager.swift in Sources */,
 				68319A301F1F2D0F00023105 /* User+CoreDataProperties.swift in Sources */,
 				68A6C6C91EFAA99D00BF971B /* CommonWSHelper.swift in Sources */,

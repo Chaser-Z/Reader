@@ -9,9 +9,9 @@
 import Foundation
 
 //let HOST = "http://47.94.86.211:8080/novel/"
-let HOST = "http://localhost:9090"
+//let HOST = "http://localhost:9090"
 //let HOST = "http://localhost:9091"
-//let HOST = "http://192.168.6.177:8090"
+let HOST = "http://192.168.6.177:8090"
 
 
 let kSeparatorViewH: CGFloat = 0.5
@@ -20,6 +20,7 @@ let kSeparatorViewH: CGFloat = 0.5
 // MARK: - Notification
 
 let kUserLoginNotificationName = Notification.Name("UserLoginNotificationName")
+let bookShelfNotificationName = Notification.Name("BookShelfNotificationName")
 
 
 // MARK: - ShareSDK

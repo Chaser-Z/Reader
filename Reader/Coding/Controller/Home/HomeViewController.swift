@@ -223,8 +223,15 @@ extension HomeViewController {
 extension HomeViewController: SearchViewDelegate {
     
     func searchButtonPress() {
-        let vc = SearchResultViewController()
-        self.navigationController?.pushViewController(vc, animated: false)
+        
+
+        
+        let storyboard = UIStoryboard(name: "Search", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController")
+        navigationController?.pushViewController(controller, animated: false)
+        
+//        let vc = SearchResultViewController()
+//        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     

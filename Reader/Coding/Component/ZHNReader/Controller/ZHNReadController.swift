@@ -829,6 +829,9 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             }
             let okAction = UIAlertAction(title: "添加到书架", style: UIAlertActionStyle.destructive){ (al) in
                 let _ =  NovelManager.add(self.novel!)
+                let notification = Notification(name: bookShelfNotificationName)
+                NotificationCenter.default.post(notification)
+                self.navigationController?.popViewController(animated: true)
             }
             alertController.addAction(cancelAction)
             alertController.addAction(okAction)

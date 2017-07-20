@@ -14,21 +14,15 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
     fileprivate var tView: ZHNBookShelfView!
     private var novels = [Novel]()
     
+    private var bookShelfObserver: NSObjectProtocol?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "书架"
-
-        
-        let novels = NovelManager.getAll()
-        self.novels = novels
-        
-        for novel in novels {
-            NOVELLog(novel.title)
-        }
-        
-        NOVELLog(novels.count)
-        
+        registerNotificationObservers()
+        getNovels()
 //        print(self.view.frame)
 //        tView = ZHNBookShelfView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
 //        tView.delegate = self
@@ -51,6 +45,18 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
 //            }
 //        }
 
+    }
+    
+    private func getNovels() {
+        
+        self.novels = [Novel]()
+        let novels = NovelManager.getAll()
+        self.novels = novels
+        for novel in novels {
+            NOVELLog(novel.title)
+        }
+        
+        self.collectionView?.reloadData()
     }
 
     private func checkoutNovelUpdate() {
@@ -91,12 +97,26 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
         
     }
     
-            
+    private func registerNotificationObservers() {
+        
+        let center = NotificationCenter.default
+        bookShelfObserver = center.addObserver(forName: bookShelfNotificationName, object: nil, queue: OperationQueue.main) { [weak self] notification in
+            print("dsj;fjlejflewjfljwefljewlfjwlejflwekf")
+            self?.getNovels()
+        }
+    }
+    
+    deinit {
+        let center = NotificationCenter.default
+        if let observer = bookShelfObserver {
+            center.removeObserver(observer)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
     // MARK: UICollectionViewDataSource
 
@@ -144,39 +164,11 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
             vc.novelID = novels[indexPath.row].article_id
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            let vc = SearchResultViewController()
-            self.navigationController?.pushViewController(vc, animated: false)
+            let storyboard = UIStoryboard(name: "Search", bundle: Bundle.main)
+            let controller = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController")
+            navigationController?.pushViewController(controller, animated: false)
         }
     }
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
 extension BookShelfViewController: ZHNBookShelfViewDelegate {

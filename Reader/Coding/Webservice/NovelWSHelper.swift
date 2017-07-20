@@ -55,6 +55,26 @@ class NovelWSHelper {
         }
     }
 
-    
+    class func searchNovelByKeyword(_ params: [String: AnyObject], completion: @escaping ServiceHandler) {
+        let path = "/article/getArticleByKeyword"
+        
+        CommonWSHelper.request(path: path, params: params) { resp in
+            let serviceResponse = CommonWSHelper.processServiceResponse(resp) { json in
+                var info = [String: Any]()
+                
+                if let dict = json as? [String: Any] {
+                    if let articleListDict = dict["data"] as? [[String: Any]] {
+                        let articles = articleListDict.map { ServerNovel.fromDict($0) }
+                        info["novels"] = articles
+                    }
+                }
+                
+                return info
+            }
+            
+            completion(serviceResponse)
+        }
+    }
+
     
 }
