@@ -104,6 +104,8 @@ class LoginHelper {
     // Weibo Login
     class func weiboLogin(completion: @escaping LoginHandler) {
         ShareSDK.getUserInfo(.typeSinaWeibo) { (state, user, error) in
+            NOVELLog(error.debugDescription)
+            NOVELLog(error?.localizedDescription)
             if state == SSDKResponseState.success, let user = user {
                 let uid = user.uid ?? ""
                 let token = user.credential.token ?? ""
@@ -113,9 +115,9 @@ class LoginHelper {
                 var icon = user.icon
                 
                 var gender: Int32 = 0 // Unknow
-                if user.gender == SSDKGender.male {
+                if user.gender == Int(SSDKGender.male.rawValue) {
                     gender = 1 // Male
-                } else if user.gender == SSDKGender.female {
+                } else if user.gender == Int(SSDKGender.female.rawValue) {
                     gender = 2 // Female
                 }
                 

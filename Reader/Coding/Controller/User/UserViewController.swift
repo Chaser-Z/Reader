@@ -58,6 +58,8 @@ class UserViewController: UITableViewController {
     
     
     private var loginObserver: NSObjectProtocol?
+    private var logoutObserver: NSObjectProtocol?
+
     private var user: User!
 
     private let loginItem = ConfigItem(titleCn: "登录", iconName: "login")
@@ -129,6 +131,22 @@ class UserViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "MyBriefCell", bundle: bundle), forCellReuseIdentifier: myBriefCellIdentifier)
     }
     
+    private func getVersion() -> String {
+        // Current version
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            if HOST.contains("192.168") {
+                // TODO: Show info for local test server
+                return "\(version) - \(HOST)"
+            } else  {
+                // Normal Server
+                return version
+            }
+        } else {
+            return ""
+        }
+    }
+    
+    // 当前版本
     private func registerNotificationObservers() {
         
         let center = NotificationCenter.default
@@ -137,11 +155,20 @@ class UserViewController: UITableViewController {
             self?.tableView.reloadData()
             NOVELLog("-------")
         }
+        
+        logoutObserver = center.addObserver(forName: kUserLogoutNotificationName, object: nil, queue: OperationQueue.main) { [weak self] notification in
+            self?.user = nil
+            self?.tableView.reloadData()
+        }
     }
     
     deinit {
         let center = NotificationCenter.default
         if let observer = loginObserver {
+            center.removeObserver(observer)
+        }
+        
+        if let observer = logoutObserver {
             center.removeObserver(observer)
         }
     }
@@ -208,17 +235,16 @@ class UserViewController: UITableViewController {
             }
         } else if indexPath.section == kSectionUser {
             let myBriefCell = tableView.dequeueReusableCell(withIdentifier: myBriefCellIdentifier, for: indexPath) as! MyBriefCell
-            
-            if self.user != nil {
-                if indexPath.row == 0 {        // bookmarks
-                   
-                } else if indexPath.row == 1 { // favorites
-                    
-                } else if indexPath.row == 2 { // messages
-                    // TODO:
-                }
-            }
             let item = myItems[indexPath.row]
+
+            if indexPath.row == 0 {        // 免责声明
+               
+            } else if indexPath.row == 1 { // 意见反馈
+                
+            } else if indexPath.row == 2 { // 版本
+                // TODO:
+                item.detailCn = getVersion()
+            }
             myBriefCell.setupItem(item)
             cell = myBriefCell
         } else if indexPath.section == kSectionSetting {
@@ -230,6 +256,7 @@ class UserViewController: UITableViewController {
         } else {
             cell = UITableViewCell()
         }
+        cell.selectionStyle = .none
         
         return cell
     }

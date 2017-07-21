@@ -104,9 +104,9 @@ class LoginViewController: UITableViewController {
                 hud?.hide(true)
                 
                 if errorCode == ErrorCode.Success {
-                    //self?.postLoginNotification()
+                    self?.postLoginNotification()
                     showMessage("登录成功", onView: self?.view)
-                    //self?.dismiss(animated: true, completion: nil)
+                    self?.dismiss(animated: true, completion: nil)
                 } else if errorCode == ErrorCode.UserNotExist {
                     showMessage("登录失败，邮箱不存在", onView: self?.view)
                 } else if errorCode == ErrorCode.UserCredentialIncorrect {
@@ -117,6 +117,11 @@ class LoginViewController: UITableViewController {
             }
         }
 
+    }
+    
+    private func postLoginNotification() {
+        let notification = Notification(name: kUserLoginNotificationName)
+        NotificationCenter.default.post(notification)
     }
     
     private func setupTapGesture() {
@@ -158,6 +163,15 @@ class LoginViewController: UITableViewController {
     }
     
     func weiboLogin(gesture: UITapGestureRecognizer) {
+        LoginHelper.weiboLogin { [weak self] (success, user) in
+            DispatchQueue.main.async {
+                if success {
+                    self?.thirdPartyLogin(user)
+                } else {
+                    showMessage("登录失败", onView: self?.view)
+                }
+            }
+        }
     }
     
     private func thirdPartyLogin(_ user: ServerUser?) {

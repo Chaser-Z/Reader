@@ -55,6 +55,21 @@ class RecordManager {
         return record
     }
     
+    class func deleteAll() {
+        let context = CoreDataManager.sharedInstance.context
+        let request: NSFetchRequest<Record> = Record.fetchRequest()
+        
+        do {
+            let list = try context.fetch(request)
+            for record in list {
+                context.delete(record)
+            }
+            
+            try context.save()
+        } catch {
+            NOVELLog("Failed to delete all records: \(error)")
+        }
+    }
     
     fileprivate class func setFields(_ record: Record, serverRecord: ServerRecord) {
         record.article_id = serverRecord.article_id!

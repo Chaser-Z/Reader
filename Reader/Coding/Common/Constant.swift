@@ -21,6 +21,7 @@ let kSeparatorViewH: CGFloat = 0.5
 
 let kUserLoginNotificationName = Notification.Name("UserLoginNotificationName")
 let bookShelfNotificationName = Notification.Name("BookShelfNotificationName")
+let kUserLogoutNotificationName = Notification.Name("UserLogoutNotificationName")
 
 
 // MARK: - ShareSDK
@@ -28,8 +29,8 @@ let bookShelfNotificationName = Notification.Name("BookShelfNotificationName")
 let kShareSDKAppKey = "1f8c0134f6651"
 
 // Wechat Login
-let kWeChatAppId = "wx857fd6c5b3995a87"
-let kWeChatAppSecret = "e8bb16bd7eb50cc53275cfcacb743c87"
+let kWeChatAppId = "wx4d1cb9a62efd22b7"
+let kWeChatAppSecret = "5d30898ed49c28dd6e869c6ceca975e7"
 
 // QQ Login
 let kQQAppId = "101376383"
@@ -39,6 +40,7 @@ let kQQAppKey = "fad7c765e3662a8925a892850a1a5598"
 let kWeiboAppKey = "745622145"
 let kWeiboAppSecret = "4504b37688015e9d1226010e4039980f"
 let kWeiboReturnUri = "http://www.sharesdk.cn"
+
 
 // MARK: - User Identity Type
 
