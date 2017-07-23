@@ -70,6 +70,10 @@
 	<string>1f8c0134f6651</string>
 	<key>MOBAppSecret</key>
 	<string>4c7397d719bd90dfc150eef2b0fcf356</string>
+	<key>NSCameraUsageDescription</key>
+	<string>请授权应用使用相机</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>请授权应用访问相册</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

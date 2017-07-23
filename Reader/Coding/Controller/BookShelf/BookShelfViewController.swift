@@ -149,10 +149,14 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if is4InchPhone() {
-            return CGSize(width: 85.0, height: 160)
+        if isPad() {
+            return CGSize(width: 152.0, height: 242.0)
         } else {
-            return CGSize(width: 100.0, height: 160.0)
+            if is4InchPhone() {
+                return CGSize(width: 85.0, height: 136.0)
+            } else {
+                return CGSize(width: 100.0, height: 160.0)
+            }
         }
     }
     // MARK: UICollectionViewDelegate

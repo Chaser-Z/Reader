@@ -65,6 +65,10 @@ class SearchResultViewController: UITableViewController {
         
         return stringSize.height
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchView?.searchTextField.resignFirstResponder()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -107,7 +111,7 @@ extension SearchResultViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        searchView?.searchTextField.resignFirstResponder()
         let cell = tableView.cellForRow(at: indexPath) as! DemoCell
         
         if cell.isAnimating() {

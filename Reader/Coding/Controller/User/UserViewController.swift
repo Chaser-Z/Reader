@@ -48,7 +48,7 @@ class UserViewController: UITableViewController {
     // User related
     private let myItems = [
         ConfigItem(titleCn: "免责声明", iconName: "免责声明_icon"),
-        ConfigItem(titleCn: "反馈意见", iconName: "意见反馈"),
+        ConfigItem(titleCn: "意见反馈", iconName: "意见反馈"),
         ConfigItem(titleCn: "当前版本", iconName: "version")
     ]
     
@@ -59,6 +59,8 @@ class UserViewController: UITableViewController {
     
     private var loginObserver: NSObjectProtocol?
     private var logoutObserver: NSObjectProtocol?
+    private var updateObserver: NSObjectProtocol?
+    private var avatarObserver: NSObjectProtocol?
 
     private var user: User!
 
@@ -73,9 +75,10 @@ class UserViewController: UITableViewController {
 
         registerTableViewCells()
         registerNotificationObservers()
-        
-        let cancelBar = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
-        self.navigationItem.leftBarButtonItem = cancelBar
+        showUser()
+
+        //let cancelBar = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        //self.navigationItem.leftBarButtonItem = cancelBar
         
         
 //        let path = "/articleInfo/getLatestArticles"
@@ -131,6 +134,21 @@ class UserViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "MyBriefCell", bundle: bundle), forCellReuseIdentifier: myBriefCellIdentifier)
     }
     
+    // 获取用户信息
+    private func showUser() {
+        self.user = UserManager.currentUser()
+        
+        if self.user != nil {
+            self.title = "我的"
+        } else {
+            self.title = "用户"
+        }
+        
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+    
+    // 当前版本
     private func getVersion() -> String {
         // Current version
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
@@ -146,7 +164,7 @@ class UserViewController: UITableViewController {
         }
     }
     
-    // 当前版本
+    // 注册通知
     private func registerNotificationObservers() {
         
         let center = NotificationCenter.default
@@ -160,6 +178,16 @@ class UserViewController: UITableViewController {
             self?.user = nil
             self?.tableView.reloadData()
         }
+        
+        updateObserver = center.addObserver(forName: kUserInfoUpdateNotificationName, object: nil, queue: OperationQueue.main) { [weak self] notification in
+            self?.user = UserManager.currentUser()
+            self?.tableView.reloadData()
+        }
+        
+        avatarObserver = center.addObserver(forName: kUserAvatarUpdateNotificationName, object: nil, queue: OperationQueue.main) { [weak self] notification in
+            self?.user = UserManager.currentUser()
+            self?.tableView.reloadData()
+        }
     }
     
     deinit {
@@ -169,6 +197,14 @@ class UserViewController: UITableViewController {
         }
         
         if let observer = logoutObserver {
+            center.removeObserver(observer)
+        }
+        
+        if let observer = updateObserver {
+            center.removeObserver(observer)
+        }
+        
+        if let observer = avatarObserver {
             center.removeObserver(observer)
         }
     }
@@ -194,6 +230,12 @@ class UserViewController: UITableViewController {
     private func showUserSettingController() {
         let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(withIdentifier: "UserSettingViewController")
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func showDisclaimerViewController() {
+        let storyboard = UIStoryboard(name: "User", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "DisclaimerViewController")
         navigationController?.pushViewController(controller, animated: true)
     }
 
@@ -302,8 +344,8 @@ class UserViewController: UITableViewController {
             }
         } else if indexPath.section == 1 {
             let sender = tableView.cellForRow(at: indexPath)
-            if indexPath.row == 0 { // My Bookmarks
-                
+            if indexPath.row == 0 { // 免责声明
+                showDisclaimerViewController()
             } else if indexPath.row == 1 { // My Favorites
                 
             } else if indexPath.row == 2 { // My Messages

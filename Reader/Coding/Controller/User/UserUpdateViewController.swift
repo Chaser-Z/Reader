@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UserUpdateViewControllerDelegate: class {
-    func textSaved(_ text: String?)
+    func textSaved(_ text: String?, type: String)
 }
 
 
@@ -27,17 +27,36 @@ class UserUpdateViewController: UITableViewController {
     
     fileprivate var placeHolderLabel: UILabel!
 
+    @IBOutlet weak var modifyTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = myTitle
-        
+        self.view.backgroundColor = UIColor.white
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        setupPlaceHolder()
         setupNavigationBar()
+        
+        if myTitle == "修改个人简介" {
+            setupPlaceHolder()
+        } else {
+            setupTextField()
+        }
     }
 
+    private func setupTextField() {
+        
+        self.textView.isHidden = true
+        modifyTextField.placeholder = myPlaceHolder
+        modifyTextField.delegate = self
+        charCountLabel?.text = "\(0)"
+        self.modifyTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+
+    }
+    
     private func setupPlaceHolder() {
+        
+        self.modifyTextField.isHidden = true
+        
         textView.delegate = self
         textView.text = currentText
         
@@ -54,14 +73,25 @@ class UserUpdateViewController: UITableViewController {
         placeHolderLabel.isHidden = !textView.text.isEmpty
     }
     
+    @objc private func editingChanged(_ textField: UITextField) {
+        modifyTextField.text = textField.text
+        charCountLabel?.text = "\(textField.text!.characters.count)"
+    }
+    
     private func setupNavigationBar() {
         let saveBarButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(saveText))
         navigationItem.rightBarButtonItem = saveBarButton
     }
     
     func saveText() {
-        if let delegate = self.delegate {
-            delegate.textSaved(textView.text)
+        if myTitle == "修改个人简介" {
+            if let delegate = self.delegate {
+                delegate.textSaved(textView.text, type: myTitle!)
+            }
+        } else {
+            if let delegate = self.delegate {
+                delegate.textSaved(modifyTextField.text, type: myTitle!)
+            }
         }
         
         // Pop navigation controller
@@ -102,3 +132,14 @@ extension UserUpdateViewController: UITextViewDelegate {
     
 }
 
+extension UserUpdateViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.modifyTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        //NOVELLog(textField.text)
+    }
+}

@@ -27,6 +27,8 @@ class LoginViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "登录"
+        self.emailTextField.clearButtonMode = .always
+        self.passwordTextField.clearButtonMode = .always
         setupTapGesture()
         
     }

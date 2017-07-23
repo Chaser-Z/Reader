@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import MBProgressHUD
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var searchController: UISearchController?
@@ -44,7 +44,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     private func loadData() {
-        
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud?.removeFromSuperViewOnHide = true
+        hud?.mode = .indeterminate
         NovelFacade.getHomeNovelList { (novels) in
             
             for novel in novels {
@@ -71,6 +73,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                     NOVELLog("未知错误")
                 }
             }
+            hud?.hide(true)
             self.collectionView?.reloadData()
         }
 
@@ -216,22 +219,14 @@ extension HomeViewController {
         vc.novel = novel
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
 }
 
 extension HomeViewController: SearchViewDelegate {
     
     func searchButtonPress() {
-        
-
-        
         let storyboard = UIStoryboard(name: "Search", bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController")
         navigationController?.pushViewController(controller, animated: false)
-        
-//        let vc = SearchResultViewController()
-//        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     

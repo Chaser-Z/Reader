@@ -70,11 +70,11 @@ class RegisterViewController: UITableViewController {
             return
         }
 
-        currentNationalityId = 10
-        guard let nationId = currentNationalityId else {
-            showMessage("请选择国籍", onView: self.view)
-            return
-        }
+//        currentNationalityId = 10
+//        guard let nationId = currentNationalityId else {
+//            showMessage("请选择国籍", onView: self.view)
+//            return
+//        }
 
         let credential = md5(plain)
         
@@ -82,7 +82,7 @@ class RegisterViewController: UITableViewController {
         serverUser.email = identifier
         serverUser.nickname = nickname
         serverUser.city = city
-        serverUser.nationalityId = nationId
+        //serverUser.nationalityId = nationId
         
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud?.removeFromSuperViewOnHide = true

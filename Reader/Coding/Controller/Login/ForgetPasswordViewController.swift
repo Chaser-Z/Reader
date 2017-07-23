@@ -7,13 +7,58 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ForgetPasswordViewController: UIViewController {
-
+    
+    @IBOutlet weak var resetTextField: UITextField!
+    @IBOutlet weak var resetPasswordBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "重置密码"
+    }
+    @IBAction func resetBtnAction(_ sender: Any) {
+        
+        if !isInternetReachable() {
+            showMessage("没有网络", onView: self.view)
+            return
+        }
+        
+        guard let identifier = textOfTextField(resetTextField) else {
+            showMessage("请输入注册邮箱", onView: self.view)
+            return
+        }
+        
+        if !validateEmail(identifier) {
+            showMessage("邮箱不合法", onView: self.view)
+            return
+        }
+        
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud?.removeFromSuperViewOnHide = true
+        hud?.mode = .indeterminate
+        self.resetTextField.resignFirstResponder()
+        
+        UserFacade.resetPassword(identityType: kIdentityTypeEmail, identifier: identifier) { [weak self] success, errorCode in
+            DispatchQueue.main.async {
+                hud?.hide(true)
+                
+                if success {
+                    if let window = UIApplication.shared.delegate?.window {
+                        showMessage("密码已重置，请检查您的邮箱", onView: window)
+                    }
+                    
+                    _ = self?.navigationController?.popViewController(animated: true)
+                } else if errorCode == ErrorCode.UserNotExist {
+                    showMessage("邮箱尚未注册，请检查输入的邮箱", onView: self?.view)
+                } else {
+                    showMessage("重置密码失败，请联系管理员", errorCode: errorCode, onView: self?.view)
+                }
+            }
+        }
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +67,16 @@ class ForgetPasswordViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ForgetPasswordViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.resetTextField.resignFirstResponder()
+        return true
     }
-    */
-
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        //NOVELLog(textField.text)
+    }
 }

@@ -105,7 +105,7 @@ class ZHNReadViewController: UIViewController {
             tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: CGFloat(ZHNReadParser.shared.chapters.count + readController.currentPage) * GetReadTableViewFrame().height)
         }
         
-    }
+    }    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

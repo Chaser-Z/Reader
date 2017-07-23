@@ -127,6 +127,7 @@ class UserWSHelper {
         
         CommonWSHelper.request(path: path, params: params, datum: [avatar], progress: progress) { resp in
             let serviceResponse = CommonWSHelper.processServiceResponse(resp) { json in
+                NOVELLog(resp)
                 var info = [String: Any]()
                 
                 if let dict = json as? [String: Any] {
