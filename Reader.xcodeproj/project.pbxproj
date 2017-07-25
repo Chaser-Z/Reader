@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		680BAD471EF95C920052FA11 /* 求魔.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680BAD461EF95C920052FA11 /* 求魔.txt */; };
 		6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825AACA1EFD483000A0F73F /* InfoModel.swift */; };
 		682C5D811F1CE3FB00AB353C /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */; };
 		682C5D831F1CE4ED00AB353C /* BookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */; };
@@ -43,6 +42,7 @@
 		68571B381F03598500D1F7C1 /* ServerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68571B371F03598500D1F7C1 /* ServerRecord.swift */; };
 		6859CF421F1B589900155BE7 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6859CF411F1B589900155BE7 /* HomeCell.swift */; };
 		6859CF441F1B66B100155BE7 /* HomeReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6859CF431F1B66B100155BE7 /* HomeReusableView.swift */; };
+		685AC1621F257CF0006F78DD /* BookShelfCellPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685AC1611F257CF0006F78DD /* BookShelfCellPad.swift */; };
 		685C05A21F01E65600BEB1F4 /* ZHNLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685C05A11F01E65600BEB1F4 /* ZHNLightView.swift */; };
 		685C05A41F01FCD800BEB1F4 /* ZHNStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685C05A31F01FCD800BEB1F4 /* ZHNStatusView.swift */; };
 		685C05A61F01FD0D00BEB1F4 /* ZHNBatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685C05A51F01FD0D00BEB1F4 /* ZHNBatteryView.swift */; };
@@ -117,6 +117,12 @@
 		687E6E4E1F1DF6F70049F582 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687E6E4D1F1DF6F70049F582 /* SearchView.xib */; };
 		687E6E501F1E04050049F582 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E6E4F1F1E04050049F582 /* SearchDetailView.swift */; };
 		687E6E521F1E041C0049F582 /* SearchDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687E6E511F1E041C0049F582 /* SearchDetailView.xib */; };
+		687F857B1F27128E006B2073 /* LeadPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F85791F27128E006B2073 /* LeadPageViewController.swift */; };
+		687F857C1F27128E006B2073 /* LeadPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F857A1F27128E006B2073 /* LeadPageCell.swift */; };
+		687F85881F272D9A006B2073 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 687F85851F272D9A006B2073 /* 1.jpg */; };
+		687F85891F272D9A006B2073 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 687F85861F272D9A006B2073 /* 2.jpg */; };
+		687F858A1F272D9A006B2073 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 687F85871F272D9A006B2073 /* 4.jpg */; };
+		687F858C1F2739B3006B2073 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 687F858B1F2739B3006B2073 /* 3.jpg */; };
 		6881D4861EFCB6CE003CA502 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4851EFCB6CD003CA502 /* Home.storyboard */; };
 		6881D4881EFCB6E4003CA502 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4871EFCB6E4003CA502 /* User.storyboard */; };
 		6881D48E1EFCB8C7003CA502 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D48D1EFCB8C7003CA502 /* UserViewController.swift */; };
@@ -217,7 +223,6 @@
 
 /* Begin PBXFileReference section */
 		3BED83C7077D86B773E450C8 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
-		680BAD461EF95C920052FA11 /* 求魔.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔.txt"; sourceTree = "<group>"; };
 		6825AACA1EFD483000A0F73F /* InfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
 		682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfCell.swift; sourceTree = "<group>"; };
@@ -251,6 +256,7 @@
 		68571B371F03598500D1F7C1 /* ServerRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRecord.swift; sourceTree = "<group>"; };
 		6859CF411F1B589900155BE7 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		6859CF431F1B66B100155BE7 /* HomeReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeReusableView.swift; sourceTree = "<group>"; };
+		685AC1611F257CF0006F78DD /* BookShelfCellPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfCellPad.swift; sourceTree = "<group>"; };
 		685C05A11F01E65600BEB1F4 /* ZHNLightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNLightView.swift; sourceTree = "<group>"; };
 		685C05A31F01FCD800BEB1F4 /* ZHNStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNStatusView.swift; sourceTree = "<group>"; };
 		685C05A51F01FD0D00BEB1F4 /* ZHNBatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNBatteryView.swift; sourceTree = "<group>"; };
@@ -325,6 +331,12 @@
 		687E6E4D1F1DF6F70049F582 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		687E6E4F1F1E04050049F582 /* SearchDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
 		687E6E511F1E041C0049F582 /* SearchDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchDetailView.xib; sourceTree = "<group>"; };
+		687F85791F27128E006B2073 /* LeadPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadPageViewController.swift; sourceTree = "<group>"; };
+		687F857A1F27128E006B2073 /* LeadPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadPageCell.swift; sourceTree = "<group>"; };
+		687F85851F272D9A006B2073 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		687F85861F272D9A006B2073 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		687F85871F272D9A006B2073 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		687F858B1F2739B3006B2073 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		6881D4851EFCB6CD003CA502 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6881D4871EFCB6E4003CA502 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		6881D48D1EFCB8C7003CA502 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -541,6 +553,27 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		687F85771F271277006B2073 /* ZHNLeadPage */ = {
+			isa = PBXGroup;
+			children = (
+				687F85791F27128E006B2073 /* LeadPageViewController.swift */,
+				687F857A1F27128E006B2073 /* LeadPageCell.swift */,
+				687F85781F271277006B2073 /* images */,
+			);
+			path = ZHNLeadPage;
+			sourceTree = "<group>";
+		};
+		687F85781F271277006B2073 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				687F85851F272D9A006B2073 /* 1.jpg */,
+				687F858B1F2739B3006B2073 /* 3.jpg */,
+				687F85861F272D9A006B2073 /* 2.jpg */,
+				687F85871F272D9A006B2073 /* 4.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		6881D4831EFCB5ED003CA502 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +753,7 @@
 		68A6C65C1EFAA7DB00BF971B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				687F85771F271277006B2073 /* ZHNLeadPage */,
 				68B5C92B1F21D05C00CD61BE /* SDK */,
 				689868631F20607500A3D0DC /* CCFoldCell */,
 				68319A401F1F601600023105 /* Reachability */,
@@ -1066,6 +1100,7 @@
 			children = (
 				682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */,
 				682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */,
+				685AC1611F257CF0006F78DD /* BookShelfCellPad.swift */,
 			);
 			path = BookShelf;
 			sourceTree = "<group>";
@@ -1089,7 +1124,6 @@
 		68E88DDB1EF803D600921015 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				680BAD461EF95C920052FA11 /* 求魔.txt */,
 				68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */,
 				68F4D8521EF7FCBB004B39DB /* ViewController.swift */,
 				68F4D85A1EF7FCBB004B39DB /* Assets.xcassets */,
@@ -1224,6 +1258,7 @@
 				6861A9641F0115CE00A7687A /* read_bar_3@2x.png in Resources */,
 				6861A9841F01161100A7687A /* RM_7@2x.png in Resources */,
 				6861A9981F01163600A7687A /* RM_13@2x.png in Resources */,
+				687F858C1F2739B3006B2073 /* 3.jpg in Resources */,
 				686ED7481F1F9B910007AD0A /* UserInfoCell.xib in Resources */,
 				68B5C9591F21D05C00CD61BE /* ShareSDKUI.bundle in Resources */,
 				6861A97C1F01160000A7687A /* RM_5@2x.png in Resources */,
@@ -1238,6 +1273,7 @@
 				6861A9551F0115A800A7687A /* G_Battery_Black@3x.png in Resources */,
 				6861A9781F0115F700A7687A /* RM_4@2x.png in Resources */,
 				6861A9881F01161900A7687A /* RM_8@2x.png in Resources */,
+				687F85891F272D9A006B2073 /* 2.jpg in Resources */,
 				6861A9941F01162D00A7687A /* RM_11@2x.png in Resources */,
 				6861A9801F01160900A7687A /* RM_6@2x.png in Resources */,
 				6861A9AD1F01166100A7687A /* RM_18@3x.png in Resources */,
@@ -1251,13 +1287,13 @@
 				6861A95D1F0115BC00A7687A /* read_bar_1@3x.png in Resources */,
 				68319A3B1F1F3C5000023105 /* Login.storyboard in Resources */,
 				6861A9651F0115CE00A7687A /* read_bar_3@3x.png in Resources */,
-				680BAD471EF95C920052FA11 /* 求魔.txt in Resources */,
 				68B5A0AB1EFE82BB009D4EAE /* read_bg_0@3x.png in Resources */,
 				68B5C9691F21D05C00CD61BE /* ShareSDK.bundle in Resources */,
 				68B5A0AA1EFE82BB009D4EAE /* read_bg_0@2x.png in Resources */,
 				6861A9701F0115E900A7687A /* RM_2@2x.png in Resources */,
 				6861A9741F0115F000A7687A /* RM_3@2x.png in Resources */,
 				684F04611F0B571500C712F6 /* Main.storyboard in Resources */,
+				687F858A1F272D9A006B2073 /* 4.jpg in Resources */,
 				6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */,
 				6861A9A11F01164500A7687A /* RM_15@3x.png in Resources */,
 				6861A9951F01162D00A7687A /* RM_11@3x.png in Resources */,
@@ -1271,6 +1307,7 @@
 				6881D4881EFCB6E4003CA502 /* User.storyboard in Resources */,
 				6861A9711F0115E900A7687A /* RM_2@3x.png in Resources */,
 				68B5C9661F21D05C00CD61BE /* WeiboSDK.bundle in Resources */,
+				687F85881F272D9A006B2073 /* 1.jpg in Resources */,
 				686ED74C1F1F9DAC0007AD0A /* MyBriefCell.xib in Resources */,
 				6861A9A51F01164C00A7687A /* RM_16@3x.png in Resources */,
 			);
@@ -1334,6 +1371,7 @@
 				68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */,
 				68319A361F1F33F500023105 /* UserInfoViewController.swift in Sources */,
 				68B5A0BF1EFEA840009D4EAE /* ZHNReadRecordModel.swift in Sources */,
+				685AC1621F257CF0006F78DD /* BookShelfCellPad.swift in Sources */,
 				682C5D831F1CE4ED00AB353C /* BookShelfCell.swift in Sources */,
 				68A6C6C31EFAA8AF00BF971B /* Constant.swift in Sources */,
 				68A6C6DB1EFAB82400BF971B /* CoreDataManager.swift in Sources */,
@@ -1346,11 +1384,13 @@
 				68B5A0971EFE7904009D4EAE /* ZHNReadConfigure.swift in Sources */,
 				68319A321F1F2D8500023105 /* Dictionary+Extensions.swift in Sources */,
 				68B5A0BB1EFE98E8009D4EAE /* Content+CoreDataProperties.swift in Sources */,
+				687F857C1F27128E006B2073 /* LeadPageCell.swift in Sources */,
 				68A6C6CB1EFAA9BF00BF971B /* ServiceResponse.swift in Sources */,
 				68319A2A1F1F2C4800023105 /* UserFacade.swift in Sources */,
 				68B5A0A21EFE7BBC009D4EAE /* ZHNReadEnum.swift in Sources */,
 				685C05A61F01FD0D00BEB1F4 /* ZHNBatteryView.swift in Sources */,
 				68571B361F0358F400D1F7C1 /* RecordManager.swift in Sources */,
+				687F857B1F27128E006B2073 /* LeadPageViewController.swift in Sources */,
 				687E6E4C1F1DF6E30049F582 /* SearchView.swift in Sources */,
 				68B5A0941EFE78CA009D4EAE /* ZHNBaseViewController.swift in Sources */,
 				6881D48E1EFCB8C7003CA502 /* UserViewController.swift in Sources */,
@@ -1567,7 +1607,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 85PMH535HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Reader/Coding/Component/ShareSDK",
@@ -1638,7 +1678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 85PMH535HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Reader/Coding/Component/ShareSDK",

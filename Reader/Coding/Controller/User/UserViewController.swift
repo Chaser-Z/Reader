@@ -46,12 +46,16 @@ class UserViewController: UITableViewController {
     fileprivate let kSectionSetting = 2
     
     // User related
+//    private let myItems = [
+//        ConfigItem(titleCn: "免责声明", iconName: "免责声明_icon"),
+//        ConfigItem(titleCn: "意见反馈", iconName: "意见反馈"),
+//        ConfigItem(titleCn: "当前版本", iconName: "version")
+//    ]
+
     private let myItems = [
         ConfigItem(titleCn: "免责声明", iconName: "免责声明_icon"),
-        ConfigItem(titleCn: "意见反馈", iconName: "意见反馈"),
         ConfigItem(titleCn: "当前版本", iconName: "version")
     ]
-    
     private let commonItems = [
         ConfigItem(titleCn: "通用", iconName: "tongyong")
     ]
@@ -242,7 +246,7 @@ class UserViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -282,7 +286,7 @@ class UserViewController: UITableViewController {
             if indexPath.row == 0 {        // 免责声明
                
             } else if indexPath.row == 1 { // 意见反馈
-                
+                item.detailCn = getVersion()
             } else if indexPath.row == 2 { // 版本
                 // TODO:
                 item.detailCn = getVersion()

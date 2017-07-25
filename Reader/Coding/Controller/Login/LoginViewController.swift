@@ -27,6 +27,8 @@ class LoginViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "登录"
+        wechatImageView.removeFromSuperview()
+        qqImageView.removeFromSuperview()
         self.emailTextField.clearButtonMode = .always
         self.passwordTextField.clearButtonMode = .always
         setupTapGesture()
@@ -180,7 +182,7 @@ class LoginViewController: UITableViewController {
         if let user = user {
             UserFacade.login(user) { [weak self] user, errorCode in
                 if errorCode == ErrorCode.Success {
-                    //self?.postLoginNotification()
+                    self?.postLoginNotification()
                     self?.dismiss(animated: true, completion: nil)
                 } else {
                     showMessage("登录失败", onView: self?.view)

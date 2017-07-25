@@ -15,6 +15,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     
     fileprivate let headerViewTitles = ["热门","玄幻","修真","都市","历史","网游","科幻","恐怖","全本"]
+    fileprivate var wholeNovels = [[Novel]]()
     fileprivate var hotNovels = [Novel]()
     fileprivate var fantasyNovels = [Novel]()
     fileprivate var coatardNovels = [Novel]()
@@ -73,6 +74,24 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                     NOVELLog("未知错误")
                 }
             }
+            
+            self.wholeNovels.append(self.hotNovels)
+            self.wholeNovels.append(self.fantasyNovels)
+            self.wholeNovels.append(self.coatardNovels)
+            self.wholeNovels.append(self.cityNovels)
+            self.wholeNovels.append(self.historyNovels)
+            self.wholeNovels.append(self.onlineNovels)
+            if self.scienceNovels.count > 0 {
+                self.wholeNovels.append(self.scienceNovels)
+            }
+            if self.terrorNovels.count > 0 {
+                self.wholeNovels.append(self.terrorNovels)
+            }
+            if self.completeNovels.count > 0 {
+                self.wholeNovels.append(self.completeNovels)
+            }
+
+            
             hud?.hide(true)
             self.collectionView?.reloadData()
         }
@@ -80,6 +99,17 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func forTest() {
+        
+        var params = [String: AnyObject]()
+        params["article_id"] = "0_703" as AnyObject
+        params["article_directory_link"] = "/0_703/7380617.html" as AnyObject
+        
+        ContentFacade.getContent(params: params) { (content) in
+            
+            NOVELLog("完成")
+        
+        }
+        
         let btn = UIButton(type: .custom)
         btn.frame = CGRect(x: 0, y: 100, width: ScreenWidth, height: 50)
         btn.backgroundColor = UIColor.red
@@ -103,7 +133,7 @@ extension HomeViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return headerViewTitles.count
+        return wholeNovels.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

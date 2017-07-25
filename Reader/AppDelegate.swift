@@ -65,17 +65,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //WXApi.registerApp(kWeChatAppId)
     }
 
-    
+    private func showGuideView() {
+        // Show the Guide view
+        if !UserDefaults.standard.bool(forKey: "firstLaunch"){
+            
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
+            // 引导页
+            let leadPageVC = LeadPageViewController()
+            // 设置引导页图片
+            leadPageVC.imagesArray = ["1.jpg","2.jpg","3.jpg"]
+            // 设置跳转界面
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "MyTabBarController")
+            leadPageVC.controller = tabBarController
+            
+            self.window?.rootViewController = leadPageVC
+        } else {
+            
+        }
+
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // 显示状态栏
         application.setStatusBarHidden(false, with: UIStatusBarAnimation.fade)
-//        let vc = ViewController()
-//        
-//        let navVC = UINavigationController(rootViewController:vc)
-//        
-//        window!.rootViewController = navVC
-
+        
+        showGuideView()
         registerShareSDK()
 
         return true
