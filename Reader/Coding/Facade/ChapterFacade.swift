@@ -15,11 +15,12 @@ class ChapterFacade {
             
             let errorCode = resp.errorCode
             if errorCode == ErrorCode.Success {
+                
+                
                 let serverChapters = resp.dict["chapters"] as! [ServerChapter]
                 let chapters = serverChapters.map {
                     ChapterManager.add($0)
                 }
-                NOVELLog(chapters[0]?.article_directory)
                 completion(chapters as! [Chapter])
                 
             } else {

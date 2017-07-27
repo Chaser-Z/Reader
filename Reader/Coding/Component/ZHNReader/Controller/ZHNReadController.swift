@@ -183,7 +183,7 @@ class ZHNReadController: ZHNBaseViewController {
                 }
                 
                 // 是否有缓存
-                let getContent = ContentManager.getContent(chapters[i].article_directory_link, article_id: novelID)
+                let getContent = ContentManager.getContent(chapters[i].id, article_id: novelID)
                 // 有缓存
                 if getContent != nil {
                     if self.isCreatePage == false {
@@ -215,8 +215,8 @@ class ZHNReadController: ZHNBaseViewController {
                 NOVELLog("第\(i+1)个")
                 
                 var params = [String: AnyObject]()
-                params["article_id"] = novelID as AnyObject
-                params["article_directory_link"] = chapters[i].article_directory_link as AnyObject
+                //params["article_id"] = novelID as AnyObject
+                params["id"] = chapters[i].id as AnyObject
                 
                 ContentFacade.getContent(params: params) { (content) in
                     
@@ -256,12 +256,12 @@ class ZHNReadController: ZHNBaseViewController {
             if currentLeft {
                 
                 //self.nextContent = self.currentContent
-                self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) - 1].article_directory_link, article_id: novelID)
+                self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) - 1].id, article_id: novelID)
                 ZHNReadParser.shared.content = self.currentContent?.content
                 
                 if currentChapterIndex - 1 >= 0  {
                     // 是否有缓存
-                    let getContent = ContentManager.getContent(chapters[currentChapterIndex - 1].article_directory_link, article_id: novelID)
+                    let getContent = ContentManager.getContent(chapters[currentChapterIndex - 1].id, article_id: novelID)
                     // 有缓存
                     if getContent != nil {
                         self.hud?.hide(true)
@@ -270,8 +270,7 @@ class ZHNReadController: ZHNBaseViewController {
                         self.contents.append(getContent!)
                     } else { // 无缓存
                         var params = [String: AnyObject]()
-                        params["article_id"] = novelID as AnyObject
-                        params["article_directory_link"] = chapters[currentChapterIndex - 1].article_directory_link as AnyObject
+                        params["id"] = chapters[currentChapterIndex - 1].id as AnyObject
                         ContentFacade.getContent(params: params) { (content) in
                             self.hud?.hide(true)
                             //self.preContent = content
@@ -287,9 +286,9 @@ class ZHNReadController: ZHNBaseViewController {
                 NOVELLog("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc")
 
                 if isBug {
-                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!)].article_directory_link, article_id: novelID)
+                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!)].id, article_id: novelID)
                 } else{
-                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].article_directory_link, article_id: novelID)
+                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].id, article_id: novelID)
                     NOVELLog("这里")
                 }
                 NOVELLog("到这了")
@@ -303,7 +302,7 @@ class ZHNReadController: ZHNBaseViewController {
                 if currentChapterIndex + 1 < ZHNReadParser.shared.chapters.count {
                     NOVELLog("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
                     // 是否有缓存
-                    let getContent = ContentManager.getContent(chapters[currentChapterIndex + 1].article_directory_link, article_id: novelID)
+                    let getContent = ContentManager.getContent(chapters[currentChapterIndex + 1].id, article_id: novelID)
                     // 有缓存
                     if getContent != nil {
                         self.hud?.hide(true)
@@ -312,8 +311,7 @@ class ZHNReadController: ZHNBaseViewController {
                         self.contents.append(getContent!)
                     } else { // 无缓存
                         var params = [String: AnyObject]()
-                        params["article_id"] = novelID as AnyObject
-                        params["article_directory_link"] = chapters[currentChapterIndex + 1].article_directory_link as AnyObject
+                        params["id"] = chapters[currentChapterIndex + 1].id as AnyObject
                         ContentFacade.getContent(params: params) { (content) in
                             self.hud?.hide(true)
                             //self.nextContent = content
@@ -634,7 +632,7 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
                 NOVELLog("切换失败")
                 currentChapterIndex += 1
                 currentPage = 0
-                self.currentContent = ContentManager.getContent(chapters[currentChapterIndex].article_directory_link, article_id: novelID)
+                self.currentContent = ContentManager.getContent(chapters[currentChapterIndex].id, article_id: novelID)
                 ZHNReadParser.shared.content = self.currentContent?.content
             }
         } else {
@@ -644,7 +642,7 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
             if turnPage == true {
                 NOVELLog("切换失败")
                 currentChapterIndex -= 1
-                self.currentContent = ContentManager.getContent(chapters[currentChapterIndex].article_directory_link, article_id: novelID)
+                self.currentContent = ContentManager.getContent(chapters[currentChapterIndex].id, article_id: novelID)
                 ZHNReadParser.shared.content = self.currentContent?.content
                 currentPage =  ZHNReadParser.shared.pageCount - 1
                 
@@ -718,10 +716,10 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             for chapter in self.chapters {
                 
                 var params = [String: AnyObject]()
-                params["article_directory_link"] = chapter.article_directory_link as AnyObject
+                params["id"] = chapter.id as AnyObject
                 
                 // 查看本章是否已经缓存
-                let getContent = ContentManager.getContent(chapter.article_directory_link, article_id: self.novelID)
+                let getContent = ContentManager.getContent(chapter.id, article_id: self.novelID)
                 if getContent != nil {
                     NOVELLog("已经缓存了\(String(describing: getContent?.article_directory))")
                     continue

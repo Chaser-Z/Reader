@@ -228,12 +228,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522662794.217427"
+                  timestampString = "522843539.497296"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "1800">
+                  offsetFromSymbolStart = "1484">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -243,12 +243,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522662794.21871"
+                  timestampString = "522843539.498539"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "149"
                   endingLineNumber = "149"
-                  offsetFromSymbolStart = "23">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -356,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -468,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -580,7 +580,135 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "554"
+            endingLineNumber = "554"
+            landmarkName = "GetAboveReadViewController()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.ZHNReadController.(GetAboveReadViewController in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; Swift.Optional&lt;Reader.ZHNReadViewController&gt;"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "522843539.548692"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "555"
+                  endingLineNumber = "555"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.ZHNReadController.(GetAboveReadViewController in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; Swift.Optional&lt;Reader.ZHNReadViewController&gt;"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "522843539.549948"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "555"
+                  endingLineNumber = "555"
+                  offsetFromSymbolStart = "2092">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "557"
+            endingLineNumber = "557"
+            landmarkName = "GetAboveReadViewController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "560"
+            endingLineNumber = "560"
+            landmarkName = "GetAboveReadViewController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
+            landmarkName = "GetAboveReadViewController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "285"
@@ -596,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,107 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "556"
-            endingLineNumber = "556"
-            landmarkName = "GetAboveReadViewController()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.ZHNReadController.(GetAboveReadViewController in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; Swift.Optional&lt;Reader.ZHNReadViewController&gt;"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522662794.277312"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "557"
-                  endingLineNumber = "557"
-                  offsetFromSymbolStart = "294">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.ZHNReadController.(GetAboveReadViewController in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; Swift.Optional&lt;Reader.ZHNReadViewController&gt;"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522662794.27887"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "557"
-                  endingLineNumber = "557"
-                  offsetFromSymbolStart = "2719">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "559"
-            endingLineNumber = "559"
-            landmarkName = "GetAboveReadViewController()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "562"
-            endingLineNumber = "562"
-            landmarkName = "GetAboveReadViewController()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "563"
-            endingLineNumber = "563"
-            landmarkName = "GetAboveReadViewController()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -724,43 +756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
-            landmarkName = "loadContentData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
-            landmarkName = "loadContentData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "767"
-            endingLineNumber = "767"
+            startingLineNumber = "765"
+            endingLineNumber = "765"
             landmarkName = "readMenuClickPreviousChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -772,55 +772,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "768"
-            endingLineNumber = "768"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "769"
-            endingLineNumber = "769"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "770"
-            endingLineNumber = "770"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "766"
@@ -836,11 +788,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "767"
+            endingLineNumber = "767"
+            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "768"
+            endingLineNumber = "768"
+            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "764"
+            endingLineNumber = "764"
+            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "411"
+            endingLineNumber = "411"
             landmarkName = "page(location:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -852,7 +852,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
+            landmarkName = "page(location:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "414"
@@ -868,39 +884,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "416"
-            endingLineNumber = "416"
-            landmarkName = "page(location:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
-            landmarkName = "page(location:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "417"
@@ -916,11 +900,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522639074.573988"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "page(location:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
             landmarkName = "page(location:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1044,12 +1044,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.342088"
+                  timestampString = "522843539.61145"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "212">
+                  offsetFromSymbolStart = "192">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1059,12 +1059,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.34333"
+                  timestampString = "522843539.612792"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1124,12 +1124,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.351268"
+                  timestampString = "522843539.621155"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
                   endingLineNumber = "170"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "20">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1139,12 +1139,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.352546"
+                  timestampString = "522843539.622496"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
                   endingLineNumber = "170"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1154,12 +1154,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.353838"
+                  timestampString = "522843539.623847"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
                   endingLineNumber = "170"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1187,12 +1187,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.357694"
+                  timestampString = "522843539.627578"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
                   endingLineNumber = "171"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1202,12 +1202,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.359107"
+                  timestampString = "522843539.628885"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
                   endingLineNumber = "170"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1235,12 +1235,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.362157"
+                  timestampString = "522843539.631932"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
                   endingLineNumber = "155"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "20">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1250,12 +1250,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.363545"
+                  timestampString = "522843539.633157"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
                   endingLineNumber = "155"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1265,12 +1265,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.364885"
+                  timestampString = "522843539.634539"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
                   endingLineNumber = "155"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1298,12 +1298,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.368368"
+                  timestampString = "522843539.638468"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "156"
                   endingLineNumber = "156"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1313,12 +1313,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.369579"
+                  timestampString = "522843539.63999"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
                   endingLineNumber = "155"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1426,12 +1426,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "522662794.385484"
+                  timestampString = "522843539.656023"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
                   endingLineNumber = "111"
-                  offsetFromSymbolStart = "1732">
+                  offsetFromSymbolStart = "1248">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1441,12 +1441,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "522662794.386742"
+                  timestampString = "522843539.658003"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
                   endingLineNumber = "111"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1474,12 +1474,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "522662794.389676"
+                  timestampString = "522843539.661275"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
                   endingLineNumber = "114"
-                  offsetFromSymbolStart = "4686">
+                  offsetFromSymbolStart = "3508">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1489,12 +1489,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "522662794.3912"
+                  timestampString = "522843539.662542"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
                   endingLineNumber = "114"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1602,12 +1602,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.406748"
+                  timestampString = "522843539.678576"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
                   endingLineNumber = "182"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "20">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1617,12 +1617,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.408591"
+                  timestampString = "522843539.679849"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
                   endingLineNumber = "182"
-                  offsetFromSymbolStart = "49">
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1650,12 +1650,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.411553"
+                  timestampString = "522843539.682901"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "183"
                   endingLineNumber = "183"
-                  offsetFromSymbolStart = "62">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1665,12 +1665,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "522662794.413024"
+                  timestampString = "522843539.684224"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "183"
                   endingLineNumber = "183"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1746,12 +1746,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "522662794.478743"
+                  timestampString = "522843539.699622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "142"
                   endingLineNumber = "142"
-                  offsetFromSymbolStart = "244">
+                  offsetFromSymbolStart = "268">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1761,12 +1761,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "522662794.480024"
+                  timestampString = "522843539.701091"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "142"
                   endingLineNumber = "142"
-                  offsetFromSymbolStart = "9265">
+                  offsetFromSymbolStart = "6856">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1794,12 +1794,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/User/UserViewController.swift"
-                  timestampString = "522662794.482986"
+                  timestampString = "522843539.704173"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "271"
                   endingLineNumber = "271"
-                  offsetFromSymbolStart = "470">
+                  offsetFromSymbolStart = "400">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1809,12 +1809,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Controller/User/UserViewController.swift"
-                  timestampString = "522662794.484411"
+                  timestampString = "522843539.705613"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "271"
                   endingLineNumber = "271"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2050,12 +2050,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.648511"
+                  timestampString = "522843539.738637"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "128"
                   endingLineNumber = "128"
-                  offsetFromSymbolStart = "124">
+                  offsetFromSymbolStart = "112">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2065,12 +2065,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.649763"
+                  timestampString = "522843539.739808"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "129"
                   endingLineNumber = "129"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2114,12 +2114,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.65518"
+                  timestampString = "522843539.745378"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
                   endingLineNumber = "134"
-                  offsetFromSymbolStart = "550">
+                  offsetFromSymbolStart = "404">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2129,12 +2129,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.656981"
+                  timestampString = "522843539.746615"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
                   endingLineNumber = "134"
-                  offsetFromSymbolStart = "967">
+                  offsetFromSymbolStart = "716">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2402,12 +2402,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.70133"
+                  timestampString = "522843539.898672"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "129"
                   endingLineNumber = "129"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2417,12 +2417,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "522662794.702561"
+                  timestampString = "522843539.900087"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
                   endingLineNumber = "130"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2450,11 +2450,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662067.606742"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "791"
-            endingLineNumber = "791"
+            startingLineNumber = "789"
+            endingLineNumber = "789"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2466,11 +2466,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662068.258974"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "792"
-            endingLineNumber = "792"
+            startingLineNumber = "790"
+            endingLineNumber = "790"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2482,11 +2482,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662071.001805"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "795"
-            endingLineNumber = "795"
+            startingLineNumber = "793"
+            endingLineNumber = "793"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2498,11 +2498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662071.836611"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "798"
-            endingLineNumber = "798"
+            startingLineNumber = "796"
+            endingLineNumber = "796"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2514,7 +2514,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662073.688353"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "800"
+            endingLineNumber = "800"
+            landmarkName = "readMenuClickChapterList(readMenu:index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "802"
@@ -2530,27 +2546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662074.037063"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "804"
-            endingLineNumber = "804"
-            landmarkName = "readMenuClickChapterList(readMenu:index:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662089.388997"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2562,11 +2562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662090.90636"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2578,27 +2578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662091.411945"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "315"
             endingLineNumber = "315"
-            landmarkName = "loadContentData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662093.100018"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
             landmarkName = "loadContentData()"
             landmarkType = "7">
             <Locations>
@@ -2610,12 +2594,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522662794.732954"
+                  timestampString = "522843539.931394"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "317"
-                  endingLineNumber = "317"
-                  offsetFromSymbolStart = "12745">
+                  startingLineNumber = "315"
+                  endingLineNumber = "315"
+                  offsetFromSymbolStart = "9804">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2625,12 +2609,12 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "522662794.734218"
+                  timestampString = "522843539.932788"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "318"
-                  endingLineNumber = "318"
-                  offsetFromSymbolStart = "23">
+                  startingLineNumber = "316"
+                  endingLineNumber = "316"
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2674,7 +2658,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662282.767491"
+            timestampString = "522840837.692864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "773"
+            endingLineNumber = "773"
+            landmarkName = "readMenuClickNextChapter(readMenu:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "775"
@@ -2690,11 +2690,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662283.757433"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "777"
-            endingLineNumber = "777"
+            startingLineNumber = "779"
+            endingLineNumber = "779"
             landmarkName = "readMenuClickNextChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2706,11 +2706,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662284.758737"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "781"
-            endingLineNumber = "781"
+            startingLineNumber = "780"
+            endingLineNumber = "780"
             landmarkName = "readMenuClickNextChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2722,27 +2722,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662285.084993"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "782"
-            endingLineNumber = "782"
-            landmarkName = "readMenuClickNextChapter(readMenu:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662288.032567"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "761"
-            endingLineNumber = "761"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
             landmarkName = "readMenuClickPreviousChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2754,11 +2738,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "522662288.550121"
+            timestampString = "522840837.692864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "763"
-            endingLineNumber = "763"
+            startingLineNumber = "761"
+            endingLineNumber = "761"
             landmarkName = "readMenuClickPreviousChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3057,13 +3041,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/DataAccess/ContentManager.swift"
-            timestampString = "522662786.317303"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522825917.200486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "add(_:)"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "loadNovelChaptersData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.ZHNReadController.(loadNovelChaptersData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "522843540.019067"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "1632">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reader.ZHNReadController.((loadNovelChaptersData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()).(closure #2)"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+                  timestampString = "522843540.020321"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522825962.415598"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3073,13 +3105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/DataAccess/ContentManager.swift"
-            timestampString = "522662787.09382"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522825963.473108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "add(_:)"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3089,13 +3121,125 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/DataAccess/ContentManager.swift"
-            timestampString = "522662789.152394"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522825965.734275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "loadNovelChaptersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522825966.096088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "loadNovelChaptersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522825966.792081"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "loadNovelChaptersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Facade/ChapterFacade.swift"
+            timestampString = "522836731.878199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getChapterList(params:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Facade/ChapterFacade.swift"
+            timestampString = "522836883.599969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getChapterList(params:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Facade/ChapterFacade.swift"
+            timestampString = "522836883.599969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getChapterList(params:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Facade/ChapterFacade.swift"
+            timestampString = "522843293.53705"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getChapterList(params:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Facade/ChapterFacade.swift"
+            timestampString = "522843293.53705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "add(_:)"
+            landmarkName = "getChapterList(params:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3105,13 +3249,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/DataAccess/ContentManager.swift"
-            timestampString = "522662790.333682"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841152.742921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "add(_:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "getChapterList(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3121,13 +3265,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/DataAccess/ContentManager.swift"
-            timestampString = "522662791.47008"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841155.398129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getChapterList(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841157.321935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "add(_:)"
+            landmarkName = "getChapterList(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3137,13 +3297,349 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/DataAccess/ContentManager.swift"
-            timestampString = "522662822.048116"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841158.300464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getChapterList(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841159.200869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getChapterList(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Reader.ChapterWSHelper.(getChapterList (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion : (Reader.ServiceResponse) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/ChapterWSHelper.swift"
+                  timestampString = "522843540.065334"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Reader.ChapterWSHelper.(getChapterList (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion : (Reader.ServiceResponse) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Reader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghainan/Documents/Reader/Reader/Coding/Webservice/ChapterWSHelper.swift"
+                  timestampString = "522843540.066583"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841160.798252"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "add(_:)"
+            landmarkName = "getChapterList(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841161.788348"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getChapterList(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841162.496996"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getChapterList(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Webservice/ChapterWSHelper.swift"
+            timestampString = "522841163.199752"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getChapterList(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/ServerEntity/ServerChapter.swift"
+            timestampString = "522844935.829157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "fromDict(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/ServerEntity/ServerChapter.swift"
+            timestampString = "522844935.829157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "fromDict(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/ServerEntity/ServerChapter.swift"
+            timestampString = "522844935.829157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "fromDict(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/ServerEntity/ServerChapter.swift"
+            timestampString = "522844935.829157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fromDict(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/ServerEntity/ServerChapter.swift"
+            timestampString = "522844935.829157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fromDict(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522843420.714984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "loadNovelChaptersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522844670.585238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "loadNovelChaptersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "522844670.978365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "loadNovelChaptersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/ChapterManager.swift"
+            timestampString = "522844697.045238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getAll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/ChapterManager.swift"
+            timestampString = "522844697.596443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getAll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/ChapterManager.swift"
+            timestampString = "522844698.012835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getAll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/ChapterManager.swift"
+            timestampString = "522844699.160398"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getAll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/ChapterManager.swift"
+            timestampString = "522844699.70026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "getAll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/DataAccess/ChapterManager.swift"
+            timestampString = "522844700.161436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getAll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

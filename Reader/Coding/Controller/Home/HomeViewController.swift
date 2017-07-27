@@ -100,15 +100,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     func forTest() {
         
-        var params = [String: AnyObject]()
-        params["article_id"] = "0_703" as AnyObject
-        params["article_directory_link"] = "/0_703/7380617.html" as AnyObject
-        
-        ContentFacade.getContent(params: params) { (content) in
-            
-            NOVELLog("完成")
-        
-        }
         
         let btn = UIButton(type: .custom)
         btn.frame = CGRect(x: 0, y: 100, width: ScreenWidth, height: 50)
