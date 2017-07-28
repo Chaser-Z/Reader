@@ -12,7 +12,7 @@ import Foundation
 //let HOST = "http://192.168.1.104:9090"
 //let HOST = "http://localhost:9091"
 let HOST = "http://192.168.6.177:8090"
-//let HOST = "http://47.94.86.211:8080/mytest/"
+//let HOST = "http://47.94.86.211:8080/new_novel/"
 
 let kSeparatorViewH: CGFloat = 0.5
 
