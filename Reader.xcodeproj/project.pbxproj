@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681D7E2A1F38723700A86C6E /* ZHNReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D7E291F38723700A86C6E /* ZHNReadController.swift */; };
+		681D7E2C1F38727C00A86C6E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D7E2B1F38727C00A86C6E /* HomeViewController.swift */; };
 		6825AACB1EFD483000A0F73F /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825AACA1EFD483000A0F73F /* InfoModel.swift */; };
 		682C5D811F1CE3FB00AB353C /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */; };
 		682C5D831F1CE4ED00AB353C /* BookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */; };
@@ -148,7 +150,6 @@
 		6898686B1F20607500A3D0DC /* CCRotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689868671F20607500A3D0DC /* CCRotatedView.m */; };
 		6898686C1F20607500A3D0DC /* UIView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 689868691F20607500A3D0DC /* UIView+Snapshot.m */; };
 		6898686E1F2060A300A3D0DC /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6898686D1F2060A300A3D0DC /* DemoCell.swift */; };
-		689B3B0C1F18F730000BA64B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689B3B0B1F18F730000BA64B /* HomeViewController.swift */; };
 		68A4AEA71F38408D00360184 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4AEA61F38408D00360184 /* StringUtil.swift */; };
 		68A4AEA91F385F8900360184 /* EmptyDataSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4AEA81F385F8900360184 /* EmptyDataSetView.swift */; };
 		68A4AEAB1F385F9500360184 /* EmptyDataSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68A4AEAA1F385F9500360184 /* EmptyDataSetView.xib */; };
@@ -176,7 +177,6 @@
 		68B5A0801EFE096B009D4EAE /* ServerChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A07F1EFE096B009D4EAE /* ServerChapter.swift */; };
 		68B5A0821EFE0D4D009D4EAE /* ChapterFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0811EFE0D4D009D4EAE /* ChapterFacade.swift */; };
 		68B5A0841EFE0D6E009D4EAE /* ChapterWSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0831EFE0D6E009D4EAE /* ChapterWSHelper.swift */; };
-		68B5A0921EFE5A5D009D4EAE /* ZHNReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0911EFE5A5D009D4EAE /* ZHNReadController.swift */; };
 		68B5A0941EFE78CA009D4EAE /* ZHNBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0931EFE78CA009D4EAE /* ZHNBaseViewController.swift */; };
 		68B5A0971EFE7904009D4EAE /* ZHNReadConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0961EFE7904009D4EAE /* ZHNReadConfigure.swift */; };
 		68B5A0991EFE7941009D4EAE /* ZHNGlobalProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A0981EFE7941009D4EAE /* ZHNGlobalProperty.swift */; };
@@ -236,6 +236,8 @@
 
 /* Begin PBXFileReference section */
 		3BED83C7077D86B773E450C8 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
+		681D7E291F38723700A86C6E /* ZHNReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNReadController.swift; sourceTree = "<group>"; };
+		681D7E2B1F38727C00A86C6E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6825AACA1EFD483000A0F73F /* InfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		682C5D801F1CE3FB00AB353C /* BookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
 		682C5D821F1CE4ED00AB353C /* BookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfCell.swift; sourceTree = "<group>"; };
@@ -378,7 +380,6 @@
 		689868681F20607500A3D0DC /* UIView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snapshot.h"; sourceTree = "<group>"; };
 		689868691F20607500A3D0DC /* UIView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snapshot.m"; sourceTree = "<group>"; };
 		6898686D1F2060A300A3D0DC /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
-		689B3B0B1F18F730000BA64B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		68A4AEA61F38408D00360184 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		68A4AEA81F385F8900360184 /* EmptyDataSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDataSetView.swift; sourceTree = "<group>"; };
 		68A4AEAA1F385F9500360184 /* EmptyDataSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDataSetView.xib; sourceTree = "<group>"; };
@@ -411,7 +412,6 @@
 		68B5A07F1EFE096B009D4EAE /* ServerChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerChapter.swift; sourceTree = "<group>"; };
 		68B5A0811EFE0D4D009D4EAE /* ChapterFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterFacade.swift; sourceTree = "<group>"; };
 		68B5A0831EFE0D6E009D4EAE /* ChapterWSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterWSHelper.swift; sourceTree = "<group>"; };
-		68B5A0911EFE5A5D009D4EAE /* ZHNReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNReadController.swift; sourceTree = "<group>"; };
 		68B5A0931EFE78CA009D4EAE /* ZHNBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNBaseViewController.swift; sourceTree = "<group>"; };
 		68B5A0961EFE7904009D4EAE /* ZHNReadConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNReadConfigure.swift; sourceTree = "<group>"; };
 		68B5A0981EFE7941009D4EAE /* ZHNGlobalProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNGlobalProperty.swift; sourceTree = "<group>"; };
@@ -621,7 +621,7 @@
 		6881D4891EFCB877003CA502 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				689B3B0B1F18F730000BA64B /* HomeViewController.swift */,
+				681D7E2B1F38727C00A86C6E /* HomeViewController.swift */,
 				6859CF431F1B66B100155BE7 /* HomeReusableView.swift */,
 				6859CF411F1B589900155BE7 /* HomeCell.swift */,
 			);
@@ -874,7 +874,7 @@
 		68B5A0871EFE4E56009D4EAE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				68B5A0911EFE5A5D009D4EAE /* ZHNReadController.swift */,
+				681D7E291F38723700A86C6E /* ZHNReadController.swift */,
 				68B5A0AE1EFE86CE009D4EAE /* ZHNReadViewController.swift */,
 			);
 			path = Controller;
@@ -1429,6 +1429,7 @@
 				68319A321F1F2D8500023105 /* Dictionary+Extensions.swift in Sources */,
 				68B5A0BB1EFE98E8009D4EAE /* Content+CoreDataProperties.swift in Sources */,
 				687F857C1F27128E006B2073 /* LeadPageCell.swift in Sources */,
+				681D7E2C1F38727C00A86C6E /* HomeViewController.swift in Sources */,
 				68A6C6CB1EFAA9BF00BF971B /* ServiceResponse.swift in Sources */,
 				68319A2A1F1F2C4800023105 /* UserFacade.swift in Sources */,
 				68B5A0A21EFE7BBC009D4EAE /* ZHNReadEnum.swift in Sources */,
@@ -1486,7 +1487,6 @@
 				686E493A1F331C0400B2F089 /* FeedbackFacade.swift in Sources */,
 				68B5A0A41EFE7CC2009D4EAE /* ZHNReadUserDefaults.swift in Sources */,
 				6898686B1F20607500A3D0DC /* CCRotatedView.m in Sources */,
-				68B5A0921EFE5A5D009D4EAE /* ZHNReadController.swift in Sources */,
 				6881D4911EFCBB4B003CA502 /* MyNavigationController.swift in Sources */,
 				6861A94D1F00FFE300A7687A /* UIView+Extension.swift in Sources */,
 				6854EF8C1F138C870033B61C /* UIView+Toast.swift in Sources */,
@@ -1524,11 +1524,11 @@
 				686E49401F345C2A00B2F089 /* ShareView.swift in Sources */,
 				68A6C69D1EFAA7DB00BF971B /* UIView+YGPulseView.m in Sources */,
 				687E6E401F1D97EA0049F582 /* SearchViewController.swift in Sources */,
-				689B3B0C1F18F730000BA64B /* HomeViewController.swift in Sources */,
 				6854EF5C1F1374790033B61C /* ZHNCoverView.swift in Sources */,
 				68319A391F1F3BEF00023105 /* LoginViewController.swift in Sources */,
 				685C05B31F0201E700BEB1F4 /* ZHNColorView.swift in Sources */,
 				686ED7471F1F9B910007AD0A /* UserInfoCell.swift in Sources */,
+				681D7E2A1F38723700A86C6E /* ZHNReadController.swift in Sources */,
 				68571B381F03598500D1F7C1 /* ServerRecord.swift in Sources */,
 				68319A421F1F601600023105 /* Reachability.swift in Sources */,
 				68B5A09D1EFE79FC009D4EAE /* String+Extension.swift in Sources */,

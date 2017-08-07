@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class ContentManager{
-
+    
     fileprivate static let entityConetent = "Content"
     
     class func add(_ serverContent: ServerContent) -> Content? {
@@ -77,6 +77,6 @@ class ContentManager{
         content.article_id = serverContent.article_id
         content.id = serverContent.id
     }
-
+    
     
 }

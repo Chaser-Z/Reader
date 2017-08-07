@@ -17,15 +17,15 @@ class ServerChapter {
     var last_update_directory: String
     //var update_status: String
     var id: Int64
-
-//    init(article_directory: String, article_directory_link: String, article_id: String, last_update_date: String, last_update_directory: String, update_status: String) {
-//        self.article_directory = article_directory
-//        self.article_directory_link = article_directory_link
-//        self.article_id = article_id
-//        self.last_update_date = last_update_date
-//        self.last_update_directory = last_update_directory
-//        self.update_status = update_status
-//    }
+    
+    //    init(article_directory: String, article_directory_link: String, article_id: String, last_update_date: String, last_update_directory: String, update_status: String) {
+    //        self.article_directory = article_directory
+    //        self.article_directory_link = article_directory_link
+    //        self.article_id = article_id
+    //        self.last_update_date = last_update_date
+    //        self.last_update_directory = last_update_directory
+    //        self.update_status = update_status
+    //    }
     
     init(article_directory: String, last_update_date: String, last_update_directory: String, id: Int64, article_id: String) {
         self.article_directory = article_directory
@@ -34,7 +34,7 @@ class ServerChapter {
         self.id = id
         self.article_id = article_id
     }
-
+    
 }
 
 extension ServerChapter {

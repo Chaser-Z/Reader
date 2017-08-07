@@ -23,7 +23,7 @@ class ServerContent {
         self.article_id = article_id
         self.id = id
     }
-
+    
     
     
 }

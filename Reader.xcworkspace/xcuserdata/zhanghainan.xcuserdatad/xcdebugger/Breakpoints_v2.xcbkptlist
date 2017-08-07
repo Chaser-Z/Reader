@@ -297,7 +297,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "674"
             endingLineNumber = "674"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,7 +313,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "675"
             endingLineNumber = "675"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,7 +329,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "676"
             endingLineNumber = "676"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -345,7 +345,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "678"
             endingLineNumber = "678"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -361,7 +361,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "673"
             endingLineNumber = "673"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1895,7 +1895,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "683"
             endingLineNumber = "683"
-            landmarkName = "readMenuClickNextChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1911,7 +1911,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "685"
             endingLineNumber = "685"
-            landmarkName = "readMenuClickNextChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1927,7 +1927,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "689"
             endingLineNumber = "689"
-            landmarkName = "readMenuClickNextChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1943,7 +1943,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "691"
             endingLineNumber = "691"
-            landmarkName = "readMenuClickNextChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1959,7 +1959,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "668"
             endingLineNumber = "668"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1975,7 +1975,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "670"
             endingLineNumber = "670"
-            landmarkName = "readMenuClickPreviousChapter(readMenu:)"
+            landmarkName = "readMenuClickDownload(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2121,54 +2121,6 @@
             endingLineNumber = "172"
             landmarkName = "loadContentData()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "523791031.367143"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "loadContentData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.ZHNReadController.(loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Desktop/%E7%BB%83%E4%B9%A0%E6%B5%8B%E8%AF%95/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "523789040.756509"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "181"
-                  endingLineNumber = "181"
-                  offsetFromSymbolStart = "3516">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Reader.ZHNReadController.((loadContentData in _E7D76175C631B20DCC27BC2F805E4737) () -&gt; ()).(closure #1)"
-                  moduleName = "Reader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhanghainan/Desktop/%E7%BB%83%E4%B9%A0%E6%B5%8B%E8%AF%95/Reader/Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-                  timestampString = "523789040.757783"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2423,7 +2375,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2439,7 +2391,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
             endingLineNumber = "183"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2631,7 +2583,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2647,7 +2599,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
             endingLineNumber = "178"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2663,7 +2615,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
             endingLineNumber = "185"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
