@@ -101,29 +101,22 @@ class DZMSegmentedControl: UIView {
     func setup() {
         
         for button in buttons {
-            
             button.removeFromSuperview()
         }
         
         for spaceLine in verticalSpaceLines {
-            
             spaceLine.removeFromSuperview()
         }
         
         horizontalSpaceLine?.removeFromSuperview()
-        
         buttons.removeAll()
-        
         verticalSpaceLines.removeAll()
-        
         addSubviews()
     }
     
     /// 取消全部按钮选中状态
     func cancalButtonsSelected() {
-        
         for button in buttons {
-            
             button.isSelected = false
         }
     }
@@ -131,10 +124,8 @@ class DZMSegmentedControl: UIView {
     init(_ delegate:DZMSegmentedControlDelegate? = nil) {
         
         super.init(frame: CGRect.zero)
-        
         // 代理
         self.delegate = delegate
-        
         // 背景颜色
         backgroundColor = UIColor.white
     }

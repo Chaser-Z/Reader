@@ -54,7 +54,11 @@ class UserViewController: UITableViewController {
 
     private let myItems = [
         ConfigItem(titleCn: "免责声明", iconName: "免责声明_icon"),
-        ConfigItem(titleCn: "当前版本", iconName: "version")
+        ConfigItem(titleCn: "当前版本", iconName: "version"),
+        ConfigItem(titleCn: "清理缓存", iconName: "clear_cache"),
+        ConfigItem(titleCn: "意见反馈", iconName: "feedback"),
+        ConfigItem(titleCn: "去评分", iconName: "rating"),
+        ConfigItem(titleCn: "推荐给好友", iconName: "share-alt")
     ]
     private let commonItems = [
         ConfigItem(titleCn: "通用", iconName: "tongyong")
@@ -138,6 +142,29 @@ class UserViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "MyBriefCell", bundle: bundle), forCellReuseIdentifier: myBriefCellIdentifier)
     }
     
+    // 去评分
+    private func goToRating() {
+        let appId = "1255400240"
+        let link = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appId)&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
+        if let url = URL(string: link) {
+            UIApplication.shared.openURL(url)
+        }
+    }
+
+    // 分享给好友
+    private func goToRecommend(_ sender: UITableViewCell) {
+        
+        let UMENG_SHARE_TEXT = "点帮帮里程碑"
+        let UMENG_MILESTONE_SHARE_TEXT = "点帮帮里程碑"
+        let UMENG_INVITE_SHARE_TEXT = "发现一款好玩的APP,点帮帮，快来下载吧，下载地址是http://bangbang.pointgongyi.com"
+        let ABOUT_US_URL = "http://bangbang.pointgongyi.com"
+        
+        let shareView = ShareView.init(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
+        shareView.setShareModel(UMENG_INVITE_SHARE_TEXT, image: UIImage(named: "share_logo")!, url: ABOUT_US_URL, title: UMENG_SHARE_TEXT)
+        
+        shareView.showInViewController(self)
+    }
+    
     // 获取用户信息
     private func showUser() {
         self.user = UserManager.currentUser()
@@ -166,6 +193,71 @@ class UserViewController: UITableViewController {
         } else {
             return ""
         }
+    }
+    
+    // 当前缓存
+    private func calculateCacheSize() -> String {
+        let text = "当前缓存"
+        var sizeString = "\(text) 0Mb"
+        
+        if let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first {
+            let sizeInMB = fileSizeAtPath(cachePath)
+            sizeString = String(format: "\(text) %.2fMb", sizeInMB)
+        }
+        
+        return sizeString
+    }
+    
+    private func fileSizeAtPath(_ filePath: String) -> Float {
+        var fileSize: Int64 = 0
+        
+        let manager = FileManager.default
+        if manager.fileExists(atPath: filePath) {
+            let files = manager.subpaths(atPath: filePath) ?? []
+            for file in files {
+                let path = filePath.appendingPathComponent(path: "\(file)")
+                let attribs = try? manager.attributesOfItem(atPath: path)
+                let currentSize = attribs?[FileAttributeKey.size] as? Int
+                fileSize += Int64(currentSize ?? 0)
+            }
+        }
+        
+        NOVELLog("file size: \(fileSize)")
+        
+        let sizeInMB = Float(fileSize) / 1024.0 / 1024.0
+        return sizeInMB
+    }
+    
+    // 清理缓存
+    private func promptToCleanCache() {
+        let alertController = UIAlertController(title: "您要清理缓存吗", message: "将删除缓存的图片和历史小说", preferredStyle: .alert)
+        
+        let cleanAction = UIAlertAction(title: "清理", style: .destructive) { [weak self] action in
+            self?.cleanCache()
+        }
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(cleanAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+
+    private func cleanCache() {
+        let manager = FileManager.default
+        
+        if let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first {
+            let files = manager.subpaths(atPath: cachePath) ?? []
+            for file in files {
+                let path = cachePath.appendingPathComponent(path: "\(file)")
+                if manager.fileExists(atPath: path) {
+                    try? manager.removeItem(atPath: path)
+                }
+            }
+        }
+        showMessage("缓存清理完毕", onView: self.view)
+        self.tableView.reloadData()
     }
     
     // 注册通知
@@ -242,6 +334,13 @@ class UserViewController: UITableViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: "DisclaimerViewController")
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    private func goToFeedbackController() {
+        let storyboard = UIStoryboard(name: "User", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "FeedbackViewController")
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+
 
     // MARK: - Table view data source
     
@@ -285,11 +384,11 @@ class UserViewController: UITableViewController {
 
             if indexPath.row == 0 {        // 免责声明
                
-            } else if indexPath.row == 1 { // 意见反馈
+            } else if indexPath.row == 1 { // 版本
                 item.detailCn = getVersion()
             } else if indexPath.row == 2 { // 版本
                 // TODO:
-                item.detailCn = getVersion()
+                item.detailCn = calculateCacheSize()
             }
             myBriefCell.setupItem(item)
             cell = myBriefCell
@@ -347,17 +446,22 @@ class UserViewController: UITableViewController {
                 showLoginController()
             }
         } else if indexPath.section == 1 {
-            let sender = tableView.cellForRow(at: indexPath)
             if indexPath.row == 0 { // 免责声明
                 showDisclaimerViewController()
-            } else if indexPath.row == 1 { // My Favorites
+            } else if indexPath.row == 1 { // 当前版本
                 
-            } else if indexPath.row == 2 { // My Messages
+            } else if indexPath.row == 2 { // 清理缓存
+                promptToCleanCache()
+            } else if indexPath.row == 3 { // 意见反馈
+                goToFeedbackController()
+            } else if indexPath.row == 4 { // 去评分
+                goToRating()
+            } else if indexPath.row == 5 { // 分享
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    goToRecommend(cell)
+                }
             }
-        } else if indexPath.section == 2 { // Change Default Language
-            
-            let sender = tableView.cellForRow(at: indexPath)
-            
+        } else if indexPath.section == 2 { 
             switch indexPath.row {
             case 0:
                 print("0")

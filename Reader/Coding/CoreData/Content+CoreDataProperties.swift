@@ -20,6 +20,7 @@ extension Content {
     @NSManaged public var article_directory: String
     @NSManaged public var pageCount: Int
     @NSManaged public var article_id: String
-    
+    @NSManaged public var id: Int64
+
     
 }

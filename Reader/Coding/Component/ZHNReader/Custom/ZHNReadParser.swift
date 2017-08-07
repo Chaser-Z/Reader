@@ -18,15 +18,32 @@ class ZHNReadParser  {
     /// 文字章节内容
     var content: String? {
         didSet{
-            updateFont()
+            if content != nil {
+                updateFont()
+            }
         }
     }
-    
+        
     /// 文章有多少页
     var pageCount: Int = 0
     
     /// 当前页
-    var currentPage: Int = 0
+    var currentPage: Int = 0 {
+        didSet {
+            if currentPage <= -1 {
+                currentPage = 0
+            }
+        }
+    }
+    
+    /// 当前章节
+    var currentChapter: Int = 0 {
+        didSet {
+            if currentChapter <= -1 {
+                currentChapter = 0
+            }
+        }
+    }
     
     /// 每一页的Range数组
     var rangeArray:[NSRange] = []
@@ -50,15 +67,10 @@ class ZHNReadParser  {
     func updateFont(isSave:Bool = false) {
         
         let readAttribute = ZHNReadConfigure.shared().readAttribute()
-        
 //        if self.readAttribute != readAttribute {
-        
             self.readAttribute = readAttribute
-            
             rangeArray = ZHNReadParser.ParserPageRange(string: content!, rect: GetReadViewFrame(), attrs: readAttribute)
-            NOVELLog(rangeArray.count)
             pageCount = rangeArray.count
-            
             if isSave {
                 //save()
             }
@@ -68,7 +80,20 @@ class ZHNReadParser  {
     /// 通过page获得字符串
     func string(page: Int) -> String {
         
-        return content?.substring(rangeArray[page]) ?? ""
+        var index = 0
+        if page < 0 {
+            index = 0
+        } else if page >= rangeArray.count - 1{
+            index = rangeArray.count - 1
+        } else {
+            index = page
+        }
+        
+        guard let content = content?.substring(rangeArray[index]) else {
+            return ""
+        }
+        
+        return content
     }
     
     /// 通过 Location 获得 Page

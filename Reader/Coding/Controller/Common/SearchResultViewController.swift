@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import DZNEmptyDataSet
 
 class SearchResultViewController: UITableViewController {
 
@@ -28,17 +29,15 @@ class SearchResultViewController: UITableViewController {
         
         setup()
         //inhibitPop()
-        searchView?.searchTextField.text = ""
+        searchView?.searchTextField.placeholder = "请输入小说名称"
         searchView?.delegate = self
         self.navigationItem.titleView = searchView!
     }
     
     fileprivate func setup() {
-        
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-
     }
     
     // 禁止系统滑动返回
@@ -53,6 +52,11 @@ class SearchResultViewController: UITableViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchView?.searchTextField.becomeFirstResponder()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -62,7 +66,6 @@ class SearchResultViewController: UITableViewController {
         let size = CGSize(width:1000, height:1000)
         let dic = [NSFontAttributeName : font]
         let stringSize = text.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic, context:nil).size
-        
         return stringSize.height
     }
     
@@ -171,6 +174,8 @@ extension SearchResultViewController: SearchDetailViewDelegate {
                 self?.cellHeights = Array(repeating: (self?.kCloseCellHeight)!, count: (self?.novels.count)!)
 
                 self?.setup()
+                self?.tableView.emptyDataSetSource = self
+                self?.tableView.emptyDataSetDelegate = self
                 self?.tableView.reloadData()
             }
         }
@@ -189,6 +194,30 @@ extension SearchResultViewController: DemoCellDelegate {
 
     }
     
+}
+
+extension SearchResultViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "没有找到这部小说，没关系，快去意见反馈告诉程序员哥哥，让程序员哥哥为您添加吧!"
+        return StringUtil.attributeStringFromString(
+            string: text,
+            alignment: .center,
+            color: .blue,
+            lineSpacing: 5.0,
+            fontSize: 16.0
+        )
+    }
+
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return -150
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+
+
 }
 
 

@@ -17,10 +17,7 @@ class LeadPageViewController: UIViewController,UICollectionViewDataSource,UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.addCollectionView()
-        
-        
     }
     fileprivate func addCollectionView() {
         
@@ -42,42 +39,33 @@ class LeadPageViewController: UIViewController,UICollectionViewDataSource,UIColl
         // 设置弹簧效果
         collectionView.bounces = false
         self.view.addSubview(collectionView)
-        
         collectionView.register(LeadPageCell.self, forCellWithReuseIdentifier: "LeadPageCell")
-        
     }
+    
     //MARK: - UICollectionViewDataSource && UICollectionViewDelegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return self.imagesArray.count
- 
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LeadPageCell", for: indexPath) as! LeadPageCell
         cell.bgImageView.image = UIImage(named: self.imagesArray[(indexPath as NSIndexPath).row])
-        
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if (indexPath as NSIndexPath).row == self.imagesArray.count - 1 {
-            
             self.present(self.controller, animated: true, completion: nil)
-            //self.navigationController?.pushViewController(self.controller, animated: true)
         }
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
 }

@@ -21,13 +21,13 @@ private var instance:ZHNReadConfigure? = ZHNReadConfigure.readInfo()
 let ReadBGColors:[UIColor] = [UIColor.white,ReadBGColor_1,ReadBGColor_2,ReadBGColor_3,ReadBGColor_4,ReadBGColor_5]
 
 /// 阅读最小阅读字体大小
-let ReadMinFontSize:NSInteger = 12
+let ReadMinFontSize:NSInteger = 14
 
 /// 阅读最大阅读字体大小
 let ReadMaxFontSize:NSInteger = 25
 
 /// 阅读当前默认字体大小
-let ReadDefaultFontSize:NSInteger = 14
+let ReadDefaultFontSize:NSInteger = 16
 
 
 class ZHNReadConfigure: NSObject {

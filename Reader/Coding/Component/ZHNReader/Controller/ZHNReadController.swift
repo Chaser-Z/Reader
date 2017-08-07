@@ -9,108 +9,74 @@
 import UIKit
 import MBProgressHUD
 class ZHNReadController: ZHNBaseViewController {
-
     
-    /// 
-    fileprivate var isBug = false
-    
-    /// 
-    fileprivate var pageAnimationFinished = false
-    
+    /// 指示bug
+    /*
+     调用 func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {  方法会偶尔调用viewControllerBefore 这个方法
+     isType 会提示有无bug，如果有就处理一下，否则小说加载顺序不对。
+     目前还没有更好的解决办法 -----   待修复
+     */
+    fileprivate var isType = 0
+    fileprivate var isPreType = 0
     /// 翻页成功或者失败
     fileprivate var turnPage = true
-    
     /// 是否存在更新
     var isUpdate = false
-    
-    /// 下一章内容
-    fileprivate var nextContent: Content?
-    
     /// 现在内容
     fileprivate var currentContent: Content?
-    
-    /// 上一章内容
-    fileprivate var preContent: Content?
-    
     /// 文章记录
     var novelRecord: ServerRecord? = ServerRecord()
-    
-    
     /// 阅读菜单UI
     private(set) var readMenu: ZHNReadMenu!
-    
     /// 左边还是右边
     fileprivate var currentLeft: Bool = false
-    
     /// 是否创建了页面
     private var isCreatePage = false
-    
     // 用于区分正反面的值(固定)
     fileprivate var TempNumber:NSInteger = 1
-
-    // currentPage
-    var currentPage = 0
-    
     /// 章节
     var chapters = [Chapter]()
-    
     /// 是否跳章节
     fileprivate var isJumpChapter: Bool = false
-    
-    /// 当前章节
-    var currentChapterIndex = 0
-    
-    /// 当前加载完成的内容数组
-    var contents = [Content]()
-    
     /// 当前已经缓存的章节数组
     var loadContents = [Content]()
-    
     /// 小说模型
     var novel: Novel?
-    
     /// 小说id
     var novelID: String!
-    
     /// 翻页控制器 (仿真)
     private(set) var pageViewController: UIPageViewController?
-    
     /// 翻页控制器 (无效果,覆盖,上下)
     private(set) var coverController:DZMCoverController?
-
     /// 当前显示的阅读View控制器
     fileprivate(set) var currentReadViewController:ZHNReadViewController?
-    
     var readVC = ZHNReadViewController()
-
     var hud: MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = UIColor.white
         self.automaticallyAdjustsScrollViewInsets = false
         // 设置白色状态栏
         isStatusBarLightContent = true
-    
         // 加载提醒视图
         self.showHUD()
-        
         // 初始化阅读UI控制对象
         readMenu = ZHNReadMenu.readMenu(vc: self, delegate: self)
-        
         readVC.readController = self
-        
+        readVC.delegate = self
         // 获取阅读记录
         let record = RecordManager.getRecord(novelID)
         if record.count > 0 {
-            currentChapterIndex = Int(record[0].currentChapterIndex)
-            currentPage = Int(record[0].currentPage)
+            ZHNReadParser.shared.currentPage = Int(record[0].currentPage)
+            ZHNReadParser.shared.currentChapter = Int(record[0].currentChapterIndex)
+        } else {
+            ZHNReadParser.shared.currentChapter = 0
+            ZHNReadParser.shared.currentPage = 0
         }
 
         // 获取已经缓存的内容
         loadContents = ContentManager.getAll(novelID)
-        
         // 加载小说章节
         loadNovelChaptersData()
     }
@@ -129,19 +95,16 @@ class ZHNReadController: ZHNBaseViewController {
     fileprivate func loadNovelChaptersData() {
         var params = [String: AnyObject]()
         params["article_id"] = novelID as AnyObject
-        
         let chapterList = ChapterManager.getAll(novelID)
         
         if chapterList.count > 0 {
             chapters = chapterList
-            
             // 无更新情况
             if isUpdate == false {
                 ZHNReadParser.shared.chapters = chapters
-                readMenu.leftView.reloadData()
+                readMenu.leftView.reloadData((novel?.title)!, chapterCount: chapters.count)
                 // 加载内容
                 loadContentData()
-
             } else { // 有更新
                 let record = RecordManager.getRecord(novelID)
                 params["last_update_date"] = record[0].last_update_date as AnyObject
@@ -150,18 +113,16 @@ class ZHNReadController: ZHNBaseViewController {
                     self.chapters.append(chapter)
                 }
                 ZHNReadParser.shared.chapters = self.chapters
-                self.readMenu.leftView.reloadData()
+                self.readMenu.leftView.reloadData((self.novel?.title)!, chapterCount: self.chapters.count)
                 // 加载内容
                 self.loadContentData()
                })
             }
-
         } else {
-            
             ChapterFacade.getChapterList(params: params, completion: { (chapters) in
                 self.chapters = chapters
                 ZHNReadParser.shared.chapters = chapters
-                self.readMenu.leftView.reloadData()
+                self.readMenu.leftView.reloadData((self.novel?.title)!, chapterCount: self.chapters.count)
                 for chapter in chapters {
                     NOVELLog(chapter.article_directory)
                 }
@@ -175,37 +136,40 @@ class ZHNReadController: ZHNBaseViewController {
     fileprivate func loadContentData() {
         
         if isCreatePage == false || isJumpChapter == true {
-            
-            for i in (currentChapterIndex - 1)...(currentChapterIndex + 1) {
-                
+            for i in (ZHNReadParser.shared.currentChapter - 1)...(ZHNReadParser.shared.currentChapter + 1) {
                 if i < 0 || i >= chapters.count {
                     continue
                 }
                 
                 // 是否有缓存
-                let getContent = ContentManager.getContent(chapters[i].article_directory_link, article_id: novelID)
+                let getContent = ContentManager.getContent(chapters[i].id, article_id: novelID)
                 // 有缓存
                 if getContent != nil {
                     if self.isCreatePage == false {
                         self.isCreatePage = true
                     }
-                    if i == self.currentChapterIndex - 1 {
-                        self.preContent = getContent
+                    if i == ZHNReadParser.shared.currentChapter - 1 {
                         continue
-                    } else if i == self.currentChapterIndex {
+                    } else if i == ZHNReadParser.shared.currentChapter {
                         guard let currentContent = getContent?.content else {
                             return
                         }
                         ZHNReadParser.shared.content = currentContent
                         self.currentContent = getContent
-                        self.readVC = self.GetReadViewController()!
+                        let vc = ZHNReadViewController()
+                        vc.currentPage = ZHNReadParser.shared.currentPage
+                        vc.readController = self
+                        self.readVC.delegate = self
+                        self.readVC = vc
                         self.creatPageController(self.readVC)
+                        if i == chapters.count - 1 {
+                            self.hud?.hide(true)
+                        }
                         // 添加缓存
                         self.saveNovel()
                         continue
                     } else {
                         self.hud?.hide(true)
-                        self.nextContent = getContent
                         self.isJumpChapter = false
                         continue
                     }
@@ -213,118 +177,95 @@ class ZHNReadController: ZHNBaseViewController {
                 
                 NOVELLog("下面有未加载的内容")
                 NOVELLog("第\(i+1)个")
-                
                 var params = [String: AnyObject]()
-                params["article_id"] = novelID as AnyObject
-                params["article_directory_link"] = chapters[i].article_directory_link as AnyObject
+                params["id"] = chapters[i].id as AnyObject
                 
                 ContentFacade.getContent(params: params) { (content) in
-                    
-                    
                     if self.isCreatePage == false {
                         self.isCreatePage = true
                     }
-                    if i == self.currentChapterIndex - 1 {
-                        self.preContent = content
-                        self.hud?.hide(true)
-                    } else if i == self.currentChapterIndex {
+                    if i == ZHNReadParser.shared.currentChapter - 1 {
+                    } else if i == ZHNReadParser.shared.currentChapter {
                         guard let currentContent = content?.content else {
                             return
                         }
                         ZHNReadParser.shared.content = currentContent
                         self.currentContent = content
-                        self.readVC = self.GetReadViewController()!
+                        let vc = ZHNReadViewController()
+                        vc.currentPage = ZHNReadParser.shared.currentPage
+                        vc.readController = self
+                        self.readVC = vc
+                        self.readVC.delegate = self
                         self.creatPageController(self.readVC)
-                        
+                        if i == self.chapters.count - 1 {
+                            self.hud?.hide(true)
+                        }
                         // 添加缓存
                         self.saveNovel()
-                        
                     } else {
-
-                        self.nextContent = content
+                        self.hud?.hide(true)
                         self.isJumpChapter = false
                     }
-                    if content != nil {
-                        self.contents.append(content!)
-                    }
                 }
-
             }
 
         } else {
             // 左边章节
             if currentLeft {
-                
-                //self.nextContent = self.currentContent
-                self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) - 1].article_directory_link, article_id: novelID)
-                ZHNReadParser.shared.content = self.currentContent?.content
-                
-                if currentChapterIndex - 1 >= 0  {
-                    // 是否有缓存
-                    let getContent = ContentManager.getContent(chapters[currentChapterIndex - 1].article_directory_link, article_id: novelID)
-                    // 有缓存
-                    if getContent != nil {
-                        self.hud?.hide(true)
-                        NOVELLog("有缓存")
-                        self.preContent = getContent
-                        self.contents.append(getContent!)
-                    } else { // 无缓存
-                        var params = [String: AnyObject]()
-                        params["article_id"] = novelID as AnyObject
-                        params["article_directory_link"] = chapters[currentChapterIndex - 1].article_directory_link as AnyObject
-                        ContentFacade.getContent(params: params) { (content) in
-                            self.hud?.hide(true)
-                            //self.preContent = content
-                            //self.contents.append(content!)
-                        }
-                    }
-                } else {
-                    self.hud?.hide(true)
-                }
-                
-            } else { // 右边章节
-                //self.preContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].article_directory_link)
-                NOVELLog("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc")
-
-                if isBug {
-                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!)].article_directory_link, article_id: novelID)
-                } else{
-                    self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].article_directory_link, article_id: novelID)
-                    NOVELLog("这里")
-                }
-                NOVELLog("到这了")
+                self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) - 1].id, article_id: novelID)
                 if self.currentContent == nil {
-                    
+                    ZHNReadParser.shared.content = ""
                     NOVELLog("控制")
                     return
                 }
                 ZHNReadParser.shared.content = self.currentContent?.content
 
-                if currentChapterIndex + 1 < ZHNReadParser.shared.chapters.count {
-                    NOVELLog("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
+                if ZHNReadParser.shared.currentChapter - 1 >= 0  {
                     // 是否有缓存
-                    let getContent = ContentManager.getContent(chapters[currentChapterIndex + 1].article_directory_link, article_id: novelID)
+                    let getContent = ContentManager.getContent(chapters[ZHNReadParser.shared.currentChapter - 1].id, article_id: novelID)
                     // 有缓存
                     if getContent != nil {
                         self.hud?.hide(true)
                         NOVELLog("有缓存")
-                        self.nextContent = getContent
-                        self.contents.append(getContent!)
                     } else { // 无缓存
                         var params = [String: AnyObject]()
-                        params["article_id"] = novelID as AnyObject
-                        params["article_directory_link"] = chapters[currentChapterIndex + 1].article_directory_link as AnyObject
+                        params["id"] = chapters[ZHNReadParser.shared.currentChapter - 1].id as AnyObject
                         ContentFacade.getContent(params: params) { (content) in
+                            NOVELLog("没有缓存，下载完毕\(ZHNReadParser.shared.currentChapter - 1)章")
                             self.hud?.hide(true)
-                            //self.nextContent = content
-                            //self.contents.append(content!)
                         }
-                    
                     }
                 } else {
                     self.hud?.hide(true)
                 }
+            } else { // 右边章节
+                self.currentContent = ContentManager.getContent(chapters[Int((self.novelRecord?.currentChapterIndex)!) + 1].id, article_id: novelID)
+                if self.currentContent == nil {
+                    ZHNReadParser.shared.content = ""
+                    NOVELLog("控制")
+                    return
+                }
                 
+                ZHNReadParser.shared.content = self.currentContent?.content
+                if ZHNReadParser.shared.currentChapter + 1 < ZHNReadParser.shared.chapters.count {
+                    // 是否有缓存
+                    let getContent = ContentManager.getContent(chapters[ZHNReadParser.shared.currentChapter + 1].id, article_id: novelID)
+                    // 有缓存
+                    if getContent != nil {
+                        self.hud?.hide(true)
+                        NOVELLog("有缓存")
+                    } else { // 无缓存
+                        var params = [String: AnyObject]()
+                        params["id"] = chapters[ZHNReadParser.shared.currentChapter + 1].id as AnyObject
+                        ContentFacade.getContent(params: params) { (content) in
+                            NOVELLog(content?.content)
+                            NOVELLog("没有缓存，下载完毕\(ZHNReadParser.shared.currentChapter + 1)章")
+                            self.hud?.hide(true)
+                        }
+                    }
+                } else {
+                    self.hud?.hide(true)
+                }
             }
         }        
     }
@@ -332,7 +273,6 @@ class ZHNReadController: ZHNBaseViewController {
     // MARK: - 创建 PageController
     /// 创建效果控制器 传入初始化显示控制器
     fileprivate func creatPageController(_ displayController:UIViewController?) {
-        
         // 清理
         if pageViewController != nil {
             pageViewController?.view.removeFromSuperview()
@@ -346,72 +286,50 @@ class ZHNReadController: ZHNBaseViewController {
             coverController = nil
         }
         
-        //ZHNReadConfigure.shared().effectType = ZHNEffectType.upAndDown.rawValue
-        
         // 创建
         if ZHNReadConfigure.shared().effectType == ZHNEffectType.simulation.rawValue { // 仿真
-            
             let options = [UIPageViewControllerOptionSpineLocationKey:NSNumber(value: UIPageViewControllerSpineLocation.min.rawValue as Int)]
             pageViewController = UIPageViewController(transitionStyle:UIPageViewControllerTransitionStyle.pageCurl,navigationOrientation:UIPageViewControllerNavigationOrientation.horizontal,options: options)
             pageViewController?.delegate = self
             pageViewController?.dataSource = self
             // 为了翻页背面的颜色使用
-            pageViewController?.isDoubleSided = true
-            
+            //pageViewController?.isDoubleSided = true
             view.insertSubview(pageViewController!.view, at: 0)
             addChildViewController(pageViewController!)
-            
             pageViewController!.setViewControllers((displayController != nil ? [displayController!] : nil), direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
             
-            for gr in (pageViewController?.gestureRecognizers)! {
-                //gr.delegate = self
-            }
-            
         } else { // 无效果 覆盖 上下
-            
             coverController = DZMCoverController()
             coverController?.delegate = self
-            
             view.insertSubview(coverController!.view, at: 0)
             addChildViewController(coverController!)
             coverController?.setController(displayController)
             
             if ZHNReadConfigure.shared().effectType == ZHNEffectType.none.rawValue {
-                
                 coverController?.openAnimate = false
-                
             } else if ZHNReadConfigure.shared().effectType == ZHNEffectType.upAndDown.rawValue {
-                
                 coverController?.openAnimate = false
                 coverController?.gestureRecognizerEnabled = false
             }
-            
         }
-        
         // 记录
         currentReadViewController = displayController as? ZHNReadViewController
-        
     }
     
     // MARK: - 刷新字体相关
     /// 刷新字体
     fileprivate func updateFont(isSave:Bool = false) {
-        
-        let location = ZHNReadParser.shared.rangeArray[currentPage].location
+        let location = ZHNReadParser.shared.rangeArray[ZHNReadParser.shared.currentPage].location
         ZHNReadParser.shared.content = currentContent?.content
-        currentPage = page(location: location)
+        ZHNReadParser.shared.currentPage = page(location: location)
     }
     
     /// 通过 Location 获得 Page
     fileprivate func page(location:NSInteger) ->NSInteger {
         let count = ZHNReadParser.shared.rangeArray.count
-        
         for i in 0..<count {
-            
             let range = ZHNReadParser.shared.rangeArray[i]
-            
             if location < (range.location + range.length) {
-                
                 return i
             }
         }
@@ -420,7 +338,6 @@ class ZHNReadController: ZHNBaseViewController {
     
     // MARK: - 缓存记录相关
     fileprivate func saveNovel() {
-        
         NOVELLog("记录缓存")
         // 添加缓存
         self.novelRecord?.last_update_date = self.chapters[self.chapters.count - 1].last_update_date
@@ -429,11 +346,10 @@ class ZHNReadController: ZHNBaseViewController {
         self.novelRecord?.content = currentContent?.content
         self.novelRecord?.article_directory = currentContent?.article_directory
         self.novelRecord?.pageCount = Int32(ZHNReadParser.shared.pageCount)
-        self.novelRecord?.currentPage = Int32(self.currentPage)
-        self.novelRecord?.currentChapterIndex = Int32(self.currentChapterIndex)
+        self.novelRecord?.currentPage = Int32(ZHNReadParser.shared.currentPage)
+        self.novelRecord?.currentChapterIndex = Int32(ZHNReadParser.shared.currentChapter)
         if currentContent?.content != nil {
             let _ = RecordManager.add(self.novelRecord!)
-
         }
     }
     
@@ -445,6 +361,140 @@ class ZHNReadController: ZHNBaseViewController {
         hud?.removeFromSuperViewOnHide = true
     }
     
+    // MARK: - 获取阅读上下页
+    // 上页
+    fileprivate func getReadAboveController(currentController: UIViewController?) -> UIViewController? {
+        let beforeLookVC: ZHNReadViewController = currentController as! ZHNReadViewController
+        let beforeindex = beforeLookVC.currentPage - 1
+        let beforeChapterIndex = beforeLookVC.currentChapter
+        currentLeft = true
+        return GetAboveReadViewController(beforeindex, chapterIndex: beforeChapterIndex)
+    }
+    
+    // 下页
+    fileprivate func getReadBelowController(currentController: UIViewController?) -> UIViewController? {
+        let afterLookVC: ZHNReadViewController = currentController as! ZHNReadViewController
+        let afterindex = afterLookVC.currentPage + 1
+        let afterChapterIndex = afterLookVC.currentChapter
+        currentLeft = false
+        return GetBelowReadViewController(afterindex, chapterIndex: afterChapterIndex)
+    }
+    
+    /// 获取上一页控制器
+    fileprivate func GetAboveReadViewController(_ index: Int = 0, chapterIndex: Int = 0) -> ZHNReadViewController?{
+        NOVELLog("GetAboveReadViewController")
+        
+        // 修复bug
+        isPreType += 1
+        if isPreType != 1 && turnPage && ZHNReadConfigure.shared().effectType == ZHNEffectType.simulation.rawValue {
+            NOVELLog("buGGGGGGGGGGG")
+            ZHNReadParser.shared.currentChapter += 1
+        }
+        
+        // 页码
+        let page = Int((self.novelRecord?.currentPage)!)
+        // 小说到开始的最头了
+        if page == 0 && self.novelRecord?.currentChapterIndex == 0{
+            return nil
+        }
+        NOVELLog("page = \(page)")
+        if page == 0 { // 这一章到头了
+            NOVELLog("这一章到头了")
+            NOVELLog("index = \(index)")
+            isType = 2
+            turnPage = true
+            ZHNReadParser.shared.currentChapter -= 1
+            self.loadContentData()
+            ZHNReadParser.shared.currentPage = ZHNReadParser.shared.currentPage != -1 ? ZHNReadParser.shared.pageCount - 1 : 0
+            return GetReadViewController(ZHNReadParser.shared.currentPage, chapterIndex: chapterIndex - 1)
+        } else { // 没到头
+            NOVELLog("index = \(index)")
+            turnPage = false
+            var aboveIndex = 0
+            if index == -1 {
+                aboveIndex = ZHNReadParser.shared.pageCount - 1
+            } else {
+                aboveIndex = index
+            }
+            ZHNReadParser.shared.currentPage = aboveIndex
+            NOVELLog("ZHNReadParser.shared.currentChapter = \(ZHNReadParser.shared.currentChapter)")
+            
+            return GetReadViewController(aboveIndex, chapterIndex: ZHNReadParser.shared.currentChapter)
+        }
+    }
+    
+    /// 获得下一页控制器
+    fileprivate func GetBelowReadViewController(_ index: Int = 0, chapterIndex: Int = 0) -> ZHNReadViewController?{
+        
+        // 修复bug
+        if isType == 2 && turnPage && ZHNReadConfigure.shared().effectType == ZHNEffectType.simulation.rawValue{
+            ZHNReadParser.shared.currentChapter += 1
+            self.currentContent = ContentManager.getContent(chapters[ZHNReadParser.shared.currentChapter].id, article_id: novelID)
+            ZHNReadParser.shared.content = self.currentContent?.content
+            NOVELLog("BUGBBBBBBBBBB")
+        }
+        
+        isType = 1
+        // 页码
+        let page = Int((self.novelRecord?.currentPage)!)
+        // 最后一页
+        let lastPage = ZHNReadParser.shared.pageCount - 1
+        NOVELLog("page = \(page) lastpage = \(lastPage)")
+        // 小说到最后了
+        if page == lastPage && ZHNReadParser.shared.currentChapter >= ZHNReadParser.shared.chapters.count - 1{
+            return nil
+        }
+        
+        if page == lastPage{ // 这一章到头了
+            NOVELLog("这一章到头了")
+            turnPage = true
+            ZHNReadParser.shared.currentChapter += 1
+            ZHNReadParser.shared.currentPage = 0
+            self.loadContentData()
+            return GetReadViewController(0, chapterIndex: chapterIndex + 1)
+        } else { // 没到头
+            NOVELLog("index = \(index)")
+            turnPage = false
+            var belowIndex = 0
+            if index == ZHNReadParser.shared.pageCount {
+                belowIndex = ZHNReadParser.shared.pageCount - 1
+            } else {
+                belowIndex = index
+            }
+            ZHNReadParser.shared.currentPage = belowIndex
+            NOVELLog("ZHNReadParser.shared.currentChapter = \(ZHNReadParser.shared.currentChapter)")
+            
+            return GetReadViewController(belowIndex, chapterIndex: ZHNReadParser.shared.currentChapter)
+        }
+    }
+    
+    /// 获取阅读View控制器
+    fileprivate func GetReadViewController(_ index: Int = 0, chapterIndex: Int = 0) ->ZHNReadViewController? {
+        self.hud?.hide(true)
+        let readViewController = ZHNReadViewController()
+        readViewController.readController = self
+        readViewController.currentPage = index
+        readViewController.delegate = self
+        readViewController.currentChapter = chapterIndex
+        return readViewController
+    }
+    
+    /// 处理切换失败
+    fileprivate func dealCutPageLose() {
+        NOVELLog("dealCutPageLose")
+        if turnPage == true {
+            if currentLeft == true {
+                ZHNReadParser.shared.currentChapter += 1
+                self.currentContent = ContentManager.getContent(chapters[ZHNReadParser.shared.currentChapter].id, article_id: novelID)
+                ZHNReadParser.shared.content = self.currentContent?.content
+            } else {
+                ZHNReadParser.shared.currentChapter -= 1
+                self.currentContent = ContentManager.getContent(chapters[ZHNReadParser.shared.currentChapter].id, article_id: novelID)
+                ZHNReadParser.shared.content = self.currentContent?.content
+            }
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -456,33 +506,27 @@ extension ZHNReadController: DZMCoverControllerDelegate {
     
     // 切换结果
     func coverController(_ coverController: DZMCoverController, currentController: UIViewController?, finish isFinish: Bool) {
-        
-        // 记录
-        currentReadViewController = currentController as? ZHNReadViewController
-
         if !isFinish {
             dealCutPageLose()
         } else {
+            currentReadViewController = currentController as? ZHNReadViewController
+            saveNovel()
         }
-        saveNovel()
     }
     
     // 将要显示的控制器
     func coverController(_ coverController: DZMCoverController, willTransitionToPendingController pendingController: UIViewController?) {
         readMenu.menuSH(isShow: false)
-
     }
     
     // 获取上一个控制器
     func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
-        currentLeft = true
-        return GetAboveReadViewController()
+        return getReadAboveController(currentController: currentController)
     }
     
     // 获取下一个控制器
     func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
-        currentLeft = false
-        return GetBelowReadViewController()
+        return getReadBelowController(currentController: currentController)
     }
 }
 
@@ -490,167 +534,38 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
     
     // 切换结果
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        
+        NOVELLog("transitionCompleted")
+        isType = 0
+        isPreType = 0
         if !completed {
             dealCutPageLose()
-            currentReadViewController = previousViewControllers.first as? ZHNReadViewController
         } else {
             // 记录
             currentReadViewController = pageViewController.viewControllers?.first as? ZHNReadViewController
+            saveNovel()
         }
-        pageAnimationFinished = false
-        saveNovel()
+        pageViewController.view.isUserInteractionEnabled = true
     }
     
     // 准备切换
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        NOVELLog("准备切换")
-        pageAnimationFinished = true
+        NOVELLog("willTransitionTo")
+        if turnPage {
+            pageViewController.view.isUserInteractionEnabled = false
+        }
         readMenu.menuSH(isShow: false)
     }
         
     // 获取上一页
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
         NOVELLog("viewControllerBefore")
-        if pageAnimationFinished {
-            //return nil
-        }
-        TempNumber -= 1
-    
-        if abs(TempNumber) % 2 == 0 { // 背面
-            let vc = UIViewController()
-            vc.view.backgroundColor = ZHNReadConfigure.shared().readColor().withAlphaComponent(0.95)
-            return vc
-        } else { // 内容
-            currentLeft = true
-            return GetAboveReadViewController()
-        }
+        return getReadAboveController(currentController: viewController)
     }
     
     // 获取下一页
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         NOVELLog("viewControllerAfter")
-        
-        if pageAnimationFinished {
-            //return nil
-        }
-        
-        TempNumber += 1
-        
-        if abs(TempNumber) % 2 == 0 { // 背面
-            
-            let vc = UIViewController()
-            vc.view.backgroundColor =  ZHNReadConfigure.shared().readColor().withAlphaComponent(0.95)
-            return vc
-            
-        }else{ // 内容
-            currentLeft = false
-            return GetBelowReadViewController()
-        }
-    }
-    
-    /// 获取上一页控制器
-    fileprivate func GetAboveReadViewController() -> ZHNReadViewController?{
-        NOVELLog("GetAboveReadViewController")
-        // 页码
-        let page = Int((self.novelRecord?.currentPage)!)
-        
-        // 小说到开始的最头了
-        if page == 0 && self.novelRecord?.currentChapterIndex == 0{
-            return nil
-        }
-        if page == 0 { // 这一章到头了
-            NOVELLog("这一章到头了")
-            turnPage = true
-            self.showHUD()
-            currentChapterIndex = Int((self.novelRecord?.currentChapterIndex)!) - 1
-            self.loadContentData()
-            currentPage = currentPage != -1 ? ZHNReadParser.shared.pageCount - 1 : 0
-        } else { // 没到头
-            NOVELLog("-----")
-            turnPage = false
-            currentPage = page - 1 >= 0 ? page - 1 : 0
-        }
-        NOVELLog(currentChapterIndex)
-        return GetReadViewController()
-    }
-    
-    /// 获得下一页控制器
-    fileprivate func GetBelowReadViewController() -> ZHNReadViewController?{
-        
-        // 页码
-        let page = Int((self.novelRecord?.currentPage)!)
-        // 最后一页
-        let lastPage = ZHNReadParser.shared.pageCount - 1
-        NOVELLog("page = \(page) lastpage = \(lastPage)")
-        // 小说到最后了
-        if page == lastPage && currentChapterIndex >= ZHNReadParser.shared.chapters.count - 1{
-            return nil
-        }
-        
-        if page == lastPage{ // 这一章到头了
-            NOVELLog("这一章到头了")
-            turnPage = true
-            self.showHUD()
-            currentChapterIndex = Int((self.novelRecord?.currentChapterIndex)!) + 1
-            self.loadContentData()
-            currentPage = currentPage == -1 ? ZHNReadParser.shared.pageCount - 1 : 0
-        } else { // 没到头
-            NOVELLog("-----")
-            turnPage = false
-            NOVELLog("--\(currentChapterIndex)  --\(Int((self.novelRecord?.currentChapterIndex)!) + 1)")
-            // 如果调用下一页控制器的时候，bug调用上一页方法
-            if Int((self.novelRecord?.currentChapterIndex)!) + 1 - currentChapterIndex  == 2 && lastPage - page != 1 {
-                NOVELLog("$$$$$$$$$$$$$$$$$$$")
-                isBug = true
-                currentChapterIndex += 1
-                self.loadContentData()
-            }
-            isBug = false
-            currentPage = page + 1 <= lastPage ? page + 1 : lastPage
-        }
-        NOVELLog(currentChapterIndex)
-        return GetReadViewController()
-    }
-    
-    /// 获取阅读View控制器
-    fileprivate func GetReadViewController() ->ZHNReadViewController? {
-        
-        self.hud?.hide(true)
-        let readViewController = ZHNReadViewController()
-        readViewController.readController = self
-        return readViewController
-    }
-    
-    /// 处理切换失败
-    fileprivate func dealCutPageLose() {
-        NOVELLog("dealCutPageLose")
-        // 记录
-        if currentLeft {
-            currentPage += 1
-            
-            if turnPage == true {
-                NOVELLog("切换失败")
-                currentChapterIndex += 1
-                currentPage = 0
-                self.currentContent = ContentManager.getContent(chapters[currentChapterIndex].article_directory_link, article_id: novelID)
-                ZHNReadParser.shared.content = self.currentContent?.content
-            }
-        } else {
-            
-            currentPage -= 1
-            
-            if turnPage == true {
-                NOVELLog("切换失败")
-                currentChapterIndex -= 1
-                self.currentContent = ContentManager.getContent(chapters[currentChapterIndex].article_directory_link, article_id: novelID)
-                ZHNReadParser.shared.content = self.currentContent?.content
-                currentPage =  ZHNReadParser.shared.pageCount - 1
-                
-            }
-        }
-
+        return getReadBelowController(currentController: viewController)
     }
 }
 
@@ -665,34 +580,25 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     // 翻书动画
     func readMenuClickSetuptEffect(readMenu: ZHNReadMenu, index: NSInteger) {
         ZHNReadConfigure.shared().effectType = index
-        self.readVC = GetReadViewController()!
+        self.readVC = GetReadViewController(ZHNReadParser.shared.currentPage, chapterIndex: ZHNReadParser.shared.currentChapter)!
         self.creatPageController(self.readVC)
     }
     
     /// 字体
     func readMenuClickSetuptFont(readMenu: ZHNReadMenu, index: NSInteger) {
         ZHNReadConfigure.shared().fontType = index
-        self.readVC = GetReadViewController()!
+        self.readVC = GetReadViewController(ZHNReadParser.shared.currentPage, chapterIndex: ZHNReadParser.shared.currentChapter)!
         updateFont()
         self.creatPageController(self.readVC)
     }
     
     /// 字体大小
     func readMenuClickSetuptFontSize(readMenu: ZHNReadMenu, fontSize: CGFloat) {
-        self.readVC = GetReadViewController()!
+        self.readVC = GetReadViewController(ZHNReadParser.shared.currentPage, chapterIndex: ZHNReadParser.shared.currentChapter)!
         updateFont()
         self.creatPageController(self.readVC)
     }
     
-    // TODO: -- 书签
-    /// 点击书签列表
-//    func readMenuClickMarkList(readMenu: DZMReadMenu, readMarkModel: DZMReadMarkModel) {
-//        
-//        readModel.modifyReadRecordModel(readMarkModel: readMarkModel, isUpdateFont: true, isSave: false)
-//        
-//        creatPageController(readOperation.GetCurrentReadViewController(isUpdateFont: false, isSave: true))
-//    }
-
     /// 下载
     func readMenuClickDownload(readMenu: ZHNReadMenu) {
         print("点击了下载")
@@ -700,55 +606,56 @@ extension ZHNReadController: ZHNReadMenuDelegate {
         // 已经缓存的内容
         let addContent = ContentManager.getAll(self.novelID)
         if addContent.count == self.chapters.count {
+            self.view.toast("已经下载完成了", postion: .middle)
             return
         }
         NOVELLog("已经缓存的章节数\(addContent.count)")
         NOVELLog("没有缓存的章节数\(self.chapters.count - addContent.count)")
-
-//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-//        hud?.mode = .text
-//        hud?.labelText = "开始下载"
-//        hud?.removeFromSuperViewOnHide = true
-//        hud?.xOffset = 0.0
-//        hud?.yOffset = 40.0
-//        hud?.hide(true, afterDelay: 0.5)
         self.view.toast("开始下载", postion: .middle)
         DispatchQueue.global(qos: .userInitiated).async {
             
-            for chapter in self.chapters {
-                
-                var params = [String: AnyObject]()
-                params["article_directory_link"] = chapter.article_directory_link as AnyObject
-                
-                // 查看本章是否已经缓存
-                let getContent = ContentManager.getContent(chapter.article_directory_link, article_id: self.novelID)
-                if getContent != nil {
-                    NOVELLog("已经缓存了\(String(describing: getContent?.article_directory))")
-                    continue
-                }
-                
-                NOVELLog("正在缓存\(chapter.article_directory)")
-                
-                // 缓存没有缓存的内容
-                ContentFacade.getContent(params: params, completion: { (content) in
-                    let totalContent = ContentManager.getAll(self.novelID)
-                    
-                    let process = Float(totalContent.count) / Float(self.chapters.count)
-                    let processStr = String(format:"%.2f",process)
-                    NOVELLog("缓存进度\(processStr.floatValue() * 100)%")
+            var params = [String: AnyObject]()
+            params["article_id"] = self.novelID as AnyObject
 
-                    if processStr.floatValue()  == 1 {
-                        NOVELLog("下载完成")
-                        self.view.toast("下载完成", postion: .middle)
-                        //hud?.labelText = "下载完成"
-                        //hud?.hide(true, afterDelay: 0.3)
-                    }
-                    
-                })
-            }
+            ContentFacade.getAllContent(params: params, completion: { (contents) in
+                NOVELLog("下载完成")
+                self.view.toast("下载完成", postion: .middle)
+
+            })
             
+            
+            
+//            for chapter in self.chapters {
+//                var params = [String: AnyObject]()
+//                params["id"] = chapter.id as AnyObject
+//                
+//                // 查看本章是否已经缓存
+//                let getContent = ContentManager.getContent(chapter.id, article_id: self.novelID)
+//                if getContent != nil {
+//                    NOVELLog("已经缓存了\(String(describing: getContent?.article_directory))")
+//                    continue
+//                }
+//                
+//                NOVELLog("正在缓存\(chapter.article_directory)")
+//                
+//                // 缓存没有缓存的内容
+//                ContentFacade.getContent(params: params, completion: { (content) in
+//                    let totalContent = ContentManager.getAll(self.novelID)
+//                    
+//                    let process = Float(totalContent.count) / Float(self.chapters.count)
+//                    let processStr = String(format:"%.2f",process)
+//                    NOVELLog("缓存进度\(processStr.floatValue() * 100)%")
+//
+//                    if processStr.floatValue()  == 1 {
+//                        NOVELLog("下载完成")
+//                        self.view.toast("下载完成", postion: .middle)
+//                        //hud?.labelText = "下载完成"
+//                        //hud?.hide(true, afterDelay: 0.3)
+//                    }
+//                    
+//                })
+//            }
         }
-
     }
     
     /// 拖拽进度条
@@ -759,27 +666,29 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     /// 上一章
     func readMenuClickPreviousChapter(readMenu: ZHNReadMenu) {
         self.currentLeft = true
-        if currentChapterIndex - 1 >= 0 {
+        if ZHNReadParser.shared.currentChapter - 1 >= 0 {
             self.showHUD()
-            currentChapterIndex -= 1
-            currentPage = 0
+            ZHNReadParser.shared.currentChapter -= 1
+            ZHNReadParser.shared.currentPage = 0
             self.loadContentData()
             self.saveNovel()
         }
         self.readVC = GetReadViewController()!
+        self.readVC.delegate = self
         self.creatPageController(self.readVC)
     }
     
     /// 下一章
     func readMenuClickNextChapter(readMenu: ZHNReadMenu) {
         self.currentLeft = false
-        if currentChapterIndex + 1 < ZHNReadParser.shared.chapters.count {
+        if ZHNReadParser.shared.currentChapter + 1 < ZHNReadParser.shared.chapters.count {
             self.showHUD()
-            currentChapterIndex += 1
-            currentPage = 0
+            ZHNReadParser.shared.currentChapter += 1
+            ZHNReadParser.shared.currentPage = 0
             self.loadContentData()
             self.saveNovel()
             self.readVC = GetReadViewController()!
+            self.readVC.delegate = self
             self.creatPageController(self.readVC)
 
         }
@@ -789,44 +698,27 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     func readMenuClickChapterList(readMenu: ZHNReadMenu, index: Int) {
         self.isJumpChapter = true
         self.showHUD()
-        currentPage = 0
-        if currentChapterIndex > index {
+        ZHNReadParser.shared.currentPage = 0
+        if ZHNReadParser.shared.currentChapter > index {
             self.currentLeft = true
-            currentChapterIndex = index
+            ZHNReadParser.shared.currentChapter = index
             self.loadContentData()
-        } else if currentChapterIndex < index {
+        } else if ZHNReadParser.shared.currentChapter < index {
             self.currentLeft = false
-            currentChapterIndex = index
+            ZHNReadParser.shared.currentChapter = index
             self.loadContentData()
         } else {
-            currentChapterIndex = index
+            ZHNReadParser.shared.currentChapter = index
             self.hud.hide(true)
             self.isJumpChapter = false
         }
     }
     
-    /// 切换日夜间模式
-    func readMenuClickLightButton(readMenu: ZHNReadMenu, isDay: Bool) {
-        
-    }
-    
-    /// 状态栏 将要 - 隐藏以及显示状态改变
-    func readMenuWillShowOrHidden(readMenu: ZHNReadMenu, isShow: Bool) {
-        
-    }
-    
-    /// 点击书签按钮
-    func readMenuClickMarkButton(readMenu: ZHNReadMenu, button: UIButton) {
-        
-    }
-    
     /// 返回按钮
     func readMenuBackClick() {
-        
         let novel = NovelManager.getNovel(novelID)
         if novel == nil {
             let alertController = UIAlertController(title: "", message: "喜欢这本书就添加到书架吧", preferredStyle: UIAlertControllerStyle.alert)
-            
             let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel){ (al) in
                 self.navigationController?.popViewController(animated: true)
             }
@@ -840,9 +732,17 @@ extension ZHNReadController: ZHNReadMenuDelegate {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-           self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
     }
+}
+
+extension ZHNReadController: ZHNReadViewControllerDelegate {
     
+    func emptyDataSetDidButton() {
+        NOVELLog("重新加载")
+        self.isJumpChapter = true
+        self.loadContentData()
+    }
 }
 

@@ -15,12 +15,13 @@ extension Chapter {
         return NSFetchRequest<Chapter>(entityName: "Chapter")
     }
     
+    @NSManaged public var id: Int64
     @NSManaged public var article_directory: String
-    @NSManaged public var article_directory_link: String
+    //@NSManaged public var article_directory_link: String
     @NSManaged public var article_id: String
     @NSManaged public var last_update_date: String?
     @NSManaged public var last_update_directory: String
-    @NSManaged public var update_status: String
+    //@NSManaged public var update_status: String
 
     
     

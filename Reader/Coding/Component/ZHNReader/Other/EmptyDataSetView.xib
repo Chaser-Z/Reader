@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="EmptyDataSetView" id="iN0-l3-epB" customClass="EmptyDataSetView" customModule="Reader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网络不给力，请点击下面按钮重试哦~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml7-jU-NPZ">
+                    <rect key="frame" x="0.0" y="20" width="375" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="7HA-8O-U1o"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJD-Mr-Y0n">
+                    <rect key="frame" x="138" y="74" width="99" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="99" id="GY3-eE-2we"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="点击重试"/>
+                    <connections>
+                        <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZV4-5m-9qn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bJD-Mr-Y0n" firstAttribute="top" secondItem="ml7-jU-NPZ" secondAttribute="bottom" constant="34" id="0Se-XK-Kol"/>
+                <constraint firstAttribute="trailing" secondItem="ml7-jU-NPZ" secondAttribute="trailing" id="0aL-qT-nXu"/>
+                <constraint firstItem="bJD-Mr-Y0n" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QVS-h3-hDz"/>
+                <constraint firstItem="ml7-jU-NPZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZUA-8B-HVe"/>
+                <constraint firstItem="ml7-jU-NPZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="yhk-js-6jV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="点击重试" width="100" height="100"/>
+    </resources>
+</document>

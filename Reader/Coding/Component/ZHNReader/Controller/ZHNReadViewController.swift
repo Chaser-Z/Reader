@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
+
+protocol ZHNReadViewControllerDelegate: class {
+    func emptyDataSetDidButton()
+}
+
 
 class ZHNReadViewController: UIViewController {
     
+    weak var delegate: ZHNReadViewControllerDelegate?
+    
     /// 阅读控制器
     weak var readController: ZHNReadController!
+    
+    var currentPage: Int = ZHNReadParser.shared.currentPage
+    var currentChapter: Int = ZHNReadParser.shared.currentChapter
     
     /// TableView
     private(set) var tableView:UITableView!
@@ -31,7 +42,7 @@ class ZHNReadViewController: UIViewController {
 
         // 添加子控件
         addSubviews()
-        
+                
         // 配置背景颜色
         configureBGColor()
         
@@ -44,12 +55,12 @@ class ZHNReadViewController: UIViewController {
 
     }
     
+    
     /// 创建UI
     private func addSubviews() {
-        
         // TopStatusView
         topStatusView = UILabel()
-        topStatusView.text = ZHNReadParser.shared.chapters[readController.currentChapterIndex].article_directory
+        topStatusView.text = ZHNReadParser.shared.chapters[ZHNReadParser.shared.currentChapter].article_directory
         topStatusView.lineBreakMode = .byTruncatingMiddle
         topStatusView.textColor = Color_4
         topStatusView.font = Font_12
@@ -59,7 +70,7 @@ class ZHNReadViewController: UIViewController {
         // BottomStatusView
         bottomStatusView = ZHNStatusView(frame:CGRect(x: Space_1, y: view.frame.height - Space_2, width: view.width - 2 * Space_1, height: Space_2))
         bottomStatusView.backgroundColor = UIColor.clear
-        bottomStatusView.titleLabel.text = "\(readController.currentPage + 1)/\(ZHNReadParser.shared.pageCount)"
+        bottomStatusView.titleLabel.text = "\(ZHNReadParser.shared.currentPage + 1)/\(ZHNReadParser.shared.pageCount)"
         view.addSubview(bottomStatusView)
 
         
@@ -71,6 +82,8 @@ class ZHNReadViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         tableView.frame = GetReadTableViewFrame()
         view.addSubview(tableView)
 
@@ -102,7 +115,7 @@ class ZHNReadViewController: UIViewController {
     private func configureReadRecordModel() {
         // 上下滚动
         if ZHNReadConfigure.shared().effectType == ZHNEffectType.upAndDown.rawValue {
-            tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: CGFloat(ZHNReadParser.shared.chapters.count + readController.currentPage) * GetReadTableViewFrame().height)
+            tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: CGFloat(ZHNReadParser.shared.chapters.count + ZHNReadParser.shared.currentPage) * GetReadTableViewFrame().height)
         }
         
     }    
@@ -120,6 +133,10 @@ extension ZHNReadViewController: UITableViewDelegate,UITableViewDataSource {
         
         if ZHNReadConfigure.shared().effectType != ZHNEffectType.upAndDown.rawValue { // 非上下滚动
             
+            if ZHNReadParser.shared.content == "" {
+                NOVELLog("内容是空的")
+                return 0
+            }
             return 1
             
         }else{ // 上下滚动
@@ -134,8 +151,8 @@ extension ZHNReadViewController: UITableViewDelegate,UITableViewDataSource {
             
             let cell = ZHNReadViewCell.cellWithTableView(tableView)
             NOVELLog(ZHNReadParser.shared.pageCount)
-            NOVELLog(readController.currentPage)
-            cell.content = ZHNReadParser.shared.string(page: readController.currentPage)
+            NOVELLog(ZHNReadParser.shared.currentPage)
+            cell.content = ZHNReadParser.shared.string(page: ZHNReadParser.shared.currentPage)
             
             return cell
             
@@ -198,3 +215,41 @@ extension ZHNReadViewController: UITableViewDelegate,UITableViewDataSource {
     }
 
 }
+
+extension ZHNReadViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "网络不给力，请点击下面按钮重试哦~"
+        return StringUtil.attributeStringFromString(
+            string: text,
+            alignment: .center,
+            color: .darkGray,
+            lineSpacing: 5.0,
+            fontSize: 16.0
+        )
+    }
+    
+    func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> UIImage! {
+        return UIImage(named: "点击重试")
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return false
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        if let delegate = self.delegate {
+            delegate.emptyDataSetDidButton()
+        }
+    }
+    
+    func emptyDataSetWillAppear(_ scrollView: UIScrollView!) {
+        self.tableView.contentOffset = .zero
+    }
+    
+//    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+//        return UIImage(named: "not_net")
+//    }
+    
+}
+

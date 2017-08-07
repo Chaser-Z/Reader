@@ -69,7 +69,9 @@ class DemoCell: CCFoldCell {
     
     @IBAction func readButtonAction(_ sender: Any) {
         let button = sender as? UIButton
-        delegate?.readButtonClick((button?.tag)!)
+        if let delegate = self.delegate {
+            delegate.readButtonClick((button?.tag)!)
+        }
     }
     
     

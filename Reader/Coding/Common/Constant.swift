@@ -8,10 +8,10 @@
 
 import Foundation
 
-let HOST = "http://47.94.86.211:8080/my_novel/"
 //let HOST = "http://192.168.1.104:9090"
 //let HOST = "http://localhost:9091"
 //let HOST = "http://192.168.6.177:8090"
+let HOST = "http://47.94.86.211:8080/read_novel/"
 
 
 let kSeparatorViewH: CGFloat = 0.5
@@ -24,7 +24,7 @@ let bookShelfNotificationName = Notification.Name("BookShelfNotificationName")
 let kUserLogoutNotificationName = Notification.Name("UserLogoutNotificationName")
 let kUserInfoUpdateNotificationName = Notification.Name("UserInfoUpdateNotificationName")
 let kUserAvatarUpdateNotificationName = Notification.Name("UserAvatarUpdateNotificationName")
-
+let removeBookShelfNotificationName = Notification.Name("removeBookShelfNotificationName")
 
 // MARK: - ShareSDK
 
@@ -35,8 +35,8 @@ let kWeChatAppId = "wx4d1cb9a62efd22b7"
 let kWeChatAppSecret = "5d30898ed49c28dd6e869c6ceca975e7"
 
 // QQ Login
-let kQQAppId = "101376383"
-let kQQAppKey = "fad7c765e3662a8925a892850a1a5598"
+let kQQAppId = "1106227433"
+let kQQAppKey = "lC5PTsrMbNBXGAhh"
 
 // Weibo
 let kWeiboAppKey = "745622145"

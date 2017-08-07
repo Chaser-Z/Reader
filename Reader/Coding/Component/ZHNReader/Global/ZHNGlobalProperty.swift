@@ -43,8 +43,8 @@ let Color_4:UIColor = RGB(127, g: 136, b: 138)
 let Color_5:UIColor = RGB(145, g: 145, b: 145)
 
 /// LeftView文字颜色
-let Color_6:UIColor = RGB(200, g: 200, b: 200)
-
+//let Color_6:UIColor = RGB(200, g: 200, b: 200)
+let Color_6:UIColor = UIColor.black
 
 /// 阅读背景颜色支持
 let ReadBGColor_1:UIColor = RGB(238, g: 224, b: 202)

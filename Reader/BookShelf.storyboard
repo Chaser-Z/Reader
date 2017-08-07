@@ -32,7 +32,7 @@
         <scene sceneID="TMH-PP-8RM">
             <objects>
                 <collectionViewController id="PUr-3e-R2P" customClass="BookShelfViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="13C-L1-n6K">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="13C-L1-n6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,14 +125,27 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNA-Vs-LtX">
-                                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diz-jf-Git">
+                                            <rect key="frame" x="60" y="87" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="delete"/>
-                                            <connections>
-                                                <action selector="deleteButtonClick:" destination="tcN-gK-mqT" eventType="touchUpInside" id="60z-08-YXz"/>
-                                            </connections>
+                                            <state key="normal" title="Button"/>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvX-Ny-lGk" customClass="ViewSwift" customModule="Reader" customModuleProvider="target">
+                                            <rect key="frame" x="70" y="0.0" width="30" height="20"/>
+                                            <color key="backgroundColor" red="1" green="0.19358607210000001" blue="0.16062673790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="F3W-9R-SQ1"/>
+                                                <constraint firstAttribute="width" constant="30" id="UMt-UJ-Aif"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -142,16 +155,19 @@
                                     <constraint firstItem="eB7-bj-fSm" firstAttribute="leading" secondItem="tcN-gK-mqT" secondAttribute="leadingMargin" id="Wqo-Sb-VTk"/>
                                     <constraint firstItem="iY2-YC-rLT" firstAttribute="top" secondItem="eB7-bj-fSm" secondAttribute="bottom" constant="4" id="b5b-eq-fnr"/>
                                     <constraint firstAttribute="trailing" secondItem="iY2-YC-rLT" secondAttribute="trailing" constant="8" id="fgE-RF-TLY"/>
+                                    <constraint firstAttribute="trailing" secondItem="uvX-Ny-lGk" secondAttribute="trailing" id="q85-cY-d1S"/>
+                                    <constraint firstItem="uvX-Ny-lGk" firstAttribute="top" secondItem="tcN-gK-mqT" secondAttribute="top" id="sfa-5K-xqk"/>
                                     <constraint firstAttribute="bottom" secondItem="iY2-YC-rLT" secondAttribute="bottom" id="tGk-mt-5Jd"/>
                                     <constraint firstItem="eB7-bj-fSm" firstAttribute="trailing" secondItem="tcN-gK-mqT" secondAttribute="trailingMargin" id="tYg-mr-Zr5"/>
                                     <constraint firstItem="k0j-OU-uGa" firstAttribute="leading" secondItem="tcN-gK-mqT" secondAttribute="leadingMargin" id="zYs-XG-82t"/>
                                 </constraints>
                                 <size key="customSize" width="100" height="160"/>
                                 <connections>
-                                    <outlet property="deleteButton" destination="xNA-Vs-LtX" id="VUi-3O-b1t"/>
+                                    <outlet property="deleteButton" destination="diz-jf-Git" id="LxK-gh-Aot"/>
                                     <outlet property="heightConstraint" destination="frz-lr-dk4" id="VO6-k1-7Hc"/>
                                     <outlet property="novelImageView" destination="k0j-OU-uGa" id="wch-s8-RRz"/>
                                     <outlet property="processLabel" destination="iY2-YC-rLT" id="1Eb-zn-J86"/>
+                                    <outlet property="remindLabel" destination="uvX-Ny-lGk" id="vgi-qz-cc6"/>
                                     <outlet property="titleLabel" destination="eB7-bj-fSm" id="H6g-k9-3Iy"/>
                                 </connections>
                             </collectionViewCell>

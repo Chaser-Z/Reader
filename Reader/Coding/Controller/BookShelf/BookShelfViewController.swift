@@ -12,39 +12,68 @@ import Alamofire
 class BookShelfViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
 
     fileprivate var tView: ZHNBookShelfView!
-    private var novels = [Novel]()
-    
+    fileprivate var novels = [Novel]()
+    fileprivate var novelTitles = [String]()
+    fileprivate var isNovelEditing = false
     private var bookShelfObserver: NSObjectProtocol?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "书架"
+        addGesture()
         registerNotificationObservers()
         getNovels()
-//        print(self.view.frame)
-//        tView = ZHNBookShelfView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
-//        tView.delegate = self
-//        //self.view.addSubview(tView)
-//        
-//        // 获取小说目录
-//        let novles = NovelManager.getAll()
-//        DispatchQueue.main.async {
-//            
-//            NovelFacade.getNovelList { (novels) in
-//                let novles = NovelManager.getAll()
-//                self.tView.novels = novles
-//                NOVELLog(novles[0].title)
-//                for _ in 0..<novles.count {
-//                    self.tView.remindArr.append(0)
-//                }
-//                //flag = false
-//                self.tView.reloadData()
-//                self.checkoutNovelUpdate()
-//            }
-//        }
-
+        //checkoutNovelUpdate()
+    }
+    
+    private func addButtonItem() {
+        let cancelBar = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancel))
+        self.navigationItem.leftBarButtonItem = cancelBar
+        
+        let doneBar = UIBarButtonItem(title: "确定", style: .plain, target: self, action: #selector(done))
+        self.navigationItem.rightBarButtonItem = doneBar
+    }
+    
+    private func addGesture() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressMethod(_:)))
+        self.collectionView?.addGestureRecognizer(longPress)
+    }
+    
+    // MARK: - GestureMethod
+    @objc fileprivate func longPressMethod(_ gesture: UILongPressGestureRecognizer) {
+        self.isNovelEditing = true
+        addButtonItem()
+        self.title = "正在删除藏书..."
+        print("longPressMethod")
+        self.collectionView?.reloadData()
+    }
+    
+    // MARK: - Action
+    @objc private func cancel() {
+        self.title = "书架"
+        novelTitles = [String]()
+        getNovels()
+        self.isNovelEditing = false
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = nil
+        self.collectionView?.reloadData()
+    }
+    
+    @objc private func done() {
+        self.title = "书架"
+        for article_id in novelTitles {
+            if article_id != "" {
+                NovelManager.deleteNovel(article_id)
+            }
+        }
+        novelTitles = [String]()
+        getNovels()
+        
+        self.isNovelEditing = false
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = nil
+        self.collectionView?.reloadData()
     }
     
     private func getNovels() {
@@ -53,6 +82,7 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
         let novels = NovelManager.getAll()
         self.novels = novels
         for novel in novels {
+            novelTitles.append("")
             NOVELLog(novel.title)
         }
         
@@ -65,9 +95,9 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
         let path = "/articleInfo/getLatestArticles"
         var params = [String: AnyObject]()
         
-        if tView.novels.count > 0 {
+        if self.novels.count > 0 {
             
-            for (index,novel) in tView.novels.enumerated() {
+            for (index,novel) in self.novels.enumerated() {
                 let record = RecordManager.getRecord(novel.article_id)
                 if record.count <= 0 {
                     continue
@@ -82,16 +112,11 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
                             let data = info["data"] as! Array<Dictionary<String, Any>>
                             NOVELLog(data)
                             print(data.count)
-                            self.tView.remindArr[index] = data.count
-                            //print(self.tView.remindArr)
-                            //if index == novles.count - 1 {
-                            self.tView.reloadData()
-                            //}
+                            //self.tView.remindArr[index] = data.count
+                            
                         }
                     }
-                    
                 }
-                
             }
         }
         
@@ -101,7 +126,6 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
         
         let center = NotificationCenter.default
         bookShelfObserver = center.addObserver(forName: bookShelfNotificationName, object: nil, queue: OperationQueue.main) { [weak self] notification in
-            print("dsj;fjlejflewjfljwefljewlfjwlejflwekf")
             self?.getNovels()
         }
     }
@@ -138,13 +162,14 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
         if indexPath.row < novels.count {
             novel = novels[indexPath.row]
             isPlaceholder = false
+            isEditing = self.isNovelEditing
         } else {
             novel = nil
             isEditing = false
             isPlaceholder = true
         }
-        
-        cell.setup(novel: novel, isEditing: isEditing, isPlaceholder: isPlaceholder)
+        cell.setup(novel: novel, isEditing: isEditing, isPlaceholder: isPlaceholder, index: indexPath.row)
+        cell.delegate = self
         return cell
     }
 
@@ -162,15 +187,19 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if indexPath.row < novels.count {
-            let vc = ZHNReadController()
-            vc.novel = novels[indexPath.row]
-            vc.novelID = novels[indexPath.row].article_id
-            self.navigationController?.pushViewController(vc, animated: true)
+        if isNovelEditing {
+            
         } else {
-            let storyboard = UIStoryboard(name: "Search", bundle: Bundle.main)
-            let controller = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController")
-            navigationController?.pushViewController(controller, animated: false)
+            if indexPath.row < novels.count {
+                let vc = ZHNReadController()
+                vc.novel = novels[indexPath.row]
+                vc.novelID = novels[indexPath.row].article_id
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let storyboard = UIStoryboard(name: "Search", bundle: Bundle.main)
+                let controller = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController")
+                navigationController?.pushViewController(controller, animated: false)
+            }
         }
     }
 }
@@ -188,5 +217,18 @@ extension BookShelfViewController: ZHNBookShelfViewDelegate {
         self.tView.reloadData()
         self.navigationController?.pushViewController(vc, animated: true)
         
+    }
+}
+
+extension BookShelfViewController: BookShelfCellDelegate {
+    
+    func deleteNovel(_ novel: Novel?, isDelete: Bool, index: Int) {
+        if isDelete {
+            novelTitles[index] = (novel?.article_id)!
+            NOVELLog("删除" + (novel?.title)!)
+        } else {
+            novelTitles[index] = ""
+            NOVELLog("添加" + (novel?.title)!)
+        }
     }
 }

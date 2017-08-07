@@ -204,7 +204,7 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     // MARK: -- UIGestureRecognizerDelegate
     
     /// 点击这些控件不需要执行手势
-    private let ClassString:[String] = ["ASValueTrackingSlider","UITableViewCellContentView","UISlider","Reader.ZHNLeftView","Reader.ZHNTopView","Reader.ZHNBottomView","Reader.ZHNHaloButton","Reader.ZHNLightView","Reader.ZHNColorView","Reader.ZHNFuncView","Reader.ZHNSettingView"]
+    private let ClassString:[String] = ["ASValueTrackingSlider","UITableViewCellContentView","UISlider","Reader.ZHNLeftView","Reader.ZHNTopView","Reader.ZHNBottomView","Reader.ZHNHaloButton","Reader.ZHNLightView","Reader.ZHNColorView","Reader.ZHNFuncView","Reader.ZHNSettingView","Reader.LeftTopView"]
     
     /// 手势拦截
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

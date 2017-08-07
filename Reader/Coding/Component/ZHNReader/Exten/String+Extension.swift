@@ -162,6 +162,12 @@ extension String {
         } catch {return self}
     }
     
+    func appendingPathComponent(path: String) -> String {
+        let str = self as NSString
+        return str.appendingPathComponent(path)
+    }
+
+    
 }
 
 extension NSAttributedString{

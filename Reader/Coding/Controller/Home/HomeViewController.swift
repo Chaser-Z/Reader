@@ -10,9 +10,6 @@ import UIKit
 import Alamofire
 import MBProgressHUD
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
-    var searchController: UISearchController?
-
     
     fileprivate let headerViewTitles = ["热门","玄幻","修真","都市","历史","网游","科幻","恐怖","全本"]
     fileprivate var wholeNovels = [[Novel]]()
@@ -27,14 +24,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     fileprivate var completeNovels = [Novel]()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-        self.forTest()
         setupSearchView()
         loadData()
-
     }
     
     private func setupSearchView() {
@@ -90,39 +83,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             if self.completeNovels.count > 0 {
                 self.wholeNovels.append(self.completeNovels)
             }
-
             
             hud?.hide(true)
             self.collectionView?.reloadData()
         }
-
     }
     
-    func forTest() {
-        
-        var params = [String: AnyObject]()
-        params["article_id"] = "0_703" as AnyObject
-        params["article_directory_link"] = "/0_703/7380617.html" as AnyObject
-        
-        ContentFacade.getContent(params: params) { (content) in
-            
-            NOVELLog("完成")
-        
-        }
-        
-        let btn = UIButton(type: .custom)
-        btn.frame = CGRect(x: 0, y: 100, width: ScreenWidth, height: 50)
-        btn.backgroundColor = UIColor.red
-        btn.addTarget(self, action: #selector(text), for: .touchUpInside)
-        //self.view.addSubview(btn)
-        self.title = "推荐"
-    }
-    
-    func text() {
-        let vc = ViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -242,7 +208,6 @@ extension HomeViewController {
         default:
             print("++")
         }
-
         
         let vc = ZHNReadController()
         vc.novelID = novleID

@@ -19,7 +19,7 @@ class ChapterManager {
         
         let context = CoreDataManager.sharedInstance.context
         let request: NSFetchRequest<Chapter> = Chapter.fetchRequest()
-        request.predicate = NSPredicate(format: "article_directory_link == %@", serverChapter.article_directory_link)
+        request.predicate = NSPredicate(format: "article_directory == %@ AND article_id == %@", serverChapter.article_directory, serverChapter.article_id)
         do {
             let list = try context.fetch(request)
             if list.count > 0 {
@@ -55,11 +55,12 @@ class ChapterManager {
         
     fileprivate class func setFields(_ chapter: Chapter, serverChapter: ServerChapter) {
         chapter.article_directory = serverChapter.article_directory
-        chapter.article_directory_link =  serverChapter.article_directory_link
+        chapter.id = serverChapter.id
+        //chapter.article_directory_link =  serverChapter.article_directory_link
         chapter.article_id = serverChapter.article_id
         chapter.last_update_date = serverChapter.last_update_date
         chapter.last_update_directory = serverChapter.last_update_directory
-        chapter.update_status = serverChapter.update_status
+        //chapter.update_status = serverChapter.update_status
     }
 
     
