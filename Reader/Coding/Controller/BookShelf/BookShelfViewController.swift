@@ -11,10 +11,10 @@ import Alamofire
 
 class BookShelfViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
 
-    fileprivate var tView: ZHNBookShelfView!
     fileprivate var novels = [Novel]()
     fileprivate var novelTitles = [String]()
     fileprivate var isNovelEditing = false
+    fileprivate var updateCounts = [Int]()
     private var bookShelfObserver: NSObjectProtocol?
 
     
@@ -24,7 +24,7 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
         addGesture()
         registerNotificationObservers()
         getNovels()
-        //checkoutNovelUpdate()
+        checkoutNovelUpdate()
     }
     
     private func addButtonItem() {
@@ -83,9 +83,10 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
         self.novels = novels
         for novel in novels {
             novelTitles.append("")
+            updateCounts.append(0)
             NOVELLog(novel.title)
         }
-        
+        updateCounts.append(0)
         self.collectionView?.reloadData()
     }
 
@@ -110,10 +111,8 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
                         if json is [String: Any] {
                             let info = json as! [String: Any]
                             let data = info["data"] as! Array<Dictionary<String, Any>>
-                            NOVELLog(data)
-                            print(data.count)
-                            //self.tView.remindArr[index] = data.count
-                            
+                            self.updateCounts[index] = data.count
+                            self.collectionView?.reloadData()
                         }
                     }
                 }
@@ -168,7 +167,7 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
             isEditing = false
             isPlaceholder = true
         }
-        cell.setup(novel: novel, isEditing: isEditing, isPlaceholder: isPlaceholder, index: indexPath.row)
+        cell.setup(novel: novel, isEditing: isEditing, isPlaceholder: isPlaceholder, index: indexPath.row, updateCount: updateCounts[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -194,6 +193,12 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
                 let vc = ZHNReadController()
                 vc.novel = novels[indexPath.row]
                 vc.novelID = novels[indexPath.row].article_id
+                if updateCounts[indexPath.row]  > 0 {
+                    vc.isUpdate = true
+                }
+                self.updateCounts[indexPath.row] = 0
+                vc.isShelfVC = true
+                self.collectionView?.reloadData()
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
                 let storyboard = UIStoryboard(name: "Search", bundle: Bundle.main)
@@ -201,22 +206,6 @@ class BookShelfViewController: UICollectionViewController , UICollectionViewDele
                 navigationController?.pushViewController(controller, animated: false)
             }
         }
-    }
-}
-
-extension BookShelfViewController: ZHNBookShelfViewDelegate {
-    
-    func reloadOrPushReadVC(index: Int) {
-        
-        let vc = ZHNReadController()
-        vc.novelID = tView.novels[index].article_id
-        if tView.remindArr[index]  > 0{
-            vc.isUpdate = true
-        }
-        self.tView.remindArr[index] = 0
-        self.tView.reloadData()
-        self.navigationController?.pushViewController(vc, animated: true)
-        
     }
 }
 

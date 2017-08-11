@@ -46,10 +46,16 @@ class BookShelfCell: UICollectionViewCell {
         }
     }
     
-    func setup(novel: Novel?, isEditing: Bool = false, isPlaceholder: Bool = false, index: Int) {
+    func setup(novel: Novel?, isEditing: Bool = false, isPlaceholder: Bool = false, index: Int, updateCount: Int) {
         // Clean up hud
         
-        remindLabel.isHidden = true
+        if updateCount == 0 {
+            remindLabel.isHidden = true
+        } else {
+            remindLabel.isHidden = false
+        }
+        remindLabel.text = "\(updateCount)"
+        
         
         deleteButton?.isHidden = true
         deleteButton?.isEnabled = false
@@ -85,7 +91,7 @@ class BookShelfCell: UICollectionViewCell {
             novelImageView.image = UIImage(named: "add_placeholder")
             titleLabel.text = ""
             processLabel.text = ""
-            
+            remindLabel.isHidden = true
             bgView?.isHidden = true
             
             novelImageView.backgroundColor = .clear
@@ -102,6 +108,7 @@ class BookShelfCell: UICollectionViewCell {
             self.processLabel.text = novel?.author
             self.titleLabel.text = novel?.title
             if isEditing {
+                remindLabel.isHidden = true
                 bgView?.isHidden = false
                 bgView?.backgroundColor = UIColor.white
                 deleteButton?.isHidden = false
