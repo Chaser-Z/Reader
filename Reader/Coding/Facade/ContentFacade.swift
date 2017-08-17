@@ -10,14 +10,19 @@ import UIKit
 
 class ContentFacade {
     
-    class func getContent(params: [String: AnyObject], completion: @escaping (_ content: Content?) -> Void) {
+    class func getContent(params: [String: AnyObject], isDownLoad: Bool = false, completion: @escaping (_ content: Content?) -> Void) {
         ContentWSHelper.getContent(params) { (resp) in
             
             let errorCode = resp.errorCode
             if errorCode == ErrorCode.Success {
                 let serverContent = resp.dict["content"] as! ServerContent
-                let content = ContentManager.add(serverContent)
-                completion(content!)
+                if isDownLoad {
+                    ImportManager.importContent(serverContent: serverContent)
+                    completion(nil)
+                } else {
+                    let content = ContentManager.add(serverContent)
+                    completion(content!)
+                }
                 
             } else {
                 NOVELLog("Failed to get getContent: \(errorCode)")
@@ -44,6 +49,5 @@ class ContentFacade {
             }
 
         }
-
-    }
+    }    
 }

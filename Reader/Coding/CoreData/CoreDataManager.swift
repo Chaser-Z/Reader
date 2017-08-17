@@ -68,6 +68,7 @@ class CoreDataManager: NSObject {
             if context.hasChanges {
                 try context.save()
             }
+            
         } catch let error as NSError {
             NOVELLog("Failed to save: \(error)")
             abort()

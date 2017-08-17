@@ -55,6 +55,6 @@ class ContentWSHelper {
             
             completion(serviceResponse)
         }
-
     }
+    
 }

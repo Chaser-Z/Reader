@@ -24,7 +24,7 @@ extension Record {
     @NSManaged public var pageCount: Int32
     @NSManaged public var currentPage: Int32
     @NSManaged public var currentChapterIndex: Int32
-
+    @NSManaged public var id: Int64
     
 }
 

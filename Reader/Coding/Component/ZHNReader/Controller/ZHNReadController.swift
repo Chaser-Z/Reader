@@ -47,6 +47,8 @@ class ZHNReadController: ZHNBaseViewController {
     var novel: Novel?
     /// 小说id
     var novelID: String!
+    /// 当前下载到的章节id
+    fileprivate var downLoadNovelChapterId: Int64?
     /// 翻页控制器 (仿真)
     private(set) var pageViewController: UIPageViewController?
     /// 翻页控制器 (无效果,覆盖,上下)
@@ -73,6 +75,8 @@ class ZHNReadController: ZHNBaseViewController {
         if record.count > 0 {
             ZHNReadParser.shared.currentPage = Int(record[0].currentPage)
             ZHNReadParser.shared.currentChapter = Int(record[0].currentChapterIndex)
+            NOVELLog(record[0].id)
+            downLoadNovelChapterId = record[0].id
         } else {
             ZHNReadParser.shared.currentChapter = 0
             ZHNReadParser.shared.currentPage = 0
@@ -250,6 +254,7 @@ class ZHNReadController: ZHNBaseViewController {
                 if self.currentContent == nil {
                     ZHNReadParser.shared.content = ""
                     NOVELLog("控制")
+                    againLoadData()
                     return
                 }
                 ZHNReadParser.shared.content = self.currentContent?.content
@@ -277,6 +282,7 @@ class ZHNReadController: ZHNBaseViewController {
                 if self.currentContent == nil {
                     ZHNReadParser.shared.content = ""
                     NOVELLog("控制")
+                    againLoadData()
                     return
                 }
                 
@@ -382,6 +388,7 @@ class ZHNReadController: ZHNBaseViewController {
         self.novelRecord?.pageCount = Int32(ZHNReadParser.shared.pageCount)
         self.novelRecord?.currentPage = Int32(ZHNReadParser.shared.currentPage)
         self.novelRecord?.currentChapterIndex = Int32(ZHNReadParser.shared.currentChapter)
+        self.novelRecord?.id = downLoadNovelChapterId
         if currentContent?.content != nil {
             let _ = RecordManager.add(self.novelRecord!)
         }
@@ -393,6 +400,13 @@ class ZHNReadController: ZHNBaseViewController {
         hud?.mode = .indeterminate
         hud?.labelText = "正在加载中..."
         hud?.removeFromSuperViewOnHide = true
+    }
+    
+    // MARK: - 重新加载数据
+    fileprivate func againLoadData() {
+        ZHNReadParser.shared.currentPage = 0
+        self.isJumpChapter = true
+        self.loadContentData()
     }
     
     // MARK: - 获取阅读上下页
@@ -636,7 +650,6 @@ extension ZHNReadController: ZHNReadMenuDelegate {
     /// 下载
     func readMenuClickDownload(readMenu: ZHNReadMenu) {
         print("点击了下载")
-        
         // 已经缓存的内容
         let addContent = ContentManager.getAll(self.novelID)
         if addContent.count == self.chapters.count {
@@ -646,24 +659,43 @@ extension ZHNReadController: ZHNReadMenuDelegate {
         NOVELLog("已经缓存的章节数\(addContent.count)")
         NOVELLog("没有缓存的章节数\(self.chapters.count - addContent.count)")
         self.view.toast("开始下载", postion: .middle)
-        
-        let queue = DispatchQueue.global()
-        let group = DispatchGroup()
-        let semaphore = DispatchSemaphore(value: 1)
+    
         DispatchQueue.global(qos: .userInitiated).async {
             var params = [String: AnyObject]()
             params["article_id"] = self.novelID as AnyObject
-
+            NOVELLog(self.downLoadNovelChapterId)
+            if self.downLoadNovelChapterId == nil || self.downLoadNovelChapterId! <= 0 {
+                self.downLoadNovelChapterId = nil
+            }
+            params["id"] = self.downLoadNovelChapterId as AnyObject
             ContentFacade.getAllContent(params: params, completion: { (contents) in
                 NOVELLog("下载完成")
-                self.view.toast("下载完成", postion: .middle)
+                NOVELLog(contents.count)
+                if contents.count > 0 {
+                    self.novelRecord!.id = contents[contents.count - 1].id
+                    self.downLoadNovelChapterId = self.novelRecord!.id
+                    self.saveNovel()
+                    for content in contents {
+                        NOVELLog(content.article_directory)
+                    }
+                    self.view.toast("下载完成", postion: .middle)
+                }
             })
         }
         
+        let queue = DispatchQueue.global()
+        let group = DispatchGroup()
         
-//        queue.async(group: group, execute: {
-//        //queue.async {
+        
+//        let queue1 = OperationQueue()
+//        queue1.maxConcurrentOperationCount = 5
+//        
+//        
+//        queue.async {
 //            for chapter in self.chapters {
+//                
+//            autoreleasepool {
+//
 //                var params = [String: AnyObject]()
 //                params["id"] = chapter.id as AnyObject
 //                
@@ -671,31 +703,113 @@ extension ZHNReadController: ZHNReadMenuDelegate {
 //                let getContent = ContentManager.getContent(chapter.id, article_id: self.novelID)
 //                if getContent != nil {
 //                    NOVELLog("已经缓存了\(String(describing: getContent?.article_directory))")
-//                    continue
-//                }
-//                NOVELLog("正在缓存\(chapter.article_directory)")
-//                group.enter()
-//                //let result = semaphore.wait(timeout: .distantFuture)
-//                //if result == .success {
-//                    // 缓存没有缓存的内容
-//                    ContentFacade.getContent(params: params, completion: { (content) in
-//                        let totalContent = ContentManager.getAll(self.novelID)
-//                        let process = Float(totalContent.count) / Float(self.chapters.count)
-//                        let processStr = String(format:"%.2f",process)
-//                        NOVELLog("缓存进度\(processStr.floatValue() * 100)%")
-//                        if processStr.floatValue()  == 1 {
-//                            NOVELLog("下载完成")
-//                            self.view.toast("下载完成", postion: .middle)
-//                            //hud?.labelText = "下载完成"
-//                            //hud?.hide(true, afterDelay: 0.3)
-//                        }
-//                        group.leave()
-//                        // 任务结束, 信号量+1
-//                        //semaphore.signal()
+//                    
+//                } else {
+//                    
+//                    NOVELLog("正在缓存\(chapter.article_directory)")
+//                    //group.enter()
+//                    
+//                    let uploadOperation = BlockOperation(block: {
+//                        
+//                        //let result = semaphore.wait(timeout: .distantFuture)
+//                        //if result == .success {
+//                        let semaphore = DispatchSemaphore(value: 0)
+//                        
+//                        // 缓存没有缓存的内容
+//                        ContentFacade.getContent(params: params, isDownLoad: true, completion: { (content) in
+//                            let totalContent = ContentManager.getAll(self.novelID)
+//                            let process = Float(totalContent.count) / Float(self.chapters.count)
+//                            let processStr = String(format:"%.2f",process)
+//                            NOVELLog("缓存进度 \(chapter.id), \(processStr.floatValue() * 100)%")
+//                            if processStr.floatValue()  == 1 {
+//                                NOVELLog("下载完成")
+//                                //self.view.toast("下载完成", postion: .middle)
+//                                //hud?.labelText = "下载完成"
+//                                //hud?.hide(true, afterDelay: 0.3)
+//                            }
+//                            //group.leave()
+//                            // 任务结束, 信号量+1
+//                            semaphore.signal()
+//                        })
+//                        let _ = semaphore.wait(timeout: .distantFuture)
+//                        //}
 //                    })
-//                //}
+//                    queue1.addOperation(uploadOperation)
+//
+//                    
+//                }
+// 
 //            }
-//        })
+//        }
+//        
+//        }
+        
+        
+        
+        
+            
+            
+//        //queue.async(group: group, execute: {
+//        let semaphore = DispatchSemaphore(value: 1)
+//
+//        DispatchQueue.global(qos: .default).async {
+//            for chapter in self.chapters {
+//                
+//                autoreleasepool {
+//
+//                var params = [String: AnyObject]()
+//                params["id"] = chapter.id as AnyObject
+//                
+//                // 查看本章是否已经缓存
+//                let getContent = ContentManager.getContent(chapter.id, article_id: self.novelID)
+//                if getContent != nil {
+//                    NOVELLog("已经缓存了\(String(describing: getContent?.article_directory))")
+//                    
+//                } else {
+//                    
+//                    NOVELLog("正在缓存\(chapter.article_directory)")
+//                    //group.enter()
+//                    //queue.async {
+//                    
+//                    let result = semaphore.wait(timeout: .distantFuture)
+//                    if result == .success {
+//                        NOVELLog("wait")
+//                        
+//                        let path = "/articleContent/getArticleByDriectoryLink"
+//                        
+//                        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { (response) in
+//                            semaphore.signal()
+//                            NOVELLog(response)
+//                        }
+////                        // 缓存没有缓存的内容
+////                        ContentFacade.getContent(params: params, isDownLoad: true, completion: { (content) in
+////                            let totalContent = ContentManager.getAll(self.novelID)
+////                            let process = Float(totalContent.count) / Float(self.chapters.count)
+////                            let processStr = String(format:"%.2f",process)
+////                            NOVELLog("缓存进度\(processStr.floatValue() * 100)%")
+////                            if processStr.floatValue()  == 1 {
+////                                NOVELLog("下载完成")
+////                                //self.view.toast("下载完成", postion: .middle)
+////                                //hud?.labelText = "下载完成"
+////                                //hud?.hide(true, afterDelay: 0.3)
+////                            }
+////                            //group.leave()
+////                            // 任务结束, 信号量+1
+////                            
+////                            NOVELLog("signal")
+////                            semaphore.signal()
+////                        })
+//                        //}
+//                    } else {
+//                        NOVELLog("失败")
+//                    }
+//                    
+//                    }
+//
+//                
+//                }
+//            }
+//        }
     }
     
     /// 拖拽进度条
@@ -781,9 +895,6 @@ extension ZHNReadController: ZHNReadViewControllerDelegate {
     
     func emptyDataSetDidButton() {
         NOVELLog("重新加载")
-        ZHNReadParser.shared.currentPage = 0
-        self.isJumpChapter = true
-        self.loadContentData()
+        againLoadData()
     }
 }
-

@@ -153,15 +153,8 @@ class UserViewController: UITableViewController {
 
     // 分享给好友
     private func goToRecommend(_ sender: UITableViewCell) {
-        
-        let UMENG_SHARE_TEXT = "点帮帮里程碑"
-        let UMENG_MILESTONE_SHARE_TEXT = "点帮帮里程碑"
-        let UMENG_INVITE_SHARE_TEXT = "发现一款好玩的APP,点帮帮，快来下载吧，下载地址是http://bangbang.pointgongyi.com"
-        let ABOUT_US_URL = "http://bangbang.pointgongyi.com"
-        
         let shareView = ShareView.init(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
-        shareView.setShareModel(UMENG_INVITE_SHARE_TEXT, image: UIImage(named: "share_logo")!, url: ABOUT_US_URL, title: UMENG_SHARE_TEXT)
-        
+        //shareView.setShareModel(UMENG_INVITE_SHARE_TEXT, image: UIImage(named: "share_logo")!, url: ABOUT_US_URL, title: UMENG_SHARE_TEXT)
         shareView.showInViewController(self)
     }
     

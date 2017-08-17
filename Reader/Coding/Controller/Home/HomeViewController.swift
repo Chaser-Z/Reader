@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import MBProgressHUD
+import DZNEmptyDataSet
+
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     fileprivate let headerViewTitles = ["热门","玄幻","修真","都市","历史","网游","科幻","恐怖","全本"]
@@ -37,12 +39,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.navigationItem.titleView = searchView!
     }
     
-    private func loadData() {
+    fileprivate func loadData() {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud?.removeFromSuperViewOnHide = true
         hud?.mode = .indeterminate
         NovelFacade.getHomeNovelList { (novels) in
-            
             for novel in novels {
                 switch novel.article_type {
                 case "热门":
@@ -68,23 +69,46 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                 }
             }
             
-            self.wholeNovels.append(self.hotNovels)
-            self.wholeNovels.append(self.fantasyNovels)
-            self.wholeNovels.append(self.coatardNovels)
-            self.wholeNovels.append(self.cityNovels)
-            self.wholeNovels.append(self.historyNovels)
-            self.wholeNovels.append(self.onlineNovels)
+
+            if self.hotNovels.count > 0 {
+                self.wholeNovels.append(self.hotNovels)
+            }
+            
+            if self.fantasyNovels.count > 0 {
+                self.wholeNovels.append(self.fantasyNovels)
+            }
+            
+            if self.coatardNovels.count > 0 {
+                self.wholeNovels.append(self.coatardNovels)
+            }
+            
+            if self.cityNovels.count > 0 {
+                self.wholeNovels.append(self.cityNovels)
+            }
+            
+            if self.historyNovels.count > 0 {
+                self.wholeNovels.append(self.historyNovels)
+            }
+            
+            if self.onlineNovels.count > 0 {
+                self.wholeNovels.append(self.onlineNovels)
+            }
+            
             if self.scienceNovels.count > 0 {
                 self.wholeNovels.append(self.scienceNovels)
             }
+            
             if self.terrorNovels.count > 0 {
                 self.wholeNovels.append(self.terrorNovels)
             }
+            
             if self.completeNovels.count > 0 {
                 self.wholeNovels.append(self.completeNovels)
             }
             
             hud?.hide(true)
+            self.collectionView?.emptyDataSetSource = self
+            self.collectionView?.emptyDataSetDelegate = self
             self.collectionView?.reloadData()
         }
     }
@@ -169,6 +193,8 @@ extension HomeViewController {
             headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeHeaderView", for: indexPath) as? HomeReusableView 
         }
         headerView?.typeLabel.text = headerViewTitles[indexPath.section]
+        headerView?.moreButton.tag = indexPath.section
+        headerView?.delegate = self
         return headerView!
     }
     
@@ -224,6 +250,48 @@ extension HomeViewController: SearchViewDelegate {
         navigationController?.pushViewController(controller, animated: false)
     }
     
+}
+
+extension HomeViewController: HomeReusableViewDelegate {
+    
+    func moreButton(btn: UIButton) {
+        print(btn.tag)
+        let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+        controller.type = headerViewTitles[btn.tag]
+        navigationController?.pushViewController(controller, animated: false)
+        
+    }
     
 }
 
+extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "请检查网络是否正常,点击下面按钮重新加载"
+        return StringUtil.attributeStringFromString(
+            string: text,
+            alignment: .center,
+            color: .blue,
+            lineSpacing: 5.0,
+            fontSize: 16.0
+        )
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "not_net")
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        loadData()
+    }
+    
+    func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> UIImage! {
+        return UIImage(named: "again")
+    }
+    
+}

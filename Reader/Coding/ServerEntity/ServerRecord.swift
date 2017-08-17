@@ -19,7 +19,7 @@ class ServerRecord {
     var pageCount: Int32?
     var currentPage: Int32?
     var currentChapterIndex: Int32?
-    
+    var id: Int64?
 //    init(article_id: String, last_update_date: String, article_directory_link: String, content: String, article_directory: String, pageCount: Int, currentPage: Int, currentChapterIndex: Int) {
 //        self.article_id = article_id
 //        self.last_update_date = last_update_date

@@ -80,7 +80,7 @@ class RecordManager {
         record.pageCount = serverRecord.pageCount!
         record.currentPage = serverRecord.currentPage!
         record.currentChapterIndex = serverRecord.currentChapterIndex!
-
+        record.id = serverRecord.id ?? -1
     }
     
     

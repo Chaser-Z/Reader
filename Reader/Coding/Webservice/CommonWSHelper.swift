@@ -23,6 +23,9 @@ class CommonWSHelper {
             processServerResponse(response, completion: completion)
         }
         
+//        Alamofire.request("\(HOST)\(path)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON(queue: DispatchQueue.global(qos: .default)) { (response) in
+//            processServerResponse(response, completion: completion)
+//        }
     }
     
     class func request(path: String, params: [String: AnyObject], datum: [Data], progress: ProgressHandler?, completion: @escaping ServerHandler) {
@@ -121,6 +124,3 @@ class CommonWSHelper {
     }
     
 }
-
-
-

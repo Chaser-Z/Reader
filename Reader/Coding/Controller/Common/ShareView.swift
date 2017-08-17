@@ -37,8 +37,8 @@ class ShareView: UIView , UIScrollViewDelegate {
         self.addSubview(self.contentView)
         
         let sharePaltformArray = [
-            [ "share_weixin", "share_friend", "share_sina" , "share_qq", "share_zone"],
-            [ "微信","朋友圈", "微博", "QQ", "QQ空间"]
+            [ "share_sina", "share_qq", "share_weixin" , "share_friend", "share_zone"],
+            [ "微博","QQ", "微信", "朋友圈", "QQ空间"]
         ]
         
         self.scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: 130))
@@ -130,28 +130,28 @@ class ShareView: UIView , UIScrollViewDelegate {
      */
     func shareButtonClicked(_ sender:UIButton) {
         
-        let snsTypes:Array<AnyObject>!
-        var currentShareType:String!
+        let urlString = "https://itunes.apple.com/us/app/id1255400240?l=zh&ls=1&mt=8"
+        let url = URL(string: urlString)
+        let content = "一款不错的app,可以免费阅读小说:" + urlString
+
+        // 1.创建分享参数
+        let shareParames = NSMutableDictionary()
+        shareParames.ssdkSetupShareParams(byText: content,
+                                          images : #imageLiteral(resourceName: "logo1"),
+                                          url : url ,
+                                          title : "一款不错的app,免费阅读小说",
+                                          type : SSDKContentType.auto)
+        
         if sender.tag == 100 {
-            // 1.创建分享参数
-            let shareParames = NSMutableDictionary()
             
-            
-            
-            
-            shareParames.ssdkSetupShareParams(byText: "分享内容",
-                                              images : #imageLiteral(resourceName: "logo1"),
-                                              url : NSURL(string:"https://itunes.apple.com/us/app/免阅/id1255400240?l=zh&ls=1&mt=8") as URL!,
-                                              title : "一款不错的app,免费阅读小说",
-                                              type : SSDKContentType.image)
-            
+            shareParames.ssdkEnableUseClientShare()
             //2.进行分享
             ShareSDK.share(SSDKPlatformType.typeSinaWeibo, parameters: shareParames) { (state : SSDKResponseState, nil, entity : SSDKContentEntity?, error :Error?) in
                 
                 switch state{
                     
                 case SSDKResponseState.success: print("分享成功")
-                case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
+                case SSDKResponseState.fail:    print("授权失败,错误描述:\(error!)")
                 case SSDKResponseState.cancel:  print("操作取消")
                     
                 default:
@@ -160,13 +160,6 @@ class ShareView: UIView , UIScrollViewDelegate {
                 
             }
         }else if sender.tag == 100 + 1 {
-            // 1.创建分享参数
-            let shareParames = NSMutableDictionary()
-            shareParames.ssdkSetupShareParams(byText: "分享内容",
-                                              images : #imageLiteral(resourceName: "logo1"),
-                                              url : NSURL(string:"https://itunes.apple.com/us/app/免阅/id1255400240?l=zh&ls=1&mt=8") as URL!,
-                                              title : "分享标题",
-                                              type : SSDKContentType.webPage)
             
             //2.进行分享
             ShareSDK.share(SSDKPlatformType.subTypeQQFriend, parameters: shareParames) { (state : SSDKResponseState, nil, entity : SSDKContentEntity?, error :Error?) in
@@ -174,7 +167,7 @@ class ShareView: UIView , UIScrollViewDelegate {
                 switch state{
                     
                 case SSDKResponseState.success: print("分享成功")
-                case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
+                case SSDKResponseState.fail:    print("授权失败,错误描述:\(error!)")
                 case SSDKResponseState.cancel:  print("操作取消")
                     
                 default:
@@ -183,41 +176,51 @@ class ShareView: UIView , UIScrollViewDelegate {
                 
             }
         }else if sender.tag == 100 + 2 {
-            //            snsTypes = [UMShareToSina]
-            currentShareType = "2"
-            
-            self.shareContent = self.shareUrl + self.shareContent
-            
-            guard self.shareTitle.characters.count > 0 else{
-                //                UMSocialData.defaultData().extConfig.qzoneData.title = "  "
-                return
+            //2.进行分享
+            ShareSDK.share(SSDKPlatformType.typeWechat, parameters: shareParames) { (state : SSDKResponseState, nil, entity : SSDKContentEntity?, error :Error?) in
+                
+                switch state{
+                    
+                case SSDKResponseState.success: print("分享成功")
+                case SSDKResponseState.fail:    print("授权失败,错误描述:\(error!)")
+                case SSDKResponseState.cancel:  print("操作取消")
+                    
+                default:
+                    break
+                }
+                
             }
-            //            UMSocialData.defaultData().extConfig.qzoneData.title = self.shareTitle
-            //            UMSocialData.defaultData().extConfig.qzoneData.url = self.shareUrl
         }else if sender.tag == 100 + 3 {
-            //            snsTypes = [UMShareToQQ]
-            currentShareType = "4"
-            guard self.shareTitle.characters.count > 0 else{
-                //                UMSocialData.defaultData().extConfig.qqData.title = "  "
-                return
+            //2.进行分享
+            ShareSDK.share(SSDKPlatformType.subTypeWechatTimeline, parameters: shareParames) { (state : SSDKResponseState, nil, entity : SSDKContentEntity?, error :Error?) in
+                
+                switch state{
+                    
+                case SSDKResponseState.success: print("分享成功")
+                case SSDKResponseState.fail:    print("授权失败,错误描述:\(error!)")
+                case SSDKResponseState.cancel:  print("操作取消")
+                    
+                default:
+                    break
+                }
+                
             }
-            //            UMSocialData.defaultData().extConfig.qqData.title = self.shareTitle
-            //            UMSocialData.defaultData().extConfig.qqData.url = self.shareUrl
         }else if sender.tag == 100 + 4 {
-            //            snsTypes = [UMShareToQzone]
-            currentShareType = "3"
-            guard self.shareTitle.characters.count > 0 else{
-                //                UMSocialData.defaultData().extConfig.qzoneData.title = "  "
-                return
+            //2.进行分享
+            ShareSDK.share(SSDKPlatformType.subTypeQZone, parameters: shareParames) { (state : SSDKResponseState, nil, entity : SSDKContentEntity?, error :Error?) in
+                
+                switch state{
+                    
+                case SSDKResponseState.success: print("分享成功")
+                case SSDKResponseState.fail:    print("授权失败,错误描述:\(error!)")
+                case SSDKResponseState.cancel:  print("操作取消")
+                    
+                default:
+                    break
+                }
+                
             }
-            //            UMSocialData.defaultData().extConfig.qzoneData.title = self.shareTitle
-            //            UMSocialData.defaultData().extConfig.qzoneData.url = self.shareUrl
-        }else{
-            snsTypes = []
-            currentShareType = " "
         }
-        
-        
     }
     
     func showInViewController(_ viewController:UIViewController){

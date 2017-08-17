@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func registerShareSDK() {
         let activePlatforms = [
-            //SSDKPlatformType.typeWechat.rawValue,
+            SSDKPlatformType.typeWechat.rawValue,
             SSDKPlatformType.typeQQ.rawValue,
             SSDKPlatformType.typeSinaWeibo.rawValue,
             /*SSDKPlatformType.typeMail.rawValue,
@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ShareSDK.registerActivePlatforms(activePlatforms, onImport: { (platformType) in
             switch platformType {
                 
-//            case .typeWechat:
-//                ShareSDKConnector.connectWeChat(WXApi.classForCoder())
-//                break
+            case .typeWechat:
+                ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                break
                 
             case .typeQQ:
                 ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
@@ -45,10 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }) { (platformType, appInfo) in
             switch platformType {
                 
-//            case .typeWechat:
-//                appInfo?.ssdkSetupWeChat(byAppId: kWeChatAppId, appSecret: kWeChatAppSecret)
-//                break
-//                
+            case .typeWechat:
+                appInfo?.ssdkSetupWeChat(byAppId: kWeChatAppId, appSecret: kWeChatAppSecret)
+                break
+                
             case .typeQQ:
                 appInfo?.ssdkSetupQQ(byAppId: kQQAppId, appKey: kQQAppKey, authType: SSDKAuthTypeBoth)
                 break
@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        //WXApi.registerApp(kWeChatAppId)
+        WXApi.registerApp(kWeChatAppId)
     }
 
     private func showGuideView() {

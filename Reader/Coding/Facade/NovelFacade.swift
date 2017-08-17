@@ -31,6 +31,27 @@ class NovelFacade {
         }
     }
     
+    class func getNovelByType(params: [String: AnyObject], completion: @escaping (_ novel: [Novel]) -> Void) {
+        
+        NovelWSHelper.getNovelByType(params) { (resp) in
+            
+            let errorCode = resp.errorCode
+            if errorCode == ErrorCode.Success {
+                let serverNovels = resp.dict["novels"] as! [ServerNovel]
+                let novels = serverNovels.map {
+                    NovelManager.add($0)
+                }
+                completion(novels as! [Novel])
+                
+            } else {
+                NOVELLog("Failed to get all novels: \(errorCode)")
+                completion([])
+            }
+            
+        }
+    }
+
+    
 //    class func getHomeNovelList(completion: @escaping (_ novel: [ServerNovel]) -> Void) {
 //        
 //        NovelWSHelper.getHomeNovels([:]) { (resp) in
