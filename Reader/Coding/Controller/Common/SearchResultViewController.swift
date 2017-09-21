@@ -29,9 +29,15 @@ class SearchResultViewController: UITableViewController {
         
         setup()
         //inhibitPop()
+        let contentView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth , height: 30))
+        self.navigationItem.titleView = contentView
+        
+        searchView?.frame = CGRect(x: 0, y: 0, width: contentView.width, height: 30)
+        contentView.addSubview(searchView!)
+
         searchView?.searchTextField.placeholder = "请输入小说名称"
         searchView?.delegate = self
-        self.navigationItem.titleView = searchView!
+        //self.navigationItem.titleView = searchView!
     }
     
     fileprivate func setup() {

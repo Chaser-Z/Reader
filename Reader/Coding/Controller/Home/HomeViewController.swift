@@ -33,10 +33,20 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     private func setupSearchView() {
-        let searchView = SearchView.newInstance()
-        searchView?.searchTextField.text = "搜一搜"
-        searchView?.delegate = self
-        self.navigationItem.titleView = searchView!
+        
+        if let searchView = SearchView.newInstance() {
+            let contentView = UIView(frame: CGRect(x: 5, y: 0, width: ScreenWidth - 10, height: 30))
+            self.navigationItem.titleView = contentView
+            
+            if kVersion >= 11.0 {
+                searchView.frame = CGRect(x: 0, y: (44 - 30) / 2, width: contentView.width - 5, height: 30)
+            } else {
+                searchView.frame = CGRect(x: 0, y: 0, width: contentView.width - 5, height: 30)
+            }
+            contentView.addSubview(searchView)
+            searchView.searchTextField.text = "搜一搜"
+            searchView.delegate = self
+        }
     }
     
     fileprivate func loadData() {

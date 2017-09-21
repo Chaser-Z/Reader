@@ -50,8 +50,8 @@ class Util {
     class func showAlert(title: String?,
                          message: String?,
                          parentController: UIViewController?,
-                         completion: ((Void) -> Void)? = nil,
-                         closed: ((Void) -> Void)? = nil) {
+                         completion: (() -> Void)? = nil,
+                         closed: (() -> Void)? = nil) {
         
         if let controller = parentController {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -66,9 +66,9 @@ class Util {
     class func showOptionAlert(title: String?,
                                message: String?,
                                parentController: UIViewController?,
-                               confirmed: ((Void) -> Void)? = nil,
-                               cancelled: ((Void) -> Void)? = nil,
-                               completed: ((Void) -> Void)? = nil) {
+                               confirmed: (() -> Void)? = nil,
+                               cancelled: (() -> Void)? = nil,
+                               completed: (() -> Void)? = nil) {
         if let controller = parentController {
             
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
