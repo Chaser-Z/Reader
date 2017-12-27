@@ -20,6 +20,7 @@ class SearchResultViewController: UITableViewController {
     
     var searchView = SearchDetailView.newInstance()
     fileprivate var novels = [Novel]()
+    var searchContentView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +30,17 @@ class SearchResultViewController: UITableViewController {
         
         setup()
         //inhibitPop()
-        let contentView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth , height: 30))
-        self.navigationItem.titleView = contentView
         
-        searchView?.frame = CGRect(x: 0, y: 0, width: contentView.width, height: 30)
-        contentView.addSubview(searchView!)
-
-        searchView?.searchTextField.placeholder = "请输入小说名称"
-        searchView?.delegate = self
+        if let mySearchView = searchView {
+            let contentView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth , height: 30))
+            searchContentView = contentView
+            self.navigationItem.titleView = contentView
+            mySearchView.frame = CGRect(x: 0, y: 0, width: contentView.width, height: 30)
+            contentView.addSubview(mySearchView)
+            mySearchView.searchTextField.placeholder = "请输入小说名称"
+            mySearchView.delegate = self
+        }
+       
         //self.navigationItem.titleView = searchView!
     }
     
@@ -60,12 +64,23 @@ class SearchResultViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        searchContentView.isHidden = false
         searchView?.searchTextField.becomeFirstResponder()
+        if let mySearchView = searchView {
+            let contentView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth , height: 30))
+            searchContentView = contentView
+            self.navigationItem.titleView = contentView
+            mySearchView.frame = CGRect(x: 0, y: 0, width: contentView.width, height: 30)
+            contentView.addSubview(mySearchView)
+            mySearchView.searchTextField.placeholder = "请输入小说名称"
+            mySearchView.delegate = self
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        searchContentView.isHidden = true
     }
     
     fileprivate func widthForLabel(text: String, font: UIFont) -> CGFloat {

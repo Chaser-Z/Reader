@@ -146,6 +146,14 @@
 		6881D49B1EFCBC6B003CA502 /* ZHNBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881D4991EFCBC6B003CA502 /* ZHNBookShelfCell.swift */; };
 		6881D49C1EFCBC6B003CA502 /* ZHNBookShelfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6881D49A1EFCBC6B003CA502 /* ZHNBookShelfCell.xib */; };
 		6881D4A41EFCBDB3003CA502 /* 703s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6881D4A31EFCBDB3003CA502 /* 703s.jpg */; };
+		6897F3201FF331C6006BCDAB /* ZHNCursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6897F31F1FF331C6006BCDAB /* ZHNCursorView.swift */; };
+		6897F3241FF3325E006BCDAB /* DZMMagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6897F3231FF3325E006BCDAB /* DZMMagnifierView.m */; };
+		6897F3261FF333C1006BCDAB /* ZHNReadAuxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6897F3251FF333C1006BCDAB /* ZHNReadAuxiliary.swift */; };
+		6897F3281FF36EA8006BCDAB /* UIPageViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6897F3271FF36EA8006BCDAB /* UIPageViewController+Extension.swift */; };
+		6897F3321FF38EF0006BCDAB /* NSObject+DZM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6897F32B1FF38EF0006BCDAB /* NSObject+DZM.m */; };
+		6897F3331FF38EF0006BCDAB /* UINavigationController+DZM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6897F32E1FF38EF0006BCDAB /* UINavigationController+DZM.m */; };
+		6897F3341FF38EF0006BCDAB /* DZMATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6897F3301FF38EF0006BCDAB /* DZMATViewController.m */; };
+		6897F3351FF38EF0006BCDAB /* DZMAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 6897F3311FF38EF0006BCDAB /* DZMAnimatedTransitioning.m */; };
 		689868261F20474300A3D0DC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689868251F20474300A3D0DC /* Search.storyboard */; };
 		6898686A1F20607500A3D0DC /* CCFoldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 689868651F20607500A3D0DC /* CCFoldCell.m */; };
 		6898686B1F20607500A3D0DC /* CCRotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689868671F20607500A3D0DC /* CCRotatedView.m */; };
@@ -231,7 +239,6 @@
 		68B7026B1F1E51D600DAC39A /* ServerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7026A1F1E51D600DAC39A /* ServerUser.swift */; };
 		68B8AC751F14FC9C00764F99 /* BookShelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B8AC741F14FC9C00764F99 /* BookShelf.storyboard */; };
 		68F4D8511EF7FCBB004B39DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */; };
-		68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8521EF7FCBB004B39DB /* ViewController.swift */; };
 		68F4D8591EF7FCBB004B39DB /* Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D8571EF7FCBB004B39DB /* Reader.xcdatamodeld */; };
 		68F4D85B1EF7FCBB004B39DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F4D85A1EF7FCBB004B39DB /* Assets.xcassets */; };
 		FA268755716D16A20A9AD89A /* Pods_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB43FD6337481CDE00ADAFC /* Pods_Reader.framework */; };
@@ -376,6 +383,19 @@
 		6881D4991EFCBC6B003CA502 /* ZHNBookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNBookShelfCell.swift; sourceTree = "<group>"; };
 		6881D49A1EFCBC6B003CA502 /* ZHNBookShelfCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHNBookShelfCell.xib; sourceTree = "<group>"; };
 		6881D4A31EFCBDB3003CA502 /* 703s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 703s.jpg; sourceTree = "<group>"; };
+		6897F31F1FF331C6006BCDAB /* ZHNCursorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHNCursorView.swift; sourceTree = "<group>"; };
+		6897F3221FF3325E006BCDAB /* DZMMagnifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZMMagnifierView.h; sourceTree = "<group>"; };
+		6897F3231FF3325E006BCDAB /* DZMMagnifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZMMagnifierView.m; sourceTree = "<group>"; };
+		6897F3251FF333C1006BCDAB /* ZHNReadAuxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHNReadAuxiliary.swift; sourceTree = "<group>"; };
+		6897F3271FF36EA8006BCDAB /* UIPageViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extension.swift"; sourceTree = "<group>"; };
+		6897F32A1FF38EF0006BCDAB /* DZMATViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZMATViewController.h; sourceTree = "<group>"; };
+		6897F32B1FF38EF0006BCDAB /* NSObject+DZM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DZM.m"; sourceTree = "<group>"; };
+		6897F32C1FF38EF0006BCDAB /* UINavigationController+DZM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DZM.h"; sourceTree = "<group>"; };
+		6897F32D1FF38EF0006BCDAB /* DZMAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZMAnimatedTransitioning.h; sourceTree = "<group>"; };
+		6897F32E1FF38EF0006BCDAB /* UINavigationController+DZM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DZM.m"; sourceTree = "<group>"; };
+		6897F32F1FF38EF0006BCDAB /* NSObject+DZM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DZM.h"; sourceTree = "<group>"; };
+		6897F3301FF38EF0006BCDAB /* DZMATViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZMATViewController.m; sourceTree = "<group>"; };
+		6897F3311FF38EF0006BCDAB /* DZMAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZMAnimatedTransitioning.m; sourceTree = "<group>"; };
 		689868251F20474300A3D0DC /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		689868641F20607500A3D0DC /* CCFoldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFoldCell.h; sourceTree = "<group>"; };
 		689868651F20607500A3D0DC /* CCFoldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFoldCell.m; sourceTree = "<group>"; };
@@ -478,7 +498,6 @@
 		68E88DED1EF809FE00921015 /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		68F4D84D1EF7FCBB004B39DB /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68F4D8521EF7FCBB004B39DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68F4D8551EF7FCBB004B39DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68F4D8581EF7FCBB004B39DB /* Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reader.xcdatamodel; sourceTree = "<group>"; };
 		68F4D85A1EF7FCBB004B39DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -585,6 +604,7 @@
 				687A33461F305964000B576F /* LeftTopView.xib */,
 				68A4AEA81F385F8900360184 /* EmptyDataSetView.swift */,
 				68A4AEAA1F385F9500360184 /* EmptyDataSetView.xib */,
+				6897F3251FF333C1006BCDAB /* ZHNReadAuxiliary.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -685,6 +705,30 @@
 				6863E1681F0A114700FDB81A /* ViewSwift.swift */,
 			);
 			path = ZHNBookShelf;
+			sourceTree = "<group>";
+		};
+		6897F3211FF3325E006BCDAB /* DZMMagnifierView */ = {
+			isa = PBXGroup;
+			children = (
+				6897F3221FF3325E006BCDAB /* DZMMagnifierView.h */,
+				6897F3231FF3325E006BCDAB /* DZMMagnifierView.m */,
+			);
+			path = DZMMagnifierView;
+			sourceTree = "<group>";
+		};
+		6897F3291FF38EF0006BCDAB /* DZMAnimatedTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				6897F32A1FF38EF0006BCDAB /* DZMATViewController.h */,
+				6897F32B1FF38EF0006BCDAB /* NSObject+DZM.m */,
+				6897F32C1FF38EF0006BCDAB /* UINavigationController+DZM.h */,
+				6897F32D1FF38EF0006BCDAB /* DZMAnimatedTransitioning.h */,
+				6897F32E1FF38EF0006BCDAB /* UINavigationController+DZM.m */,
+				6897F32F1FF38EF0006BCDAB /* NSObject+DZM.h */,
+				6897F3301FF38EF0006BCDAB /* DZMATViewController.m */,
+				6897F3311FF38EF0006BCDAB /* DZMAnimatedTransitioning.m */,
+			);
+			path = DZMAnimatedTransitioning;
 			sourceTree = "<group>";
 		};
 		689868631F20607500A3D0DC /* CCFoldCell */ = {
@@ -799,6 +843,9 @@
 		68A6C65C1EFAA7DB00BF971B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6897F3291FF38EF0006BCDAB /* DZMAnimatedTransitioning */,
+				68A6C6621EFAA7DB00BF971B /* DZMCoverController */,
+				6897F3211FF3325E006BCDAB /* DZMMagnifierView */,
 				687F85771F271277006B2073 /* ZHNLeadPage */,
 				68B5C92B1F21D05C00CD61BE /* SDK */,
 				689868631F20607500A3D0DC /* CCFoldCell */,
@@ -807,7 +854,6 @@
 				68B5A0851EFE4E56009D4EAE /* ZHNReader */,
 				6881D4941EFCBC1B003CA502 /* ZHNBookShelf */,
 				68A6C65D1EFAA7DB00BF971B /* ASValueTrackingSlider */,
-				68A6C6621EFAA7DB00BF971B /* DZMCoverController */,
 				68A6C6651EFAA7DB00BF971B /* FDFullscreenPopGesture */,
 				68A6C6681EFAA7DB00BF971B /* YGPulseView */,
 				68319A431F1F69B900023105 /* LoginHelper.swift */,
@@ -904,6 +950,7 @@
 				68B5A09C1EFE79FC009D4EAE /* String+Extension.swift */,
 				68B5A0A51EFE7E93009D4EAE /* NSObject+Extension.swift */,
 				6861A94C1F00FFE300A7687A /* UIView+Extension.swift */,
+				6897F3271FF36EA8006BCDAB /* UIPageViewController+Extension.swift */,
 			);
 			path = Exten;
 			sourceTree = "<group>";
@@ -948,6 +995,7 @@
 				68B5A0B01EFE9500009D4EAE /* ZHNReadViewCell.swift */,
 				68B5A0B21EFE951B009D4EAE /* ZHNReadView.swift */,
 				68B5A0B61EFE969F009D4EAE /* ZHNReadViewUDCell.swift */,
+				6897F31F1FF331C6006BCDAB /* ZHNCursorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1173,7 +1221,6 @@
 			isa = PBXGroup;
 			children = (
 				68F4D8501EF7FCBB004B39DB /* AppDelegate.swift */,
-				68F4D8521EF7FCBB004B39DB /* ViewController.swift */,
 				68F4D85A1EF7FCBB004B39DB /* Assets.xcassets */,
 				68F4D85C1EF7FCBB004B39DB /* LaunchScreen.storyboard */,
 				68F4D85F1EF7FCBB004B39DB /* Info.plist */,
@@ -1256,7 +1303,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 85PMH535HR;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1420,7 +1467,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F4D8531EF7FCBB004B39DB /* ViewController.swift in Sources */,
 				68319A361F1F33F500023105 /* UserInfoViewController.swift in Sources */,
 				68B5A0BF1EFEA840009D4EAE /* ZHNReadRecordModel.swift in Sources */,
 				685AC1621F257CF0006F78DD /* BookShelfCellPad.swift in Sources */,
@@ -1430,12 +1476,14 @@
 				68B5A0B31EFE951B009D4EAE /* ZHNReadView.swift in Sources */,
 				686CFAD11F2361800095517A /* DisclaimerViewController.swift in Sources */,
 				68319A2E1F1F2CEE00023105 /* User+CoreDataClass.swift in Sources */,
+				6897F3281FF36EA8006BCDAB /* UIPageViewController+Extension.swift in Sources */,
 				68B702691F1E519C00DAC39A /* UserWSHelper.swift in Sources */,
 				686E493C1F331C6B00B2F089 /* ServerFeedback.swift in Sources */,
 				68571B341F03577E00D1F7C1 /* Record+CoreDataProperties.swift in Sources */,
 				68B5A0B11EFE9500009D4EAE /* ZHNReadViewCell.swift in Sources */,
 				68B5A0971EFE7904009D4EAE /* ZHNReadConfigure.swift in Sources */,
 				68319A321F1F2D8500023105 /* Dictionary+Extensions.swift in Sources */,
+				6897F3331FF38EF0006BCDAB /* UINavigationController+DZM.m in Sources */,
 				68B5A0BB1EFE98E8009D4EAE /* Content+CoreDataProperties.swift in Sources */,
 				687F857C1F27128E006B2073 /* LeadPageCell.swift in Sources */,
 				681D7E2C1F38727C00A86C6E /* HomeViewController.swift in Sources */,
@@ -1450,6 +1498,7 @@
 				68B5A0941EFE78CA009D4EAE /* ZHNBaseViewController.swift in Sources */,
 				6881D48E1EFCB8C7003CA502 /* UserViewController.swift in Sources */,
 				68A6AE451F4171BB003F68D4 /* MoreCell.swift in Sources */,
+				6897F3261FF333C1006BCDAB /* ZHNReadAuxiliary.swift in Sources */,
 				68B7026B1F1E51D600DAC39A /* ServerUser.swift in Sources */,
 				68A6C69B1EFAA7DB00BF971B /* DZMCoverController.m in Sources */,
 				68A6C6CD1EFAAA6300BF971B /* ServerResponse.swift in Sources */,
@@ -1460,6 +1509,7 @@
 				685C05B51F02025A00BEB1F4 /* ZHNHaloButton.swift in Sources */,
 				682C5D811F1CE3FB00AB353C /* BookShelfViewController.swift in Sources */,
 				68A6C6991EFAA7DB00BF971B /* ASValuePopUpView.m in Sources */,
+				6897F3201FF331C6006BCDAB /* ZHNCursorView.swift in Sources */,
 				68A6C6D51EFAB24200BF971B /* Novel+CoreDataProperties.swift in Sources */,
 				6859CF441F1B66B100155BE7 /* HomeReusableView.swift in Sources */,
 				68A6C6D31EFAB1B700BF971B /* Novel+CoreDataClass.swift in Sources */,
@@ -1467,11 +1517,13 @@
 				68B5A0A61EFE7E93009D4EAE /* NSObject+Extension.swift in Sources */,
 				686ED74B1F1F9DAC0007AD0A /* MyBriefCell.swift in Sources */,
 				685C05A21F01E65600BEB1F4 /* ZHNLightView.swift in Sources */,
+				6897F3241FF3325E006BCDAB /* DZMMagnifierView.m in Sources */,
 				685C05B91F02041D00BEB1F4 /* ZHNSettingView.swift in Sources */,
 				68A6C69A1EFAA7DB00BF971B /* ASValueTrackingSlider.m in Sources */,
 				68F4D8591EF7FCBB004B39DB /* Reader.xcdatamodeld in Sources */,
 				68A6C6CF1EFAADBA00BF971B /* ErrorCode.swift in Sources */,
 				685C05AE1F02015D00BEB1F4 /* ZHNLeftView.swift in Sources */,
+				6897F3321FF38EF0006BCDAB /* NSObject+DZM.m in Sources */,
 				68B5A09B1EFE798F009D4EAE /* ZHNGlobalMethod.swift in Sources */,
 				687A33451F305954000B576F /* LeftTopView.swift in Sources */,
 				6881D49B1EFCBC6B003CA502 /* ZHNBookShelfCell.swift in Sources */,
@@ -1484,8 +1536,10 @@
 				68B5A0991EFE7941009D4EAE /* ZHNGlobalProperty.swift in Sources */,
 				68319A2C1F1F2C8800023105 /* Util.swift in Sources */,
 				685C05B71F0202EE00BEB1F4 /* ZHNFuncView.swift in Sources */,
+				6897F3341FF38EF0006BCDAB /* DZMATViewController.m in Sources */,
 				68B5A0B91EFE9887009D4EAE /* Content+CoreDataClass.swift in Sources */,
 				685C05AD1F02015D00BEB1F4 /* ZHNBaseView.swift in Sources */,
+				6897F3351FF38EF0006BCDAB /* DZMAnimatedTransitioning.m in Sources */,
 				68B5C96C1F21E92100CD61BE /* UserUpdateViewController.swift in Sources */,
 				68B5A0C31EFEB23D009D4EAE /* ContentFacade.swift in Sources */,
 				6872B8B81F443A6600BCB97E /* ImportManager.swift in Sources */,
@@ -1682,8 +1736,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 85PMH535HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Reader/Coding/Component/ShareSDK",
@@ -1699,7 +1754,7 @@
 					"$(PROJECT_DIR)/Reader/Coding/Component/SDK/ShareSDK/Support/Required",
 				);
 				INFOPLIST_FILE = Reader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1739,8 +1794,8 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.reader.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "dcdd538b-9db9-4d41-a50e-4244ea8854b4";
+				PROVISIONING_PROFILE_SPECIFIER = Reader;
 				SWIFT_OBJC_BRIDGING_HEADER = "Reader/Reader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1753,8 +1808,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 85PMH535HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Reader/Coding/Component/ShareSDK",
@@ -1770,7 +1826,7 @@
 					"$(PROJECT_DIR)/Reader/Coding/Component/SDK/ShareSDK/Support/Required",
 				);
 				INFOPLIST_FILE = Reader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1810,8 +1866,8 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.reader.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "dcdd538b-9db9-4d41-a50e-4244ea8854b4";
+				PROVISIONING_PROFILE_SPECIFIER = Reader;
 				SWIFT_OBJC_BRIDGING_HEADER = "Reader/Reader-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

@@ -76,7 +76,7 @@ extension ForgetPasswordViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        //NOVELLog(textField.text)
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+//        //NOVELLog(textField.text)
+//    }
 }

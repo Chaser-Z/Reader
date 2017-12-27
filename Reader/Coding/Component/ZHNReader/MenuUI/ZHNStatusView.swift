@@ -9,8 +9,7 @@
 import UIKit
 
 class ZHNStatusView: ZHNBaseView {
-
-
+    
     /// 电池
     private(set) var batteryView: ZHNBatteryView!
     
@@ -59,15 +58,17 @@ class ZHNStatusView: ZHNBaseView {
         
         super.layoutSubviews()
         
+        // 适配间距
+        let space = isX ? Space_1 : 0
         // 电池
-        batteryView.origin = CGPoint(x: width - BatterySize.width, y: (height - BatterySize.height)/2)
-        
+        batteryView.origin = CGPoint(x: width - BatterySize.width - space, y: (height - BatterySize.height)/2)
+
         // 时间
         let timeLabelW:CGFloat = SizeW(50)
         timeLabel.frame = CGRect(x: batteryView.frame.minX - timeLabelW, y: 0, width: timeLabelW, height: height)
         
         // 标题
-        titleLabel.frame = CGRect(x: 0, y: 0, width: timeLabel.frame.minX, height: height)
+        titleLabel.frame = CGRect(x: space, y: 0, width: timeLabel.frame.minX - space, height: height)
     }
     
     // MARK: -- 时间相关

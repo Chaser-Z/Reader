@@ -9,9 +9,13 @@
 
 /// 小说阅读效果控制器 (无效果,覆盖)
 #import "DZMCoverController.h"
-
+// 放大镜
+#import "DZMMagnifierView.h"
 /// 导航栏扩展
 #import "UINavigationController+FDFullscreenPopGesture.h"
+
+#import "DZMATViewController.h"
+
 /// 光晕
 #import "UIView+YGPulseView.h"
 #import "CCFoldCell.h"

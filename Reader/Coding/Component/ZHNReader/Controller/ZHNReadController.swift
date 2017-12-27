@@ -25,6 +25,8 @@ class ZHNReadController: ZHNBaseViewController {
     fileprivate var turnPage = true
     /// 是否存在更新
     var isUpdate = false
+    /// 开启长按菜单
+    var openLongMenu:Bool = true
     /// 现在内容
     fileprivate var currentContent: Content?
     /// 文章记录
@@ -70,6 +72,11 @@ class ZHNReadController: ZHNBaseViewController {
         readMenu = ZHNReadMenu.readMenu(vc: self, delegate: self)
         readVC.readController = self
         readVC.delegate = self
+        
+        
+        // 注册 DZMReadView 手势通知
+        ZHNReadView.RegisterNotification(observer: self, selector: #selector(readViewNotification(notification:)))
+        
         // 获取阅读记录
         let record = RecordManager.getRecord(novelID)
         if record.count > 0 {
@@ -95,11 +102,37 @@ class ZHNReadController: ZHNBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    // MARK: ZHNReadView 手势通知
+    
+    /// 收到通知
+    func readViewNotification(notification:Notification) {
+        
+        // 获得状态
+        let info = notification.userInfo
+        
+        // 隐藏菜单
+        readMenu.menuSH(isShow: false)
+        
+        // 解析状态
+        if info != nil && info!.keys.contains(Key_ReadView_Ges_isOpen) {
+            
+            let isOpen = info![Key_ReadView_Ges_isOpen] as! NSNumber
+            
+            coverController?.gestureRecognizerEnabled = isOpen.boolValue
+            
+            pageViewController?.gestureRecognizerEnabled = isOpen.boolValue
+            
+            readMenu.singleTap.isEnabled = isOpen.boolValue
+        }
     }
     
     // MARK: - 检查是否有更新
@@ -548,6 +581,10 @@ class ZHNReadController: ZHNBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        // 移除通知
+        ZHNReadView.RemoveNotification(observer: self)
+    }
 }
 
 extension ZHNReadController: DZMCoverControllerDelegate {
@@ -618,6 +655,14 @@ extension ZHNReadController: UIPageViewControllerDelegate, UIPageViewControllerD
 }
 
 extension ZHNReadController: ZHNReadMenuDelegate {
+    
+    /// 状态栏 将要 - 隐藏以及显示状态改变
+    func readMenuWillShowOrHidden(readMenu: ZHNReadMenu, isShow: Bool) {
+        
+        pageViewController?.tapGestureRecognizerEnabled = !isShow
+        
+        coverController?.tapGestureRecognizerEnabled = !isShow
+    }
     
     /// 背景颜色
     func readMenuClickSetuptColor(readMenu: ZHNReadMenu, index: NSInteger, color: UIColor) {

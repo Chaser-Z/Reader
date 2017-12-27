@@ -33,6 +33,8 @@ class ZHNReadViewController: UIViewController {
     /// 底部状态栏
     private(set) var bottomStatusView: ZHNStatusView!
 
+    /// 当前阅读View(上下滚动不能使用)
+    fileprivate weak var readView: ZHNReadView?
     
     /// 往上滚(true)还是往下滚(false)
     fileprivate var isScrollTop:Bool = true
@@ -64,7 +66,7 @@ class ZHNReadViewController: UIViewController {
         topStatusView.lineBreakMode = .byTruncatingMiddle
         topStatusView.textColor = Color_4
         topStatusView.font = Font_12
-        topStatusView.frame = CGRect(x: Space_1, y: 0, width: view.width - 2 * Space_1, height: Space_2)
+        topStatusView.frame = CGRect(x: Space_1, y: (isX ? TopLiuHeight : 0), width: view.width - 2 * Space_1, height: Space_2)
         view.addSubview(topStatusView)
         
         // BottomStatusView
@@ -84,6 +86,10 @@ class ZHNReadViewController: UIViewController {
         tableView.dataSource = self
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+        tableView.bounces = false
+        tableView.estimatedRowHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
+        tableView.estimatedSectionHeaderHeight = 0
         tableView.frame = GetReadTableViewFrame()
         view.addSubview(tableView)
 
@@ -104,10 +110,11 @@ class ZHNReadViewController: UIViewController {
         if ZHNReadConfigure.shared().effectType != ZHNEffectType.upAndDown.rawValue { // 非上下滚动
             
             tableView.isScrollEnabled = false
-            
+            tableView.clipsToBounds = false
+
         }else{ // 上下滚动
-            
             tableView.isScrollEnabled = true
+            tableView.clipsToBounds = true
         }
     }
 
@@ -153,7 +160,8 @@ extension ZHNReadViewController: UITableViewDelegate,UITableViewDataSource {
             NOVELLog(ZHNReadParser.shared.pageCount)
             NOVELLog(ZHNReadParser.shared.currentPage)
             cell.content = ZHNReadParser.shared.string(page: ZHNReadParser.shared.currentPage)
-            
+            readView = cell.readView
+            readView?.openLongMenu = readController.openLongMenu
             return cell
             
         }else{ // 上下滚动
@@ -213,6 +221,47 @@ extension ZHNReadViewController: UITableViewDelegate,UITableViewDataSource {
             cell?.readChapterModel = nil
         }
     }
+    
+    // MARK: 光标拖拽手势
+    
+    /// 触摸开始
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        drag(touches: touches, status: .begin)
+    }
+    
+    /// 触摸移动
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        drag(touches: touches, status: .changed)
+    }
+    
+    /// 触摸结束
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        drag(touches: touches, status: .end)
+    }
+    
+    /// 触摸取消
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        drag(touches: touches, status: .end)
+    }
+    
+    /// 解析触摸事件
+    private func drag(touches: Set<UITouch>, status: ZHNPanStatus) {
+        
+        if readView?.isOpenDrag ?? false {
+            
+            let point = ((touches as NSSet).anyObject() as? UITouch)?.location(in: view)
+            
+            if point != nil {
+                
+                readView?.drag(status: status, point: view.convert(point!, to: readView), windowPoint: point!)
+            }
+        }
+    }
+    
 
 }
 

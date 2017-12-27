@@ -32,8 +32,8 @@ class ZHNSettingView: ZHNBaseView {
         addSubview(colorView)
         
         // funcViewH
-        let funcViewH:CGFloat = (height - colorView.height) / 3
-        
+        let funcViewH:CGFloat = (height - (isX ? Space_1 : 0) - colorView.height) / 3
+
         // 翻页效果 labels 排放顺序参照 DZMRMNovelEffectType
         //effectView = ZHNFuncView(frame:CGRect(x: 0, y: colorView.frame.maxY, width: ScreenWidth, height: funcViewH), readMenu:readMenu, funcType: .effect, title:"翻书动画", labels:["无效果","平移","仿真","上下"], selectIndex: ZHNReadConfigure.shared().effectType)
         effectView = ZHNFuncView(frame:CGRect(x: 0, y: colorView.frame.maxY, width: ScreenWidth, height: funcViewH), readMenu:readMenu, funcType: .effect, title:"翻书动画", labels:["无效果","平移","仿真"], selectIndex: ZHNReadConfigure.shared().effectType)

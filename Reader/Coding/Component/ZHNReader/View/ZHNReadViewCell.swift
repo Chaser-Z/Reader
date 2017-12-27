@@ -11,8 +11,8 @@ import UIKit
 class ZHNReadViewCell: UITableViewCell {
 
     /// 阅读View 显示使用
-    private var readView:ZHNReadView!
-    
+    private(set) var readView: ZHNReadView!
+
     /// 当前的显示的内容
     var content:String! {
         

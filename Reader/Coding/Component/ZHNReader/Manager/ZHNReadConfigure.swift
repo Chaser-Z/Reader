@@ -44,7 +44,7 @@ class ZHNReadConfigure: NSObject {
     var fontSize:NSInteger = ReadDefaultFontSize {didSet{save()}}
     
     /// 翻页效果
-    var effectType:NSInteger = ZHNEffectType.simulation.rawValue {didSet{save()}}
+    var effectType:NSInteger = ZHNEffectType.translation.rawValue {didSet{save()}}
     
     /// 阅读文字颜色(更加需求自己选)
     var textColor:UIColor {

@@ -86,11 +86,13 @@ class ZHNLeftView: ZHNBaseView ,DZMSegmentedControlDelegate,UITableViewDelegate,
         contentView.frame = CGRect(x: -contentViewW, y: 0, width: contentViewW, height: height)
         
         // topView
+        let topViewY:CGFloat = isX ? TopLiuHeight : 0
         let topViewH:CGFloat = 55
-        topView.frame = CGRect(x: 0, y: 0, width: contentViewW, height: topViewH)
+        topView.frame = CGRect(x: 0, y: topViewY, width: contentViewW, height: topViewH)
         
         // tableView
-        tableView.frame = CGRect(x: 0, y: topViewH, width: contentView.width, height: height - topViewH)
+        let tableViewY = topView.frame.maxY
+        tableView.frame = CGRect(x: 0, y: tableViewY, width: contentView.width, height: height - topViewH)
     }
     
     // MARK: -- UITableViewDelegate,UITableViewDataSource

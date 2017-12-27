@@ -98,17 +98,17 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
     private var novelsSettingView: ZHNSettingView!
     
     /// BottomView 高
-    private let BottomViewH:CGFloat = 112
-    
+    private let BottomViewH:CGFloat = isX ? 150 : 112
+
     /// LightView 高
-    private let LightViewH:CGFloat = 64
-    
+    private let LightViewH:CGFloat = isX ? 80 : 64
+
     /// LightButton 宽高
     private let lightButtonWH:CGFloat = 84
     
     /// NovelsSettingView 高
-    private let NovelsSettingViewH:CGFloat = 218
-    
+    private let NovelsSettingViewH:CGFloat = isX ? 250 : 218
+
     /// 初始化
     class func readMenu(vc: ZHNReadController,delegate: ZHNReadMenuDelegate) ->ZHNReadMenu {
         
@@ -133,8 +133,8 @@ class ZHNReadMenu: NSObject ,UIGestureRecognizerDelegate{
         UIDevice.current.isBatteryMonitoringEnabled = true
         
         // 隐藏导航栏
-        vc.fd_prefersNavigationBarHidden = true
-        
+        //vc.fd_prefersNavigationBarHidden = true
+        //vc.navigationController?.navigationBar.isHidden = true
         // 禁止手势返回
         vc.fd_interactivePopDisabled = true
         

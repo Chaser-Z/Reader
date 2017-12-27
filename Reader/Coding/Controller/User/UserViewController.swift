@@ -153,7 +153,7 @@ class UserViewController: UITableViewController {
 
     // 分享给好友
     private func goToRecommend(_ sender: UITableViewCell) {
-        let shareView = ShareView.init(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
+        let shareView = ShareView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 49 - 64))
         //shareView.setShareModel(UMENG_INVITE_SHARE_TEXT, image: UIImage(named: "share_logo")!, url: ABOUT_US_URL, title: UMENG_SHARE_TEXT)
         shareView.showInViewController(self)
     }

@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.469848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "848"
-            endingLineNumber = "848"
+            startingLineNumber = "893"
+            endingLineNumber = "893"
             landmarkName = "readMenuClickNextChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.470128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "849"
-            endingLineNumber = "849"
+            startingLineNumber = "894"
+            endingLineNumber = "894"
             landmarkName = "readMenuClickNextChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -324,13 +324,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.470254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "850"
-            endingLineNumber = "850"
+            startingLineNumber = "895"
+            endingLineNumber = "895"
             landmarkName = "ZHNReadController"
-            landmarkType = "4">
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.470379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "852"
-            endingLineNumber = "852"
+            startingLineNumber = "897"
+            endingLineNumber = "897"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -356,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.470464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "847"
-            endingLineNumber = "847"
+            startingLineNumber = "892"
+            endingLineNumber = "892"
             landmarkName = "readMenuClickNextChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -484,7 +484,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "527671471.789752"
+                  timestampString = "536047057.572069"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -499,7 +499,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "527671471.792072"
+                  timestampString = "536047057.57357"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -516,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Common/SearchResultViewController.swift"
-            timestampString = "527676315.386175"
+            timestampString = "536056046.470952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -532,11 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Common/SearchResultViewController.swift"
-            timestampString = "527676315.386494"
+            timestampString = "536056046.471115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -548,7 +548,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.53489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
@@ -564,7 +564,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.803532"
+                  timestampString = "536047057.583122"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
@@ -579,7 +579,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.805664"
+                  timestampString = "536047057.58457"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
@@ -594,7 +594,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.807533"
+                  timestampString = "536047057.586062"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
@@ -611,7 +611,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.535988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
@@ -627,7 +627,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.81246"
+                  timestampString = "536047057.590057"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
@@ -642,7 +642,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.814227"
+                  timestampString = "536047057.592196"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "170"
@@ -659,7 +659,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.536674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
@@ -675,7 +675,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.818206"
+                  timestampString = "536047057.595701"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
@@ -690,7 +690,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.820516"
+                  timestampString = "536047057.597163"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
@@ -705,7 +705,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.822829"
+                  timestampString = "536047057.598653"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
@@ -722,7 +722,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.537281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -738,7 +738,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.828619"
+                  timestampString = "536047057.602999"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "156"
@@ -753,7 +753,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.830946"
+                  timestampString = "536047057.60447"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "155"
@@ -770,7 +770,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.537885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -786,7 +786,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.538441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -802,7 +802,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.539046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
@@ -818,7 +818,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.539624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -866,7 +866,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "527671471.854835"
+                  timestampString = "536047057.622932"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
@@ -881,7 +881,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "527671471.856729"
+                  timestampString = "536047057.624554"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
@@ -914,7 +914,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "527671471.862443"
+                  timestampString = "536047057.628108"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -929,7 +929,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "527671471.864803"
+                  timestampString = "536047057.629571"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -1010,7 +1010,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.540545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -1026,7 +1026,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.541169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
@@ -1042,7 +1042,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.541762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -1058,7 +1058,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.899052"
+                  timestampString = "536047057.650868"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "183"
@@ -1073,7 +1073,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/Login/LoginViewController.swift"
-                  timestampString = "527671471.901403"
+                  timestampString = "536047057.652334"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "183"
@@ -1090,7 +1090,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.542349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
@@ -1106,7 +1106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Login/LoginViewController.swift"
-            timestampString = "522566720.702384"
+            timestampString = "530437371.542933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
@@ -1154,7 +1154,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "527671471.920227"
+                  timestampString = "536047057.664626"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "142"
@@ -1169,7 +1169,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Component/LoginHelper.swift"
-                  timestampString = "527671471.922086"
+                  timestampString = "536047057.666137"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "142"
@@ -1186,7 +1186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserViewController.swift"
-            timestampString = "524450805.009474"
+            timestampString = "529298022.259899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "363"
@@ -1202,7 +1202,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/User/UserViewController.swift"
-                  timestampString = "527671471.926586"
+                  timestampString = "536047057.670096"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "363"
@@ -1217,7 +1217,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Controller/User/UserViewController.swift"
-                  timestampString = "527671471.929217"
+                  timestampString = "536047057.671611"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "363"
@@ -1234,7 +1234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserViewController.swift"
-            timestampString = "524450805.009474"
+            timestampString = "529298022.260438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "370"
@@ -1250,7 +1250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserViewController.swift"
-            timestampString = "524450805.009474"
+            timestampString = "529298022.260728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "437"
@@ -1266,7 +1266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserViewController.swift"
-            timestampString = "524450805.009474"
+            timestampString = "529298022.261013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "439"
@@ -1282,7 +1282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserUpdateViewController.swift"
-            timestampString = "522341126.997296"
+            timestampString = "533717509.591733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -1298,7 +1298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserUpdateViewController.swift"
-            timestampString = "522341127.978267"
+            timestampString = "533717509.591786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -1314,7 +1314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserUpdateViewController.swift"
-            timestampString = "522341174.755254"
+            timestampString = "533717509.591842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -1394,7 +1394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserUpdateViewController.swift"
-            timestampString = "522341307.8945"
+            timestampString = "533717509.59205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -1410,7 +1410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserUpdateViewController.swift"
-            timestampString = "522341325.678275"
+            timestampString = "533717509.592098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -1426,7 +1426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/User/UserUpdateViewController.swift"
-            timestampString = "522341326.408269"
+            timestampString = "533717509.592138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -1458,7 +1458,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "527671471.981404"
+                  timestampString = "536047057.709867"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "128"
@@ -1473,7 +1473,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "527671471.983313"
+                  timestampString = "536047057.711379"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "129"
@@ -1778,7 +1778,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "527671472.056045"
+                  timestampString = "536047057.763074"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "129"
@@ -1793,7 +1793,7 @@
                   moduleName = "Reader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghainan/Desktop/Swift/%E9%A1%B9%E7%9B%AE/Reader/Reader/Coding/Webservice/UserWSHelper.swift"
-                  timestampString = "527671472.057724"
+                  timestampString = "536047057.764579"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
@@ -1826,11 +1826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.473816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "857"
-            endingLineNumber = "857"
+            startingLineNumber = "902"
+            endingLineNumber = "902"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1842,11 +1842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.473974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "859"
-            endingLineNumber = "859"
+            startingLineNumber = "904"
+            endingLineNumber = "904"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1858,11 +1858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "863"
-            endingLineNumber = "863"
+            startingLineNumber = "908"
+            endingLineNumber = "908"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1874,11 +1874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "865"
-            endingLineNumber = "865"
+            startingLineNumber = "910"
+            endingLineNumber = "910"
             landmarkName = "readMenuClickChapterList(readMenu:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1890,11 +1890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "842"
-            endingLineNumber = "842"
+            startingLineNumber = "887"
+            endingLineNumber = "887"
             landmarkName = "readMenuClickNextChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1906,11 +1906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "844"
-            endingLineNumber = "844"
+            startingLineNumber = "889"
+            endingLineNumber = "889"
             landmarkName = "readMenuClickNextChapter(readMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1922,11 +1922,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474542"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1938,11 +1938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1954,11 +1954,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1970,11 +1970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1986,11 +1986,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.474956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2002,11 +2002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.475057"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2018,11 +2018,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.475163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2034,11 +2034,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.47528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2050,11 +2050,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.475482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2066,11 +2066,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.475693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2082,11 +2082,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.47587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2098,11 +2098,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.475985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2114,11 +2114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.476135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2130,11 +2130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.476264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2146,11 +2146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.476429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2162,11 +2162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.476963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2178,11 +2178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.477264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2194,11 +2194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.477487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2210,11 +2210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.477651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2226,11 +2226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.478072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "loadNovelChaptersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2242,7 +2242,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.388954"
+            timestampString = "536056046.478558"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "240"
@@ -2258,7 +2258,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.390213"
+            timestampString = "536056046.479251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "241"
@@ -2274,7 +2274,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.391201"
+            timestampString = "536056046.479514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "270"
@@ -2290,7 +2290,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.392124"
+            timestampString = "536056046.479868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "272"
@@ -2306,7 +2306,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.393001"
+            timestampString = "536056046.480078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "273"
@@ -2322,55 +2322,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524627004.484346"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524627220.992588"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.480597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -2386,11 +2338,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.480977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "536056046.481119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "536056046.481702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
+            timestampString = "536056046.482066"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2402,7 +2402,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.394096"
+            timestampString = "536056046.482467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -2418,7 +2418,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.395008"
+            timestampString = "536056046.482878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "236"
@@ -2434,7 +2434,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.395944"
+            timestampString = "536056046.483468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "243"
@@ -2450,7 +2450,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/MenuUI/ZHNReadMenu.swift"
-            timestampString = "523787544.360344"
+            timestampString = "536056046.483773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
@@ -2466,7 +2466,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/MenuUI/ZHNReadMenu.swift"
-            timestampString = "523787545.125239"
+            timestampString = "536056046.484193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
@@ -2482,7 +2482,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/MenuUI/ZHNReadMenu.swift"
-            timestampString = "523787547.150405"
+            timestampString = "536056046.484454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "210"
@@ -2498,7 +2498,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/MenuUI/ZHNReadMenu.swift"
-            timestampString = "523787547.458862"
+            timestampString = "536056046.484524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
@@ -2514,7 +2514,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/MenuUI/ZHNReadMenu.swift"
-            timestampString = "523787547.971745"
+            timestampString = "536056046.484613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
@@ -2530,11 +2530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.484766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2546,11 +2546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.484988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2562,11 +2562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.485116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2594,7 +2594,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.397152"
+            timestampString = "536056046.485318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -2610,7 +2610,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.398175"
+            timestampString = "536056046.485585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -2626,7 +2626,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.399191"
+            timestampString = "536056046.48587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -2642,7 +2642,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.400244"
+            timestampString = "536056046.486185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -2658,7 +2658,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.40122"
+            timestampString = "536056046.486531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -2674,7 +2674,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.402533"
+            timestampString = "536056046.486818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -2690,7 +2690,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.40352"
+            timestampString = "536056046.487287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -2706,7 +2706,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.404601"
+            timestampString = "536056046.487612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -2722,7 +2722,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.405531"
+            timestampString = "536056046.487711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -2738,7 +2738,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.406502"
+            timestampString = "536056046.487884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -2754,7 +2754,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
-            timestampString = "527676315.4074"
+            timestampString = "536056046.488123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -2770,11 +2770,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.488549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "loadContentData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2786,12 +2786,412 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadController.swift"
-            timestampString = "524629418.211158"
+            timestampString = "536056046.48887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "loadContentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.5161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "getResumeDictionary(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.516905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "getResumeDictionary(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.517521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "getResumeDictionary(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.517993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "getResumeDictionary(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.518425"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "getResumeDictionary(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.518865"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "getResumeDictionary(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.519291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.519736"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.520171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.520624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.521065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.521501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.521934"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.522402"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "correct(requestData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.522857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "correctResumeData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.523309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "correctResumeData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.523757"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "correctResumeData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.524197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "correctResumeData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.524658"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "correctResumeData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/ViewController.swift"
+            timestampString = "528022632.525117"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "correctResumeData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
+            timestampString = "536056046.490454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "setupSearchView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
+            timestampString = "536056046.490725"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "setupSearchView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Controller/Home/HomeViewController.swift"
+            timestampString = "536056046.49092"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setupSearchView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadViewController.swift"
+            timestampString = "536056046.491579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "touchesBegan(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reader/Coding/Component/ZHNReader/Controller/ZHNReadViewController.swift"
+            timestampString = "536056046.491879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "touchesMoved(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

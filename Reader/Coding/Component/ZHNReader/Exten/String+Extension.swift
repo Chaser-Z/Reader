@@ -162,6 +162,27 @@ extension String {
         } catch {return self}
     }
     
+    /// 正则搜索相关字符位置
+    func matches(pattern:String) ->[NSTextCheckingResult] {
+        
+        if isEmpty {return []}
+        
+        do {
+            let regularExpression = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
+            
+            return regularExpression.matches(in: self, options: NSRegularExpression.MatchingOptions.reportProgress, range: NSMakeRange(0, length))
+            
+        } catch {return []}
+    }
+    
+    /// 是否存在正则匹配到的内容
+    func isExist(pattern:String) ->Bool {
+        
+        let result:[NSTextCheckingResult] = matches(pattern: pattern)
+        
+        return !result.isEmpty
+    }
+    
     func appendingPathComponent(path: String) -> String {
         let str = self as NSString
         return str.appendingPathComponent(path)
